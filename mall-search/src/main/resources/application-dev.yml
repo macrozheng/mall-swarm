@@ -17,3 +17,9 @@ spring:
       repositories:
         enabled: true
       cluster-nodes: 127.0.0.1:9300
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/

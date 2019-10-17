@@ -26,6 +26,7 @@
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
+        <!--使用logstash时打开-->
         <appender-ref ref="LOGSTASH"/>
     </root>
 </configuration>

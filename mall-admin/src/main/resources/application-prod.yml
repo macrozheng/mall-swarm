@@ -12,6 +12,5 @@ spring:
       stat-view-servlet: #访问监控网页的登录用户名和密码
         login-username: druid
         login-password: druid
-
 logging:
   path: /var/logs #配置日志生成路径
