@@ -34,6 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").authenticated()//该路径需要登录认证
 //                .antMatchers("/brand/list").hasAuthority("TEST")//该路径需要TEST权限
                 .antMatchers("/**").permitAll()
+                .antMatchers("/actuator/**")// 允许SpringBoot Admin 访问监控信息
+                .permitAll()
                 .and()//启用基于http的认证
                 .httpBasic()
                 .realmName("/")

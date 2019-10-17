@@ -70,6 +70,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.OPTIONS)//跨域请求会先进行一次options请求
                 .permitAll()
+                .antMatchers("/actuator/**")// 允许SpringBoot Admin 访问监控信息
+                .permitAll()
 //                .antMatchers("/**")//测试时全部运行访问
 //                .permitAll()
                 .anyRequest()// 除上面外的所有请求全部需要鉴权认证
