@@ -7,12 +7,9 @@ package com.macro.mall.demo.controller;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.demo.dto.UmsAdminLoginParam;
 import com.macro.mall.demo.service.FeignAdminService;
-import com.macro.mall.model.PmsBrand;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * Feign调用mall-admin接口示例
@@ -29,7 +26,7 @@ public class FeignAdminController {
         return adminService.login(loginParam);
     }
 
-    @GetMapping("/brand/listAll")
+    @GetMapping("/getBrandList")
     public CommonResult getBrandList(){
         return adminService.getList();
     }
