@@ -4,7 +4,7 @@ spring:
   application:
     name: mall-admin
 server:
-  port: 8080
+  port: 8180
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
