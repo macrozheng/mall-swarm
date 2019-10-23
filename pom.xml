@@ -19,6 +19,7 @@
         <module>mall-registry</module>
         <module>mall-monitor</module>
         <module>mall-gateway</module>
+        <module>mall-config</module>
     </modules>
 
     <parent>

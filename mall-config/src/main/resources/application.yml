@@ -1,0 +1,16 @@
+server:
+  port: 8301
+spring:
+  application:
+    name: mall-config
+  profiles:
+    active: native #使用本地配置
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/{application}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/

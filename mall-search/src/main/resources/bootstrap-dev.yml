@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      profile: dev #启用环境名称
+      label: master #分支名称
+      name: search #配置文件名称
+      discovery:
+        enabled: true
+        service-id: mall-config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
