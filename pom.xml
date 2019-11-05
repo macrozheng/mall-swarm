@@ -12,6 +12,7 @@
     <modules>
         <module>mall-common</module>
         <module>mall-mbg</module>
+        <module>mall-security</module>
         <module>mall-demo</module>
         <module>mall-admin</module>
         <module>mall-search</module>
@@ -47,6 +48,7 @@
         <admin-starter-server.version>2.1.5</admin-starter-server.version>
         <mall-common.version>1.0-SNAPSHOT</mall-common.version>
         <mall-mbg.version>1.0-SNAPSHOT</mall-mbg.version>
+        <mall-security.version>1.0-SNAPSHOT</mall-security.version>
     </properties>
 
     <dependencies>
@@ -86,6 +88,12 @@
                 <groupId>com.macro.mall</groupId>
                 <artifactId>mall-mbg</artifactId>
                 <version>${mall-mbg.version}</version>
+            </dependency>
+            <!--mall安全模块-->
+            <dependency>
+                <groupId>com.macro.mall</groupId>
+                <artifactId>mall-security</artifactId>
+                <version>${mall-security.version}</version>
             </dependency>
             <!--MyBatis分页插件starter-->
             <dependency>

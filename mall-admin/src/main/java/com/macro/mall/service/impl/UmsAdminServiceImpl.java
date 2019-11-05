@@ -1,6 +1,7 @@
 package com.macro.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.macro.mall.bo.AdminUserDetails;
 import com.macro.mall.dao.UmsAdminPermissionRelationDao;
 import com.macro.mall.dao.UmsAdminRoleRelationDao;
 import com.macro.mall.dto.UmsAdminParam;
@@ -9,20 +10,18 @@ import com.macro.mall.mapper.UmsAdminMapper;
 import com.macro.mall.mapper.UmsAdminPermissionRelationMapper;
 import com.macro.mall.mapper.UmsAdminRoleRelationMapper;
 import com.macro.mall.model.*;
+import com.macro.mall.security.util.JwtTokenUtil;
 import com.macro.mall.service.UmsAdminService;
-import com.macro.mall.util.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -44,15 +43,9 @@ import java.util.stream.Collectors;
 public class UmsAdminServiceImpl implements UmsAdminService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UmsAdminServiceImpl.class);
     @Autowired
-    private AuthenticationManager authenticationManager;
-    @Autowired
-    private UserDetailsService userDetailsService;
-    @Autowired
     private JwtTokenUtil jwtTokenUtil;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Value("${jwt.tokenHead}")
-    private String tokenHead;
     @Autowired
     private UmsAdminMapper adminMapper;
     @Autowired
@@ -102,7 +95,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         String token = null;
         //密码需要客户端加密后传递
         try {
-            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            UserDetails userDetails = loadUserByUsername(username);
             if(!passwordEncoder.matches(password,userDetails.getPassword())){
                 throw new BadCredentialsException("密码不正确");
             }
@@ -145,11 +138,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public String refreshToken(String oldToken) {
-        String token = oldToken.substring(tokenHead.length());
-        if (jwtTokenUtil.canRefresh(token)) {
-            return jwtTokenUtil.refreshToken(token);
-        }
-        return null;
+        return jwtTokenUtil.refreshHeadToken(oldToken);
     }
 
     @Override
@@ -248,5 +237,15 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public List<UmsPermission> getPermissionList(Long adminId) {
         return adminRoleRelationDao.getPermissionList(adminId);
+    }
+
+    public UserDetails loadUserByUsername(String username){
+        //获取用户信息
+        UmsAdmin admin = getAdminByUsername(username);
+        if (admin != null) {
+            List<UmsPermission> permissionList = getPermissionList(admin.getId());
+            return new AdminUserDetails(admin,permissionList);
+        }
+        throw new UsernameNotFoundException("用户名或密码错误");
     }
 }

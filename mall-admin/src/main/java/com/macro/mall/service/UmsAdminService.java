@@ -4,6 +4,7 @@ import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.model.UmsAdmin;
 import com.macro.mall.model.UmsPermission;
 import com.macro.mall.model.UmsRole;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -78,4 +79,9 @@ public interface UmsAdminService {
      * 获取用户所有权限（包括角色权限和+-权限）
      */
     List<UmsPermission> getPermissionList(Long adminId);
+
+    /**
+     * 获取用户信息
+     */
+    UserDetails loadUserByUsername(String username);
 }
