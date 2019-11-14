@@ -14,7 +14,7 @@
 
     <parent>
         <groupId>com.macro.mall</groupId>
-        <artifactId>mall</artifactId>
+        <artifactId>mall-swarm</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
