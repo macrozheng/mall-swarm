@@ -1,4 +1,4 @@
-# mall-swarm 在windows环境下的部署
+# mall-swarm 在Windows环境下的部署
 
 ## 开发环境搭建
 
