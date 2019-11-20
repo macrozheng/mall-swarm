@@ -37,12 +37,12 @@ mall
 ## 项目文档
 
 - 配套`Spring Cloud`系列教程：[https://github.com/macrozheng/springcloud-learning](https://github.com/macrozheng/springcloud-learning)
-- 项目相关`mall`系列教程：[https://macrozheng.github.io/mall-learning](https://macrozheng.github.io/mall-learning)
+- 项目相关`mall`系列教程：[http://www.macrozheng.com](https://macrozheng.github.io/mall-learning)
 
 ## 项目演示
 
-- 后台管理系统： [http://39.98.190.128/index.html](http://39.98.190.128/index.html)  
-- 移动端商城系统：[http://39.98.190.128/mall-app/mainpage.html](http://39.98.190.128/mall-app/mainpage.html)
+- 后台管理系统： [http://www.macrozheng.com/admin/index.html](http://www.macrozheng.com/admin/index.html)  
+- 移动端商城系统：[http://www.macrozheng.com/app/index.html](http://www.macrozheng.com/app/index.html)
 
 ## 技术选型
 
