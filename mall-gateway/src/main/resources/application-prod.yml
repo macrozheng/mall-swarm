@@ -1,0 +1,7 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://mall-registry:8001/eureka/
+    registry-fetch-interval-seconds: 10
+  instance:
+    prefer-ip-address: true

@@ -16,7 +16,3 @@ spring:
           password: 123456
           clone-on-start: true
           search-paths: '{application}'
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8001/eureka/
