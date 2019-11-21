@@ -109,3 +109,27 @@ spring:
           clone-on-start: true
           search-paths: '{application}'
 ```
+
+## 可视化管理工具
+
+### 下载
+
+- 地址：https://github.com/portainer/portainer
+
+### 安装
+
+- 拉取镜像文件：
+
+```bash
+docker pull portainer/portainer
+```
+
+- 使用docker容器运行运行portainer：
+
+```bash
+docker run -p 9000:9000 -p 8000:8000 --name portainer \
+--restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /mydata/portainer/data:/data \
+-d portainer/portainer
+```

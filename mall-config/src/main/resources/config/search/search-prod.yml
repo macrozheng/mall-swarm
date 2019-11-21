@@ -7,5 +7,12 @@ spring:
     elasticsearch:
       cluster-nodes: es:9300
       cluster-name: elasticsearch
+  elasticsearch:
+    rest:
+      uris: http://es:9200
 logging:
   path: /var/logs #配置日志生成路径
+management:
+  health:
+    elasticsearch:
+      response-timeout: 1000ms #加大健康检查超时时间

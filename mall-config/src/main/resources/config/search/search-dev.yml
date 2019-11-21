@@ -7,6 +7,9 @@ spring:
     elasticsearch:
       cluster-nodes: 127.0.0.1:9300
       cluster-name: elasticsearch
+  elasticsearch:
+    rest:
+      uris: http://localhost:9200
 logging:
   level:
     root: info #日志配置DEBUG,INFO,WARN,ERROR
