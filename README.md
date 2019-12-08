@@ -67,6 +67,7 @@ mall
 | LogStash             | 日志收集            | [https://github.com/logstash/logstash-logback-encoder](https://github.com/logstash/logstash-logback-encoder) |
 | Lombok               | 简化对象封装工具    | [https://github.com/rzwitserloot/lombok](https://github.com/rzwitserloot/lombok) |
 | Seata                | 全局事务管理框架    | [https://github.com/seata/seata](https://github.com/seata/seata) |
+| Portainer            | 可视化Docker容器管理| [https://github.com/portainer/portainer](https://github.com/portainer/portainer) |
 
 ### 前端技术
 
