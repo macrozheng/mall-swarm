@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * 商品专题Controller
+ * Commodity topics Controller
  * Created by macro on 2018/6/1.
  */
 @Controller
-@Api(tags = "CmsSubjectController", description = "商品专题管理")
+@Api(tags = "CmsSubjectController", description = "Commodity topics management")
 @RequestMapping("/subject")
 public class CmsSubjectController {
     @Autowired
     private CmsSubjectService subjectService;
 
-    @ApiOperation("获取全部商品专题")
+    @ApiOperation("Get all Commodity topics ")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<CmsSubject>> listAll() {
@@ -34,7 +34,7 @@ public class CmsSubjectController {
         return CommonResult.success(subjectList);
     }
 
-    @ApiOperation(value = "根据专题名称分页获取专题")
+    @ApiOperation(value = "Get topics by page by topic name")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<CmsSubject>> getList(@RequestParam(value = "keyword", required = false) String keyword,

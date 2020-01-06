@@ -1,9 +1,9 @@
 spring:
   cloud:
     config:
-      profile: prod #启用环境名称
-      label: master #分支名称
-      name: demo #配置文件名称
+      profile: prod #Enable environment name
+      label: master #Branch name
+      name: demo #Configure file name
       discovery:
         enabled: true
         service-id: mall-config

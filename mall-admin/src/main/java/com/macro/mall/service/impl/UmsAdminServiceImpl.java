@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * UmsAdminService实现类
+ * UmsAdmin Service Implementation Class
  * Created by macro on 2018/4/26.
  */
 @Service
@@ -76,14 +76,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         BeanUtils.copyProperties(umsAdminParam, umsAdmin);
         umsAdmin.setCreateTime(new Date());
         umsAdmin.setStatus(1);
-        //查询是否有相同用户名的用户
+        //Find out if there are users with the same username
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(umsAdmin.getUsername());
         List<UmsAdmin> umsAdminList = adminMapper.selectByExample(example);
         if (umsAdminList.size() > 0) {
             return null;
         }
-        //将密码进行加密操作
+        //Encrypting password
         String encodePassword = passwordEncoder.encode(umsAdmin.getPassword());
         umsAdmin.setPassword(encodePassword);
         adminMapper.insert(umsAdmin);
@@ -93,11 +93,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public String login(String username, String password) {
         String token = null;
-        //密码需要客户端加密后传递
+        //password needs to be encrypted after client pass
         try {
             UserDetails userDetails = loadUserByUsername(username);
             if(!passwordEncoder.matches(password,userDetails.getPassword())){
-                throw new BadCredentialsException("密码不正确");
+                throw new BadCredentialsException("Password is incorrect");
             }
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -105,14 +105,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 //            updateLoginTimeByUsername(username);
             insertLoginLog(username);
         } catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
+            LOGGER.warn("Login exception:{}", e.getMessage());
         }
         return token;
     }
 
     /**
-     * 添加登录记录
-     * @param username 用户名
+     * Add login record
+     * @param username username
      */
     private void insertLoginLog(String username) {
         UmsAdmin admin = getAdminByUsername(username);
@@ -126,7 +126,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     /**
-     * 根据用户名修改登录时间
+     * Change the login time according to username
      */
     private void updateLoginTimeByUsername(String username) {
         UmsAdmin record = new UmsAdmin();
@@ -161,7 +161,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public int update(Long id, UmsAdmin admin) {
         admin.setId(id);
-        //密码已经加密处理，需要单独修改
+        //password has been encrypted，Need to be modified separately
         admin.setPassword(null);
         return adminMapper.updateByPrimaryKeySelective(admin);
     }
@@ -174,11 +174,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public int updateRole(Long adminId, List<Long> roleIds) {
         int count = roleIds == null ? 0 : roleIds.size();
-        //先删除原来的关系
+        //Delete the original relationship first
         UmsAdminRoleRelationExample adminRoleRelationExample = new UmsAdminRoleRelationExample();
         adminRoleRelationExample.createCriteria().andAdminIdEqualTo(adminId);
         adminRoleRelationMapper.deleteByExample(adminRoleRelationExample);
-        //建立新关系
+        //Build new relationships
         if (!CollectionUtils.isEmpty(roleIds)) {
             List<UmsAdminRoleRelation> list = new ArrayList<>();
             for (Long roleId : roleIds) {
@@ -199,20 +199,20 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public int updatePermission(Long adminId, List<Long> permissionIds) {
-        //删除原所有权限关系
+        //Delete all original permission relationships
         UmsAdminPermissionRelationExample relationExample = new UmsAdminPermissionRelationExample();
         relationExample.createCriteria().andAdminIdEqualTo(adminId);
         adminPermissionRelationMapper.deleteByExample(relationExample);
-        //获取用户所有角色权限
+        //Get all role permissions for a user
         List<UmsPermission> permissionList = adminRoleRelationDao.getRolePermissionList(adminId);
         List<Long> rolePermissionList = permissionList.stream().map(UmsPermission::getId).collect(Collectors.toList());
         if (!CollectionUtils.isEmpty(permissionIds)) {
             List<UmsAdminPermissionRelation> relationList = new ArrayList<>();
-            //筛选出+权限
+            //Filter out the permissions
             List<Long> addPermissionIdList = permissionIds.stream().filter(permissionId -> !rolePermissionList.contains(permissionId)).collect(Collectors.toList());
-            //筛选出-权限
+            //Filter out - Permission
             List<Long> subPermissionIdList = rolePermissionList.stream().filter(permissionId -> !permissionIds.contains(permissionId)).collect(Collectors.toList());
-            //插入+-权限关系
+            //Insert-permission relationship
             relationList.addAll(convert(adminId,1,addPermissionIdList));
             relationList.addAll(convert(adminId,-1,subPermissionIdList));
             return adminPermissionRelationDao.insertList(relationList);
@@ -221,7 +221,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     /**
-     * 将+-权限关系转化为对象
+     * Turn + -permission relationship into object
      */
     private List<UmsAdminPermissionRelation> convert(Long adminId,Integer type,List<Long> permissionIdList) {
         List<UmsAdminPermissionRelation> relationList = permissionIdList.stream().map(permissionId -> {
@@ -240,12 +240,12 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     public UserDetails loadUserByUsername(String username){
-        //获取用户信息
+        //Get user information
         UmsAdmin admin = getAdminByUsername(username);
         if (admin != null) {
             List<UmsPermission> permissionList = getPermissionList(admin.getId());
             return new AdminUserDetails(admin,permissionList);
         }
-        throw new UsernameNotFoundException("用户名或密码错误");
+        throw new UsernameNotFoundException("wrong user name or password");
     }
 }

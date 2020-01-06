@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 购物车管理Service实现类
+ * 购物车managementService实现类
  * Created by macro on 2018/8/2.
  */
 @Service
@@ -54,7 +54,7 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
     }
 
     /**
-     * 根据会员id,商品id和规格获取购物车中商品
+     * according toMemberid,商品id和specification获取购物车中商品
      */
     private OmsCartItem getCartItem(OmsCartItem cartItem) {
         OmsCartItemExample example = new OmsCartItemExample();

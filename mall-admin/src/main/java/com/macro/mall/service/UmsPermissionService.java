@@ -6,32 +6,32 @@ import com.macro.mall.model.UmsPermission;
 import java.util.List;
 
 /**
- * 后台用户权限管理Service
+ * Background user rights management Service
  * Created by macro on 2018/9/29.
  */
 public interface UmsPermissionService {
     /**
-     * 添加权限
+     * Add permissions
      */
     int create(UmsPermission permission);
 
     /**
-     * 修改权限
+     * Modify permissions
      */
-    int update(Long id,UmsPermission permission);
+    int update(Long id, UmsPermission permission);
 
     /**
-     * 批量删除权限
+     * Delete permissions in bulk
      */
     int delete(List<Long> ids);
 
     /**
-     * 以层级结构返回所有权限
+     * Returns all permissions in a hierarchical structure
      */
     List<UmsPermissionNode> treeList();
 
     /**
-     * 获取所有权限
+     * Get all permissions
      */
     List<UmsPermission> list();
 }

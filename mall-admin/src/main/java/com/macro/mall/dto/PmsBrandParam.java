@@ -9,30 +9,30 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 /**
- * 品牌传递参数
+ * Brand delivery parameters
  * Created by macro on 2018/4/26.
  */
 public class PmsBrandParam {
-    @ApiModelProperty(value = "品牌名称",required = true)
-    @NotEmpty(message = "名称不能为空")
+    @ApiModelProperty(value = "brand name",required = true)
+    @NotEmpty(message = "Name is required")
     private String name;
-    @ApiModelProperty(value = "品牌首字母")
+    @ApiModelProperty(value = "Brand initials")
     private String firstLetter;
-    @ApiModelProperty(value = "排序字段")
-    @Min(value = 0, message = "排序最小为0")
+    @ApiModelProperty(value = "Sort fields")
+    @Min(value = 0, message = "Sort minimum is 0")
     private Integer sort;
-    @ApiModelProperty(value = "是否为厂家制造商")
-    @FlagValidator(value = {"0","1"}, message = "厂家状态不正确")
+    @ApiModelProperty(value = "Is it a manufacturer?")
+    @FlagValidator(value = {"0","1"}, message = "Manufacturer status is incorrect")
     private Integer factoryStatus;
-    @ApiModelProperty(value = "是否进行显示")
-    @FlagValidator(value = {"0","1"}, message = "显示状态不正确")
+    @ApiModelProperty(value = "Whether to display")
+    @FlagValidator(value = {"0","1"}, message = "The display status is incorrect")
     private Integer showStatus;
-    @ApiModelProperty(value = "品牌logo",required = true)
-    @NotEmpty(message = "品牌logo不能为空")
+    @ApiModelProperty(value = "Brand logo",required = true)
+    @NotEmpty(message = "Brand logo cannot be empty")
     private String logo;
-    @ApiModelProperty(value = "品牌大图")
+    @ApiModelProperty(value = "Brand big picture")
     private String bigPic;
-    @ApiModelProperty(value = "品牌故事")
+    @ApiModelProperty(value = "Brand story")
     private String brandStory;
 
     public String getName() {

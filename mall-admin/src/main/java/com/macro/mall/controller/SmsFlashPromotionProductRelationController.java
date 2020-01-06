@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 限时购和商品关系管理Controller
+ * Limited-time purchase and product relationship management Controller
  * Created by macro on 2018/11/16.
  */
 @Controller
-@Api(tags = "SmsFlashPromotionProductRelationController", description = "限时购和商品关系管理")
+@Api(tags = "SmsFlashPromotionProductRelationController", description = "Limited-time purchase and merchandise relationship management")
 @RequestMapping("/flashProductRelation")
 public class SmsFlashPromotionProductRelationController {
     @Autowired
     private SmsFlashPromotionProductRelationService relationService;
 
-    @ApiOperation("批量选择商品添加关联")
+    @ApiOperation("Add items in batches to add associations")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody List<SmsFlashPromotionProductRelation> relationList) {
@@ -35,7 +35,7 @@ public class SmsFlashPromotionProductRelationController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改关联相关信息")
+    @ApiOperation("Edit related information")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody SmsFlashPromotionProductRelation relation) {
@@ -46,7 +46,7 @@ public class SmsFlashPromotionProductRelationController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("删除关联")
+    @ApiOperation("Delete association")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
@@ -57,7 +57,7 @@ public class SmsFlashPromotionProductRelationController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("获取管理商品促销信息")
+    @ApiOperation("Get management product promotion information")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<SmsFlashPromotionProductRelation> getItem(@PathVariable Long id) {
@@ -65,7 +65,7 @@ public class SmsFlashPromotionProductRelationController {
         return CommonResult.success(relation);
     }
 
-    @ApiOperation("分页查询不同场次关联及商品信息")
+    @ApiOperation("Pagination query for different session associations and Product information")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<SmsFlashPromotionProduct>> list(@RequestParam(value = "flashPromotionId") Long flashPromotionId,

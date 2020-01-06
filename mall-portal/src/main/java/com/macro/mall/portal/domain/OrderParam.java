@@ -1,17 +1,17 @@
 package com.macro.mall.portal.domain;
 
 /**
- * 生成订单时传入的参数
+ * 生成订单时传入的parameter
  * Created by macro on 2018/8/30.
  */
 public class OrderParam {
-    //收货地址id
+    //Shipping addressid
     private Long memberReceiveAddressId;
-    //优惠券id
+    //Coupon id
     private Long couponId;
     //使用的积分数
     private Integer useIntegration;
-    //支付方式
+    //Payment method
     private Integer payType;
 
     public Long getMemberReceiveAddressId() {

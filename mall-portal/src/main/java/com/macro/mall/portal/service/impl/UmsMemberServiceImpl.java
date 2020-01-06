@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * 会员管理Service实现类
+ * MembermanagementService实现类
  * Created by macro on 2018/8/3.
  */
 @Service
@@ -76,22 +76,22 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         if(!verifyAuthCode(authCode,telephone)){
             return CommonResult.failed("验证码错误");
         }
-        //查询是否已有该用户
+        //查询YesNo已有该User
         UmsMemberExample example = new UmsMemberExample();
         example.createCriteria().andUsernameEqualTo(username);
         example.or(example.createCriteria().andPhoneEqualTo(telephone));
         List<UmsMember> umsMembers = memberMapper.selectByExample(example);
         if (!CollectionUtils.isEmpty(umsMembers)) {
-            return CommonResult.failed("该用户已经存在");
+            return CommonResult.failed("该User已经存在");
         }
-        //没有该用户进行添加操作
+        //没有该User进行添加操作
         UmsMember umsMember = new UmsMember();
         umsMember.setUsername(username);
         umsMember.setPhone(telephone);
         umsMember.setPassword(passwordEncoder.encode(password));
         umsMember.setCreateTime(new Date());
         umsMember.setStatus(1);
-        //获取默认会员等级并设置
+        //获取默认Member等级并设置
         UmsMemberLevelExample levelExample = new UmsMemberLevelExample();
         levelExample.createCriteria().andDefaultStatusEqualTo(1);
         List<UmsMemberLevel> memberLevelList = memberLevelMapper.selectByExample(levelExample);
@@ -131,7 +131,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         UmsMember umsMember = memberList.get(0);
         umsMember.setPassword(passwordEncoder.encode(password));
         memberMapper.updateByPrimaryKeySelective(umsMember);
-        return CommonResult.success(null,"密码修改成功");
+        return CommonResult.success(null,"password修改成功");
     }
 
     @Override
@@ -156,23 +156,23 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         if(member!=null){
             return new MemberDetails(member);
         }
-        throw new UsernameNotFoundException("用户名或密码错误");
+        throw new UsernameNotFoundException("wrong user name or password");
     }
 
     @Override
     public String login(String username, String password) {
         String token = null;
-        //密码需要客户端加密后传递
+        //password needs to be encrypted after client pass
         try {
             UserDetails userDetails = loadUserByUsername(username);
             if(!passwordEncoder.matches(password,userDetails.getPassword())){
-                throw new BadCredentialsException("密码不正确");
+                throw new BadCredentialsException("Password is incorrect");
             }
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
             token = jwtTokenUtil.generateToken(userDetails);
         } catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
+            LOGGER.warn("Login exception:{}", e.getMessage());
         }
         return token;
     }

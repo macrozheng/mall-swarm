@@ -5,30 +5,30 @@ import com.macro.mall.model.UmsMemberReceiveAddress;
 import java.util.List;
 
 /**
- * 用户地址管理Service
+ * User地址managementService
  * Created by macro on 2018/8/28.
  */
 public interface UmsMemberReceiveAddressService {
     /**
-     * 添加收货地址
+     * 添加Shipping address
      */
     int add(UmsMemberReceiveAddress address);
 
     /**
-     * 删除收货地址
+     * 删除Shipping address
      * @param id 地址表的id
      */
     int delete(Long id);
 
     /**
-     * 修改收货地址
+     * 修改Shipping address
      * @param id 地址表的id
-     * @param address 修改的收货地址信息
+     * @param address 修改的Shipping address信息
      */
     int update(Long id, UmsMemberReceiveAddress address);
 
     /**
-     * 返回当前用户的收货地址
+     * 返回当前User的Shipping address
      */
     List<UmsMemberReceiveAddress> list();
 

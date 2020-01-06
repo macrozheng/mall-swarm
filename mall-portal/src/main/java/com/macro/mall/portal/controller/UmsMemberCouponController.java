@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 用户优惠券管理Controller
+ * UserCoupon management Controller
  * Created by macro on 2018/8/29.
  */
 @Controller
-@Api(tags = "UmsMemberCouponController", description = "用户优惠券管理")
+@Api(tags = "UmsMemberCouponController", description = "UserCoupon management")
 @RequestMapping("/member/coupon")
 public class UmsMemberCouponController {
     @Autowired
@@ -38,7 +38,7 @@ public class UmsMemberCouponController {
         return memberCouponService.add(couponId);
     }
 
-    @ApiOperation("获取用户优惠券列表")
+    @ApiOperation("获取User优惠券列表")
     @ApiImplicitParam(name = "useStatus", value = "优惠券筛选类型:0->未使用；1->已使用；2->已过期",
             allowableValues = "0,1,2", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -48,7 +48,7 @@ public class UmsMemberCouponController {
         return CommonResult.success(couponHistoryList);
     }
 
-    @ApiOperation("获取登录会员购物车的相关优惠券")
+    @ApiOperation("获取登录Member购物车的相关优惠券")
     @ApiImplicitParam(name = "type", value = "使用可用:0->不可用；1->可用",
             defaultValue = "1", allowableValues = "0,1", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/list/cart/{type}", method = RequestMethod.GET)

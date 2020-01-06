@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * 购物车中促销信息的封装
  */
 public class CartPromotionItem extends OmsCartItem{
-    //促销活动信息
+    //促销Event information
     private String promotionMessage;
     //促销活动减去的金额，针对每个商品
     private BigDecimal reduceAmount;

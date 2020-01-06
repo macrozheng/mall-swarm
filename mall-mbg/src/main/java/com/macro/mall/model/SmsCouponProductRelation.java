@@ -10,7 +10,7 @@ public class SmsCouponProductRelation implements Serializable {
 
     private Long productId;
 
-    @ApiModelProperty(value = "商品名称")
+    @ApiModelProperty(value = "product name")
     private String productName;
 
     @ApiModelProperty(value = "商品编码")

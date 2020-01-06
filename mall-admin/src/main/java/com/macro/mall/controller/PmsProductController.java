@@ -18,17 +18,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 商品管理Controller
+ * Product management Controller
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductController", description = "商品管理")
+@Api(tags = "PmsProductController", description = "Product management")
 @RequestMapping("/product")
 public class PmsProductController {
     @Autowired
     private PmsProductService productService;
 
-    @ApiOperation("创建商品")
+    @ApiOperation("Create product")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:create')")
@@ -41,7 +41,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("根据商品id获取商品编辑信息")
+    @ApiOperation("Get product edit information based on product id")
     @RequestMapping(value = "/updateInfo/{id}", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:read')")
@@ -50,7 +50,7 @@ public class PmsProductController {
         return CommonResult.success(productResult);
     }
 
-    @ApiOperation("更新商品")
+    @ApiOperation("Update product")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:update')")
@@ -63,7 +63,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("查询商品")
+    @ApiOperation("Search for Products")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:read')")
@@ -74,7 +74,7 @@ public class PmsProductController {
         return CommonResult.success(CommonPage.restPage(productList));
     }
 
-    @ApiOperation("根据商品名称或货号模糊查询")
+    @ApiOperation("Fuzzy query by product name or article number")
     @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProduct>> getList(String keyword) {
@@ -82,7 +82,7 @@ public class PmsProductController {
         return CommonResult.success(productList);
     }
 
-    @ApiOperation("批量修改审核状态")
+    @ApiOperation("Edit review status in bulk")
     @RequestMapping(value = "/update/verifyStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:update')")
@@ -97,7 +97,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量上下架")
+    @ApiOperation("Batch loading and unloading")
     @RequestMapping(value = "/update/publishStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:update')")
@@ -111,7 +111,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量推荐商品")
+    @ApiOperation("Recommended products in bulk")
     @RequestMapping(value = "/update/recommendStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:update')")
@@ -125,7 +125,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量设为新品")
+    @ApiOperation("Set as new Status")
     @RequestMapping(value = "/update/newStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:update')")
@@ -139,7 +139,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量修改删除状态")
+    @ApiOperation("Batch delete Status")
     @RequestMapping(value = "/update/deleteStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:product:delete')")

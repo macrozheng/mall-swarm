@@ -22,7 +22,7 @@ import java.util.Date;
 /**
  * Created by macro on 2019/12/25.
  */
-@Api(tags = "MinioController", description = "MinIO对象存储管理")
+@Api(tags = "MinioController", description = "MinIOObject storemanagement")
 @Controller
 @RequestMapping("/minio")
 public class MinioController {
@@ -37,39 +37,39 @@ public class MinioController {
     @Value("${minio.secretKey}")
     private String SECRET_KEY;
 
-    @ApiOperation("文件上传")
+    @ApiOperation("File Upload")
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult upload(@RequestParam("file") MultipartFile file) {
         try {
-            //创建一个MinIO的Java客户端
+            //Create a MinIO Java Client
             MinioClient minioClient = new MinioClient(ENDPOINT, ACCESS_KEY, SECRET_KEY);
             boolean isExist = minioClient.bucketExists(BUCKET_NAME);
             if (isExist) {
-                LOGGER.info("存储桶已经存在！");
+                LOGGER.info("The bucket already exists！");
             } else {
-                //创建存储桶并设置只读权限
+                //Create a bucket and set read-only permissions
                 minioClient.makeBucket(BUCKET_NAME);
                 minioClient.setBucketPolicy(BUCKET_NAME, "*.*", PolicyType.READ_ONLY);
             }
             String filename = file.getOriginalFilename();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-            // 设置存储对象名称
+            // Set storage object name
             String objectName = sdf.format(new Date()) + "/" + filename;
-            // 使用putObject上传一个文件到存储桶中
+            // Upload a file to the bucket using putObject
             minioClient.putObject(BUCKET_NAME, objectName, file.getInputStream(), file.getContentType());
-            LOGGER.info("文件上传成功!");
+            LOGGER.info("File Upload succeeded!");
             MinioUploadDto minioUploadDto = new MinioUploadDto();
             minioUploadDto.setName(filename);
             minioUploadDto.setUrl(ENDPOINT + "/" + BUCKET_NAME + "/" + objectName);
             return CommonResult.success(minioUploadDto);
         } catch (Exception e) {
-            LOGGER.info("上传发生错误: {}！", e.getMessage());
+            LOGGER.info("Upload error: {}！", e.getMessage());
         }
         return CommonResult.failed();
     }
 
-    @ApiOperation("文件删除")
+    @ApiOperation("File deletion")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@RequestParam("objectName") String objectName) {

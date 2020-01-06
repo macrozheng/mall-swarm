@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 限时购场次管理Controller
+ * Limited-time purchases managementController
  * Created by macro on 2018/11/16.
  */
 @Controller
-@Api(tags = "SmsFlashPromotionSessionController", description = "限时购场次管理")
+@Api(tags = "SmsFlashPromotionSessionController", description = "Time-limited purchases")
 @RequestMapping("/flashSession")
 public class SmsFlashPromotionSessionController {
     @Autowired
     private SmsFlashPromotionSessionService flashPromotionSessionService;
 
-    @ApiOperation("添加场次")
+    @ApiOperation("Add Sessions")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody SmsFlashPromotionSession promotionSession) {
@@ -34,7 +34,7 @@ public class SmsFlashPromotionSessionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改场次")
+    @ApiOperation("Modify Sessions")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody SmsFlashPromotionSession promotionSession) {
@@ -45,7 +45,7 @@ public class SmsFlashPromotionSessionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改启用状态")
+    @ApiOperation("Modify Enabled")
     @RequestMapping(value = "/update/status/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateStatus(@PathVariable Long id, Integer status) {
@@ -56,7 +56,7 @@ public class SmsFlashPromotionSessionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("删除场次")
+    @ApiOperation("Delete Session")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
@@ -67,7 +67,7 @@ public class SmsFlashPromotionSessionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("获取场次详情")
+    @ApiOperation("Get Show Details")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<SmsFlashPromotionSession> getItem(@PathVariable Long id) {
@@ -75,7 +75,7 @@ public class SmsFlashPromotionSessionController {
         return CommonResult.success(promotionSession);
     }
 
-    @ApiOperation("获取全部场次")
+    @ApiOperation("Get all Sessions")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsFlashPromotionSession>> list() {
@@ -83,7 +83,7 @@ public class SmsFlashPromotionSessionController {
         return CommonResult.success(promotionSessionList);
     }
 
-    @ApiOperation("获取全部可选场次及其数量")
+    @ApiOperation("Get all Optional Sessions and their number")
     @RequestMapping(value = "/selectList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsFlashPromotionSessionDetail>> selectList(Long flashPromotionId) {

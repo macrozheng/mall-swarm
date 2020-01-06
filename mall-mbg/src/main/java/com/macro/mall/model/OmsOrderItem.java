@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 public class OmsOrderItem implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "Order_id")
     private Long orderId;
 
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "Order Number")
     private String orderSn;
 
     private Long productId;
@@ -23,48 +23,48 @@ public class OmsOrderItem implements Serializable {
 
     private String productSn;
 
-    @ApiModelProperty(value = "销售价格")
+    @ApiModelProperty(value = "selling price")
     private BigDecimal productPrice;
 
-    @ApiModelProperty(value = "购买数量")
+    @ApiModelProperty(value = "Number of purchases")
     private Integer productQuantity;
 
-    @ApiModelProperty(value = "商品sku编号")
+    @ApiModelProperty(value = "Product SKU id")
     private Long productSkuId;
 
-    @ApiModelProperty(value = "商品sku条码")
+    @ApiModelProperty(value = "Product SKU code")
     private String productSkuCode;
 
-    @ApiModelProperty(value = "商品分类id")
+    @ApiModelProperty(value = "Category ID")
     private Long productCategoryId;
 
-    @ApiModelProperty(value = "商品的销售属性")
+    @ApiModelProperty(value = "Product sales Attributes")
     private String sp1;
 
     private String sp2;
 
     private String sp3;
 
-    @ApiModelProperty(value = "商品促销名称")
+    @ApiModelProperty(value = "Product promotion name")
     private String promotionName;
 
-    @ApiModelProperty(value = "商品促销分解金额")
+    @ApiModelProperty(value = "Product promotion breakdown amount")
     private BigDecimal promotionAmount;
 
-    @ApiModelProperty(value = "优惠券优惠分解金额")
+    @ApiModelProperty(value = "Coupon offer break-down amount")
     private BigDecimal couponAmount;
 
-    @ApiModelProperty(value = "积分优惠分解金额")
+    @ApiModelProperty(value = "Points discounted amount")
     private BigDecimal integrationAmount;
 
-    @ApiModelProperty(value = "该商品经过优惠后的分解金额")
+    @ApiModelProperty(value = "The amount of the product is broken down after the discount")
     private BigDecimal realAmount;
 
     private Integer giftIntegration;
 
     private Integer giftGrowth;
 
-    @ApiModelProperty(value = "商品销售属性:[{'key':'颜色','value':'颜色'},{'key':'容量','value':'4G'}]")
+    @ApiModelProperty(value = "Product Sales Attributes:[{'key':'colour','value':'colour'},{'key':'capacity','value':'4G'}]")
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

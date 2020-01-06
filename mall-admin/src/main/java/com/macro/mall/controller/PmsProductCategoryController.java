@@ -18,17 +18,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 商品分类模块Controller
+ * Product Classification Module Controller
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductCategoryController", description = "商品分类管理")
+@Api(tags = "PmsProductCategoryController", description = "Categories management")
 @RequestMapping("/productCategory")
 public class PmsProductCategoryController {
     @Autowired
     private PmsProductCategoryService productCategoryService;
 
-    @ApiOperation("添加产品分类")
+    @ApiOperation("Add product category")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:create')")
@@ -42,7 +42,7 @@ public class PmsProductCategoryController {
         }
     }
 
-    @ApiOperation("修改商品分类")
+    @ApiOperation("Edit product category")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:update')")
@@ -58,7 +58,7 @@ public class PmsProductCategoryController {
         }
     }
 
-    @ApiOperation("分页查询商品分类")
+    @ApiOperation("Paging query product categories")
     @RequestMapping(value = "/list/{parentId}", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:read')")
@@ -69,7 +69,7 @@ public class PmsProductCategoryController {
         return CommonResult.success(CommonPage.restPage(productCategoryList));
     }
 
-    @ApiOperation("根据id获取商品分类")
+    @ApiOperation("Get product classification by id")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:read')")
@@ -78,7 +78,7 @@ public class PmsProductCategoryController {
         return CommonResult.success(productCategory);
     }
 
-    @ApiOperation("删除商品分类")
+    @ApiOperation("Remove product category")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:delete')")
@@ -91,7 +91,7 @@ public class PmsProductCategoryController {
         }
     }
 
-    @ApiOperation("修改导航栏显示状态")
+    @ApiOperation("Modify navigation bar display status")
     @RequestMapping(value = "/update/navStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:update')")
@@ -104,7 +104,7 @@ public class PmsProductCategoryController {
         }
     }
 
-    @ApiOperation("修改显示状态")
+    @ApiOperation("Modify display status")
     @RequestMapping(value = "/update/showStatus", method = RequestMethod.POST)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:update')")
@@ -117,7 +117,7 @@ public class PmsProductCategoryController {
         }
     }
 
-    @ApiOperation("查询所有一级分类及子分类")
+    @ApiOperation("Query all first-level categories and sub-categories")
     @RequestMapping(value = "/list/withChildren", method = RequestMethod.GET)
     @ResponseBody
     @PreAuthorize("hasAuthority('pms:productCategory:read')")

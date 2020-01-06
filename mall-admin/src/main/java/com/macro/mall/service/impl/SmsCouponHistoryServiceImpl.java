@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * 优惠券领取记录管理Service实现类
+ * Coupon collection records实现类
  * Created by macro on 2018/11/6.
  */
 @Service

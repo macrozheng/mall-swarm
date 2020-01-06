@@ -10,31 +10,31 @@ public class PmsProductAttribute implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "属性选择类型：0->唯一；1->单选；2->多选")
+    @ApiModelProperty(value = "Attribute selection type：0->unique；1->Single choice；2->Multiple choice")
     private Integer selectType;
 
-    @ApiModelProperty(value = "属性录入方式：0->手工录入；1->从列表中选取")
+    @ApiModelProperty(value = "Property entry method：0->manual input；1->Pick from the list")
     private Integer inputType;
 
-    @ApiModelProperty(value = "可选值列表，以逗号隔开")
+    @ApiModelProperty(value = "List of optional values，Separated by commas")
     private String inputList;
 
-    @ApiModelProperty(value = "排序字段：最高的可以单独上传图片")
+    @ApiModelProperty(value = "Sort fields：最高的可以单独上传图片")
     private Integer sort;
 
-    @ApiModelProperty(value = "分类筛选样式：1->普通；1->颜色")
+    @ApiModelProperty(value = "Classification and filtering style：1->ordinary；1->colour")
     private Integer filterType;
 
-    @ApiModelProperty(value = "检索类型；0->不需要进行检索；1->关键字检索；2->范围检索")
+    @ApiModelProperty(value = "Type of retrieval；0->No retrieval required；1->Keyword search；2->Range search")
     private Integer searchType;
 
-    @ApiModelProperty(value = "相同属性产品是否关联；0->不关联；1->关联")
+    @ApiModelProperty(value = "Whether products with the same attributes are related；0->Not related；1->Related")
     private Integer relatedStatus;
 
-    @ApiModelProperty(value = "是否支持手动新增；0->不支持；1->支持")
+    @ApiModelProperty(value = "Whether to support manual addition；0->not support；1->Support")
     private Integer handAddStatus;
 
-    @ApiModelProperty(value = "属性的类型；0->规格；1->参数")
+    @ApiModelProperty(value = "Type of attribute；0->specification；1->parameter")
     private Integer type;
 
     private static final long serialVersionUID = 1L;

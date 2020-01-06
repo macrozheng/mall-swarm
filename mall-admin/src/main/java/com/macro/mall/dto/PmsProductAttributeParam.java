@@ -5,39 +5,39 @@ import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 商品属性参数
+ * Product attribute parameters
  * Created by macro on 2018/4/26.
  */
 public class PmsProductAttributeParam {
-    @ApiModelProperty("属性分类ID")
-    @NotEmpty(message = "属性分类不能为空")
+    @ApiModelProperty("Attribute Classification ID")
+    @NotEmpty(message = "Attribute class cannot be empty")
     private Long productAttributeCategoryId;
-    @ApiModelProperty("属性名称")
-    @NotEmpty(message = "属性名称不能为空")
+    @ApiModelProperty("Attribute name")
+    @NotEmpty(message = "Property Name is required")
     private String name;
-    @ApiModelProperty("属性选择类型：0->唯一；1->单选；2->多选")
+    @ApiModelProperty("Attribute selection type：0->unique；1->Single choice；2->Multiple choice")
     @FlagValidator({"0","1","2"})
     private Integer selectType;
-    @ApiModelProperty("属性录入方式：0->手工录入；1->从列表中选取")
+    @ApiModelProperty("Property entry method：0->manual input；1->Pick from the list")
     @FlagValidator({"0","1"})
     private Integer inputType;
-    @ApiModelProperty("可选值列表，以逗号隔开")
+    @ApiModelProperty("List of optional values，Separated by commas")
     private String inputList;
 
     private Integer sort;
-    @ApiModelProperty("分类筛选样式：0->普通；1->颜色")
+    @ApiModelProperty("Classification and filtering style：0->ordinary；1->colour")
     @FlagValidator({"0","1"})
     private Integer filterType;
-    @ApiModelProperty("检索类型；0->不需要进行检索；1->关键字检索；2->范围检索")
+    @ApiModelProperty("Type of retrieval；0->No retrieval required；1->Keyword search；2->Range search")
     @FlagValidator({"0","1","2"})
     private Integer searchType;
-    @ApiModelProperty("相同属性产品是否关联；0->不关联；1->关联")
+    @ApiModelProperty("Whether products with the same attributes are related；0->Not related；1->Related")
     @FlagValidator({"0","1"})
     private Integer relatedStatus;
-    @ApiModelProperty("是否支持手动新增；0->不支持；1->支持")
+    @ApiModelProperty("Whether to support manual addition；0->not support；1->Support")
     @FlagValidator({"0","1"})
     private Integer handAddStatus;
-    @ApiModelProperty("属性的类型；0->规格；1->参数")
+    @ApiModelProperty("Type of attribute；0->specification；1->parameter")
     @FlagValidator({"0","1"})
     private Integer type;
 

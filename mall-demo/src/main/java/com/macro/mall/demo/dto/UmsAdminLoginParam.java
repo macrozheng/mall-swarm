@@ -6,14 +6,14 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 用户登录参数
+ * User login parameter
  * Created by macro on 2018/4/26.
  */
 @Getter
 @Setter
 public class UmsAdminLoginParam {
-    @ApiModelProperty(value = "用户名", required = true)
+    @ApiModelProperty(value = "username", required = true)
     private String username;
-    @ApiModelProperty(value = "密码", required = true)
+    @ApiModelProperty(value = "password", required = true)
     private String password;
 }

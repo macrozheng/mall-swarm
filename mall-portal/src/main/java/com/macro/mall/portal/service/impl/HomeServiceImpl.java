@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 首页内容管理Service实现类
+ * 首页内容managementService实现类
  * Created by macro on 2019/1/28.
  */
 @Service
@@ -94,12 +94,12 @@ public class HomeServiceImpl implements HomeService {
         Date now = new Date();
         SmsFlashPromotion flashPromotion = getFlashPromotion(now);
         if (flashPromotion != null) {
-            //获取当前秒杀场次
+            //获取当前秒杀Sessions
             SmsFlashPromotionSession flashPromotionSession = getFlashPromotionSession(now);
             if (flashPromotionSession != null) {
                 homeFlashPromotion.setStartTime(flashPromotionSession.getStartTime());
                 homeFlashPromotion.setEndTime(flashPromotionSession.getEndTime());
-                //获取下一个秒杀场次
+                //获取下一个秒杀Sessions
                 SmsFlashPromotionSession nextSession = getNextFlashPromotionSession(homeFlashPromotion.getStartTime());
                 if(nextSession!=null){
                     homeFlashPromotion.setNextStartTime(nextSession.getStartTime());
@@ -113,7 +113,7 @@ public class HomeServiceImpl implements HomeService {
         return homeFlashPromotion;
     }
 
-    //获取下一个场次信息
+    //获取下一个Sessions信息
     private SmsFlashPromotionSession getNextFlashPromotionSession(Date date) {
         SmsFlashPromotionSessionExample sessionExample = new SmsFlashPromotionSessionExample();
         sessionExample.createCriteria()
@@ -133,7 +133,7 @@ public class HomeServiceImpl implements HomeService {
         return advertiseMapper.selectByExample(example);
     }
 
-    //根据时间获取秒杀活动
+    //according to时间获取秒杀活动
     private SmsFlashPromotion getFlashPromotion(Date date) {
         Date currDate = DateUtil.getDate(date);
         SmsFlashPromotionExample example = new SmsFlashPromotionExample();
@@ -148,7 +148,7 @@ public class HomeServiceImpl implements HomeService {
         return null;
     }
 
-    //根据时间获取秒杀场次
+    //according to时间获取秒杀Sessions
     private SmsFlashPromotionSession getFlashPromotionSession(Date date) {
         Date currTime = DateUtil.getTime(date);
         SmsFlashPromotionSessionExample sessionExample = new SmsFlashPromotionSessionExample();

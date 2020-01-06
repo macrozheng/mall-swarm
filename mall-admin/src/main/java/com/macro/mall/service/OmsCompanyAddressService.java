@@ -5,12 +5,12 @@ import com.macro.mall.model.OmsCompanyAddress;
 import java.util.List;
 
 /**
- * 收货地址管Service
+ * Shipping address management service
  * Created by macro on 2018/10/18.
  */
 public interface OmsCompanyAddressService {
     /**
-     * 获取全部收货地址
+     * Get all Shipping address
      */
     List<OmsCompanyAddress> list();
 }

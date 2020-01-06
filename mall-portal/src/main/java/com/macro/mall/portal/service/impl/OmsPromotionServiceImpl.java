@@ -19,7 +19,7 @@ import java.util.*;
 
 /**
  * Created by macro on 2018/8/27.
- * 促销管理Service实现类
+ * 促销managementService实现类
  */
 @Service
 public class OmsPromotionServiceImpl implements OmsPromotionService {
@@ -28,11 +28,11 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
 
     @Override
     public List<CartPromotionItem> calcCartPromotion(List<OmsCartItem> cartItemList) {
-        //1.先根据productId对CartItem进行分组，以spu为单位进行计算优惠
+        //1.先according toproductId对CartItem进行分组，以spu为单位进行计算优惠
         Map<Long, List<OmsCartItem>> productCartMap = groupCartItemBySpu(cartItemList);
         //2.查询所有商品的优惠相关信息
         List<PromotionProduct> promotionProductList = getPromotionProductList(cartItemList);
-        //3.根据商品促销类型计算商品促销优惠价格
+        //3.according to商品促销类型计算商品促销优惠价格
         List<CartPromotionItem> cartPromotionItemList = new ArrayList<>();
         for (Map.Entry<Long, List<OmsCartItem>> entry : productCartMap.entrySet()) {
             Long productId = entry.getKey();
@@ -172,7 +172,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     private PmsProductFullReduction getProductFullReduction(BigDecimal totalAmount,List<PmsProductFullReduction> fullReductionList) {
-        //按条件从高到低排序
+        //按条件从高到低Sort
         fullReductionList.sort(new Comparator<PmsProductFullReduction>() {
             @Override
             public int compare(PmsProductFullReduction o1, PmsProductFullReduction o2) {
@@ -203,10 +203,10 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 根据购买商品数量获取满足条件的打折优惠策略
+     * according to购买商品数量获取满足条件的打折优惠策略
      */
     private PmsProductLadder getProductLadder(int count, List<PmsProductLadder> productLadderList) {
-        //按数量从大到小排序
+        //按数量从大到小Sort
         productLadderList.sort(new Comparator<PmsProductLadder>() {
             @Override
             public int compare(PmsProductLadder o1, PmsProductLadder o2) {
@@ -259,7 +259,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
     }
 
     /**
-     * 根据商品id获取商品的促销信息
+     * according to商品id获取商品的促销信息
      */
     private PromotionProduct getPromotionProductById(Long productId, List<PromotionProduct> promotionProductList) {
         for (PromotionProduct promotionProduct : promotionProductList) {

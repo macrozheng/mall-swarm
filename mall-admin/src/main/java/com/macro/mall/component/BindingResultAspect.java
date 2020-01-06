@@ -11,7 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
 /**
- * HibernateValidator错误结果处理切面
+ * HibernateValidator error result processing aspects
  * Created by macro on 2018/4/26.
  */
 @Aspect

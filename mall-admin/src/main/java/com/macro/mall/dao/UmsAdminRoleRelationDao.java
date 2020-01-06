@@ -8,27 +8,27 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 后台用户与角色管理自定义Dao
+ * Background user and role management custom Dao
  * Created by macro on 2018/10/8.
  */
 public interface UmsAdminRoleRelationDao {
     /**
-     * 批量插入用户角色关系
+     * Bulk insertion of user role relationships
      */
     int insertList(@Param("list") List<UmsAdminRoleRelation> adminRoleRelationList);
 
     /**
-     * 获取用于所有角色
+     * Get for all roles
      */
     List<UmsRole> getRoleList(@Param("adminId") Long adminId);
 
     /**
-     * 获取用户所有角色权限
+     * Get all role permissions for a user
      */
     List<UmsPermission> getRolePermissionList(@Param("adminId") Long adminId);
 
     /**
-     * 获取用户所有权限(包括+-权限)
+     * Get all user permissions (including +-permissions)
      */
     List<UmsPermission> getPermissionList(@Param("adminId") Long adminId);
 }

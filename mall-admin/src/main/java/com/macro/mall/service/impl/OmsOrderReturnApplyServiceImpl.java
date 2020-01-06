@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 订单退货管理Service
+ * Order Return Service Management
  * Created by macro on 2018/10/18.
  */
 @Service
@@ -43,7 +43,7 @@ public class OmsOrderReturnApplyServiceImpl implements OmsOrderReturnApplyServic
         Integer status = statusParam.getStatus();
         OmsOrderReturnApply returnApply = new OmsOrderReturnApply();
         if(status.equals(1)){
-            //确认退货
+            //Confirm return
             returnApply.setId(id);
             returnApply.setStatus(1);
             returnApply.setReturnAmount(statusParam.getReturnAmount());
@@ -52,14 +52,14 @@ public class OmsOrderReturnApplyServiceImpl implements OmsOrderReturnApplyServic
             returnApply.setHandleMan(statusParam.getHandleMan());
             returnApply.setHandleNote(statusParam.getHandleNote());
         }else if(status.equals(2)){
-            //完成退货
+            //Complete return
             returnApply.setId(id);
             returnApply.setStatus(2);
             returnApply.setReceiveTime(new Date());
             returnApply.setReceiveMan(statusParam.getReceiveMan());
             returnApply.setReceiveNote(statusParam.getReceiveNote());
         }else if(status.equals(3)){
-            //拒绝退货
+            //Reject returns
             returnApply.setId(id);
             returnApply.setStatus(3);
             returnApply.setHandleTime(new Date());

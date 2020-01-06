@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 商品优选Service实现类
+     * Product preferred Service implementation class
  * Created by macro on 2018/6/1.
  */
 @Service

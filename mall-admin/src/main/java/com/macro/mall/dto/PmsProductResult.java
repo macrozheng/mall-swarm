@@ -1,11 +1,11 @@
 package com.macro.mall.dto;
 
 /**
- * 查询单个产品进行修改时返回的结果
+ * Querying the results returned by a single product for modification
  * Created by macro on 2018/4/26.
  */
 public class PmsProductResult extends PmsProductParam {
-    //商品所选分类的父id
+    //The parent id of the selected category of the product
     private Long cateParentId;
 
     public Long getCateParentId() {

@@ -5,7 +5,7 @@ import com.macro.mall.portal.domain.MemberReadHistory;
 import java.util.List;
 
 /**
- * 会员浏览记录管理Service
+ * Member浏览记录managementService
  * Created by macro on 2018/8/3.
  */
 public interface MemberReadHistoryService {
@@ -20,7 +20,7 @@ public interface MemberReadHistoryService {
     int delete(List<String> ids);
 
     /**
-     * 获取用户浏览历史记录
+     * 获取User浏览历史记录
      */
     List<MemberReadHistory> list(Long memberId);
 }

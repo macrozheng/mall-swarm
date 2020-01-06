@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 后台角色管理Service实现类
+ * Background Role Service Management Implementation Class
  * Created by macro on 2018/9/30.
  */
 @Service
@@ -53,11 +53,11 @@ public class UmsRoleServiceImpl implements UmsRoleService {
 
     @Override
     public int updatePermission(Long roleId, List<Long> permissionIds) {
-        //先删除原有关系
+        //Delete the original relationship first
         UmsRolePermissionRelationExample example=new UmsRolePermissionRelationExample();
         example.createCriteria().andRoleIdEqualTo(roleId);
         rolePermissionRelationMapper.deleteByExample(example);
-        //批量插入新关系
+        //Insert new relationships in bulk
         List<UmsRolePermissionRelation> relationList = new ArrayList<>();
         for (Long permissionId : permissionIds) {
             UmsRolePermissionRelation relation = new UmsRolePermissionRelation();

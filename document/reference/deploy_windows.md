@@ -1,10 +1,10 @@
 # mall-swarm 在Windows环境下的部署
 
-## 开发环境搭建
+## 开发Environment setup
 
 > `mall-swarm`中使用到的环境和`mall`项目中大致相同，具体可以查看[mall在Windows环境下的部署](https://github.com/macrozheng/mall-learning/blob/master/docs/deploy/mall_deploy_windows.md)。
 
-简易环境搭建流程：
+简易Environment setup流程：
 
 - 安装IDEA并导入项目源码；
 - 安装MySql，创建一个`mall`数据库，并导入`/document/sql/mall.sql`文件；
@@ -28,14 +28,14 @@
 
 - 直接运行com.macro.mall.MallMonitorApplication的main函数即可；
 - 运行完成后可以通过监控中心控制台查看：http://localhost:8101
-- 输入账号密码`macro:123456`可以登录查看。
+- 输入账号password`macro:123456`可以登录查看。
 
 ### 启动网关服务`mall-gateway`
 
 - 直接运行com.macro.mall.MallGatewayApplication的main函数即可；
 - 访问以下接口获取动态路由规则：http://localhost:8201/actuator/gateway/routes
 
-### 启动后台管理服务`mall-admin`
+### 启动后台management服务`mall-admin`
 
 - 直接运行com.macro.mall.MallAdminApplication的main函数即可；
 - 通过`mall-gateway`网关服务访问接口文档：http://localhost:8201/mall-admin/swagger-ui.html

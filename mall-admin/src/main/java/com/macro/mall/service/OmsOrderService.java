@@ -7,51 +7,51 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 订单管理Service
+ * Order management Service
  * Created by macro on 2018/10/11.
  */
 public interface OmsOrderService {
     /**
-     * 订单查询
+     * Order Tracking
      */
     List<OmsOrder> list(OmsOrderQueryParam queryParam, Integer pageSize, Integer pageNum);
 
     /**
-     * 批量发货
+     * Bulk shipment
      */
     @Transactional
     int delivery(List<OmsOrderDeliveryParam> deliveryParamList);
 
     /**
-     * 批量关闭订单
+     * Close orders in bulk
      */
     @Transactional
     int close(List<Long> ids, String note);
 
     /**
-     * 批量删除订单
+     * Delete orders in bulk
      */
     int delete(List<Long> ids);
 
     /**
-     * 获取指定订单详情
+     * Get specified order details
      */
     OmsOrderDetail detail(Long id);
 
     /**
-     * 修改订单收货人信息
+     * Modify Order Receiver Information
      */
     @Transactional
     int updateReceiverInfo(OmsReceiverInfoParam receiverInfoParam);
 
     /**
-     * 修改订单费用信息
+     * Modify order fee information
      */
     @Transactional
     int updateMoneyInfo(OmsMoneyInfoParam moneyInfoParam);
 
     /**
-     * 修改订单备注
+     * Modify Order Note
      */
     @Transactional
     int updateNote(Long id, String note, Integer status);

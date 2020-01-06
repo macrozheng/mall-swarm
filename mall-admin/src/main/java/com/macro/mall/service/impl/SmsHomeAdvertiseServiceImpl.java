@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 首页广告管理Service实现类
+ * Home Ad Service Management Implementation Class
  * Created by macro on 2018/11/7.
  */
 @Service

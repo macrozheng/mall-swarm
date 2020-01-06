@@ -15,7 +15,7 @@ public class UmsIntegrationConsumeSetting implements Serializable {
     @ApiModelProperty(value = "每次使用积分最小单位100")
     private Integer useUnit;
 
-    @ApiModelProperty(value = "是否可以和优惠券同用；0->不可以；1->可以")
+    @ApiModelProperty(value = "YesNo可以和优惠券同用；0->不可以；1->可以")
     private Integer couponStatus;
 
     private static final long serialVersionUID = 1L;

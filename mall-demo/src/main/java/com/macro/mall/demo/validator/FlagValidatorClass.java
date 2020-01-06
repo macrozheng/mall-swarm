@@ -4,7 +4,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * 状态标记校验器
+ * Status tag verifier
  */
 public class FlagValidatorClass implements ConstraintValidator<FlagValidator,Integer> {
     private String[] values;

@@ -6,28 +6,28 @@ spring:
     username: root
     password: root
     druid:
-      initial-size: 5 #连接池初始化大小
-      min-idle: 10 #最小空闲连接数
-      max-active: 20 #最大连接数
+      initial-size: 5 #Connection pool initialization size
+      min-idle: 10 #Minimum number of idle connections
+      max-active: 20 #Maximum number of connections
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
-      stat-view-servlet: #访问监控网页的登录用户名和密码
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Do not count these request data
+      stat-view-servlet: #Login username and password for accessing monitoring web pages
         login-username: druid
         login-password: druid
-  rabbitmq: #rabbitmq相关配置
+  rabbitmq: #rabbitmq related configuration
     host: localhost
     port: 5672
     username: guest
     password: guest
   servlet:
     multipart:
-      enabled: true #开启文件上传
-      max-file-size: 10MB #限制文件上传大小为10M
+      enabled: true #Open File Upload
+      max-file-size: 10MB #Limit file upload size to 10M
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
     - classpath*:com/**/mapper/*.xml
-management: #开启SpringBoot Admin的监控
+management: #Enable monitoring of SpringBoot Admin
   endpoints:
     web:
       exposure:
@@ -36,13 +36,13 @@ management: #开启SpringBoot Admin的监控
     health:
       show-details: always
 jwt:
-  tokenHeader: Authorization #JWT存储的请求头
-  secret: mall-admin-secret #JWT加解密使用的密钥
-  expiration: 604800 #JWT的超期限时间(60*60*24)
-  tokenHead: Bearer  #JWT负载中拿到开头
+  tokenHeader: Authorization #JWT stored request header
+  secret: mall-admin-secret #JWT encryption and decryption key
+  expiration: 604800 #JWT overdue time (60 * 60 * 24)
+  tokenHead: Bearer  #Get the beginning in JWT load
 secure:
   ignored:
-    urls: #安全路径白名单
+    urls: #Safe Path Whitelist
       - /swagger-ui.html
       - /swagger-resources/**
       - /swagger/**
@@ -59,18 +59,18 @@ secure:
       - /minio/upload
 aliyun:
   oss:
-    endpoint: oss-cn-shenzhen.aliyuncs.com # oss对外服务的访问域名
-    accessKeyId: test # 访问身份验证中用到用户标识
-    accessKeySecret: test # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
-    bucketName: macro-oss # oss的存储空间
+    endpoint: oss-cn-shenzhen.aliyuncs.com # access domain for oss external services
+    accessKeyId: test # User ID used in access authentication
+    accessKeySecret: test # Key used by the user to encrypt the signature string and OSS to verify the signature string
+    bucketName: macro-oss # storage space for oss
     policy:
-      expire: 300 # 签名有效期(S)
-    maxSize: 10 # 上传文件大小(M)
-    callback: http://39.98.190.128:8080/aliyun/oss/callback # 文件上传成功后的回调地址
+      expire: 300 # Signature validity(S)
+    maxSize: 10 # Upload File size (M)
+    callback: http://39.98.190.128:8080/aliyun/oss/callback # Callback address after File Upload succeeded
     dir:
-      prefix: mall/images/ # 上传文件夹路径前缀
+      prefix: mall/images/ # Upload folder path prefix
 minio:
-  endpoint: http://192.168.6.132:9090 #MinIO服务所在地址
-  bucketName: mall #存储桶名称
-  accessKey: minioadmin #访问的key
-  secretKey: minioadmin #访问的秘钥
+  endpoint: http://192.168.6.132:9090 #Address of the MinIO service
+  bucketName: mall #Bucket name
+  accessKey: minioadmin #Access key
+  secretKey: minioadmin #Secret key

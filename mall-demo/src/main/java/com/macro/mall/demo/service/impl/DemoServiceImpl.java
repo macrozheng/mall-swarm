@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * DemoService实现类
+ * DemoService Implementation Class
  */
 @Service
 public class DemoServiceImpl implements DemoService {
@@ -28,14 +28,14 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public int createBrand(PmsBrandDto pmsBrandDto) {
         PmsBrand pmsBrand = new PmsBrand();
-        BeanUtils.copyProperties(pmsBrandDto,pmsBrand);
+        BeanUtils.copyProperties(pmsBrandDto, pmsBrand);
         return brandMapper.insertSelective(pmsBrand);
     }
 
     @Override
     public int updateBrand(Long id, PmsBrandDto pmsBrandDto) {
         PmsBrand pmsBrand = new PmsBrand();
-        BeanUtils.copyProperties(pmsBrandDto,pmsBrand);
+        BeanUtils.copyProperties(pmsBrandDto, pmsBrand);
         pmsBrand.setId(id);
         return brandMapper.updateByPrimaryKeySelective(pmsBrand);
     }

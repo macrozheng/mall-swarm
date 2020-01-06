@@ -13,13 +13,13 @@ import java.util.List;
 public class ConfirmOrderResult {
     //包含优惠信息的购物车信息
     private List<CartPromotionItem> cartPromotionItemList;
-    //用户收货地址列表
+    //UserShipping address列表
     private List<UmsMemberReceiveAddress> memberReceiveAddressList;
-    //用户可用优惠券列表
+    //User可用优惠券列表
     private List<SmsCouponHistoryDetail> couponHistoryDetailList;
     //积分使用规则
     private UmsIntegrationConsumeSetting integrationConsumeSetting;
-    //会员持有的积分
+    //Member持有的积分
     private Integer memberIntegration;
     //计算的金额
     private CalcAmount calcAmount;

@@ -18,20 +18,20 @@ public class PmsProductCategory implements Serializable {
 
     private String productUnit;
 
-    @ApiModelProperty(value = "是否显示在导航栏：0->不显示；1->显示")
+    @ApiModelProperty(value = "YesNoShow在导航栏：0->Do not show；1->Show")
     private Integer navStatus;
 
-    @ApiModelProperty(value = "显示状态：0->不显示；1->显示")
+    @ApiModelProperty(value = "Display state：0->Do not show；1->Show")
     private Integer showStatus;
 
     private Integer sort;
 
-    @ApiModelProperty(value = "图标")
+    @ApiModelProperty(value = "icon")
     private String icon;
 
     private String keywords;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "description")
     private String description;
 
     private static final long serialVersionUID = 1L;

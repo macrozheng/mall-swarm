@@ -8,7 +8,7 @@ import java.util.Date;
 public class SmsCoupon implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "优惠卷类型；0->全场赠券；1->会员赠券；2->购物赠券；3->注册赠券")
+    @ApiModelProperty(value = "优惠卷类型；0->全场赠券；1->Member赠券；2->购物赠券；3->注册赠券")
     private Integer type;
 
     private String name;
@@ -35,7 +35,7 @@ public class SmsCoupon implements Serializable {
     @ApiModelProperty(value = "使用类型：0->全场通用；1->指定分类；2->指定商品")
     private Integer useType;
 
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "Note")
     private String note;
 
     @ApiModelProperty(value = "发行数量")
@@ -47,13 +47,13 @@ public class SmsCoupon implements Serializable {
     @ApiModelProperty(value = "领取数量")
     private Integer receiveCount;
 
-    @ApiModelProperty(value = "可以领取的日期")
+    @ApiModelProperty(value = "可以领取的date")
     private Date enableTime;
 
     @ApiModelProperty(value = "优惠码")
     private String code;
 
-    @ApiModelProperty(value = "可领取的会员类型：0->无限时")
+    @ApiModelProperty(value = "可领取的Member类型：0->无限时")
     private Integer memberLevel;
 
     private static final long serialVersionUID = 1L;

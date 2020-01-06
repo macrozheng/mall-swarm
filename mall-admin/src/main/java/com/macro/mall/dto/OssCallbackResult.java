@@ -3,19 +3,19 @@ package com.macro.mall.dto;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * oss上传文件的回调结果
+ * oss上传文件的Callback结果
  * Created by macro on 2018/5/17.
  */
 public class OssCallbackResult {
-    @ApiModelProperty("文件名称")
+    @ApiModelProperty("file name")
     private String filename;
-    @ApiModelProperty("文件大小")
+    @ApiModelProperty("File size")
     private String size;
-    @ApiModelProperty("文件的mimeType")
+    @ApiModelProperty("File mimeType")
     private String mimeType;
-    @ApiModelProperty("图片文件的宽")
+    @ApiModelProperty("The width of the picture file")
     private String width;
-    @ApiModelProperty("图片文件的高")
+    @ApiModelProperty("The height of the picture file")
     private String height;
 
     public String getFilename() {

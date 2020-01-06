@@ -7,26 +7,26 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * 确认收货提交参数
+ * Confirm receipt submission parameters
  * Created by macro on 2018/10/18.
  */
 @Getter
 @Setter
 public class OmsUpdateStatusParam {
-    @ApiModelProperty("服务单号")
+    @ApiModelProperty("Ticket number")
     private Long id;
-    @ApiModelProperty("收货地址关联id")
+    @ApiModelProperty("Shipping address association id")
     private Long companyAddressId;
-    @ApiModelProperty("确认退款金额")
+    @ApiModelProperty("Confirm the refund amount")
     private BigDecimal returnAmount;
-    @ApiModelProperty("处理备注")
+    @ApiModelProperty("Handling notes")
     private String handleNote;
-    @ApiModelProperty("处理人")
+    @ApiModelProperty("Handler")
     private String handleMan;
-    @ApiModelProperty("收货备注")
+    @ApiModelProperty("Receipt note")
     private String receiveNote;
-    @ApiModelProperty("收货人")
+    @ApiModelProperty("Receiver")
     private String receiveMan;
-    @ApiModelProperty("申请状态：1->退货中；2->已完成；3->已拒绝")
+    @ApiModelProperty("application status：1->Returning；2->completed；3->Rejected")
     private Integer status;
 }

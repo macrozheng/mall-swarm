@@ -6,7 +6,7 @@ import com.macro.mall.model.PmsBrand;
 import java.util.List;
 
 /**
- * DemoService接口
+ * DemoService Interface
  */
 public interface DemoService {
     List<PmsBrand> listAllBrand();

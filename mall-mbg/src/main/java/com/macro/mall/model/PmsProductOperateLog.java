@@ -27,7 +27,7 @@ public class PmsProductOperateLog implements Serializable {
 
     private Integer usePointLimitNew;
 
-    @ApiModelProperty(value = "操作人")
+    @ApiModelProperty(value = "Operator")
     private String operateMan;
 
     private Date createTime;

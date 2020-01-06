@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Swagger2API文档的配置
+ * Configuration of Swagger2API documentation
  */
 @Configuration
 @EnableSwagger2
@@ -37,15 +37,15 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("mall-demo系统")
-                .description("SpringCloud版本中的一些示例")
+                .title("mall-demo system")
+                .description("Some examples in SpringCloud version")
                 .contact("macro")
                 .version("1.0")
                 .build();
     }
 
     private List<ApiKey> securitySchemes() {
-        //设置请求头信息
+        //Set request header
         List<ApiKey> result = new ArrayList<>();
         ApiKey apiKey = new ApiKey("Authorization", "Authorization", "header");
         result.add(apiKey);
@@ -53,7 +53,7 @@ public class Swagger2Config {
     }
 
     private List<SecurityContext> securityContexts() {
-        //设置需要登录认证的路径
+        //Set the path that requires login authentication
         List<SecurityContext> result = new ArrayList<>();
         result.add(getContextByPath("/feign/admin/getBrandList"));
         result.add(getContextByPath("/feign/portal/cartList"));

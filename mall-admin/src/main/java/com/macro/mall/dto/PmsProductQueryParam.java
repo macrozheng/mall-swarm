@@ -3,21 +3,21 @@ package com.macro.mall.dto;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * 产品查询参数
+ * Product query parameter
  * Created by macro on 2018/4/27.
  */
 public class PmsProductQueryParam {
-    @ApiModelProperty("上架状态")
+    @ApiModelProperty("Up-shelf status")
     private Integer publishStatus;
-    @ApiModelProperty("审核状态")
+    @ApiModelProperty("Approval Status")
     private Integer verifyStatus;
-    @ApiModelProperty("商品名称模糊关键字")
+    @ApiModelProperty("Product Name Fuzzy Keywords")
     private String keyword;
-    @ApiModelProperty("商品货号")
+    @ApiModelProperty("Product Code")
     private String productSn;
-    @ApiModelProperty("商品分类编号")
+    @ApiModelProperty("Product Classification Number")
     private Long productCategoryId;
-    @ApiModelProperty("商品品牌编号")
+    @ApiModelProperty("Product Brand Number")
     private Long brandId;
 
     public Integer getPublishStatus() {

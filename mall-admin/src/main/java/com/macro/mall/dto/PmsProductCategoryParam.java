@@ -8,33 +8,33 @@ import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 /**
- * 添加更新产品分类的参数
+ * Add parameter to update product category
  * Created by macro on 2018/4/26.
  */
 public class PmsProductCategoryParam {
-    @ApiModelProperty("父分类的编号")
+    @ApiModelProperty("Number of parent category")
     private Long parentId;
-    @ApiModelProperty(value = "商品分类名称",required = true)
-    @NotEmpty(message = "商品分类名称不能为空")
+    @ApiModelProperty(value = "Product category name",required = true)
+    @NotEmpty(message = "Category Name is required")
     private String name;
-    @ApiModelProperty("分类单位")
+    @ApiModelProperty("Classification units")
     private String productUnit;
-    @ApiModelProperty("是否在导航栏显示")
-    @FlagValidator(value = {"0","1"},message = "状态只能为0或1")
+    @ApiModelProperty("Whether to show in the navigation bar")
+    @FlagValidator(value = {"0","1"},message = "Status can only be 0 or 1")
     private Integer navStatus;
-    @ApiModelProperty("是否进行显示")
-    @FlagValidator(value = {"0","1"},message = "状态只能为0或1")
+    @ApiModelProperty("Whether to display")
+    @FlagValidator(value = {"0","1"},message = "Status can only be 0 or 1")
     private Integer showStatus;
-    @ApiModelProperty("排序")
-    @Min(value = 0,message = "排序最小为0")
+    @ApiModelProperty("Sort")
+    @Min(value = 0,message = "Sort minimum is 0")
     private Integer sort;
-    @ApiModelProperty("图标")
+    @ApiModelProperty("icon")
     private String icon;
-    @ApiModelProperty("关键字")
+    @ApiModelProperty("Keywords")
     private String keywords;
-    @ApiModelProperty("描述")
+    @ApiModelProperty("description")
     private String description;
-    @ApiModelProperty("产品相关筛选属性集合")
+    @ApiModelProperty("Product-related filtering properties collection")
     private List<Long> productAttributeIdList;
 
     public Long getParentId() {

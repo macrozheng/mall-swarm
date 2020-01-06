@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 限时购活动管理Controller
+ * Limited-time purchase management Controller
  * Created by macro on 2018/11/16.
  */
 @Controller
-@Api(tags = "SmsFlashPromotionController", description = "限时购活动管理")
+@Api(tags = "SmsFlashPromotionController", description = "Limited time purchase activities")
 @RequestMapping("/flash")
 public class SmsFlashPromotionController {
     @Autowired
     private SmsFlashPromotionService flashPromotionService;
 
-    @ApiOperation("添加活动")
+    @ApiOperation("Add event")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody SmsFlashPromotion flashPromotion) {
@@ -34,7 +34,7 @@ public class SmsFlashPromotionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("编辑活动信息")
+    @ApiOperation("Edit event information")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public Object update(@PathVariable Long id, @RequestBody SmsFlashPromotion flashPromotion) {
@@ -45,7 +45,7 @@ public class SmsFlashPromotionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("删除活动信息")
+    @ApiOperation("Delete event information")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     public Object delete(@PathVariable Long id) {
@@ -56,7 +56,7 @@ public class SmsFlashPromotionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改上下线状态")
+    @ApiOperation("Modify online and offline status")
     @RequestMapping(value = "/update/status/{id}", method = RequestMethod.POST)
     @ResponseBody
     public Object update(@PathVariable Long id, Integer status) {
@@ -67,7 +67,7 @@ public class SmsFlashPromotionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("获取活动详情")
+    @ApiOperation("Get event details")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Object getItem(@PathVariable Long id) {
@@ -75,7 +75,7 @@ public class SmsFlashPromotionController {
         return CommonResult.success(flashPromotion);
     }
 
-    @ApiOperation("根据活动名称分页查询")
+    @ApiOperation("Paging by event name")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public Object getItem(@RequestParam(value = "keyword", required = false) String keyword,

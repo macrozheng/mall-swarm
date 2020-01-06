@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
- * mall-security模块相关配置
+ * mall-security Module related configuration
  * Created by macro on 2019/11/5.
  */
 @Configuration
@@ -23,7 +23,7 @@ public class MallSecurityConfig extends SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        //获取登录用户信息
+        //Get login user information
         return username -> adminService.loadUserByUsername(username);
     }
 }

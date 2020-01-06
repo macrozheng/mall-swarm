@@ -8,82 +8,82 @@ import java.util.Date;
 public class OmsOrderReturnApply implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "Order_id")
     private Long orderId;
 
-    @ApiModelProperty(value = "收货地址表id")
+    @ApiModelProperty(value = "Shipping address table id")
     private Long companyAddressId;
 
-    @ApiModelProperty(value = "退货商品id")
+    @ApiModelProperty(value = "Returned product id")
     private Long productId;
 
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "Order Number")
     private String orderSn;
 
-    @ApiModelProperty(value = "申请时间")
+    @ApiModelProperty(value = "application time")
     private Date createTime;
 
-    @ApiModelProperty(value = "会员用户名")
+    @ApiModelProperty(value = "Member username")
     private String memberUsername;
 
-    @ApiModelProperty(value = "退款金额")
+    @ApiModelProperty(value = "Amount of refund")
     private BigDecimal returnAmount;
 
-    @ApiModelProperty(value = "退货人姓名")
+    @ApiModelProperty(value = "Name of returner")
     private String returnName;
 
-    @ApiModelProperty(value = "退货人电话")
+    @ApiModelProperty(value = "Returner Phone")
     private String returnPhone;
 
-    @ApiModelProperty(value = "申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝")
+    @ApiModelProperty(value = "application status：0->Pending；1->Returning；2->completed；3->Rejected")
     private Integer status;
 
-    @ApiModelProperty(value = "处理时间")
+    @ApiModelProperty(value = "Processing time")
     private Date handleTime;
 
-    @ApiModelProperty(value = "商品图片")
+    @ApiModelProperty(value = "Product picture")
     private String productPic;
 
-    @ApiModelProperty(value = "商品名称")
+    @ApiModelProperty(value = "product name")
     private String productName;
 
-    @ApiModelProperty(value = "商品品牌")
+    @ApiModelProperty(value = "Product brand")
     private String productBrand;
 
-    @ApiModelProperty(value = "商品销售属性：颜色：红色；尺码：xl;")
+    @ApiModelProperty(value = "Product Sales Attributes：colour：Red；size：xl;")
     private String productAttr;
 
-    @ApiModelProperty(value = "退货数量")
+    @ApiModelProperty(value = "Number of returns")
     private Integer productCount;
 
-    @ApiModelProperty(value = "商品单价")
+    @ApiModelProperty(value = "Product price")
     private BigDecimal productPrice;
 
-    @ApiModelProperty(value = "商品实际支付单价")
+    @ApiModelProperty(value = "The actual unit price of the product")
     private BigDecimal productRealPrice;
 
-    @ApiModelProperty(value = "原因")
+    @ApiModelProperty(value = "The reason")
     private String reason;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "description")
     private String description;
 
-    @ApiModelProperty(value = "凭证图片，以逗号隔开")
+    @ApiModelProperty(value = "Voucher picture，Separated by commas")
     private String proofPics;
 
-    @ApiModelProperty(value = "处理备注")
+    @ApiModelProperty(value = "Handling notes")
     private String handleNote;
 
-    @ApiModelProperty(value = "处理人员")
+    @ApiModelProperty(value = "Processing staff")
     private String handleMan;
 
-    @ApiModelProperty(value = "收货人")
+    @ApiModelProperty(value = "Receiver")
     private String receiveMan;
 
-    @ApiModelProperty(value = "收货时间")
+    @ApiModelProperty(value = "Time of receipt")
     private Date receiveTime;
 
-    @ApiModelProperty(value = "收货备注")
+    @ApiModelProperty(value = "Receipt note")
     private String receiveNote;
 
     private static final long serialVersionUID = 1L;

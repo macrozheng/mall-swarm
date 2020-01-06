@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 搜索商品管理Controller
+ * 搜索Product management Controller
  * Created by macro on 2018/6/19.
  */
 @Controller
-@Api(tags = "EsProductController", description = "搜索商品管理")
+@Api(tags = "EsProductController", description = "搜索Product management")
 @RequestMapping("/esProduct")
 public class EsProductController {
     @Autowired
@@ -34,7 +34,7 @@ public class EsProductController {
         return CommonResult.success(count);
     }
 
-    @ApiOperation(value = "根据id删除商品")
+    @ApiOperation(value = "according toid删除商品")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<Object> delete(@PathVariable Long id) {
@@ -42,7 +42,7 @@ public class EsProductController {
         return CommonResult.success(null);
     }
 
-    @ApiOperation(value = "根据id批量删除商品")
+    @ApiOperation(value = "according toidDelete items in bulk")
     @RequestMapping(value = "/delete/batch", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<Object> delete(@RequestParam("ids") List<Long> ids) {
@@ -50,7 +50,7 @@ public class EsProductController {
         return CommonResult.success(null);
     }
 
-    @ApiOperation(value = "根据id创建商品")
+    @ApiOperation(value = "according toidCreate product")
     @RequestMapping(value = "/create/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<EsProduct> create(@PathVariable Long id) {
@@ -72,8 +72,8 @@ public class EsProductController {
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
 
-    @ApiOperation(value = "综合搜索、筛选、排序")
-    @ApiImplicitParam(name = "sort", value = "排序字段:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低",
+    @ApiOperation(value = "综合搜索、筛选、Sort")
+    @ApiImplicitParam(name = "sort", value = "Sort fields:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低",
             defaultValue = "0", allowableValues = "0,1,2,3,4", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
@@ -87,7 +87,7 @@ public class EsProductController {
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
 
-    @ApiOperation(value = "根据商品id推荐商品")
+    @ApiOperation(value = "according to商品id推荐商品")
     @RequestMapping(value = "/recommend/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<EsProduct>> recommend(@PathVariable Long id,
@@ -97,7 +97,7 @@ public class EsProductController {
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
 
-    @ApiOperation(value = "获取搜索的相关品牌、分类及筛选属性")
+    @ApiOperation(value = "获取搜索的相关品牌、分类及筛选Attributes")
     @RequestMapping(value = "/search/relate", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<EsProductRelatedInfo> searchRelatedInfo(@RequestParam(required = false) String keyword) {

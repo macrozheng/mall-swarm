@@ -20,7 +20,7 @@ public class HomeContentResult {
     private List<SmsHomeAdvertise> advertiseList;
     //推荐品牌
     private List<PmsBrand> brandList;
-    //当前秒杀场次
+    //当前秒杀Sessions
     private HomeFlashPromotion homeFlashPromotion;
     //新品推荐
     private List<PmsProduct> newProductList;

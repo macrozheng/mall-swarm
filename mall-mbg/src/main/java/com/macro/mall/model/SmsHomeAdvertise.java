@@ -18,7 +18,7 @@ public class SmsHomeAdvertise implements Serializable {
 
     private Date endTime;
 
-    @ApiModelProperty(value = "上下线状态：0->下线；1->上线")
+    @ApiModelProperty(value = "上下线status：0->下线；1->上线")
     private Integer status;
 
     @ApiModelProperty(value = "点击数")
@@ -30,10 +30,10 @@ public class SmsHomeAdvertise implements Serializable {
     @ApiModelProperty(value = "链接地址")
     private String url;
 
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "Note")
     private String note;
 
-    @ApiModelProperty(value = "排序")
+    @ApiModelProperty(value = "Sort")
     private Integer sort;
 
     private static final long serialVersionUID = 1L;

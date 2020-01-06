@@ -1,27 +1,27 @@
-# mall功能结构说明
+# mall功能结构Description
 
-## 后台管理系统
+## Background management system
 
-### 商品管理
+### Product management
 
 ![功能结构图-商品.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_product.jpg)
 
-### 订单管理
+### 订单management
 
 ![功能结构图-订单.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_order.jpg)
 
-### 促销管理
+### 促销management
 
 ![功能结构图-促销.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_sale.jpg)
 
-### 内容管理
+### 内容management
 
 ![功能结构图-内容.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_content.jpg)
 
-### 用户管理
+### Usermanagement
 
-![功能结构图-用户.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_member.jpg)
+![功能结构图-User.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_member.jpg)
 
-## 前台商城系统 
+## 前台商城Systematic 
 
 ![功能结构图-前台.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_portal.jpg)

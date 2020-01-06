@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * 商品sku库存管理Service实现类
+ * Commodity SKU inventory management service implementation class
  * Created by macro on 2018/4/27.
  */
 @Service

@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 文件上传返回结果
+ * File Upload returns results
  * Created by macro on 2019/12/25.
  */
 @Data

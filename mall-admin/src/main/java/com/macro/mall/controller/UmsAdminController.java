@@ -23,11 +23,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 后台用户管理
+ * Background user management
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "UmsAdminController", description = "后台用户管理")
+@Api(tags = "UmsAdminController", description = "Background user management")
 @RequestMapping("/admin")
 public class UmsAdminController {
     @Autowired
@@ -37,7 +37,7 @@ public class UmsAdminController {
     @Value("${jwt.tokenHead}")
     private String tokenHead;
 
-    @ApiOperation(value = "用户注册")
+    @ApiOperation(value = "User registration")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<UmsAdmin> register(@RequestBody UmsAdminParam umsAdminParam, BindingResult result) {
@@ -48,13 +48,13 @@ public class UmsAdminController {
         return CommonResult.success(umsAdmin);
     }
 
-    @ApiOperation(value = "登录以后返回token")
+    @ApiOperation(value = "Return token after login")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam, BindingResult result) {
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {
-            return CommonResult.validateFailed("用户名或密码错误");
+            return CommonResult.validateFailed("wrong user name or password");
         }
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
@@ -62,14 +62,14 @@ public class UmsAdminController {
         return CommonResult.success(tokenMap);
     }
 
-    @ApiOperation(value = "刷新token")
+    @ApiOperation(value = "Refresh token")
     @RequestMapping(value = "/refreshToken", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult refreshToken(HttpServletRequest request) {
         String token = request.getHeader(tokenHeader);
         String refreshToken = adminService.refreshToken(token);
         if (refreshToken == null) {
-            return CommonResult.failed("token已经过期！");
+            return CommonResult.failed("token has Expired！");
         }
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", refreshToken);
@@ -77,7 +77,7 @@ public class UmsAdminController {
         return CommonResult.success(tokenMap);
     }
 
-    @ApiOperation(value = "获取当前登录用户信息")
+    @ApiOperation(value = "Get the information of the currently logged in User")
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult getAdminInfo(Principal principal) {
@@ -90,14 +90,14 @@ public class UmsAdminController {
         return CommonResult.success(data);
     }
 
-    @ApiOperation(value = "登出功能")
+    @ApiOperation(value = "Sign out function")
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult logout() {
         return CommonResult.success(null);
     }
 
-    @ApiOperation("根据用户名或姓名分页获取用户列表")
+    @ApiOperation("Get user list by username or name")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<UmsAdmin>> list(@RequestParam(value = "name", required = false) String name,
@@ -107,7 +107,7 @@ public class UmsAdminController {
         return CommonResult.success(CommonPage.restPage(adminList));
     }
 
-    @ApiOperation("获取指定用户信息")
+    @ApiOperation("Get specified User information")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<UmsAdmin> getItem(@PathVariable Long id) {
@@ -115,7 +115,7 @@ public class UmsAdminController {
         return CommonResult.success(admin);
     }
 
-    @ApiOperation("修改指定用户信息")
+    @ApiOperation("Modify specified User information")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody UmsAdmin admin) {
@@ -126,7 +126,7 @@ public class UmsAdminController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("删除指定用户信息")
+    @ApiOperation("Delete specified User information")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
@@ -137,7 +137,7 @@ public class UmsAdminController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("给用户分配角色")
+    @ApiOperation("Assign roles to users")
     @RequestMapping(value = "/role/update", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateRole(@RequestParam("adminId") Long adminId,
@@ -149,7 +149,7 @@ public class UmsAdminController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("获取指定用户的角色")
+    @ApiOperation("Assign roles to users")
     @RequestMapping(value = "/role/{adminId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsRole>> getRoleList(@PathVariable Long adminId) {
@@ -157,7 +157,7 @@ public class UmsAdminController {
         return CommonResult.success(roleList);
     }
 
-    @ApiOperation("给用户分配+-权限")
+    @ApiOperation("Assign users +-permissions")
     @RequestMapping(value = "/permission/update", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updatePermission(@RequestParam Long adminId,
@@ -169,7 +169,7 @@ public class UmsAdminController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("获取用户所有权限（包括+-权限）")
+    @ApiOperation("Get all user permissions (including + -permissions)")
     @RequestMapping(value = "/permission/{adminId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsPermission>> getPermissionList(@PathVariable Long adminId) {
