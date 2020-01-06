@@ -1,4 +1,4 @@
-# docker环境部署
+# Docker environment deployment
 
 ## docker环境安装
 ### docker安装
@@ -15,16 +15,16 @@ yum install docker-ce
 4. 启动docker:
 systemctl start docker
 注：常见命令见document/reference文件夹中的docker.md
-5. 安装上传下载插件：
+5. 安装上传download插件：
 yum -y install lrzsz
 ### docker compose安装
-1. 下载地址：https://github.com/docker/compose/releases
+1. download地址：https://github.com/docker/compose/releases
 2. 安装地址：/usr/local/bin/docker-compose
 3. 设置为可执行：sudo chmod +x /usr/local/bin/docker-compose
-4. 测试是否安装成功：docker-compose --version
+4. 测试YesNo安装成功：docker-compose --version
 
 ## mysql安装
-### 下载镜像文件
+### download镜像文件
 docker pull mysql:5.7 
 ### 创建实例并启动
 docker run -p 3306:3306 --name mysql \
@@ -33,22 +33,22 @@ docker run -p 3306:3306 --name mysql \
 -v /mydata/mysql/conf:/etc/mysql \
 -e MYSQL_ROOT_PASSWORD=root  \
 -d mysql:5.7
-> 参数说明
+> parameterDescription
 - -p 3306:3306：将容器的3306端口映射到主机的3306端口
 - -v /mydata/mysql/conf:/etc/mysql：将配置文件夹挂在到主机
 - -v /mydata/mysql/log:/var/log/mysql：将日志文件夹挂载到主机
 - -v /mydata/mysql/data:/var/lib/mysql/：将配置文件夹挂载到主机
-- -e MYSQL_ROOT_PASSWORD=root：初始化root用户的密码
-### 通过容器的mysql命令行工具连接
+- -e MYSQL_ROOT_PASSWORD=root：初始化rootUser的password
+### 通过容器的mysql命令行tool连接
 docker exec -it mysql mysql -uroot -proot
 ### 设置远程访问
 grant all privileges on *.* to 'root' @'%' identified by 'root';
 flush privileges;
-### 进入容器文件系统
+### 进入容器文件Systematic
 docker exec -it mysql /bin/bash
 
 ## redis安装
-### 下载镜像文件
+### download镜像文件
 docker pull redis:3.2
 ### 创建实例并启动
 docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data -d redis:3.2 redis-server --appendonly yes
@@ -56,7 +56,7 @@ docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data -d redis:3.2 re
 docker exec -it redis redis-cli
 
 ## nginx安装
-### 下载镜像文件
+### download镜像文件
 docker pull nginx:1.10
 ### 创建实例并启动
 docker run -p 80:80 --name nginx \
@@ -65,7 +65,7 @@ docker run -p 80:80 --name nginx \
 -d nginx:1.10
 ### 修改nginx配置
 1. 将容器内的配置文件拷贝到当前目录：docker container cp nginx:/etc/nginx .
-2. 修改文件名称：mv nginx conf
+2. 修改file name：mv nginx conf
 3. 终止容器：docker stop nginx
 4. 执行命令删除原容器：docker rm $ContainerId
 5. 执行以下命令：
@@ -76,7 +76,7 @@ docker run -p 80:80 --name nginx \
 -d nginx:1.10
 
 ## rabbitmq安装
-### 下载镜像文件
+### download镜像文件
 docker pull rabbitmq:management
 ### 创建实例并启动
 docker run -d --name rabbitmq --publish 5671:5671 \
@@ -84,7 +84,7 @@ docker run -d --name rabbitmq --publish 5671:5671 \
 rabbitmq:management
 
 ## elasticsearch安装
-### 下载镜像文件
+### download镜像文件
 docker pull elasticsearch:6.4.0
 ### 创建实例并运行
 docker run -p 9200:9200 -p 9300:9300 --name elasticsearch \
@@ -105,10 +105,10 @@ docker run -p 9200:9200 -p 9300:9300 --name elasticsearch \
 3. 测试：
     - 访问header插件：打开地址http://192.168.1.66:9200/_plugin/head/ 
     - 选择复合查询，输入地址：POST:http://192.168.1.66:9200/_analyze 
-    - 输入参数：JSON:{"analyzer":"ik","text":"我们是大数据开发人员"}
+    - 输入parameter：JSON:{"analyzer":"ik","text":"我们Yes大数据开发人员"}
 
 ## mongodb安装
-### 下载镜像文件
+### download镜像文件
 docker pull mongo:3.2
 ### 创建实例并运行
 docker run -p 27017:27017 --name mongo -v /mydata/mongo/db:/data/db -d mongo:3.2

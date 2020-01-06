@@ -6,7 +6,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * 修改订单费用信息参数
+ * Modify order fee information parameters
  * Created by macro on 2018/10/29.
  */
 @Getter

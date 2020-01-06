@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 统一日志处理切面
+ * Unified log processing aspects
  * Created by macro on 2018/4/26.
  */
 @Aspect
@@ -55,10 +55,10 @@ public class WebLogAspect {
     @Around("webLog()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
-        //获取当前请求对象
+        //Get the current request object
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        //记录请求信息(通过Logstash传入Elasticsearch)
+        //Record request information(Into Elasticsearch via Logstash)
         WebLog webLog = new WebLog();
         Object result = joinPoint.proceed();
         Signature signature = joinPoint.getSignature();
@@ -91,18 +91,18 @@ public class WebLogAspect {
     }
 
     /**
-     * 根据方法和传入的参数获取请求参数
+     * Get request parameters based on method and incoming parameters
      */
     private Object getParameter(Method method, Object[] args) {
         List<Object> argList = new ArrayList<>();
         Parameter[] parameters = method.getParameters();
         for (int i = 0; i < parameters.length; i++) {
-            //将RequestBody注解修饰的参数作为请求参数
+            //Use RequestBody annotation modified parameters as request parameters
             RequestBody requestBody = parameters[i].getAnnotation(RequestBody.class);
             if (requestBody != null) {
                 argList.add(args[i]);
             }
-            //将RequestParam注解修饰的参数作为请求参数
+            //RequestParam annotation modified parameters as request parameters
             RequestParam requestParam = parameters[i].getAnnotation(RequestParam.class);
             if (requestParam != null) {
                 Map<String, Object> map = new HashMap<>();

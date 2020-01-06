@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * 应用启动入口
+ * Application launch portal
  * Created by macro on 2018/4/26.
  */
 @EnableDiscoveryClient

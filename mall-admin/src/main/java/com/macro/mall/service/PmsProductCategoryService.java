@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 产品分类Service
+ * Product Category Service
  * Created by macro on 2018/4/26.
  */
 public interface PmsProductCategoryService {

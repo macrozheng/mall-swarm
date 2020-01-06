@@ -22,7 +22,7 @@ public class UmsMemberStatisticsInfo implements Serializable {
     @ApiModelProperty(value = "评价数")
     private Integer commentCount;
 
-    @ApiModelProperty(value = "退货数量")
+    @ApiModelProperty(value = "Number of returns")
     private Integer returnOrderCount;
 
     @ApiModelProperty(value = "登录次数")

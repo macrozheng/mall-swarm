@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 import java.util.*;
 
 /**
- * 会员优惠券管理Service实现类
+ * MemberManagement Coupon Service Implementation Class
  * Created by macro on 2018/8/29.
  */
 @Service
@@ -44,7 +44,7 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
         if(now.before(coupon.getEnableTime())){
             return CommonResult.failed("优惠券还没到领取时间");
         }
-        //判断用户领取的优惠券数量是否超过限制
+        //判断User领取的优惠券数量YesNo超过限制
         SmsCouponHistoryExample couponHistoryExample = new SmsCouponHistoryExample();
         couponHistoryExample.createCriteria().andCouponIdEqualTo(couponId).andMemberIdEqualTo(currentMember.getId());
         long count = couponHistoryMapper.countByExample(couponHistoryExample);
@@ -63,7 +63,7 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
         //未使用
         couponHistory.setUseStatus(0);
         couponHistoryMapper.insert(couponHistory);
-        //修改优惠券表的数量、领取数量
+        //Edit coupon表的数量、领取数量
         coupon.setCount(coupon.getCount()-1);
         coupon.setReceiveCount(coupon.getReceiveCount()==null?1:coupon.getReceiveCount()+1);
         couponMapper.updateByPrimaryKey(coupon);
@@ -71,7 +71,7 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
     }
 
     /**
-     * 16位优惠码生成：时间戳后8位+4位随机数+用户id后4位
+     * 16位优惠码生成：时间戳后8位+4位随机数+Userid后4位
      */
     private String generateCouponCode(Long memberId) {
         StringBuilder sb = new StringBuilder();
@@ -106,9 +106,9 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
     public List<SmsCouponHistoryDetail> listCart(List<CartPromotionItem> cartItemList, Integer type) {
         UmsMember currentMember = memberService.getCurrentMember();
         Date now = new Date();
-        //获取该用户所有优惠券
+        //获取该User所有优惠券
         List<SmsCouponHistoryDetail> allList = couponHistoryDao.getDetailList(currentMember.getId());
-        //根据优惠券使用类型来判断优惠券是否可用
+        //according to优惠券使用类型来判断优惠券YesNo可用
         List<SmsCouponHistoryDetail> enableList = new ArrayList<>();
         List<SmsCouponHistoryDetail> disableList = new ArrayList<>();
         for (SmsCouponHistoryDetail couponHistoryDetail : allList) {
@@ -117,7 +117,7 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
             Date endTime = couponHistoryDetail.getCoupon().getEndTime();
             if(useType.equals(0)){
                 //0->全场通用
-                //判断是否满足优惠起点
+                //判断YesNo满足优惠起点
                 //计算购物车商品的总价
                 BigDecimal totalAmount = calcTotalAmount(cartItemList);
                 if(now.before(endTime)&&totalAmount.subtract(minPoint).intValue()>=0){

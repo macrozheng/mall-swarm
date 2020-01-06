@@ -20,25 +20,25 @@ public class PmsProduct implements Serializable {
 
     private String pic;
 
-    @ApiModelProperty(value = "货号")
+    @ApiModelProperty(value = "Product Serial Number")
     private String productSn;
 
-    @ApiModelProperty(value = "删除状态：0->未删除；1->已删除")
+    @ApiModelProperty(value = "Delete status：0->Not deleted；1->Deleted")
     private Integer deleteStatus;
 
-    @ApiModelProperty(value = "上架状态：0->下架；1->上架")
+    @ApiModelProperty(value = "Up-shelf status：0->下架；1->上架")
     private Integer publishStatus;
 
-    @ApiModelProperty(value = "新品状态:0->不是新品；1->新品")
+    @ApiModelProperty(value = "新品status:0->No新品；1->新品")
     private Integer newStatus;
 
-    @ApiModelProperty(value = "推荐状态；0->不推荐；1->推荐")
+    @ApiModelProperty(value = "推荐status；0->不推荐；1->推荐")
     private Integer recommandStatus;
 
-    @ApiModelProperty(value = "审核状态：0->未审核；1->审核通过")
+    @ApiModelProperty(value = "Approval Status：0->未审核；1->审核通过")
     private Integer verifyStatus;
 
-    @ApiModelProperty(value = "排序")
+    @ApiModelProperty(value = "Sort")
     private Integer sort;
 
     @ApiModelProperty(value = "销量")
@@ -61,7 +61,7 @@ public class PmsProduct implements Serializable {
     @ApiModelProperty(value = "副标题")
     private String subTitle;
 
-    @ApiModelProperty(value = "市场价")
+    @ApiModelProperty(value = "City场价")
     private BigDecimal originalPrice;
 
     @ApiModelProperty(value = "库存")
@@ -76,7 +76,7 @@ public class PmsProduct implements Serializable {
     @ApiModelProperty(value = "商品重量，默认为克")
     private BigDecimal weight;
 
-    @ApiModelProperty(value = "是否为预告商品：0->不是；1->是")
+    @ApiModelProperty(value = "YesNo为预告商品：0->No；1->Yes")
     private Integer previewStatus;
 
     @ApiModelProperty(value = "以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮")
@@ -100,16 +100,16 @@ public class PmsProduct implements Serializable {
     @ApiModelProperty(value = "活动限购数量")
     private Integer promotionPerLimit;
 
-    @ApiModelProperty(value = "促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购")
+    @ApiModelProperty(value = "促销类型：0->没有促销使用原价;1->使用促销价；2->使用Member价；3->使用Ladder price；4->使用Full discount；5->限时购")
     private Integer promotionType;
 
-    @ApiModelProperty(value = "品牌名称")
+    @ApiModelProperty(value = "brand name")
     private String brandName;
 
-    @ApiModelProperty(value = "商品分类名称")
+    @ApiModelProperty(value = "Product category name")
     private String productCategoryName;
 
-    @ApiModelProperty(value = "商品描述")
+    @ApiModelProperty(value = "商品description")
     private String description;
 
     private String detailDesc;

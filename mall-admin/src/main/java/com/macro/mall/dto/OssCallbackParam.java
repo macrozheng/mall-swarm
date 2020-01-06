@@ -3,15 +3,15 @@ package com.macro.mall.dto;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * oss上传成功后的回调参数
+ * callback parameters after oss upload is successful
  * Created by macro on 2018/5/17.
  */
 public class OssCallbackParam {
-    @ApiModelProperty("请求的回调地址")
+    @ApiModelProperty("Requested callback address")
     private String callbackUrl;
-    @ApiModelProperty("回调是传入request中的参数")
+    @ApiModelProperty("Callback is the parameter passed in the request")
     private String callbackBody;
-    @ApiModelProperty("回调时传入参数的格式，比如表单提交形式")
+    @ApiModelProperty("The format of the incoming parameters when callbacks, such as form submission")
     private String callbackBodyType;
 
     public String getCallbackUrl() {

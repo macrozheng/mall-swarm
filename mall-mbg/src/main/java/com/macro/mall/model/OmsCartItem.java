@@ -14,53 +14,53 @@ public class OmsCartItem implements Serializable {
 
     private Long memberId;
 
-    @ApiModelProperty(value = "购买数量")
+    @ApiModelProperty(value = "Number of purchases")
     private Integer quantity;
 
-    @ApiModelProperty(value = "添加到购物车的价格")
+    @ApiModelProperty(value = "Price added to shopping cart")
     private BigDecimal price;
 
-    @ApiModelProperty(value = "销售属性1")
+    @ApiModelProperty(value = "Sales Attributes1")
     private String sp1;
 
-    @ApiModelProperty(value = "销售属性2")
+    @ApiModelProperty(value = "Sales Attributes2")
     private String sp2;
 
-    @ApiModelProperty(value = "销售属性3")
+    @ApiModelProperty(value = "Sales Attributes3")
     private String sp3;
 
-    @ApiModelProperty(value = "商品主图")
+    @ApiModelProperty(value = "Product main picture")
     private String productPic;
 
-    @ApiModelProperty(value = "商品名称")
+    @ApiModelProperty(value = "product name")
     private String productName;
 
-    @ApiModelProperty(value = "商品副标题（卖点）")
+    @ApiModelProperty(value = "Product Subtitle (Selling Point)")
     private String productSubTitle;
 
-    @ApiModelProperty(value = "商品sku条码")
+    @ApiModelProperty(value = "Product SKU code")
     private String productSkuCode;
 
-    @ApiModelProperty(value = "会员昵称")
+    @ApiModelProperty(value = "Member nickname")
     private String memberNickname;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "Creation Date")
     private Date createDate;
 
-    @ApiModelProperty(value = "修改时间")
+    @ApiModelProperty(value = "Time of modification")
     private Date modifyDate;
 
-    @ApiModelProperty(value = "是否删除")
+    @ApiModelProperty(value = "Delete or not")
     private Integer deleteStatus;
 
-    @ApiModelProperty(value = "商品分类")
+    @ApiModelProperty(value = "Product Categories")
     private Long productCategoryId;
 
     private String productBrand;
 
     private String productSn;
 
-    @ApiModelProperty(value = "商品销售属性:[{'key':'颜色','value':'颜色'},{'key':'容量','value':'4G'}]")
+    @ApiModelProperty(value = "Product Sales Attributes:[{'key':'colour','value':'colour'},{'key':'capacity','value':'4G'}]")
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

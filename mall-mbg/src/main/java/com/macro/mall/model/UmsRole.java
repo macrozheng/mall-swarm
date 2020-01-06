@@ -10,16 +10,16 @@ public class UmsRole implements Serializable {
     @ApiModelProperty(value = "名称")
     private String name;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "description")
     private String description;
 
-    @ApiModelProperty(value = "后台用户数量")
+    @ApiModelProperty(value = "后台User数量")
     private Integer adminCount;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "Creation Date")
     private Date createTime;
 
-    @ApiModelProperty(value = "启用状态：0->禁用；1->启用")
+    @ApiModelProperty(value = "Enabled：0->禁用；1->Enable")
     private Integer status;
 
     private Integer sort;

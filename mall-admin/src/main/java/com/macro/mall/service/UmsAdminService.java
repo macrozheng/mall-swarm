@@ -10,78 +10,78 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 后台管理员Service
+ * Backoffice Management Service
  * Created by macro on 2018/4/26.
  */
 public interface UmsAdminService {
     /**
-     * 根据用户名获取后台管理员
+     * According to username get Backoffice Management
      */
     UmsAdmin getAdminByUsername(String username);
 
     /**
-     * 注册功能
+     * Registration function
      */
     UmsAdmin register(UmsAdminParam umsAdminParam);
 
     /**
-     * 登录功能
-     * @param username 用户名
-     * @param password 密码
-     * @return 生成的JWT的token
+     * Login function
+     * @param username username
+     * @param password password
+     * @return Generated JWT token
      */
     String login(String username,String password);
 
     /**
-     * 刷新token的功能
-     * @param oldToken 旧的token
+     * Refresh token function
+     * @param oldToken Old token
      */
     String refreshToken(String oldToken);
 
     /**
-     * 根据用户id获取用户
+     * get user according to user id
      */
     UmsAdmin getItem(Long id);
 
     /**
-     * 根据用户名或昵称分页查询用户
+     * query users according to username or nickname
      */
     List<UmsAdmin> list(String name, Integer pageSize, Integer pageNum);
 
     /**
-     * 修改指定用户信息
+     * Modify specified User information
      */
     int update(Long id, UmsAdmin admin);
 
     /**
-     * 删除指定用户
+     * Delete the specified user
      */
     int delete(Long id);
 
     /**
-     * 修改用户角色关系
+     * Modify user role relationships
      */
     @Transactional
     int updateRole(Long adminId, List<Long> roleIds);
 
     /**
-     * 获取用户对于角色
+     * Get user for role
      */
     List<UmsRole> getRoleList(Long adminId);
 
     /**
-     * 修改用户的+-权限
+     * Modify user's + -permissions
      */
     @Transactional
     int updatePermission(Long adminId, List<Long> permissionIds);
 
     /**
-     * 获取用户所有权限（包括角色权限和+-权限）
+     * Get all user permissions (including role permissions and +-permissions)
      */
     List<UmsPermission> getPermissionList(Long adminId);
 
     /**
-     * 获取用户信息
+     * Get user information
      */
     UserDetails loadUserByUsername(String username);
 }

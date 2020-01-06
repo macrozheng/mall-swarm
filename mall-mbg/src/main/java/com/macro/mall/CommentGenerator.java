@@ -20,7 +20,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
     private static final String API_MODEL_PROPERTY_FULL_CLASS_NAME="io.swagger.annotations.ApiModelProperty";
 
     /**
-     * 设置用户配置的参数
+     * 设置User配置的parameter
      */
     @Override
     public void addConfigurationProperties(Properties properties) {
@@ -35,7 +35,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
     public void addFieldComment(Field field, IntrospectedTable introspectedTable,
                                 IntrospectedColumn introspectedColumn) {
         String remarks = introspectedColumn.getRemarks();
-        //根据参数和备注信息判断是否添加备注信息
+        //according toparameter和Note信息判断YesNo添加Note信息
         if(addRemarkComments&&StringUtility.stringHasValue(remarks)){
 //            addFieldJavaDoc(field, remarks);
             //数据库中特殊字符需要转义
@@ -53,7 +53,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
     private void addFieldJavaDoc(Field field, String remarks) {
         //文档注释开始
         field.addJavaDocLine("/**");
-        //获取数据库字段的备注信息
+        //获取数据库字段的Note信息
         String[] remarkLines = remarks.split(System.getProperty("line.separator"));
         for(String remarkLine:remarkLines){
             field.addJavaDocLine(" * "+remarkLine);

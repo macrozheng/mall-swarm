@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Feign调用mall-admin接口示例
+ * Feign calls mall-admin interface example
  */
-@Api(tags = "FeignAdminController", description = "Feign调用mall-admin接口示例")
+@Api(tags = "FeignAdminController", description = "Feign calls mall-admin interface example")
 @RestController
 @RequestMapping("/feign/admin")
 public class FeignAdminController {

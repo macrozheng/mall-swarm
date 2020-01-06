@@ -8,7 +8,7 @@ import com.macro.mall.portal.domain.HomeContentResult;
 import java.util.List;
 
 /**
- * 首页内容管理Service
+ * 首页内容managementService
  * Created by macro on 2019/1/28.
  */
 public interface HomeService {
@@ -24,14 +24,14 @@ public interface HomeService {
     List<PmsProduct> recommendProductList(Integer pageSize, Integer pageNum);
 
     /**
-     * 获取商品分类
+     * 获取Product Categories
      * @param parentId 0:获取一级分类；其他：获取指定二级分类
      */
     List<PmsProductCategory> getProductCateList(Long parentId);
 
     /**
-     * 根据专题分类分页获取专题
-     * @param cateId 专题分类id
+     * according to专题分类分页获取专题
+     * @param cateId 专题Category id
      */
     List<CmsSubject> getSubjectList(Long cateId, Integer pageSize, Integer pageNum);
 }

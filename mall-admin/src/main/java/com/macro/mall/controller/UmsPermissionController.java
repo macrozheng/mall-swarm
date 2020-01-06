@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 后台用户权限管理
+ * Background user rights management
  * Created by macro on 2018/9/29.
  */
 @Controller
-@Api(tags = "UmsPermissionController", description = "后台用户权限管理")
+@Api(tags = "UmsPermissionController", description = "Background user rights management")
 @RequestMapping("/permission")
 public class UmsPermissionController {
     @Autowired
     private UmsPermissionService permissionService;
-    @ApiOperation("添加权限")
+    @ApiOperation("Add permissions")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody UmsPermission permission) {
@@ -33,7 +33,7 @@ public class UmsPermissionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改权限")
+    @ApiOperation("Modify permissions")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody UmsPermission permission) {
@@ -44,7 +44,7 @@ public class UmsPermissionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("根据id批量删除权限")
+    @ApiOperation("Delete permissions in batches based on id")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@RequestParam("ids") List<Long> ids) {
@@ -55,7 +55,7 @@ public class UmsPermissionController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("以层级结构返回所有权限")
+    @ApiOperation("Returns all permissions in a hierarchical structure")
     @RequestMapping(value = "/treeList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsPermissionNode>> treeList() {
@@ -63,7 +63,7 @@ public class UmsPermissionController {
         return CommonResult.success(permissionNodeList);
     }
 
-    @ApiOperation("获取所有权限列表")
+    @ApiOperation("Get a list of all permissions")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsPermission>> list() {

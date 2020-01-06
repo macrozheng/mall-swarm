@@ -42,7 +42,7 @@ import java.util.Map;
 
 
 /**
- * 商品搜索管理Service实现类
+ * 商品搜索managementService实现类
  * Created by macro on 2018/6/19.
  */
 @Service
@@ -137,7 +137,7 @@ public class EsProductServiceImpl implements EsProductService {
                     .setMinScore(2);
             nativeSearchQueryBuilder.withQuery(functionScoreQueryBuilder);
         }
-        //排序
+        //Sort
         if(sort==1){
             //按新品从新到旧
             nativeSearchQueryBuilder.withSort(SortBuilders.fieldSort("id").order(SortOrder.DESC));
@@ -169,7 +169,7 @@ public class EsProductServiceImpl implements EsProductService {
             String keyword = esProduct.getName();
             Long brandId = esProduct.getBrandId();
             Long productCategoryId = esProduct.getProductCategoryId();
-            //根据商品标题、品牌、分类进行搜索
+            //according to商品标题、品牌、分类进行搜索
             List<FunctionScoreQueryBuilder.FilterFunctionBuilder> filterFunctionBuilders = new ArrayList<>();
             filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.matchQuery("name", keyword),
                     ScoreFunctionBuilders.weightFactorFunction(8)));
@@ -205,11 +205,11 @@ public class EsProductServiceImpl implements EsProductService {
         }else{
             builder.withQuery(QueryBuilders.multiMatchQuery(keyword,"name","subTitle","keywords"));
         }
-        //聚合搜索品牌名称
+        //聚合搜索brand name
         builder.addAggregation(AggregationBuilders.terms("brandNames").field("brandName"));
         //集合搜索分类名称
         builder.addAggregation(AggregationBuilders.terms("productCategoryNames").field("productCategoryName"));
-        //聚合搜索商品属性，去除type=1的属性
+        //聚合搜索商品Attributes，去除type=1的Attributes
         AbstractAggregationBuilder aggregationBuilder = AggregationBuilders.nested("allAttrValues","attrValueList")
                 .subAggregation(AggregationBuilders.filter("productAttrs",QueryBuilders.termQuery("attrValueList.type",1))
                 .subAggregation(AggregationBuilders.terms("attrIds")
@@ -227,7 +227,7 @@ public class EsProductServiceImpl implements EsProductService {
     }
 
     /**
-     * 将返回结果转换为对象
+     * 将Return result转换为对象
      */
     private EsProductRelatedInfo convertProductRelatedInfo(SearchResponse response) {
         EsProductRelatedInfo productRelatedInfo = new EsProductRelatedInfo();
@@ -246,7 +246,7 @@ public class EsProductServiceImpl implements EsProductService {
             productCategoryNameList.add(((Terms) productCategoryNames).getBuckets().get(i).getKeyAsString());
         }
         productRelatedInfo.setProductCategoryNames(productCategoryNameList);
-        //设置参数
+        //设置parameter
         Aggregation productAttrs = aggregationMap.get("allAttrValues");
         List<LongTerms.Bucket> attrIds = ((LongTerms) ((InternalFilter) ((InternalNested) productAttrs).getProperty("productAttrs")).getProperty("attrIds")).getBuckets();
         List<EsProductRelatedInfo.ProductAttr> attrList = new ArrayList<>();

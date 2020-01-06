@@ -7,25 +7,25 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 用户登录参数
+ * User login parameter
  * Created by macro on 2018/4/26.
  */
 @Getter
 @Setter
 public class UmsAdminParam {
-    @ApiModelProperty(value = "用户名", required = true)
-    @NotEmpty(message = "用户名不能为空")
+    @ApiModelProperty(value = "username", required = true)
+    @NotEmpty(message = "username cannot be empty")
     private String username;
-    @ApiModelProperty(value = "密码", required = true)
-    @NotEmpty(message = "密码不能为空")
+    @ApiModelProperty(value = "password", required = true)
+    @NotEmpty(message = "password cannot be empty")
     private String password;
-    @ApiModelProperty(value = "用户头像")
+    @ApiModelProperty(value = "profile picture")
     private String icon;
-    @ApiModelProperty(value = "邮箱")
-    @Email(message = "邮箱格式不合法")
+    @ApiModelProperty(value = "Mailbox")
+    @Email(message = "Mailbox format is not legal")
     private String email;
-    @ApiModelProperty(value = "用户昵称")
+    @ApiModelProperty(value = "User's Nickname")
     private String nickName;
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "Note")
     private String note;
 }

@@ -16,7 +16,7 @@
         <!--生成mapper.xml时覆盖原文件-->
         <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
         <commentGenerator type="com.macro.mall.CommentGenerator">
-            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <!-- YesNo去除自动生成的注释 true：Yes ： false:No -->
             <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="true"/>
             <property name="addRemarkComments" value="true"/>

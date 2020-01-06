@@ -24,7 +24,7 @@ public class SmsFlashPromotionProductRelation implements Serializable {
     @ApiModelProperty(value = "每人限购数量")
     private Integer flashPromotionLimit;
 
-    @ApiModelProperty(value = "排序")
+    @ApiModelProperty(value = "Sort")
     private Integer sort;
 
     private static final long serialVersionUID = 1L;

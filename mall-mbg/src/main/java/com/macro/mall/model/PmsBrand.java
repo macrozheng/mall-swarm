@@ -8,29 +8,29 @@ public class PmsBrand implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "首字母")
+    @ApiModelProperty(value = "First letter")
     private String firstLetter;
 
     private Integer sort;
 
-    @ApiModelProperty(value = "是否为品牌制造商：0->不是；1->是")
+    @ApiModelProperty(value = "Whether or not a brand manufacturer：0->No；1->Yes")
     private Integer factoryStatus;
 
     private Integer showStatus;
 
-    @ApiModelProperty(value = "产品数量")
+    @ApiModelProperty(value = "Quantity")
     private Integer productCount;
 
-    @ApiModelProperty(value = "产品评论数量")
+    @ApiModelProperty(value = "Number of product reviews")
     private Integer productCommentCount;
 
-    @ApiModelProperty(value = "品牌logo")
+    @ApiModelProperty(value = "Brand logo")
     private String logo;
 
-    @ApiModelProperty(value = "专区大图")
+    @ApiModelProperty(value = "Big picture")
     private String bigPic;
 
-    @ApiModelProperty(value = "品牌故事")
+    @ApiModelProperty(value = "Brand story")
     private String brandStory;
 
     private static final long serialVersionUID = 1L;

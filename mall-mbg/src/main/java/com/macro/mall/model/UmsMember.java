@@ -9,10 +9,10 @@ public class UmsMember implements Serializable {
 
     private Long memberLevelId;
 
-    @ApiModelProperty(value = "用户名")
+    @ApiModelProperty(value = "username")
     private String username;
 
-    @ApiModelProperty(value = "密码")
+    @ApiModelProperty(value = "password")
     private String password;
 
     @ApiModelProperty(value = "昵称")
@@ -21,7 +21,7 @@ public class UmsMember implements Serializable {
     @ApiModelProperty(value = "手机号码")
     private String phone;
 
-    @ApiModelProperty(value = "帐号启用状态:0->禁用；1->启用")
+    @ApiModelProperty(value = "帐号Enabled:0->禁用；1->Enable")
     private Integer status;
 
     @ApiModelProperty(value = "注册时间")
@@ -36,7 +36,7 @@ public class UmsMember implements Serializable {
     @ApiModelProperty(value = "生日")
     private Date birthday;
 
-    @ApiModelProperty(value = "所做城市")
+    @ApiModelProperty(value = "所做City")
     private String city;
 
     @ApiModelProperty(value = "职业")
@@ -45,7 +45,7 @@ public class UmsMember implements Serializable {
     @ApiModelProperty(value = "个性签名")
     private String personalizedSignature;
 
-    @ApiModelProperty(value = "用户来源")
+    @ApiModelProperty(value = "User来源")
     private Integer sourceType;
 
     @ApiModelProperty(value = "积分")

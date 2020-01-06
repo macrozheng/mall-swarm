@@ -14,9 +14,9 @@ import java.util.List;
 public class SmsCouponHistoryDetail extends SmsCouponHistory {
     //相关优惠券信息
     private SmsCoupon coupon;
-    //优惠券关联商品
+    //优惠券Related商品
     private List<SmsCouponProductRelation> productRelationList;
-    //优惠券关联商品分类
+    //优惠券RelatedProduct Categories
     private List<SmsCouponProductCategoryRelation> categoryRelationList;
 
     public SmsCoupon getCoupon() {

@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * 首页人气推荐管理Service实现类
+ * Home Popular Service Management Implementation Class
  * Created by macro on 2018/11/7.
  */
 @Service

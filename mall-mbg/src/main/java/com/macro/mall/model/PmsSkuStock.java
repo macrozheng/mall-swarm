@@ -20,14 +20,14 @@ public class PmsSkuStock implements Serializable {
     @ApiModelProperty(value = "预警库存")
     private Integer lowStock;
 
-    @ApiModelProperty(value = "销售属性1")
+    @ApiModelProperty(value = "Sales Attributes1")
     private String sp1;
 
     private String sp2;
 
     private String sp3;
 
-    @ApiModelProperty(value = "展示图片")
+    @ApiModelProperty(value = "Show pictures")
     private String pic;
 
     @ApiModelProperty(value = "销量")

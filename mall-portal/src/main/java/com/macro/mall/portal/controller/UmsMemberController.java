@@ -17,11 +17,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 会员登录注册管理Controller
+ * Member登录注册managementController
  * Created by macro on 2018/8/3.
  */
 @Controller
-@Api(tags = "UmsMemberController", description = "会员登录注册管理")
+@Api(tags = "UmsMemberController", description = "Member登录注册management")
 @RequestMapping("/sso")
 public class UmsMemberController {
     @Value("${jwt.tokenHeader}")
@@ -31,7 +31,7 @@ public class UmsMemberController {
     @Autowired
     private UmsMemberService memberService;
 
-    @ApiOperation("会员注册")
+    @ApiOperation("Member注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult register(@RequestParam String username,
@@ -41,14 +41,14 @@ public class UmsMemberController {
         return memberService.register(username, password, telephone, authCode);
     }
 
-    @ApiOperation("会员登录")
+    @ApiOperation("Member登录")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult login(@RequestParam String username,
                               @RequestParam String password) {
         String token = memberService.login(username, password);
         if (token == null) {
-            return CommonResult.validateFailed("用户名或密码错误");
+            return CommonResult.validateFailed("wrong user name or password");
         }
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
@@ -63,7 +63,7 @@ public class UmsMemberController {
         return memberService.generateAuthCode(telephone);
     }
 
-    @ApiOperation("修改密码")
+    @ApiOperation("修改password")
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updatePassword(@RequestParam String telephone,
@@ -72,14 +72,14 @@ public class UmsMemberController {
         return memberService.updatePassword(telephone,password,authCode);
     }
 
-    @ApiOperation(value = "刷新token")
+    @ApiOperation(value = "Refresh token")
     @RequestMapping(value = "/refreshToken", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult refreshToken(HttpServletRequest request) {
         String token = request.getHeader(tokenHeader);
         String refreshToken = memberService.refreshToken(token);
         if (refreshToken == null) {
-            return CommonResult.failed("token已经过期！");
+            return CommonResult.failed("token has Expired！");
         }
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", refreshToken);

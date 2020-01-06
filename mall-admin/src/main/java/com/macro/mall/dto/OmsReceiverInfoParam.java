@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 订单修改收货人信息参数
+ * Order Modify consignee information parameters
  * Created by macro on 2018/10/29.
  */
 @Getter

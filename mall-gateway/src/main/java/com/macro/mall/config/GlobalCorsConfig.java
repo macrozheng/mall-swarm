@@ -8,8 +8,8 @@ import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.util.pattern.PathPatternParser;
 
 /**
- * 全局跨域配置
- * 注意：前端从网关进行调用时需要配置
+ * Global cross-domain configuration
+ * note：The front-end needs to be configured when calling from the gateway
  * Created by macro on 2019/7/27.
  */
 @Configuration

@@ -7,44 +7,45 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 限时购商品关联管理Service
+ * Limited-time purchase of Products Related Management Services
  * Created by macro on 2018/11/16.
  */
 public interface SmsFlashPromotionProductRelationService {
     /**
-     * 批量添加关联
+     * Add Related in bulk
      */
     @Transactional
     int create(List<SmsFlashPromotionProductRelation> relationList);
 
     /**
-     * 修改关联相关信息
+     * Edit related information
      */
     int update(Long id, SmsFlashPromotionProductRelation relation);
 
     /**
-     * 删除关联
+     * Delete association
      */
     int delete(Long id);
 
     /**
-     * 获取关联详情
+     * Get Related details
      */
     SmsFlashPromotionProductRelation getItem(Long id);
 
     /**
-     * 分页查询相关商品及促销信息
+     * Paging for related products and promotions
      *
-     * @param flashPromotionId        限时购id
-     * @param flashPromotionSessionId 限时购场次id
+     * @param flashPromotionId        Limited-time purchase id
+     * @param flashPromotionSessionId Time-limited purchase of Sessions id
      */
     List<SmsFlashPromotionProduct> list(Long flashPromotionId, Long flashPromotionSessionId, Integer pageSize, Integer pageNum);
 
     /**
-     * 根据活动和场次id获取商品关系数量
+     * Get the number of product relationships according to the activity and Sessions id
+     *
      * @param flashPromotionId
      * @param flashPromotionSessionId
      * @return
      */
-    long getCount(Long flashPromotionId,Long flashPromotionSessionId);
+    long getCount(Long flashPromotionId, Long flashPromotionSessionId);
 }

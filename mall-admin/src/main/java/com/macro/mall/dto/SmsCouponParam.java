@@ -7,13 +7,13 @@ import com.macro.mall.model.SmsCouponProductRelation;
 import java.util.List;
 
 /**
- * 优惠券信息封装，包括绑定商品和绑定分类
+ * Coupon information package, including bundled products and bundled categories
  * Created by macro on 2018/8/28.
  */
 public class SmsCouponParam extends SmsCoupon {
-    //优惠券绑定的商品
+    //Coupon-bound products
     private List<SmsCouponProductRelation> productRelationList;
-    //优惠券绑定的商品分类
+    //Coupon-bound products category
     private List<SmsCouponProductCategoryRelation> productCategoryRelationList;
 
     public List<SmsCouponProductRelation> getProductRelationList() {

@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.util.List;
 
 /**
- * 订单详情信息
+ * Order details
  * Created by macro on 2018/10/11.
  */
 public class OmsOrderDetail extends OmsOrder {

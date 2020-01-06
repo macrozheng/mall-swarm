@@ -4,15 +4,15 @@ import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 用户登录参数
+ * User login parameter
  * Created by macro on 2018/4/26.
  */
 public class UmsAdminLoginParam {
-    @ApiModelProperty(value = "用户名", required = true)
-    @NotEmpty(message = "用户名不能为空")
+    @ApiModelProperty(value = "username", required = true)
+    @NotEmpty(message = "username cannot be empty")
     private String username;
-    @ApiModelProperty(value = "密码", required = true)
-    @NotEmpty(message = "密码不能为空")
+    @ApiModelProperty(value = "password", required = true)
+    @NotEmpty(message = "password cannot be empty")
     private String password;
 
     public String getUsername() {

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 会员收藏Service实现类
+ * Member收藏Service实现类
  * Created by macro on 2018/8/2.
  */
 @Service

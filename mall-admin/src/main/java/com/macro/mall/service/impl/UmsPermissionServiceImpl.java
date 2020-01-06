@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 后台用户权限管理Service实现类
+ * Background user services service management implementation class
  * Created by macro on 2018/9/29.
  */
 @Service
@@ -58,8 +58,8 @@ public class UmsPermissionServiceImpl implements UmsPermissionService {
     }
 
     /**
-     * 将权限转换为带有子级的权限对象
-     * 当找不到子级权限的时候map操作不会再递归调用covert
+     * Converting permissions to permission objects with children
+     * Map operation no longer recursively invokes covert when child permissions are not found
      */
     private UmsPermissionNode covert(UmsPermission permission,List<UmsPermission> permissionList){
         UmsPermissionNode node = new UmsPermissionNode();

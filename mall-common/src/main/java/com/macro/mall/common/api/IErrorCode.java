@@ -1,7 +1,7 @@
 package com.macro.mall.common.api;
 
 /**
- * 封装API的错误码
+ * Wrapper API error code
  * Created by macro on 2019/4/19.
  */
 public interface IErrorCode {

@@ -33,7 +33,7 @@ public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
                 //2.配置登录和登出路径
                 .formLogin().loginPage(adminContextPath + "/login").successHandler(successHandler).and()
                 .logout().logoutUrl(adminContextPath + "/logout").and()
-                //3.开启http basic支持，admin-client注册时需要使用
+                //3.开启http basicSupport，admin-client注册时需要使用
                 .httpBasic().and()
                 .csrf()
                 //4.开启基于cookie的csrf保护

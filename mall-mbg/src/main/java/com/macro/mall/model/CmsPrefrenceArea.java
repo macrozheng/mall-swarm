@@ -14,7 +14,7 @@ public class CmsPrefrenceArea implements Serializable {
 
     private Integer showStatus;
 
-    @ApiModelProperty(value = "展示图片")
+    @ApiModelProperty(value = "Show pictures")
     private byte[] pic;
 
     private static final long serialVersionUID = 1L;

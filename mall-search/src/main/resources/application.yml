@@ -6,12 +6,12 @@ spring:
     username: root
     password: root
     druid:
-      initial-size: 5 #连接池初始化大小
-      min-idle: 10 #最小空闲连接数
-      max-active: 20 #最大连接数
+      initial-size: 5 #Connection pool initialization size
+      min-idle: 10 #Minimum number of idle connections
+      max-active: 20 #Maximum number of connections
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
-      stat-view-servlet: #访问监控网页的登录用户名和密码
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Do not count these request data
+      stat-view-servlet: #Login username and password for accessing monitoring web pages
         login-username: druid
         login-password: druid
   data:
@@ -24,7 +24,7 @@ mybatis:
   mapper-locations:
     - classpath:dao/*.xml
     - classpath*:com/**/mapper/*.xml
-management: #开启SpringBoot Admin的监控
+management: #Enable monitoring of SpringBoot Admin
   endpoints:
     web:
       exposure:

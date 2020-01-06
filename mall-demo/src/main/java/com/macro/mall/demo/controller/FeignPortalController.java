@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Feign调用mall-portal接口示例
+ * Feign calls mall-portal interface example
  * Created by macro on 2019/10/18.
  */
-@Api(tags = "FeignPortalController", description = "Feign调用mall-portal接口示例")
+@Api(tags = "FeignPortalController", description = "Feign calls mall-portal interface example")
 @RestController
 @RequestMapping("/feign/portal")
 public class FeignPortalController {

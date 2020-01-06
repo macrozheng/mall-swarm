@@ -1,15 +1,15 @@
 aliyun:
   oss:
-    endpoint: oss-cn-shenzhen.aliyuncs.com # oss对外服务的访问域名
-    accessKeyId: test # 访问身份验证中用到用户标识
-    accessKeySecret: test # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
-    bucketName: macro-oss # oss的存储空间
+    endpoint: oss-cn-shenzhen.aliyuncs.com # access domain for oss external services
+    accessKeyId: test # User ID used in access authentication
+    accessKeySecret: test # Key used by the user to encrypt the signature string and OSS to verify the signature string
+    bucketName: macro-oss # storage space for oss
     policy:
-      expire: 300 # 签名有效期(S)
-    maxSize: 10 # 上传文件大小(M)
-    callback: http://39.98.190.128:8080/aliyun/oss/callback # 文件上传成功后的回调地址
+      expire: 300 # Signature validity(S)
+    maxSize: 10 # Upload File size (M)
+    callback: http://39.98.190.128:8080/aliyun/oss/callback # Callback address after File Upload succeeded
     dir:
-      prefix: mall/images/ # 上传文件夹路径前缀
+      prefix: mall/images/ # Upload folder path prefix
 spring:
   datasource:
     url: jdbc:mysql://db:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai

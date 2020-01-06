@@ -11,16 +11,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 订单管理Controller
+ * Order management Controller
  * Created by macro on 2018/8/30.
  */
 @Controller
-@Api(tags = "OmsPortalOrderController",description = "订单管理")
+@Api(tags = "OmsPortalOrderController",description = "订单management")
 @RequestMapping("/order")
 public class OmsPortalOrderController {
     @Autowired
     private OmsPortalOrderService portalOrderService;
-    @ApiOperation("根据购物车信息生成确认单信息")
+    @ApiOperation("according to购物车信息生成确认单信息")
     @RequestMapping(value = "/generateConfirmOrder",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<ConfirmOrderResult> generateConfirmOrder(){
@@ -28,13 +28,13 @@ public class OmsPortalOrderController {
         return CommonResult.success(confirmOrderResult);
     }
 
-    @ApiOperation("根据购物车信息生成订单")
+    @ApiOperation("according to购物车信息生成订单")
     @RequestMapping(value = "/generateOrder",method = RequestMethod.POST)
     @ResponseBody
     public Object generateOrder(@RequestBody OrderParam orderParam){
         return portalOrderService.generateOrder(orderParam);
     }
-    @ApiOperation("支付成功的回调")
+    @ApiOperation("支付成功的Callback")
     @RequestMapping(value = "/paySuccess",method = RequestMethod.POST)
     @ResponseBody
     public Object paySuccess(@RequestParam Long orderId){

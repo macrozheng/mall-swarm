@@ -5,12 +5,12 @@ import org.apache.ibatis.annotations.Param;
 
 
 /**
- * 商品自定义Dao
+ * Product Custom Dao
  * Created by macro on 2018/4/26.
  */
 public interface PmsProductDao {
     /**
-     * 获取商品编辑信息
+     * Get product editing information
      */
     PmsProductResult getUpdateInfo(@Param("id") Long id);
 }

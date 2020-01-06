@@ -28,7 +28,7 @@ public interface PortalOrderDao {
     List<OmsOrderDetail> getTimeOutOrders(@Param("minute") Integer minute);
 
     /**
-     * 批量修改订单状态
+     * 批量修改Order Status
      */
     int updateOrderStatus(@Param("ids") List<Long> ids,@Param("status") Integer status);
 
