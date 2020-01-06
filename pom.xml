@@ -31,8 +31,12 @@
     </parent>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
         <skipTests>true</skipTests>
         <docker.host>http://192.168.6.132:2375</docker.host>
+        <docker.maven.plugin.version>1.1.0</docker.maven.plugin.version>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <pagehelper-starter.version>1.2.10</pagehelper-starter.version>
@@ -48,6 +52,7 @@
         <aliyun-oss.version>2.5.0</aliyun-oss.version>
         <logstash-logback.version>5.3</logstash-logback.version>
         <admin-starter-server.version>2.1.5</admin-starter-server.version>
+        <minio.version>3.0.10</minio.version>
         <mall-common.version>1.0-SNAPSHOT</mall-common.version>
         <mall-mbg.version>1.0-SNAPSHOT</mall-mbg.version>
         <mall-security.version>1.0-SNAPSHOT</mall-security.version>
@@ -180,44 +185,13 @@
                 <artifactId>spring-boot-admin-starter-server</artifactId>
                 <version>${admin-starter-server.version}</version>
             </dependency>
+            <!--MinIO JAVA SDK-->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <!--<build>-->
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>com.spotify</groupId>-->
-                <!--<artifactId>docker-maven-plugin</artifactId>-->
-                <!--<version>1.1.0</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>build-image</id>-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>build</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<imageName>mall/${project.artifactId}:${project.version}</imageName>-->
-                    <!--<dockerHost>http://192.168.6.132:2375</dockerHost>-->
-                    <!--<baseImage>java:8</baseImage>-->
-                    <!--<entryPoint>["java", "-jar", "-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]-->
-                    <!--</entryPoint>-->
-                    <!--<resources>-->
-                        <!--<resource>-->
-                            <!--<targetPath>/</targetPath>-->
-                            <!--<directory>${project.build.directory}</directory>-->
-                            <!--<include>${project.build.finalName}.jar</include>-->
-                        <!--</resource>-->
-                    <!--</resources>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
-    <!--</build>-->
 
 </project>

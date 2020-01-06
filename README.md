@@ -47,38 +47,39 @@ mall
 
 ### 后端技术
 
-| 技术                 | 说明                | 官网                                                         |
-| -------------------- | ------------------- | ------------------------------------------------------------ |
-| Spring Cloud         | 微服务框架          | [https://spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud) |
-| Spring Boot          | 容器+MVC框架        | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) |
-| Spring Security      | 认证和授权框架      | [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security) |
-| MyBatis              | ORM框架             | [http://www.mybatis.org/mybatis-3/zh/index.html](http://www.mybatis.org/mybatis-3/zh/index.html) |
-| MyBatisGenerator     | 数据层代码生成      | [http://www.mybatis.org/generator/index.html](http://www.mybatis.org/generator/index.html) |
-| PageHelper           | MyBatis物理分页插件 | [http://git.oschina.net/free/Mybatis_PageHelper](http://git.oschina.net/free/Mybatis_PageHelper) |
-| Swagger-UI           | 文档生产工具        | [https://github.com/swagger-api/swagger-ui](https://github.com/swagger-api/swagger-ui) |
-| Elasticsearch        | 搜索引擎            | [https://github.com/elastic/elasticsearch](https://github.com/elastic/elasticsearch) |
-| RabbitMq             | 消息队列            | [https://www.rabbitmq.com/](https://www.rabbitmq.com/)       |
-| Redis                | 分布式缓存          | [https://redis.io/](https://redis.io/)                       |
-| MongoDb              | NoSql数据库         | [https://www.mongodb.com/](https://www.mongodb.com/)         |
-| Docker               | 应用容器引擎        | [https://www.docker.com/](https://www.docker.com/)           |
-| Druid                | 数据库连接池        | [https://github.com/alibaba/druid](https://github.com/alibaba/druid) |
-| OSS                  | 对象存储            | [https://github.com/aliyun/aliyun-oss-java-sdk](https://github.com/aliyun/aliyun-oss-java-sdk) |
-| JWT                  | JWT登录支持         | [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt) |
-| LogStash             | 日志收集            | [https://github.com/logstash/logstash-logback-encoder](https://github.com/logstash/logstash-logback-encoder) |
-| Lombok               | 简化对象封装工具    | [https://github.com/rzwitserloot/lombok](https://github.com/rzwitserloot/lombok) |
-| Seata                | 全局事务管理框架    | [https://github.com/seata/seata](https://github.com/seata/seata) |
-| Portainer            | 可视化Docker容器管理| [https://github.com/portainer/portainer](https://github.com/portainer/portainer) |
+| 技术             | 说明                 | 官网                                                 |
+| ---------------- | -------------------- | ---------------------------------------------------- |
+| Spring Cloud     | 微服务框架           | https://spring.io/projects/spring-cloud              |
+| Spring Boot      | 容器+MVC框架         | https://spring.io/projects/spring-boot               |
+| Spring Security  | 认证和授权框架       | https://spring.io/projects/spring-security           |
+| MyBatis          | ORM框架              | http://www.mybatis.org/mybatis-3/zh/index.html       |
+| MyBatisGenerator | 数据层代码生成       | http://www.mybatis.org/generator/index.html          |
+| PageHelper       | MyBatis物理分页插件  | http://git.oschina.net/free/Mybatis_PageHelper       |
+| Swagger-UI       | 文档生产工具         | https://github.com/swagger-api/swagger-ui            |
+| Elasticsearch    | 搜索引擎             | https://github.com/elastic/elasticsearch             |
+| RabbitMq         | 消息队列             | https://www.rabbitmq.com/                            |
+| Redis            | 分布式缓存           | https://redis.io/                                    |
+| MongoDb          | NoSql数据库          | https://www.mongodb.com/                             |
+| Docker           | 应用容器引擎         | https://www.docker.com/                              |
+| Druid            | 数据库连接池         | https://github.com/alibaba/druid                     |
+| OSS              | 对象存储             | https://github.com/aliyun/aliyun-oss-java-sdk        |
+| MinIO            | 对象存储             | https://github.com/minio/minio                       |
+| JWT              | JWT登录支持          | https://github.com/jwtk/jjwt                         |
+| LogStash         | 日志收集             | https://github.com/logstash/logstash-logback-encoder |
+| Lombok           | 简化对象封装工具     | https://github.com/rzwitserloot/lombok               |
+| Seata            | 全局事务管理框架     | https://github.com/seata/seata                       |
+| Portainer        | 可视化Docker容器管理 | https://github.com/portainer/portainer               |
 
 ### 前端技术
 
-| 技术       | 说明                  | 官网                                                         |
-| ---------- | --------------------- | ------------------------------------------------------------ |
-| Vue        | 前端框架              | [https://vuejs.org/](https://vuejs.org/)                     |
-| Vue-router | 路由框架              | [https://router.vuejs.org/](https://router.vuejs.org/)       |
-| Vuex       | 全局状态管理框架      | [https://vuex.vuejs.org/](https://vuex.vuejs.org/)           |
-| Element    | 前端UI框架            | [https://element.eleme.io/](https://element.eleme.io/)       |
-| Axios      | 前端HTTP框架          | [https://github.com/axios/axios](https://github.com/axios/axios) |
-| v-charts   | 基于Echarts的图表框架 | [https://v-charts.js.org/](https://v-charts.js.org/)         |
+| 技术       | 说明                  | 官网                           |
+| ---------- | --------------------- | ------------------------------ |
+| Vue        | 前端框架              | https://vuejs.org/             |
+| Vue-router | 路由框架              | https://router.vuejs.org/      |
+| Vuex       | 全局状态管理框架      | https://vuex.vuejs.org/        |
+| Element    | 前端UI框架            | https://element.eleme.io/      |
+| Axios      | 前端HTTP框架          | https://github.com/axios/axios |
+| v-charts   | 基于Echarts的图表框架 | https://v-charts.js.org/       |
 
 
 ## 环境搭建
@@ -112,6 +113,7 @@ nginx | 1.10 | http://nginx.org/en/download.html
 - Docker环境的安装请参考：[开发者必备Docker命令](https://github.com/macrozheng/mall-learning/blob/master/docs/reference/docker.md)；
 - 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](https://github.com/macrozheng/mall-learning/blob/master/docs/reference/docker_maven.md)；
 - 本项目在Docker容器下的部署请参考：[mall-swarm在Linux环境下的部署（基于Docker容器）](https://github.com/macrozheng/mall-learning/blob/master/docs/deploy/mall_swarm_deploy_docker.md)。
+- 本项目使用Jenkins自动化不是请参考：[微服务架构下的自动化部署，使用Jenkins来实现！](https://github.com/macrozheng/mall-learning/blob/master/docs/deploy/mall_swarm_deploy_jenkins.md)
 
 ## 运行效果展示
 
@@ -143,4 +145,4 @@ mall项目全套学习教程连载中，**关注公众号**第一时间获取。
 
 [Apache License 2.0](https://github.com/macrozheng/mall-swarm/blob/master/LICENSE)
 
-Copyright (c) 2018-2019 macrozheng
+Copyright (c) 2018-2020 macrozheng
