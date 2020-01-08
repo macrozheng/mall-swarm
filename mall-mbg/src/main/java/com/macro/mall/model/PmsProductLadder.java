@@ -9,13 +9,13 @@ public class PmsProductLadder implements Serializable {
 
     private Long productId;
 
-    @ApiModelProperty(value = "满足的商品数量")
+    @ApiModelProperty(value = "The quantity of Products satisfied")
     private Integer count;
 
-    @ApiModelProperty(value = "折扣")
+    @ApiModelProperty(value = "discount")
     private BigDecimal discount;
 
-    @ApiModelProperty(value = "折后价格")
+    @ApiModelProperty(value = "Discount price")
     private BigDecimal price;
 
     private static final long serialVersionUID = 1L;

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * Member详情封装
+ * Member Details Package
  * Created by macro on 2018/8/3.
  */
 public class MemberDetails implements UserDetails {

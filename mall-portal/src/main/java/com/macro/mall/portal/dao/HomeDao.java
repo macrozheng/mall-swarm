@@ -9,32 +9,32 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 首页内容management自定义Dao
+ * Home Content Management Custom Dao
  * Created by macro on 2019/1/28.
  */
 public interface HomeDao {
 
     /**
-     * 获取推荐品牌
+     * Get Recommended Brands
      */
     List<PmsBrand> getRecommendBrandList(@Param("offset") Integer offset,@Param("limit") Integer limit);
 
     /**
-     * 获取秒杀商品
+     * Get flash products
      */
     List<FlashPromotionProduct> getFlashProductList(@Param("flashPromotionId") Long flashPromotionId, @Param("sessionId") Long sessionId);
 
     /**
-     * 获取新品推荐
+     * Get new product recommendations
      */
     List<PmsProduct> getNewProductList(@Param("offset") Integer offset,@Param("limit") Integer limit);
     /**
-     * 获取人气推荐
+     * Get Popular Recommendations
      */
     List<PmsProduct> getHotProductList(@Param("offset") Integer offset,@Param("limit") Integer limit);
 
     /**
-     * 获取推荐专题
+     * Get Recommended Subjects
      */
     List<CmsSubject> getRecommendSubjectList(@Param("offset") Integer offset, @Param("limit") Integer limit);
 }

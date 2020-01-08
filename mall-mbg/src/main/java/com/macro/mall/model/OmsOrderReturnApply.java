@@ -50,7 +50,7 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "Product brand")
     private String productBrand;
 
-    @ApiModelProperty(value = "Product Sales Attributes：colour：Red；size：xl;")
+    @ApiModelProperty(value = "Product Audit status: 0 - > not approved; 1 - > approved Attributes：colour：Red；size：xl;")
     private String productAttr;
 
     @ApiModelProperty(value = "Number of returns")

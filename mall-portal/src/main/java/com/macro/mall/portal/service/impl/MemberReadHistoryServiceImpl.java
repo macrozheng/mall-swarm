@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Member浏览记录managementService实现类
+ * Member browsing record managementService implementation class
  * Created by macro on 2018/8/3.
  */
 @Service

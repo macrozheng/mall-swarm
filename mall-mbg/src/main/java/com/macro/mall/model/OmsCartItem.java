@@ -20,13 +20,13 @@ public class OmsCartItem implements Serializable {
     @ApiModelProperty(value = "Price added to shopping cart")
     private BigDecimal price;
 
-    @ApiModelProperty(value = "Sales Attributes1")
+    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes1")
     private String sp1;
 
-    @ApiModelProperty(value = "Sales Attributes2")
+    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes2")
     private String sp2;
 
-    @ApiModelProperty(value = "Sales Attributes3")
+    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes3")
     private String sp3;
 
     @ApiModelProperty(value = "Product main picture")
@@ -60,7 +60,7 @@ public class OmsCartItem implements Serializable {
 
     private String productSn;
 
-    @ApiModelProperty(value = "Product Sales Attributes:[{'key':'colour','value':'colour'},{'key':'capacity','value':'4G'}]")
+    @ApiModelProperty(value = "Product Audit status: 0 - > not approved; 1 - > approved Attributes:[{'key':'colour','value':'colour'},{'key':'capacity','value':'4G'}]")
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

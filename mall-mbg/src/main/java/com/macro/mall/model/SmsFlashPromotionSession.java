@@ -5,16 +5,16 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class SmsFlashPromotionSession implements Serializable {
-    @ApiModelProperty(value = "编号")
+    @ApiModelProperty(value = "Number")
     private Long id;
 
-    @ApiModelProperty(value = "Sessions名称")
+    @ApiModelProperty(value = "Event name")
     private String name;
 
-    @ApiModelProperty(value = "每日开始时间")
+    @ApiModelProperty(value = "Start Time")
     private Date startTime;
 
-    @ApiModelProperty(value = "每日结束时间")
+    @ApiModelProperty(value = "End Time")
     private Date endTime;
 
     @ApiModelProperty(value = "Enabled：0->Not enabled；1->Enable")

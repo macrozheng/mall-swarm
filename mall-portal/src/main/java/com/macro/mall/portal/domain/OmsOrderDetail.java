@@ -6,7 +6,7 @@ import com.macro.mall.model.OmsOrderItem;
 import java.util.List;
 
 /**
- * 包含订单Product information的订单详情
+ * Order details including order Product information
  * Created by macro on 2018/9/4.
  */
 public class OmsOrderDetail extends OmsOrder {

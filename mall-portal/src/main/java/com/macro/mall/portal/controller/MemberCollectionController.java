@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Member收藏managementController
+ * Members focus on brand management Controller
  * Created by macro on 2018/8/2.
  */
 @Controller
-@Api(tags = "MemberCollectionController", description = "Member收藏management")
+@Api(tags = "MemberCollectionController", description = "Members focus on brand management")
 @RequestMapping("/member/collection")
 public class MemberCollectionController {
     @Autowired
     private MemberCollectionService memberCollectionService;
 
-    @ApiOperation("添加商品收藏")
+    @ApiOperation("Add product collection")
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult addProduct(@RequestBody MemberProductCollection productCollection) {
@@ -34,7 +34,7 @@ public class MemberCollectionController {
         }
     }
 
-    @ApiOperation("删除收藏商品")
+    @ApiOperation("Delete favorite")
     @RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult deleteProduct(Long memberId, Long productId) {
@@ -46,7 +46,7 @@ public class MemberCollectionController {
         }
     }
 
-    @ApiOperation("Show关注列表")
+    @ApiOperation("Show follow list")
     @RequestMapping(value = "/listProduct/{memberId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<MemberProductCollection>> listProduct(@PathVariable Long memberId) {

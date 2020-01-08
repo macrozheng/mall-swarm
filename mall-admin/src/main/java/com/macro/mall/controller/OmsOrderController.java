@@ -18,7 +18,7 @@ import java.util.List;
  * Created by macro on 2018/10/11.
  */
 @Controller
-@Api(tags = "OmsOrderController", description = "订单management")
+@Api(tags = "OmsOrderController", description = "Order management")
 @RequestMapping("/order")
 public class OmsOrderController {
     @Autowired

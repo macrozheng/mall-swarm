@@ -5,22 +5,22 @@ import com.macro.mall.portal.domain.MemberReadHistory;
 import java.util.List;
 
 /**
- * Member浏览记录managementService
+ * Member browsing history managementService
  * Created by macro on 2018/8/3.
  */
 public interface MemberReadHistoryService {
     /**
-     * 生成浏览记录
+     * Generate browsing history
      */
     int create(MemberReadHistory memberReadHistory);
 
     /**
-     * 批量删除浏览记录
+     * Batch Delete browsing history
      */
     int delete(List<String> ids);
 
     /**
-     * 获取User浏览历史记录
+     * Get User browsing history
      */
     List<MemberReadHistory> list(Long memberId);
 }

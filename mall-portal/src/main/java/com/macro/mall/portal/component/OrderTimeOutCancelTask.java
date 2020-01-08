@@ -10,21 +10,21 @@ import org.springframework.stereotype.Component;
 
 /**
  * Created by macro on 2018/8/24.
- * 订单超时取消并解锁库存的定时器
+ * Timer for order timeout cancellation and unlocking inventory
  */
 //@Component
 public class OrderTimeOutCancelTask {
-    private Logger LOGGER =LoggerFactory.getLogger(OrderTimeOutCancelTask.class);
+    private Logger LOGGER = LoggerFactory.getLogger(OrderTimeOutCancelTask.class);
     @Autowired
     private OmsPortalOrderService portalOrderService;
 
     /**
-     * cron表达式：Seconds Minutes Hours DayofMonth Month DayofWeek [Year]
-     * 每10分钟扫描一次，扫描设定超时时间之前下的订单，如果没支付则取消该订单
+     * Cron expression: second minutes hours Dayofmonth month DayOfWeek [Year]
+     * scan every 10 minutes, scan the order placed before the set timeout, and cancel the order if no payment is made
      */
     @Scheduled(cron = "0 0/10 * ? * ?")
-    private void cancelTimeOutOrder(){
+    private void cancelTimeOutOrder() {
         CommonResult result = portalOrderService.cancelTimeOutOrder();
-        LOGGER.info("取消订单，并according tosku编号释放锁定库存:{}",result);
+        LOGGER.info("Cancel the order and release the locked stock according to SKU number:{}", result);
     }
 }

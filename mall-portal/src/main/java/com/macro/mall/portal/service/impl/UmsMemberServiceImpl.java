@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * MembermanagementService实现类
+ * Member management Service implementation class
  * Created by macro on 2018/8/3.
  */
 @Service
@@ -72,26 +72,26 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 
     @Override
     public CommonResult register(String username, String password, String telephone, String authCode) {
-        //验证验证码
+        //Verification code
         if(!verifyAuthCode(authCode,telephone)){
-            return CommonResult.failed("验证码错误");
+            return CommonResult.failed("Verification code error");
         }
-        //查询YesNo已有该User
+        //Query whether the user already exists
         UmsMemberExample example = new UmsMemberExample();
         example.createCriteria().andUsernameEqualTo(username);
         example.or(example.createCriteria().andPhoneEqualTo(telephone));
         List<UmsMember> umsMembers = memberMapper.selectByExample(example);
         if (!CollectionUtils.isEmpty(umsMembers)) {
-            return CommonResult.failed("该User已经存在");
+            return CommonResult.failed("The User already exists");
         }
-        //没有该User进行添加操作
+        //No user added
         UmsMember umsMember = new UmsMember();
         umsMember.setUsername(username);
         umsMember.setPhone(telephone);
         umsMember.setPassword(passwordEncoder.encode(password));
         umsMember.setCreateTime(new Date());
         umsMember.setStatus(1);
-        //获取默认Member等级并设置
+        // Get the default Member level and set
         UmsMemberLevelExample levelExample = new UmsMemberLevelExample();
         levelExample.createCriteria().andDefaultStatusEqualTo(1);
         List<UmsMemberLevel> memberLevelList = memberLevelMapper.selectByExample(levelExample);
@@ -100,7 +100,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         }
         memberMapper.insert(umsMember);
         umsMember.setPassword(null);
-        return CommonResult.success(null,"注册成功");
+        return CommonResult.success(null,"registration success");
     }
 
     @Override
@@ -110,10 +110,10 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         for(int i=0;i<6;i++){
             sb.append(random.nextInt(10));
         }
-        //验证码绑定手机号并存储到redis
+        //Verification code is bound to mobile phone number and stored in redis
         redisService.set(REDIS_KEY_PREFIX_AUTH_CODE+telephone,sb.toString());
         redisService.expire(REDIS_KEY_PREFIX_AUTH_CODE+telephone,AUTH_CODE_EXPIRE_SECONDS);
-        return CommonResult.success(sb.toString(),"获取验证码成功");
+        return CommonResult.success(sb.toString(),"Get verification code succeeded");
     }
 
     @Override
@@ -122,16 +122,16 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         example.createCriteria().andPhoneEqualTo(telephone);
         List<UmsMember> memberList = memberMapper.selectByExample(example);
         if(CollectionUtils.isEmpty(memberList)){
-            return CommonResult.failed("该账号不存在");
+            return CommonResult.failed("The account does not exist");
         }
-        //验证验证码
+        //Verification code
         if(!verifyAuthCode(authCode,telephone)){
-            return CommonResult.failed("验证码错误");
+            return CommonResult.failed("Verification code error");
         }
         UmsMember umsMember = memberList.get(0);
         umsMember.setPassword(passwordEncoder.encode(password));
         memberMapper.updateByPrimaryKeySelective(umsMember);
-        return CommonResult.success(null,"password修改成功");
+        return CommonResult.success(null,"Password changed successfully");
     }
 
     @Override
@@ -182,7 +182,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         return jwtTokenUtil.refreshHeadToken(token);
     }
 
-    //对输入的验证码进行校验
+    //Verify the entered verification code
     private boolean verifyAuthCode(String authCode, String telephone){
         if(StringUtils.isEmpty(authCode)){
             return false;

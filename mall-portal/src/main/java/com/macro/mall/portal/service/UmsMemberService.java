@@ -6,17 +6,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * MembermanagementService
+ * Member Management Service
  * Created by macro on 2018/8/3.
  */
 public interface UmsMemberService {
     /**
-     * according tousername获取Member
+     * Get members by username
      */
     UmsMember getByUsername(String username);
 
     /**
-     * according toMember编号获取Member
+     * Get members by member number
      */
     UmsMember getById(Long id);
 
@@ -27,23 +27,23 @@ public interface UmsMemberService {
     CommonResult register(String username, String password, String telephone, String authCode);
 
     /**
-     * 生成验证码
+     * Generate verification code
      */
     CommonResult generateAuthCode(String telephone);
 
     /**
-     * 修改password
+     * Change Password
      */
     @Transactional
     CommonResult updatePassword(String telephone, String password, String authCode);
 
     /**
-     * 获取当前登录Member
+     * Get the currently logged in Member
      */
     UmsMember getCurrentMember();
 
     /**
-     * according toMemberid修改Member积分
+     * Modify member points based on member id
      */
     void updateIntegration(Long id,Integer integration);
 
@@ -53,7 +53,7 @@ public interface UmsMemberService {
     UserDetails loadUserByUsername(String username);
 
     /**
-     * 登录后获取token
+     * Get token after login
      */
     String login(String username, String password);
 

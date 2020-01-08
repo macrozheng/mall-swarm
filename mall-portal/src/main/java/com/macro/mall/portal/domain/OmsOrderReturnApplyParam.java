@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * 申请退货parameter
+ * Apply for Return Parameter
  * Created by macro on 2018/10/17.
  */
 @Getter
@@ -31,7 +31,7 @@ public class OmsOrderReturnApplyParam {
     private String productName;
     @ApiModelProperty("Product brand")
     private String productBrand;
-    @ApiModelProperty("Product Sales Attributes：colour：Red；size：xl;")
+    @ApiModelProperty("Product Audit status: 0 - > not approved; 1 - > approved Attributes：colour：Red；size：xl;")
     private String productAttr;
     @ApiModelProperty("Number of returns")
     private Integer productCount;

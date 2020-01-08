@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import java.util.Date;
 
 /**
- * User收藏的商品
+ * User Favorites
  * Created by macro on 2018/8/2.
  */
 public class MemberProductCollection {

@@ -106,7 +106,7 @@ public class EsProductServiceImpl implements EsProductService {
     public Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort) {
         Pageable pageable = PageRequest.of(pageNum, pageSize);
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
-        //分页
+        //minutes页
         nativeSearchQueryBuilder.withPageable(pageable);
         //过滤
         if (brandId != null || productCategoryId != null) {
@@ -142,7 +142,7 @@ public class EsProductServiceImpl implements EsProductService {
             //按新品从新到旧
             nativeSearchQueryBuilder.withSort(SortBuilders.fieldSort("id").order(SortOrder.DESC));
         }else if(sort==2){
-            //按销量从高到低
+            //按Sales从高到低
             nativeSearchQueryBuilder.withSort(SortBuilders.fieldSort("sale").order(SortOrder.DESC));
         }else if(sort==3){
             //按价格从低到高
@@ -169,7 +169,7 @@ public class EsProductServiceImpl implements EsProductService {
             String keyword = esProduct.getName();
             Long brandId = esProduct.getBrandId();
             Long productCategoryId = esProduct.getProductCategoryId();
-            //according to商品标题、品牌、分类进行搜索
+            //according to商品标题、品牌、minutes类进行搜索
             List<FunctionScoreQueryBuilder.FilterFunctionBuilder> filterFunctionBuilders = new ArrayList<>();
             filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.matchQuery("name", keyword),
                     ScoreFunctionBuilders.weightFactorFunction(8)));
@@ -207,7 +207,7 @@ public class EsProductServiceImpl implements EsProductService {
         }
         //聚合搜索brand name
         builder.addAggregation(AggregationBuilders.terms("brandNames").field("brandName"));
-        //集合搜索分类名称
+        //集合搜索minutes类Name
         builder.addAggregation(AggregationBuilders.terms("productCategoryNames").field("productCategoryName"));
         //聚合搜索商品Attributes，去除type=1的Attributes
         AbstractAggregationBuilder aggregationBuilder = AggregationBuilders.nested("allAttrValues","attrValueList")
@@ -239,7 +239,7 @@ public class EsProductServiceImpl implements EsProductService {
             brandNameList.add(((Terms) brandNames).getBuckets().get(i).getKeyAsString());
         }
         productRelatedInfo.setBrandNames(brandNameList);
-        //设置分类
+        //设置minutes类
         Aggregation productCategoryNames = aggregationMap.get("productCategoryNames");
         List<String> productCategoryNameList = new ArrayList<>();
         for(int i=0;i<((Terms) productCategoryNames).getBuckets().size();i++){

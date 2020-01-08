@@ -32,12 +32,12 @@ public interface EsProductService {
     void delete(List<Long> ids);
 
     /**
-     * according toKeywords搜索名称或者副标题
+     * according toKeywords搜索Name或者Subtitle
      */
     Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize);
 
     /**
-     * according toKeywords搜索名称或者副标题复合查询
+     * according toKeywords搜索Name或者Subtitle复合查询
      */
     Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort);
 
@@ -47,7 +47,7 @@ public interface EsProductService {
     Page<EsProduct> recommend(Long id, Integer pageNum, Integer pageSize);
 
     /**
-     * 获取搜索词相关品牌、分类、Attributes
+     * 获取搜索词相关品牌、minutes类、Attributes
      */
     EsProductRelatedInfo searchRelatedInfo(String keyword);
 }

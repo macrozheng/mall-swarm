@@ -31,15 +31,15 @@ public class UmsMemberCouponController {
     @Autowired
     private UmsMemberService memberService;
 
-    @ApiOperation("领取指定优惠券")
+    @ApiOperation("Membership registration")
     @RequestMapping(value = "/add/{couponId}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@PathVariable Long couponId) {
         return memberCouponService.add(couponId);
     }
 
-    @ApiOperation("获取User优惠券列表")
-    @ApiImplicitParam(name = "useStatus", value = "优惠券筛选类型:0->未使用；1->已使用；2->已过期",
+    @ApiOperation("Get user coupon list")
+    @ApiImplicitParam(name = "useStatus", value = "Coupon filter type: 0-> unused; 1-> used; 2-> expired",
             allowableValues = "0,1,2", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
@@ -48,8 +48,8 @@ public class UmsMemberCouponController {
         return CommonResult.success(couponHistoryList);
     }
 
-    @ApiOperation("获取登录Member购物车的相关优惠券")
-    @ApiImplicitParam(name = "type", value = "使用可用:0->不可用；1->可用",
+    @ApiOperation("Get related coupons for login member shopping carts")
+    @ApiImplicitParam(name = "type", value = "Availability: 0->Not available; 1-> Available",
             defaultValue = "1", allowableValues = "0,1", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/list/cart/{type}", method = RequestMethod.GET)
     @ResponseBody

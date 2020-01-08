@@ -1,7 +1,7 @@
 package com.macro.mall.portal.domain;
 
 /**
- * 生成订单时传入的parameter
+ * Parameter passed in when order is generated
  * Created by macro on 2018/8/30.
  */
 public class OrderParam {
@@ -9,7 +9,7 @@ public class OrderParam {
     private Long memberReceiveAddressId;
     //Coupon id
     private Long couponId;
-    //使用的积分数
+    //Integration number used
     private Integer useIntegration;
     //Payment method
     private Integer payType;

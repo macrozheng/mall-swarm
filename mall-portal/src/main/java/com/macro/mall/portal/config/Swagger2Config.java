@@ -38,8 +38,8 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("mall前台Systematic")
-                .description("mall前台模块")
+                .title("mall front systematic")
+                .description("mall foreground module")
                 .contact("macro")
                 .version("1.0")
                 .build();

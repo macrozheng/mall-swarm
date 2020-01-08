@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 订单Product information自定义Dao
+ * Order Item information custom Dao
  * Created by macro on 2018/9/3.
  */
 public interface PortalOrderItemDao {

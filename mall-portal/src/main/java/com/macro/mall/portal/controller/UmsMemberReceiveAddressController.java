@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * MemberShipping address management Controller
+ * Member receiving address management controller
  * Created by macro on 2018/8/28.
  */
 @Controller
-@Api(tags = "UmsMemberReceiveAddressController", description = "MemberShipping address management")
+@Api(tags = "UmsMemberReceiveAddressController", description = "Member receiving address management")
 @RequestMapping("/member/address")
 public class UmsMemberReceiveAddressController {
     @Autowired
     private UmsMemberReceiveAddressService memberReceiveAddressService;
 
-    @ApiOperation("添加Shipping address")
+    @ApiOperation("Add shipping address")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody UmsMemberReceiveAddress address) {
@@ -33,7 +33,7 @@ public class UmsMemberReceiveAddressController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("删除Shipping address")
+    @ApiOperation("Delete shipping address")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
@@ -44,7 +44,7 @@ public class UmsMemberReceiveAddressController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改Shipping address")
+    @ApiOperation("Modify shipping address")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody UmsMemberReceiveAddress address) {
@@ -55,7 +55,7 @@ public class UmsMemberReceiveAddressController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("Show所有Shipping address")
+    @ApiOperation("Show all ship to addresses")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsMemberReceiveAddress>> list() {
@@ -63,7 +63,7 @@ public class UmsMemberReceiveAddressController {
         return CommonResult.success(addressList);
     }
 
-    @ApiOperation("Show所有Shipping address")
+    @ApiOperation("Show all ship to addresses")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<UmsMemberReceiveAddress> getItem(@PathVariable Long id) {

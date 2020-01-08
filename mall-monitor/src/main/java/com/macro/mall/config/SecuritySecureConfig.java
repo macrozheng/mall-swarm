@@ -25,20 +25,20 @@ public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
         successHandler.setDefaultTargetUrl(adminContextPath + "/");
 
         http.authorizeRequests()
-                //1.配置所有静态资源和登录页可以公开访问
+                //1.Configure all static resources and landing pages to be publicly accessible
                 .antMatchers(adminContextPath + "/assets/**").permitAll()
                 .antMatchers(adminContextPath + "/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                //2.配置登录和登出路径
+                //2.Configure login and logout paths
                 .formLogin().loginPage(adminContextPath + "/login").successHandler(successHandler).and()
                 .logout().logoutUrl(adminContextPath + "/logout").and()
-                //3.开启http basicSupport，admin-client注册时需要使用
+                //3.Turn on http basic support, admin-client registration is required
                 .httpBasic().and()
                 .csrf()
-                //4.开启基于cookie的csrf保护
+                //4.Enable cookie-based csrf protection
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                //5.忽略这些路径的csrf保护以便admin-client注册
+                //5.Ignore csrf protection for these paths for admin-client registration
                 .ignoringAntMatchers(
                         adminContextPath + "/instances",
                         adminContextPath + "/actuator/**"

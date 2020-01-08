@@ -13,7 +13,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.List;
 
 /**
- * User地址managementService实现类
+ * User address managementService implementation class
  * Created by macro on 2018/8/28.
  */
 @Service

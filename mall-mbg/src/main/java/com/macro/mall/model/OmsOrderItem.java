@@ -38,7 +38,7 @@ public class OmsOrderItem implements Serializable {
     @ApiModelProperty(value = "Category ID")
     private Long productCategoryId;
 
-    @ApiModelProperty(value = "Product sales Attributes")
+    @ApiModelProperty(value = "Product Audit status: 0 - > not approved; 1 - > approved Attributes")
     private String sp1;
 
     private String sp2;
@@ -64,7 +64,7 @@ public class OmsOrderItem implements Serializable {
 
     private Integer giftGrowth;
 
-    @ApiModelProperty(value = "Product Sales Attributes:[{'key':'colour','value':'colour'},{'key':'capacity','value':'4G'}]")
+    @ApiModelProperty(value = "Product Audit status: 0 - > not approved; 1 - > approved Attributes:[{'key':'colour','value':'colour'},{'key':'capacity','value':'4G'}]")
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

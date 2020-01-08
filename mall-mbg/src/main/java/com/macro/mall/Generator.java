@@ -10,27 +10,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 用于生产MBG的代码
+ * Code used to produce MBG
  * Created by macro on 2018/4/26.
  */
 public class Generator {
     public static void main(String[] args) throws Exception {
-        //MBG 执行过程中的警告信息
+        //Warning messages during MBG execution
         List<String> warnings = new ArrayList<String>();
-        //当生成的代码重复时，覆盖原代码
+        //When the generated code is repeated, the original code is overwritten
         boolean overwrite = true;
-        //读取我们的 MBG 配置文件
+        //Read our MBG configuration file
         InputStream is = Generator.class.getResourceAsStream("/generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(is);
         is.close();
 
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-        //创建 MBG
+        //Create MBG
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-        //执行生成代码
+        //Execute build code
         myBatisGenerator.generate(null);
-        //输出警告信息
+        //Output warning information
         for (String warning : warnings) {
             System.out.println(warning);
         }

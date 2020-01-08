@@ -15,49 +15,49 @@ public class UmsMember implements Serializable {
     @ApiModelProperty(value = "password")
     private String password;
 
-    @ApiModelProperty(value = "昵称")
+    @ApiModelProperty(value = "nickname")
     private String nickname;
 
-    @ApiModelProperty(value = "手机号码")
+    @ApiModelProperty(value = "mobile phone number")
     private String phone;
 
-    @ApiModelProperty(value = "帐号Enabled:0->禁用；1->Enable")
+    @ApiModelProperty(value = "Account enabling status: 0 - > Disable; 1 - > Enable")
     private Integer status;
 
-    @ApiModelProperty(value = "注册时间")
+    @ApiModelProperty(value = "Registration time")
     private Date createTime;
 
-    @ApiModelProperty(value = "头像")
+    @ApiModelProperty(value = "Icon")
     private String icon;
 
-    @ApiModelProperty(value = "性别：0->未知；1->男；2->女")
+    @ApiModelProperty(value = "Gender: 0 - > unknown; 1 - > male; 2 - > female")
     private Integer gender;
 
-    @ApiModelProperty(value = "生日")
+    @ApiModelProperty(value = "Birthday")
     private Date birthday;
 
-    @ApiModelProperty(value = "所做City")
+    @ApiModelProperty(value = "The city you're Living")
     private String city;
 
-    @ApiModelProperty(value = "职业")
+    @ApiModelProperty(value = "Job")
     private String job;
 
-    @ApiModelProperty(value = "个性签名")
+    @ApiModelProperty(value = "Signature")
     private String personalizedSignature;
 
-    @ApiModelProperty(value = "User来源")
+    @ApiModelProperty(value = "User source")
     private Integer sourceType;
 
-    @ApiModelProperty(value = "积分")
+    @ApiModelProperty(value = "Integration")
     private Integer integration;
 
-    @ApiModelProperty(value = "成长值")
+    @ApiModelProperty(value = "Growth value")
     private Integer growth;
 
-    @ApiModelProperty(value = "剩余抽奖次数")
+    @ApiModelProperty(value = "The remaining Lucky number")
     private Integer luckeyCount;
 
-    @ApiModelProperty(value = "历史积分数量")
+    @ApiModelProperty(value = "Number of historical points")
     private Integer historyIntegration;
 
     private static final long serialVersionUID = 1L;

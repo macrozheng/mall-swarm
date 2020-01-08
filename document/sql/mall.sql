@@ -47,7 +47,7 @@ CREATE TABLE `cms_help_category` (
   `show_status` int(2) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='帮助分类表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='帮助minutes类表';
 
 -- ----------------------------
 -- Records of cms_help_category
@@ -144,18 +144,18 @@ CREATE TABLE `cms_subject` (
 -- ----------------------------
 -- Records of cms_subject
 -- ----------------------------
-INSERT INTO `cms_subject` VALUES ('1', '1', '轮廓分明，双摄手机映现细腻美照', 'https://img10.360buyimg.com/mobilecms/s1500x600_jfs/t26434/217/1381240043/254214/290f9d5b/5bc6c11cN54567a27.jpg!q70.jpg', null, '1', '2018-11-11 13:26:55', '100', '1000', '100', null, '手机对于拍照党来说，已经不仅仅Yes通讯tool那么简单了。因为有时TA还充当着“单反”的角色，来不断地带给那些喜欢拍照的人惊喜。所以，在这里准备一波高颜值的双摄手机来给大家。让TA们灵敏捕捉影像的能力，为你展现出轮廓更加分明、且画质更加细腻的美照。', '1', null, null, '精选专题');
+INSERT INTO `cms_subject` VALUES ('1', '1', '轮廓minutes明，双摄手机映现细腻美照', 'https://img10.360buyimg.com/mobilecms/s1500x600_jfs/t26434/217/1381240043/254214/290f9d5b/5bc6c11cN54567a27.jpg!q70.jpg', null, '1', '2018-11-11 13:26:55', '100', '1000', '100', null, '手机对于拍照党来说，已经不仅仅Yes通讯tool那么简单了。因为有时TA还充当着“单反”的角色，来不断地带给那些喜欢拍照的人惊喜。所以，在这里准备一波高颜值的双摄手机来给大家。让TA们灵敏捕捉影像的能力，为你展现出轮廓更加minutes明、且画质更加细腻的美照。', '1', null, null, '精选专题');
 INSERT INTO `cms_subject` VALUES ('2', '1', '交通拥挤有妙招，电动车小巧穿行无障碍', 'https://img11.360buyimg.com/mobilecms/s1500x600_jfs/t14224/229/529700229/74868/a1cc7364/5a314f85N5bfd22c7.jpg!q70.jpg', null, '1', '2018-11-12 13:27:00', '100', '1000', '100', null, '随着人们消费水平的提高，公路上的小车Yes越来越多了，导致每到上下班高峰期的时候，大路的车辆堵了一环又一环，而且你根本不知道它到底会塞多久，所以我们需要变通一下，不妨骑上电动车来个绿色出行，它够小巧玲珑，即使交通再怎么拥挤，也总有它可以通过的地方。', '1', null, null, '精选专题');
 INSERT INTO `cms_subject` VALUES ('3', '1', '无酒不成席，甘香白酒开怀助兴', 'https://img12.360buyimg.com/mobilecms/s1500x600_jfs/t1/881/4/12265/114011/5bd1446fEc71114bf/68925bfb4a2adc44.jpg!q70.jpg', null, '1', '2018-11-13 13:27:05', '100', '1000', '100', null, '白酒Yes由各种优质的高粱，小麦，大米等谷物为原料，经过传统工艺的长时间酿造，酒液在这样的环境中慢慢发酵，最终变成清香浓郁的白酒，被摆上人们的餐桌，供人畅饮，Yes一种受到大众喜爱的绝佳饮品。', '1', null, null, '精选专题');
 INSERT INTO `cms_subject` VALUES ('4', '2', '真规划不盲扫，全域清洁净无尘', 'https://img10.360buyimg.com/mobilecms/s1500x600_jfs/t15205/35/2539924281/429185/72fa7857/5aab2c4bN6a32a6c5.png', null, '1', '2018-11-01 13:27:09', '100', '1000', '100', null, '科技时代，聪明女人会选择用智慧来减负，和繁琐的家务挥手再见，才能腾出更多休闲时间。规划式扫地机器人设计个性化，它能够跟据房间布置呈现清扫路线，实现规划式覆盖性清洁，少遗漏不盲扫，从而大幅度降低损耗，侦测technology遇到家具及时避让，杜绝猛烈撞击，任它灵巧穿梭于低矮空间，坐享居家净无尘。', '1', null, null, '家电专题');
-INSERT INTO `cms_subject` VALUES ('5', '2', '抑菌更纯净，直饮净水保家人健康', 'https://img11.360buyimg.com/mobilecms/s1500x600_jfs/t11428/340/1504074828/20474/1e8cab1e/5a0305d3Nb1e7a762.jpg!q70.jpg', null, '1', '2018-11-06 13:27:18', '100', '1000', '100', null, '在城里居住，首先要担心的Yes饮水问题。桶装水太贵不够经济，还不一定Yes干净的。自己去干净的水源地取水也不切实际。此时只有选择在家里安装一台净水器才实在。装上一台直饮式的净水器，方便安全，关键Yes水质过滤得比较纯净，很大限度地处理了大部分的废弃物，留下健康的矿物质水。好生活，从一口干净的纯净水开始。', '1', null, null, '家电专题');
+INSERT INTO `cms_subject` VALUES ('5', '2', '抑菌更纯净，直饮净水保家人健康', 'https://img11.360buyimg.com/mobilecms/s1500x600_jfs/t11428/340/1504074828/20474/1e8cab1e/5a0305d3Nb1e7a762.jpg!q70.jpg', null, '1', '2018-11-06 13:27:18', '100', '1000', '100', null, '在城里居住，首先要担心的Yes饮水问题。桶装水太贵不够经济，还不一定Yes干净的。自己去干净的水源地取水也不切实际。此时只有选择在家里安装一台净水器才实在。装上一台直饮式的净水器，方便安全，关键Yes水质过滤得比较纯净，很大限度地处理了大部minutes的废弃物，留下健康的矿物质水。好生活，从一口干净的纯净水开始。', '1', null, null, '家电专题');
 INSERT INTO `cms_subject` VALUES ('6', '2', '储鲜冷冻灵活变，多门无霜更贴心', 'https://img12.360buyimg.com/mobilecms/s1500x600_jfs/t13015/356/2397552584/605232/46c88e6e/5a5321bcN6a8866f0.png', null, '1', '2018-11-07 13:27:21', '100', '1000', '100', null, '春节临近，每个家庭都要储备不少食材，但各种食材的保鲜方式与温度不尽相同，而多门风冷冰箱能轻松满足您。它们容积大占地小，拥有多个可以独立调节温度的温Area，满足对不同类食材的存放需求，同时Province去除霜烦恼，还可以通过温度调节满足您对大冷藏及大冷冻的需求变化，从而带来更好的保鲜冷冻体验，为新年宴请保驾护航。', '1', null, null, '家电专题');
 INSERT INTO `cms_subject` VALUES ('7', '2', '想喝健康水，就用304不锈钢热水壶', 'https://img13.360buyimg.com/mobilecms/s1500x600_jfs/t12541/90/443985343/33603/65d6e884/5a0bb77aNff08550a.jpg!q70.jpg', null, '1', '2019-01-29 11:21:55', '100', '1000', '100', null, '大冬天的喝一口热水，不仅能够暧身还可以给身体补充足够的水份，但Yes对于热水壶的购买却Yes需要慎之又慎，材质不好的热水壶在烧水的过程当中极容易产生对身体不利的有害物，极大影响人们的身体健康。304不锈钢热水壶选用食品级不不锈钢，确保水质安全，烧水健康好水，为您的饮水健康保驾护航。', '1', null, null, '家电专题');
 INSERT INTO `cms_subject` VALUES ('8', '2', '你尽情赖床！早餐“煲”在它身上', 'https://img14.360buyimg.com/mobilecms/s1500x600_jfs/t15949/363/1450937723/89513/7d8c1219/5a531d28N2aaec2a6.jpg!q70.jpg', null, '1', '2019-01-29 13:07:13', '100', '1000', '100', null, '赖床不想起，饿了的时候想吃饭又要现做等待简直饥肠辘辘让人心烦，所以一款带有预约功能的电饭煲简直不要太贴心，你睡懒觉的时候它已经给你做好了香滑软糯的粥，起床就能享美味YesNo很贴心呐。', '1', null, null, '家电专题');
 INSERT INTO `cms_subject` VALUES ('9', '2', '小白变大厨，微波炉为实力加持', 'https://img10.360buyimg.com/mobilecms/s1500x600_jfs/t1/8774/21/11460/38908/5c2cbfcfEdab1ef03/d5800f0f7cf05b38.jpg!q70.jpg', null, '1', '2019-01-29 13:08:18', '100', '1000', '100', null, '对于厨艺小白而言，没有什么能比掌握好火候更来得困难的了！毕竟烹饪出食物的味道好坏，很大程度上还Yes对火候的掌控，想要轻松掌握火候，当然少不了一款微波炉的撑场，内设多功能，满足不同的烹饪需求，简单方便易操作，让厨艺小白秒变大师！', '1', null, null, '家电专题');
 INSERT INTO `cms_subject` VALUES ('10', '2', '十秒鲜榨，冬日把爱浓缩成杯果汁', 'https://img11.360buyimg.com/mobilecms/s1500x600_jfs/t13708/126/308291722/542847/26ee6edd/5a07dc72N3252a9e0.png', null, '1', '2019-01-29 13:10:02', '100', '1000', '100', null, '寒瑟冬日女友不喜欢吃水果，用便携迷你果汁机，撩妹又养胃。一按一转，碾压切割，简单快速制作，压榨出纯原味果汁。一键启动，十秒出汁，保留食物营养，轻轻松松粉碎食物，营养在手，说走就走。', '1', null, null, '家电专题');
 INSERT INTO `cms_subject` VALUES ('11', '3', '饭点未到肚已空？美味饼干先充饥', 'https://img10.360buyimg.com/mobilecms/s1500x600_jfs/t13240/79/443357432/38567/94792c4c/5a0ba054N89388654.jpg!q70.jpg', null, '1', '2019-01-29 13:10:45', '100', '1000', '100', null, '一上午都把精力集中在工作中，刚闲下来就发现自己已Yes饥肠辘辘了，可饭点却还没到，怎么办呢？不妨让这些美味饼干先帮你充充饥吧！酥香松脆有营养，每一口都让人回味无穷，既能满足你挑剔的味蕾又能起到果腹效果，快快为自己备上吧！', '1', null, null, '美食专题');
-INSERT INTO `cms_subject` VALUES ('12', '3', '赖床无罪，香酥面包营养又便捷', 'https://img11.360buyimg.com/mobilecms/s1500x600_jfs/t9775/33/1197239610/38547/34899011/59ddbd01N0bd693bb.jpg!q70.jpg', null, '1', '2019-01-29 13:11:41', '100', '1000', '100', null, '赖床Yes很多年轻人的通病，特别Yes秋冬季节，都会恋恋不舍温暖的被窝。对于苦逼的上班族来说，就算再多睡几分钟，还Yes要起床的，甚至来不及吃早餐。面包营养丰富，能快速饱腹，且携带方便，再搭配一盒牛奶，一顿简单而不失营养的早餐能提供一天的能量，让赖床族多睡几分钟也无妨。', '1', null, null, '美食专题');
+INSERT INTO `cms_subject` VALUES ('12', '3', '赖床无罪，香酥面包营养又便捷', 'https://img11.360buyimg.com/mobilecms/s1500x600_jfs/t9775/33/1197239610/38547/34899011/59ddbd01N0bd693bb.jpg!q70.jpg', null, '1', '2019-01-29 13:11:41', '100', '1000', '100', null, '赖床Yes很多年轻人的通病，特别Yes秋冬季节，都会恋恋不舍温暖的被窝。对于苦逼的上班族来说，就算再多睡几minutes钟，还Yes要起床的，甚至来不及吃早餐。面包营养丰富，能快速饱腹，且携带方便，再搭配一盒牛奶，一顿简单而不失营养的早餐能提供一天的能量，让赖床族多睡几minutes钟也无妨。', '1', null, null, '美食专题');
 INSERT INTO `cms_subject` VALUES ('13', '3', '夹心饼干，予多重滋味交织舌尖', 'https://img12.360buyimg.com/mobilecms/s1500x600_jfs/t18877/139/652452758/27262/36e6ed6e/5a9d5b6dN327150e8.jpg!q70.jpg', null, '1', '2019-01-29 13:12:38', '100', '1000', '100', null, '饼干味道香脆可口，深受不少人的青睐。饼干的种类多样，而夹心饼干就Yes其中一种，相比ordinary饼干而言，夹心饼干有着更丰富的口感，当肚子空空如也的时候，来一些美味的夹心饼干，既能解馋，又能扛饿。下面就为大家推荐一组好吃的夹心饼干，作为办公室小零食非常不错。', '1', null, null, '美食专题');
 INSERT INTO `cms_subject` VALUES ('14', '4', '户外Party，便携音箱烘气氛', 'https://img10.360buyimg.com/mobilecms/s1500x600_jfs/t17125/265/644948348/42066/6f2dc610/5a9c9da1N9a95ee2c.jpg!q70.jpg', null, '1', '2019-01-29 13:13:53', '100', '1000', '100', null, '初春的季节，除了户外的各种踏青旅行，在户外开异常Party也Yes很惬意。户外派对，气氛的烘托肯定不能离开音箱的衬托，选择一款户外的便携音箱，无线蓝牙连接，免去有线的束缚，携带使用更方便。', '1', null, null, '数码专题');
 INSERT INTO `cms_subject` VALUES ('15', '5', '今冬潮包look，凹出绚丽女王范', 'https://img10.360buyimg.com/mobilecms/s1500x600_jfs/t8365/191/1901440450/575969/c71560c9/59c3144dNe6d8dd2f.png', null, '1', '2019-01-29 13:15:12', '100', '1000', '100', null, '潮流时尚的美包，搭配潮服，会让你魅力一直在线。因为潮包一直Yes女性出游扮美的秘籍，它不仅能够帮你收纳日常小物件，还能让你解放双手，这里推荐的时尚美包，随意搭配一件服饰，都可以让你潮范十足，凹出绚丽女王范。', '1', null, null, '服饰专题');
@@ -172,7 +172,7 @@ CREATE TABLE `cms_subject_category` (
   `show_status` int(2) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='专题分类表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='专题minutes类表';
 
 -- ----------------------------
 -- Records of cms_subject_category
@@ -264,7 +264,7 @@ CREATE TABLE `cms_topic_category` (
   `show_status` int(2) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='话题分类表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='话题minutes类表';
 
 -- ----------------------------
 -- Records of cms_topic_category
@@ -300,9 +300,9 @@ CREATE TABLE `oms_cart_item` (
   `member_id` bigint(20) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL COMMENT 'Number of purchases',
   `price` decimal(10,2) DEFAULT NULL COMMENT 'Price added to shopping cart',
-  `sp1` varchar(200) DEFAULT NULL COMMENT 'Sales Attributes1',
-  `sp2` varchar(200) DEFAULT NULL COMMENT 'Sales Attributes2',
-  `sp3` varchar(200) DEFAULT NULL COMMENT 'Sales Attributes3',
+  `sp1` varchar(200) DEFAULT NULL COMMENT 'Audit status: 0 - > not approved; 1 - > approved Attributes1',
+  `sp2` varchar(200) DEFAULT NULL COMMENT 'Audit status: 0 - > not approved; 1 - > approved Attributes2',
+  `sp3` varchar(200) DEFAULT NULL COMMENT 'Audit status: 0 - > not approved; 1 - > approved Attributes3',
   `product_pic` varchar(1000) DEFAULT NULL COMMENT 'Product main picture',
   `product_name` varchar(500) DEFAULT NULL COMMENT 'product name',
   `product_sub_title` varchar(500) DEFAULT NULL COMMENT 'Product Subtitle (Selling Point)',
@@ -314,9 +314,9 @@ CREATE TABLE `oms_cart_item` (
   `product_category_id` bigint(20) DEFAULT NULL COMMENT 'Product Categories',
   `product_brand` varchar(200) DEFAULT NULL,
   `product_sn` varchar(200) DEFAULT NULL,
-  `product_attr` varchar(500) DEFAULT NULL COMMENT 'Product Sales Attributes:[{"key":"colour","value":"colour"},{"key":"capacity","value":"4G"}]',
+  `product_attr` varchar(500) DEFAULT NULL COMMENT 'Product Audit status: 0 - > not approved; 1 - > approved Attributes:[{"key":"colour","value":"colour"},{"key":"capacity","value":"4G"}]',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='购物车表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='Shopping车表';
 
 -- ----------------------------
 -- Records of oms_cart_item
@@ -407,21 +407,21 @@ CREATE TABLE `oms_order` (
 -- ----------------------------
 -- Records of oms_order
 -- ----------------------------
-INSERT INTO `oms_order` VALUES ('12', '1', '2', '201809150101000001', '2018-09-15 12:24:27', 'test', '18732.00', '16377.75', '20.00', '2344.25', '0.00', '10.00', '10.00', '0', '1', '4', '0', '', '', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '江苏Province', '常州City', '天宁Area', '东晓街道', 'xxx', '0', '0', null, null, null, null, null, '2018-10-30 14:43:49');
-INSERT INTO `oms_order` VALUES ('13', '1', '2', '201809150102000002', '2018-09-15 14:24:29', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '1', '0', '', '', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', '1000', '2018-10-11 14:04:19', null, null, null, null);
-INSERT INTO `oms_order` VALUES ('14', '1', '2', '201809130101000001', '2018-09-13 16:57:40', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '2', '0', '顺丰快递', '201707196398345', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, '2018-10-13 13:44:04', '2018-10-16 13:43:41', null, null, null);
-INSERT INTO `oms_order` VALUES ('15', '1', '2', '201809130102000002', '2018-09-13 17:03:00', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '3', '0', '顺丰快递', '201707196398346', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '1', '0', null, '2018-10-13 13:44:54', '2018-10-16 13:45:01', '2018-10-18 14:05:31', null, null);
-INSERT INTO `oms_order` VALUES ('16', '1', '2', '201809140101000001', '2018-09-14 16:16:16', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '4', '0', null, null, '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
-INSERT INTO `oms_order` VALUES ('17', '1', '2', '201809150101000003', '2018-09-15 12:24:27', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '0', '1', '4', '0', '顺丰快递', '201707196398345', '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, '2018-10-12 14:01:28', null, null, null);
-INSERT INTO `oms_order` VALUES ('18', '1', '2', '201809150102000004', '2018-09-15 14:24:29', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '1', '0', '圆通快递', 'xx', '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', '1000', null, '2018-10-16 14:42:17', null, null, null);
-INSERT INTO `oms_order` VALUES ('19', '1', '2', '201809130101000003', '2018-09-13 16:57:40', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '2', '0', null, null, '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
-INSERT INTO `oms_order` VALUES ('20', '1', '2', '201809130102000004', '2018-09-13 17:03:00', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '3', '0', null, null, '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
-INSERT INTO `oms_order` VALUES ('21', '1', '2', '201809140101000002', '2018-09-14 16:16:16', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '4', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
-INSERT INTO `oms_order` VALUES ('22', '1', '2', '201809150101000005', '2018-09-15 12:24:27', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '0', '1', '4', '0', '顺丰快递', '201707196398345', '15', '0', '0', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, '2018-10-12 14:01:28', null, null, null);
-INSERT INTO `oms_order` VALUES ('23', '1', '2', '201809150102000006', '2018-09-15 14:24:29', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '1', '0', '顺丰快递', 'xxx', '15', '0', '0', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', '1000', null, '2018-10-16 14:41:28', null, null, null);
-INSERT INTO `oms_order` VALUES ('24', '1', '2', '201809130101000005', '2018-09-13 16:57:40', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '2', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
-INSERT INTO `oms_order` VALUES ('25', '1', '2', '201809130102000006', '2018-09-13 17:03:00', 'test', '18732.00', '16377.75', '10.00', '2344.25', '0.00', '10.00', '5.00', '1', '1', '4', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨22', '18033441849', '518000', '北京City', '北京城Area', '东城Area', '东城街道', 'xxx', '0', '0', null, null, null, null, null, '2018-10-30 15:08:31');
-INSERT INTO `oms_order` VALUES ('26', '1', '2', '201809140101000003', '2018-09-14 16:16:16', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '0', '1', '4', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00元，减120.00元,满减优惠：满1000.00元，减120.00元,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `oms_order` VALUES ('12', '1', '2', '201809150101000001', '2018-09-15 12:24:27', 'test', '18732.00', '16377.75', '20.00', '2344.25', '0.00', '10.00', '10.00', '0', '1', '4', '0', '', '', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '江苏Province', '常州City', '天宁Area', '东晓街道', 'xxx', '0', '0', null, null, null, null, null, '2018-10-30 14:43:49');
+INSERT INTO `oms_order` VALUES ('13', '1', '2', '201809150102000002', '2018-09-15 14:24:29', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '1', '0', '', '', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', '1000', '2018-10-11 14:04:19', null, null, null, null);
+INSERT INTO `oms_order` VALUES ('14', '1', '2', '201809130101000001', '2018-09-13 16:57:40', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '2', '0', '顺丰快递', '201707196398345', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, '2018-10-13 13:44:04', '2018-10-16 13:43:41', null, null, null);
+INSERT INTO `oms_order` VALUES ('15', '1', '2', '201809130102000002', '2018-09-13 17:03:00', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '3', '0', '顺丰快递', '201707196398346', '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '1', '0', null, '2018-10-13 13:44:54', '2018-10-16 13:45:01', '2018-10-18 14:05:31', null, null);
+INSERT INTO `oms_order` VALUES ('16', '1', '2', '201809140101000001', '2018-09-14 16:16:16', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '4', '0', null, null, '15', '13284', '13284', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `oms_order` VALUES ('17', '1', '2', '201809150101000003', '2018-09-15 12:24:27', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '0', '1', '4', '0', '顺丰快递', '201707196398345', '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, '2018-10-12 14:01:28', null, null, null);
+INSERT INTO `oms_order` VALUES ('18', '1', '2', '201809150102000004', '2018-09-15 14:24:29', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '1', '0', '圆通快递', 'xx', '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', '1000', null, '2018-10-16 14:42:17', null, null, null);
+INSERT INTO `oms_order` VALUES ('19', '1', '2', '201809130101000003', '2018-09-13 16:57:40', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '2', '0', null, null, '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `oms_order` VALUES ('20', '1', '2', '201809130102000004', '2018-09-13 17:03:00', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '3', '0', null, null, '15', null, null, '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `oms_order` VALUES ('21', '1', '2', '201809140101000002', '2018-09-14 16:16:16', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '4', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `oms_order` VALUES ('22', '1', '2', '201809150101000005', '2018-09-15 12:24:27', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '0', '1', '4', '0', '顺丰快递', '201707196398345', '15', '0', '0', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, '2018-10-12 14:01:28', null, null, null);
+INSERT INTO `oms_order` VALUES ('23', '1', '2', '201809150102000006', '2018-09-15 14:24:29', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '1', '1', '1', '0', '顺丰快递', 'xxx', '15', '0', '0', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', '1000', null, '2018-10-16 14:41:28', null, null, null);
+INSERT INTO `oms_order` VALUES ('24', '1', '2', '201809130101000005', '2018-09-13 16:57:40', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '2', '1', '2', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `oms_order` VALUES ('25', '1', '2', '201809130102000006', '2018-09-13 17:03:00', 'test', '18732.00', '16377.75', '10.00', '2344.25', '0.00', '10.00', '5.00', '1', '1', '4', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨22', '18033441849', '518000', '北京City', '北京城Area', '东城Area', '东城街道', 'xxx', '0', '0', null, null, null, null, null, '2018-10-30 15:08:31');
+INSERT INTO `oms_order` VALUES ('26', '1', '2', '201809140101000003', '2018-09-14 16:16:16', 'test', '18732.00', '16377.75', '0.00', '2344.25', '0.00', '10.00', '0.00', '0', '1', '4', '0', null, null, '15', '18682', '18682', '单品促销,打折优惠：满3件，打7.50折,满减优惠：满1000.00dollar，减120.00dollar,满减优惠：满1000.00dollar，减120.00dollar,无优惠', null, null, null, null, null, '大梨', '18033441849', '518000', '广东Province', '深圳City', '福田Area', '东晓街道', null, '0', '0', null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for oms_order_item
@@ -441,7 +441,7 @@ CREATE TABLE `oms_order_item` (
   `product_sku_id` bigint(20) DEFAULT NULL COMMENT 'Product SKU id',
   `product_sku_code` varchar(50) DEFAULT NULL COMMENT 'Product SKU code',
   `product_category_id` bigint(20) DEFAULT NULL COMMENT 'Category ID',
-  `sp1` varchar(100) DEFAULT NULL COMMENT 'Product sales Attributes',
+  `sp1` varchar(100) DEFAULT NULL COMMENT 'Product Audit status: 0 - > not approved; 1 - > approved Attributes',
   `sp2` varchar(100) DEFAULT NULL,
   `sp3` varchar(100) DEFAULT NULL,
   `promotion_name` varchar(200) DEFAULT NULL COMMENT 'Product promotion name',
@@ -451,7 +451,7 @@ CREATE TABLE `oms_order_item` (
   `real_amount` decimal(10,2) DEFAULT NULL COMMENT 'The amount of the product is broken down after the discount',
   `gift_integration` int(11) DEFAULT '0',
   `gift_growth` int(11) DEFAULT '0',
-  `product_attr` varchar(500) DEFAULT NULL COMMENT 'Product Sales Attributes:[{"key":"colour","value":"colour"},{"key":"capacity","value":"4G"}]',
+  `product_attr` varchar(500) DEFAULT NULL COMMENT 'Product Audit status: 0 - > not approved; 1 - > approved Attributes:[{"key":"colour","value":"colour"},{"key":"capacity","value":"4G"}]',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COMMENT='订单中所包含的商品';
 
@@ -460,28 +460,28 @@ CREATE TABLE `oms_order_item` (
 -- ----------------------------
 INSERT INTO `oms_order_item` VALUES ('21', '12', '201809150101000001', '26', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '华为 HUAWEI P20', '华为', '6946605', '3788.00', '1', '90', '201806070026001', '19', null, null, null, '单品促销', '200.00', '2.02', '0.00', '3585.98', '3788', '3788', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
 INSERT INTO `oms_order_item` VALUES ('22', '12', '201809150101000001', '27', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8', '小米', '7437788', '2699.00', '3', '98', '201808270027001', '19', null, null, null, '打折优惠：满3件，打7.50折', '674.75', '1.44', '0.00', '2022.81', '2699', '2699', '[{\"key\":\"colour\",\"value\":\"黑色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
-INSERT INTO `oms_order_item` VALUES ('23', '12', '201809150101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
-INSERT INTO `oms_order_item` VALUES ('24', '12', '201809150101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
+INSERT INTO `oms_order_item` VALUES ('23', '12', '201809150101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
+INSERT INTO `oms_order_item` VALUES ('24', '12', '201809150101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('25', '12', '201809150101000001', '29', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', 'Apple iPhone 8 Plus', '苹果', '7437799', '5499.00', '1', '106', '201808270029001', '19', null, null, null, '无优惠', '0.00', '2.94', '0.00', '5496.06', '5499', '5499', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('26', '13', '201809150102000002', '26', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '华为 HUAWEI P20', '华为', '6946605', '3788.00', '1', '90', '201806070026001', '19', null, null, null, '单品促销', '200.00', '2.02', '0.00', '3585.98', '3788', '3788', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
 INSERT INTO `oms_order_item` VALUES ('27', '13', '201809150102000002', '27', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8', '小米', '7437788', '2699.00', '3', '98', '201808270027001', '19', null, null, null, '打折优惠：满3件，打7.50折', '674.75', '1.44', '0.00', '2022.81', '2699', '2699', '[{\"key\":\"colour\",\"value\":\"黑色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
-INSERT INTO `oms_order_item` VALUES ('28', '13', '201809150102000002', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
-INSERT INTO `oms_order_item` VALUES ('29', '13', '201809150102000002', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
+INSERT INTO `oms_order_item` VALUES ('28', '13', '201809150102000002', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
+INSERT INTO `oms_order_item` VALUES ('29', '13', '201809150102000002', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('30', '13', '201809150102000002', '29', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', 'Apple iPhone 8 Plus', '苹果', '7437799', '5499.00', '1', '106', '201808270029001', '19', null, null, null, '无优惠', '0.00', '2.94', '0.00', '5496.06', '5499', '5499', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('31', '14', '201809130101000001', '26', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '华为 HUAWEI P20', '华为', '6946605', '3788.00', '1', '90', '201806070026001', '19', null, null, null, '单品促销', '200.00', '2.02', '0.00', '3585.98', '3788', '3788', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
 INSERT INTO `oms_order_item` VALUES ('32', '14', '201809130101000001', '27', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8', '小米', '7437788', '2699.00', '3', '98', '201808270027001', '19', null, null, null, '打折优惠：满3件，打7.50折', '674.75', '1.44', '0.00', '2022.81', '2699', '2699', '[{\"key\":\"colour\",\"value\":\"黑色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
-INSERT INTO `oms_order_item` VALUES ('33', '14', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
-INSERT INTO `oms_order_item` VALUES ('34', '14', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
+INSERT INTO `oms_order_item` VALUES ('33', '14', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
+INSERT INTO `oms_order_item` VALUES ('34', '14', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('35', '14', '201809130101000001', '29', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', 'Apple iPhone 8 Plus', '苹果', '7437799', '5499.00', '1', '106', '201808270029001', '19', null, null, null, '无优惠', '0.00', '2.94', '0.00', '5496.06', '5499', '5499', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('36', '15', '201809130101000001', '26', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '华为 HUAWEI P20', '华为', '6946605', '3788.00', '1', '90', '201806070026001', '19', null, null, null, '单品促销', '200.00', '2.02', '0.00', '3585.98', '3788', '3788', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
 INSERT INTO `oms_order_item` VALUES ('37', '15', '201809130101000001', '27', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8', '小米', '7437788', '2699.00', '3', '98', '201808270027001', '19', null, null, null, '打折优惠：满3件，打7.50折', '674.75', '1.44', '0.00', '2022.81', '2699', '2699', '[{\"key\":\"colour\",\"value\":\"黑色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
-INSERT INTO `oms_order_item` VALUES ('38', '15', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
-INSERT INTO `oms_order_item` VALUES ('39', '15', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
+INSERT INTO `oms_order_item` VALUES ('38', '15', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
+INSERT INTO `oms_order_item` VALUES ('39', '15', '201809130101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('40', '15', '201809130101000001', '29', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', 'Apple iPhone 8 Plus', '苹果', '7437799', '5499.00', '1', '106', '201808270029001', '19', null, null, null, '无优惠', '0.00', '2.94', '0.00', '5496.06', '5499', '5499', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('41', '16', '201809140101000001', '26', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '华为 HUAWEI P20', '华为', '6946605', '3788.00', '1', '90', '201806070026001', '19', null, null, null, '单品促销', '200.00', '2.02', '0.00', '3585.98', '3788', '3788', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
 INSERT INTO `oms_order_item` VALUES ('42', '16', '201809140101000001', '27', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8', '小米', '7437788', '2699.00', '3', '98', '201808270027001', '19', null, null, null, '打折优惠：满3件，打7.50折', '674.75', '1.44', '0.00', '2022.81', '2699', '2699', '[{\"key\":\"colour\",\"value\":\"黑色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
-INSERT INTO `oms_order_item` VALUES ('43', '16', '201809140101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
-INSERT INTO `oms_order_item` VALUES ('44', '16', '201809140101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00元，减120.00元', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
+INSERT INTO `oms_order_item` VALUES ('43', '16', '201809140101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '649.00', '1', '102', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '57.60', '0.35', '0.00', '591.05', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"16G\"}]');
+INSERT INTO `oms_order_item` VALUES ('44', '16', '201809140101000001', '28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', '7437789', '699.00', '1', '103', '201808270028001', '19', null, null, null, '满减优惠：满1000.00dollar，减120.00dollar', '62.40', '0.37', '0.00', '636.23', '649', '649', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 INSERT INTO `oms_order_item` VALUES ('45', '16', '201809140101000001', '29', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', 'Apple iPhone 8 Plus', '苹果', '7437799', '5499.00', '1', '106', '201808270029001', '19', null, null, null, '无优惠', '0.00', '2.94', '0.00', '5496.06', '5499', '5499', '[{\"key\":\"colour\",\"value\":\"金色\"},{\"key\":\"capacity\",\"value\":\"32G\"}]');
 
 -- ----------------------------
@@ -540,7 +540,7 @@ CREATE TABLE `oms_order_return_apply` (
   `product_pic` varchar(500) DEFAULT NULL COMMENT 'Product picture',
   `product_name` varchar(200) DEFAULT NULL COMMENT 'product name',
   `product_brand` varchar(200) DEFAULT NULL COMMENT 'Product brand',
-  `product_attr` varchar(500) DEFAULT NULL COMMENT 'Product Sales Attributes：colour：Red；size：xl;',
+  `product_attr` varchar(500) DEFAULT NULL COMMENT 'Product Audit status: 0 - > not approved; 1 - > approved Attributes：colour：Red；size：xl;',
   `product_count` int(11) DEFAULT NULL COMMENT 'Number of returns',
   `product_price` decimal(10,2) DEFAULT NULL COMMENT 'Product price',
   `product_real_price` decimal(10,2) DEFAULT NULL COMMENT 'The actual unit price of the product',
@@ -561,7 +561,7 @@ CREATE TABLE `oms_order_return_apply` (
 INSERT INTO `oms_order_return_apply` VALUES ('3', '12', null, '26', '201809150101000001', '2018-10-17 14:34:57', 'test', null, '大梨', '18000000000', '0', null, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '华为 HUAWEI P20', '华为', 'colour：金色;内存：16G', '1', '3788.00', '3585.98', '质量问题', '老Yes卡', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg,http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', null, null, null, null, null);
 INSERT INTO `oms_order_return_apply` VALUES ('4', '12', '2', '27', '201809150101000001', '2018-10-17 14:40:21', 'test', '3585.98', '大梨', '18000000000', '1', '2018-10-18 13:54:10', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8', '小米', 'colour：黑色;内存：32G', '1', '2699.00', '2022.81', '质量问题', '不够高端', '', '已经处理了', 'admin', null, null, null);
 INSERT INTO `oms_order_return_apply` VALUES ('5', '12', '3', '28', '201809150101000001', '2018-10-17 14:44:18', 'test', '3585.98', '大梨', '18000000000', '2', '2018-10-18 13:55:28', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', 'colour：金色;内存：16G', '1', '649.00', '591.05', '质量问题', 'colour太土', '', '已经处理了', 'admin', 'admin', '2018-10-18 13:55:58', '已经处理了');
-INSERT INTO `oms_order_return_apply` VALUES ('8', '13', null, '28', '201809150102000002', '2018-10-17 14:44:18', 'test', null, '大梨', '18000000000', '3', '2018-10-18 13:57:12', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', 'colour：金色;内存：16G', '1', '649.00', '591.05', '质量问题', 'colour太土', '', '理由不够充分', 'admin', null, null, null);
+INSERT INTO `oms_order_return_apply` VALUES ('8', '13', null, '28', '201809150102000002', '2018-10-17 14:44:18', 'test', null, '大梨', '18000000000', '3', '2018-10-18 13:57:12', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', 'colour：金色;内存：16G', '1', '649.00', '591.05', '质量问题', 'colour太土', '', '理由不够充minutes', 'admin', null, null, null);
 INSERT INTO `oms_order_return_apply` VALUES ('9', '14', '2', '26', '201809130101000001', '2018-10-17 14:34:57', 'test', '3500.00', '大梨', '18000000000', '2', '2018-10-24 15:44:56', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '华为 HUAWEI P20', '华为', 'colour：金色;内存：16G', '1', '3788.00', '3585.98', '质量问题', '老Yes卡', '', '呵呵', 'admin', 'admin', '2018-10-24 15:46:35', '收货了');
 INSERT INTO `oms_order_return_apply` VALUES ('10', '14', null, '27', '201809130101000001', '2018-10-17 14:40:21', 'test', null, '大梨', '18000000000', '3', '2018-10-24 15:46:57', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8', '小米', 'colour：黑色;内存：32G', '1', '2699.00', '2022.81', '质量问题', '不够高端', '', '就Yes不退', 'admin', null, null, null);
 INSERT INTO `oms_order_return_apply` VALUES ('11', '14', '2', '28', '201809130101000001', '2018-10-17 14:44:18', 'test', '591.05', '大梨', '18000000000', '1', '2018-10-24 17:09:04', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '红米5A', '小米', 'colour：金色;内存：16G', '1', '649.00', '591.05', '质量问题', 'colour太土', '', '可以退款', 'admin', null, null, null);
@@ -615,7 +615,7 @@ CREATE TABLE `oms_order_setting` (
   `flash_order_overtime` int(11) DEFAULT NULL COMMENT 'Flash order timeout closing time (minutes)',
   `normal_order_overtime` int(11) DEFAULT NULL COMMENT 'Normal order timeout (minutes)',
   `confirm_overtime` int(11) DEFAULT NULL COMMENT 'Automatic Confirm receipt time (days) after delivery',
-  `finish_overtime` int(11) DEFAULT NULL COMMENT 'Auto-complete trading time, can not apply for after-sales (days)',
+  `finish_overtime` int(11) DEFAULT NULL COMMENT 'Auto-complete trading time, can not apply for after-Audit status: 0 - > not approved; 1 - > approved (days)',
   `comment_overtime` int(11) DEFAULT NULL COMMENT 'Automatic positive time after order is completed (days)',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='订单设置表';
@@ -842,36 +842,36 @@ CREATE TABLE `pms_product` (
   `pic` varchar(255) DEFAULT NULL,
   `product_sn` varchar(64) NOT NULL COMMENT 'Product Serial Number',
   `delete_status` int(1) DEFAULT NULL COMMENT 'Delete status：0->Not deleted；1->Deleted',
-  `publish_status` int(1) DEFAULT NULL COMMENT 'Up-shelf status：0->下架；1->上架',
-  `new_status` int(1) DEFAULT NULL COMMENT '新品status:0->No新品；1->新品',
-  `recommand_status` int(1) DEFAULT NULL COMMENT '推荐status；0->不推荐；1->推荐',
-  `verify_status` int(1) DEFAULT NULL COMMENT 'Approval Status：0->未审核；1->审核通过',
+  `publish_status` int(1) DEFAULT NULL COMMENT 'On shelf status: 0 - > off shelf; 1 - > on shelf',
+  `new_status` int(1) DEFAULT NULL COMMENT 'New product status :0-> is not new product; 1 - >is new product',
+  `recommand_status` int(1) DEFAULT NULL COMMENT 'Recommended status; 0-> is not recommended; 1 - > recommended',
+  `verify_status` int(1) DEFAULT NULL COMMENT 'Audit status: 0 - > not approved; 1 - > approved',
   `sort` int(11) DEFAULT NULL COMMENT 'Sort',
-  `sale` int(11) DEFAULT NULL COMMENT '销量',
+  `sale` int(11) DEFAULT NULL COMMENT 'Sales',
   `price` decimal(10,2) DEFAULT NULL,
-  `promotion_price` decimal(10,2) DEFAULT NULL COMMENT '促销价格',
-  `gift_growth` int(11) DEFAULT '0' COMMENT '赠送的成长值',
-  `gift_point` int(11) DEFAULT '0' COMMENT '赠送的积分',
-  `use_point_limit` int(11) DEFAULT NULL COMMENT '限制使用的积分数',
-  `sub_title` varchar(255) DEFAULT NULL COMMENT '副标题',
-  `description` text COMMENT '商品description',
-  `original_price` decimal(10,2) DEFAULT NULL COMMENT 'City场价',
-  `stock` int(11) DEFAULT NULL COMMENT '库存',
-  `low_stock` int(11) DEFAULT NULL COMMENT '库存预警值',
-  `unit` varchar(16) DEFAULT NULL COMMENT '单位',
-  `weight` decimal(10,2) DEFAULT NULL COMMENT '商品重量，默认为克',
-  `preview_status` int(1) DEFAULT NULL COMMENT 'YesNo为预告商品：0->No；1->Yes',
-  `service_ids` varchar(64) DEFAULT NULL COMMENT '以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮',
+  `promotion_price` decimal(10,2) DEFAULT NULL COMMENT 'Promotion price',
+  `gift_growth` int(11) DEFAULT '0' COMMENT 'Growth value of gifts',
+  `gift_point` int(11) DEFAULT '0' COMMENT 'Gift Point',
+  `use_point_limit` int(11) DEFAULT NULL COMMENT 'Limit the number of points used',
+  `sub_title` varchar(255) DEFAULT NULL COMMENT 'Subtitle',
+  `description` text COMMENT 'Description',
+  `original_price` decimal(10,2) DEFAULT NULL COMMENT 'Market price',
+  `stock` int(11) DEFAULT NULL COMMENT 'Stock',
+  `low_stock` int(11) DEFAULT NULL COMMENT 'Low Stock warning value',
+  `unit` varchar(16) DEFAULT NULL COMMENT 'Unit',
+  `weight` decimal(10,2) DEFAULT NULL COMMENT 'Product weight, The default is grams',
+  `preview_status` int(1) DEFAULT NULL COMMENT 'Is it a pre notice product: 0 - > No; 1 - > Yes',
+  `service_ids` varchar(64) DEFAULT NULL COMMENT 'Comma-separated product service: 1-> worry-free return; 2-> quick refund; 3-> free free delivery',
   `keywords` varchar(255) DEFAULT NULL,
   `note` varchar(255) DEFAULT NULL,
-  `album_pics` varchar(255) DEFAULT NULL COMMENT '画册图片，连产品图片限制为5张，以逗号分割',
+  `album_pics` varchar(255) DEFAULT NULL COMMENT 'Album pictures, even product pictures are limited to 5, separated by commas',
   `detail_title` varchar(255) DEFAULT NULL,
   `detail_desc` text,
-  `detail_html` text COMMENT '产品详情网页内容',
-  `detail_mobile_html` text COMMENT '移动端网页详情',
-  `promotion_start_time` datetime DEFAULT NULL COMMENT '促销开始时间',
-  `promotion_end_time` datetime DEFAULT NULL COMMENT '促销结束时间',
-  `promotion_per_limit` int(11) DEFAULT NULL COMMENT '活动限购数量',
+  `detail_html` text COMMENT 'Product details page content',
+  `detail_mobile_html` text COMMENT 'Mobile web page details',
+  `promotion_start_time` datetime DEFAULT NULL COMMENT 'Promotion start time',
+  `promotion_end_time` datetime DEFAULT NULL COMMENT 'Promotion end time',
+  `promotion_per_limit` int(11) DEFAULT NULL COMMENT 'Limited number of Promotion',
   `promotion_type` int(1) DEFAULT NULL COMMENT '促销类型：0->没有促销使用原价;1->使用促销价；2->使用Member价；3->使用Ladder price；4->使用Full discount；5->限时购',
   `brand_name` varchar(255) DEFAULT NULL COMMENT 'brand name',
   `product_category_name` varchar(255) DEFAULT NULL COMMENT 'Product category name',
@@ -903,7 +903,7 @@ INSERT INTO `pms_product` VALUES ('26', '3', '19', '0', '3', '华为 HUAWEI P20 
 INSERT INTO `pms_product` VALUES ('27', '6', '19', '0', '3', '小米8 全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '7437788', '0', '1', '1', '1', '0', '0', '0', '2699.00', null, '2699', '2699', '0', '骁龙845处理器，红外人脸解锁，AI变焦双摄，AI语音助手小米6X低至1299，点击抢购', '小米8 全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待', '2699.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '<p><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b2254e8N414e6d3a.jpg\" width=\"500\" /></p>', '', null, null, '0', '3', '小米', '手机通讯');
 INSERT INTO `pms_product` VALUES ('28', '6', '19', '0', '3', '小米 红米5A 全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '7437789', '0', '1', '1', '1', '0', '0', '0', '649.00', null, '649', '649', '0', '8天超长待机，137g轻巧机身，高通骁龙处理器小米6X低至1299，点击抢购', '', '649.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '', '', null, null, '0', '4', '小米', '手机通讯');
 INSERT INTO `pms_product` VALUES ('29', '51', '19', '0', '3', 'Apple iPhone 8 Plus 64GB Red特别版 移动联通电信4G手机', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', '7437799', '0', '1', '1', '0', '0', '0', '0', '5499.00', null, '5499', '5499', '0', '【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。', '', '5499.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '', '', null, null, '0', '0', '苹果', '手机通讯');
-INSERT INTO `pms_product` VALUES ('30', '50', '8', '0', '1', 'HLA海澜之家简约动物印花短袖T恤', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5ad83a4fN6ff67ecd.jpg!cc_350x449.jpg', 'HNTBJ2E042A', '0', '1', '1', '1', '0', '0', '0', '98.00', null, '0', '0', '0', '2018夏季新品微弹舒适新款短T男生 6月6日-6月20日，满300减30，参与互动赢百元礼券，立即分享赢大奖', '', '98.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '', '', null, null, '0', '0', '海澜之家', 'T恤');
+INSERT INTO `pms_product` VALUES ('30', '50', '8', '0', '1', 'HLA海澜之家简约动物印花短袖T恤', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5ad83a4fN6ff67ecd.jpg!cc_350x449.jpg', 'HNTBJ2E042A', '0', '1', '1', '1', '0', '0', '0', '98.00', null, '0', '0', '0', '2018夏季新品微弹舒适新款短T男生 6月6日-6月20日，满300减30，参与互动赢百dollar礼券，立即minutes享赢大奖', '', '98.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '', '', null, null, '0', '0', '海澜之家', 'T恤');
 INSERT INTO `pms_product` VALUES ('31', '50', '8', '0', '1', 'HLA海澜之家蓝灰花纹圆领针织布短袖T恤', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5ac98b64N70acd82f.jpg!cc_350x449.jpg', 'HNTBJ2E080A', '0', '1', '0', '0', '0', '0', '0', '98.00', null, '0', '0', '0', '2018夏季新品短袖T恤男HNTBJ2E080A 蓝灰花纹80 175/92A/L80A 蓝灰花纹80 175/92A/L', '', '98.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '', '', null, null, '0', '0', '海澜之家', 'T恤');
 INSERT INTO `pms_product` VALUES ('32', '50', '8', '0', null, 'HLA海澜之家短袖T恤男基础款', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a51eb88Na4797877.jpg', 'HNTBJ2E153A', '0', '1', '0', '0', '0', '0', '0', '68.00', null, '0', '0', '0', 'HLA海澜之家短袖T恤男基础款简约圆领HNTBJ2E153A藏青(F3)175/92A(50)', '', '68.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '', '', null, null, '0', '0', '海澜之家', 'T恤');
 INSERT INTO `pms_product` VALUES ('33', '6', '35', '0', null, '小米（MI）小米电视4A ', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b02804dN66004d73.jpg', '4609652', '0', '1', '0', '0', '0', '0', '0', '2499.00', null, '0', '0', '0', '小米（MI）小米电视4A 55英寸 L55M5-AZ/L55M5-AD 2GB+8GB HDR 4K超高清 人工智能网络液晶平板电视', '', '2499.00', '100', '0', '', '0.00', '0', '', '', '', '', '', '', '', '', null, null, '0', '0', '小米', '手机数码');
@@ -945,7 +945,7 @@ INSERT INTO `pms_product_attribute` VALUES ('18', '0', '上City年份5', '1', '1
 INSERT INTO `pms_product_attribute` VALUES ('19', '0', '适用对象', '1', '1', '青年女性,中年女性', '0', '0', '0', '0', '0', '1');
 INSERT INTO `pms_product_attribute` VALUES ('20', '0', '适用对象1', '2', '1', '青年女性,中年女性', '0', '0', '0', '0', '0', '1');
 INSERT INTO `pms_product_attribute` VALUES ('21', '0', '适用对象3', '2', '1', '青年女性,中年女性', '0', '0', '0', '0', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('24', '1', '商品编号', '1', '0', '', '0', '0', '0', '0', '0', '1');
+INSERT INTO `pms_product_attribute` VALUES ('24', '1', '商品Number', '1', '0', '', '0', '0', '0', '0', '0', '1');
 INSERT INTO `pms_product_attribute` VALUES ('25', '1', '适用季节', '1', '1', '春季,夏季,秋季,冬季', '0', '0', '0', '0', '0', '1');
 INSERT INTO `pms_product_attribute` VALUES ('32', '2', '适用人群', '0', '1', '老年,青年,中年', '0', '0', '0', '0', '0', '1');
 INSERT INTO `pms_product_attribute` VALUES ('33', '2', '风格', '0', '1', '嘻哈风格,基础大众,商务正装', '0', '0', '0', '0', '0', '1');
@@ -970,10 +970,10 @@ DROP TABLE IF EXISTS `pms_product_attribute_category`;
 CREATE TABLE `pms_product_attribute_category` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) DEFAULT NULL,
-  `attribute_count` int(11) DEFAULT '0' COMMENT 'Attributes数量',
-  `param_count` int(11) DEFAULT '0' COMMENT 'parameter数量',
+  `attribute_count` int(11) DEFAULT '0' COMMENT 'The number of Attributes',
+  `param_count` int(11) DEFAULT '0' COMMENT 'The number of Parameter',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='产品Attributes分类表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='产品Attributesminutes类表';
 
 -- ----------------------------
 -- Records of pms_product_attribute_category
@@ -984,7 +984,7 @@ INSERT INTO `pms_product_attribute_category` VALUES ('3', '手机数码-手机�
 INSERT INTO `pms_product_attribute_category` VALUES ('4', '配件', '0', '0');
 INSERT INTO `pms_product_attribute_category` VALUES ('5', '居家', '0', '0');
 INSERT INTO `pms_product_attribute_category` VALUES ('6', '洗护', '0', '0');
-INSERT INTO `pms_product_attribute_category` VALUES ('10', '测试分类', '0', '0');
+INSERT INTO `pms_product_attribute_category` VALUES ('10', '测试minutes类', '0', '0');
 
 -- ----------------------------
 -- Table structure for pms_product_attribute_value
@@ -994,7 +994,7 @@ CREATE TABLE `pms_product_attribute_value` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_id` bigint(20) DEFAULT NULL,
   `product_attribute_id` bigint(20) DEFAULT NULL,
-  `value` varchar(64) DEFAULT NULL COMMENT '手动添加specification或parameter的值，parameter单值，specification有多个时Separated by commas',
+  `value` varchar(64) DEFAULT NULL COMMENT 'Manually add the value of specification or parameter, single value of parameter, separated by comma when there are multiple specifications',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=228 DEFAULT CHARSET=utf8 COMMENT='存储产品parameter信息的表';
 
@@ -1078,24 +1078,24 @@ INSERT INTO `pms_product_attribute_value` VALUES ('227', '29', '48', '1960ml');
 DROP TABLE IF EXISTS `pms_product_category`;
 CREATE TABLE `pms_product_category` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) DEFAULT NULL COMMENT '上机分类的编号：0表示一级分类',
+  `parent_id` bigint(20) DEFAULT NULL COMMENT 'No. of upper computer classification: 0 indicates first level classification',
   `name` varchar(64) DEFAULT NULL,
-  `level` int(1) DEFAULT NULL COMMENT '分类级别：0->1级；1->2级',
+  `level` int(1) DEFAULT NULL COMMENT 'Classification level：0->1级；1->2级',
   `product_count` int(11) DEFAULT NULL,
   `product_unit` varchar(64) DEFAULT NULL,
-  `nav_status` int(1) DEFAULT NULL COMMENT 'YesNoShow在导航栏：0->Do not show；1->Show',
+  `nav_status` int(1) DEFAULT NULL COMMENT 'Display in navigation bar: 0 - > Don't Show; 1 - > Show',
   `show_status` int(1) DEFAULT NULL COMMENT 'Display state：0->Do not show；1->Show',
   `sort` int(11) DEFAULT NULL,
   `icon` varchar(255) DEFAULT NULL COMMENT 'icon',
   `keywords` varchar(255) DEFAULT NULL,
   `description` text COMMENT 'description',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='产品分类';
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='产品minutes类';
 
 -- ----------------------------
 -- Records of pms_product_category
 -- ----------------------------
-INSERT INTO `pms_product_category` VALUES ('1', '0', '服装', '0', '100', '件', '1', '1', '1', null, '服装', '服装分类');
+INSERT INTO `pms_product_category` VALUES ('1', '0', '服装', '0', '100', '件', '1', '1', '1', null, '服装', '服装minutes类');
 INSERT INTO `pms_product_category` VALUES ('2', '0', '手机数码', '0', '100', '件', '1', '1', '1', null, '手机数码', '手机数码');
 INSERT INTO `pms_product_category` VALUES ('3', '0', '家用电器', '0', '100', '件', '1', '1', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/subject_cate_jiadian.png', '家用电器', '家用电器');
 INSERT INTO `pms_product_category` VALUES ('4', '0', '家具家装', '0', '100', '件', '1', '1', '1', null, '家具家装', '家具家装');
@@ -1104,9 +1104,9 @@ INSERT INTO `pms_product_category` VALUES ('7', '1', '外套', '1', '100', '件'
 INSERT INTO `pms_product_category` VALUES ('8', '1', 'T恤', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_tshirt.png', 'T恤', 'T恤');
 INSERT INTO `pms_product_category` VALUES ('9', '1', '休闲裤', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_xiuxianku.png', '休闲裤', '休闲裤');
 INSERT INTO `pms_product_category` VALUES ('10', '1', '牛仔裤', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_niuzaiku.png', '牛仔裤', '牛仔裤');
-INSERT INTO `pms_product_category` VALUES ('11', '1', '衬衫', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_chenshan.png', '衬衫', '衬衫分类');
-INSERT INTO `pms_product_category` VALUES ('13', '12', '家电子分类1', '1', '1', 'string', '0', '1', '0', 'string', 'string', 'string');
-INSERT INTO `pms_product_category` VALUES ('14', '12', '家电子分类2', '1', '1', 'string', '0', '1', '0', 'string', 'string', 'string');
+INSERT INTO `pms_product_category` VALUES ('11', '1', '衬衫', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_chenshan.png', '衬衫', '衬衫minutes类');
+INSERT INTO `pms_product_category` VALUES ('13', '12', '家电子minutes类1', '1', '1', 'string', '0', '1', '0', 'string', 'string', 'string');
+INSERT INTO `pms_product_category` VALUES ('14', '12', '家电子minutes类2', '1', '1', 'string', '0', '1', '0', 'string', 'string', 'string');
 INSERT INTO `pms_product_category` VALUES ('19', '2', '手机通讯', '1', '0', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_shouji.png', '手机通讯', '手机通讯');
 INSERT INTO `pms_product_category` VALUES ('29', '1', '男鞋', '1', '0', '', '0', '0', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_xie.png', '', '');
 INSERT INTO `pms_product_category` VALUES ('30', '2', '手机配件', '1', '0', '', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_peijian.png', '手机配件', '手机配件');
@@ -1141,7 +1141,7 @@ CREATE TABLE `pms_product_category_attribute_relation` (
   `product_category_id` bigint(20) DEFAULT NULL,
   `product_attribute_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='产品的分类和Attributes的关系表，用于设置分类筛选条件（只Support一级分类）';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='产品的minutes类和Attributes的关系表，用于设置minutes类筛选条件（只Support一级minutes类）';
 
 -- ----------------------------
 -- Records of pms_product_category_attribute_relation
@@ -1201,9 +1201,9 @@ DROP TABLE IF EXISTS `pms_product_ladder`;
 CREATE TABLE `pms_product_ladder` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_id` bigint(20) DEFAULT NULL,
-  `count` int(11) DEFAULT NULL COMMENT '满足的商品数量',
-  `discount` decimal(10,2) DEFAULT NULL COMMENT '折扣',
-  `price` decimal(10,2) DEFAULT NULL COMMENT '折后价格',
+  `count` int(11) DEFAULT NULL COMMENT 'The quantity of Products satisfied',
+  `discount` decimal(10,2) DEFAULT NULL COMMENT 'discount',
+  `price` decimal(10,2) DEFAULT NULL COMMENT 'Discount price',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COMMENT='产品Ladder price表(只针对同商品)';
 
@@ -1248,7 +1248,7 @@ CREATE TABLE `pms_product_operate_log` (
   `price_new` decimal(10,2) DEFAULT NULL,
   `sale_price_old` decimal(10,2) DEFAULT NULL,
   `sale_price_new` decimal(10,2) DEFAULT NULL,
-  `gift_point_old` int(11) DEFAULT NULL COMMENT '赠送的积分',
+  `gift_point_old` int(11) DEFAULT NULL COMMENT 'Gift Point',
   `gift_point_new` int(11) DEFAULT NULL,
   `use_point_limit_old` int(11) DEFAULT NULL,
   `use_point_limit_new` int(11) DEFAULT NULL,
@@ -1269,9 +1269,9 @@ CREATE TABLE `pms_product_vertify_record` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `vertify_man` varchar(64) DEFAULT NULL COMMENT '审核人',
+  `vertify_man` varchar(64) DEFAULT NULL COMMENT 'reviewed by',
   `status` int(1) DEFAULT NULL,
-  `detail` varchar(255) DEFAULT NULL COMMENT '反馈详情',
+  `detail` varchar(255) DEFAULT NULL COMMENT 'Feedback details',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品审核记录';
 
@@ -1288,19 +1288,19 @@ DROP TABLE IF EXISTS `pms_sku_stock`;
 CREATE TABLE `pms_sku_stock` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_id` bigint(20) DEFAULT NULL,
-  `sku_code` varchar(64) NOT NULL COMMENT 'sku编码',
+  `sku_code` varchar(64) NOT NULL COMMENT 'SKU code',
   `price` decimal(10,2) DEFAULT NULL,
-  `stock` int(11) DEFAULT '0' COMMENT '库存',
-  `low_stock` int(11) DEFAULT NULL COMMENT '预警库存',
-  `sp1` varchar(64) DEFAULT NULL COMMENT 'Sales Attributes1',
+  `stock` int(11) DEFAULT '0' COMMENT 'Stock',
+  `low_stock` int(11) DEFAULT NULL COMMENT 'Low Stock Alarm Value',
+  `sp1` varchar(64) DEFAULT NULL COMMENT 'Audit status: 0 - > not approved; 1 - > approved Attributes1',
   `sp2` varchar(64) DEFAULT NULL,
   `sp3` varchar(64) DEFAULT NULL,
   `pic` varchar(255) DEFAULT NULL COMMENT 'Show pictures',
-  `sale` int(11) DEFAULT NULL COMMENT '销量',
-  `promotion_price` decimal(10,2) DEFAULT NULL COMMENT '单品促销价格',
-  `lock_stock` int(11) DEFAULT '0' COMMENT '锁定库存',
+  `sale` int(11) DEFAULT NULL COMMENT 'Sales',
+  `promotion_price` decimal(10,2) DEFAULT NULL COMMENT 'Promotion price of single product',
+  `lock_stock` int(11) DEFAULT '0' COMMENT 'Locking the inventory',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8 COMMENT='sku的库存';
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8 COMMENT='sku的Stock';
 
 -- ----------------------------
 -- Records of pms_sku_stock
@@ -1345,23 +1345,23 @@ INSERT INTO `pms_sku_stock` VALUES ('109', '29', '201808270029004', '6299.00', '
 DROP TABLE IF EXISTS `sms_coupon`;
 CREATE TABLE `sms_coupon` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `type` int(1) DEFAULT NULL COMMENT '优惠卷类型；0->全场赠券；1->Member赠券；2->购物赠券；3->注册赠券',
+  `type` int(1) DEFAULT NULL COMMENT 'Coupon type; 0 - > full coupon; 1 - > member coupon; 2 - > shopping coupon; 3 - > registration coupon',
   `name` varchar(100) DEFAULT NULL,
-  `platform` int(1) DEFAULT NULL COMMENT '使用平台：0->全部；1->移动；2->PC',
-  `count` int(11) DEFAULT NULL COMMENT '数量',
-  `amount` decimal(10,2) DEFAULT NULL COMMENT '金额',
-  `per_limit` int(11) DEFAULT NULL COMMENT '每人限领张数',
-  `min_point` decimal(10,2) DEFAULT NULL COMMENT '使用门槛；0表示无门槛',
+  `platform` int(1) DEFAULT NULL COMMENT 'Use platform: 0 - > all; 1 - > mobile; 2 - > PC',
+  `count` int(11) DEFAULT NULL COMMENT 'Count',
+  `amount` decimal(10,2) DEFAULT NULL COMMENT 'Amount',
+  `per_limit` int(11) DEFAULT NULL COMMENT 'Limited number of tickets per person',
+  `min_point` decimal(10,2) DEFAULT NULL COMMENT 'Use threshold; 0 means no threshold',
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `use_type` int(1) DEFAULT NULL COMMENT '使用类型：0->全场通用；1->指定分类；2->指定商品',
+  `use_type` int(1) DEFAULT NULL COMMENT 'Usage type: 0 - > universal; 1 - > specify classification; 2 - > specify Product',
   `note` varchar(200) DEFAULT NULL COMMENT 'Note',
-  `publish_count` int(11) DEFAULT NULL COMMENT '发行数量',
-  `use_count` int(11) DEFAULT NULL COMMENT '已使用数量',
-  `receive_count` int(11) DEFAULT NULL COMMENT '领取数量',
-  `enable_time` datetime DEFAULT NULL COMMENT '可以领取的date',
-  `code` varchar(64) DEFAULT NULL COMMENT '优惠码',
-  `member_level` int(1) DEFAULT NULL COMMENT '可领取的Member类型：0->无限时',
+  `publish_count` int(11) DEFAULT NULL COMMENT 'Publish Count',
+  `use_count` int(11) DEFAULT NULL COMMENT 'Used Count',
+  `receive_count` int(11) DEFAULT NULL COMMENT 'Received Count',
+  `enable_time` datetime DEFAULT NULL COMMENT 'Available date',
+  `code` varchar(64) DEFAULT NULL COMMENT 'Discount code',
+  `member_level` int(1) DEFAULT NULL COMMENT 'Available member types: 0 - > unlimited time',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='优惠卷表';
 
@@ -1370,14 +1370,14 @@ CREATE TABLE `sms_coupon` (
 -- ----------------------------
 INSERT INTO `sms_coupon` VALUES ('2', '0', '全品类通用券', '0', '92', '10.00', '1', '100.00', '2018-08-27 16:40:47', '2018-11-23 16:40:47', '0', '满100减10', '100', '0', '8', '2018-08-27 16:40:47', null, null);
 INSERT INTO `sms_coupon` VALUES ('3', '0', '小米手机专用券', '0', '92', '50.00', '1', '1000.00', '2018-08-27 16:40:47', '2018-11-16 16:40:47', '2', '小米手机专用优惠券', '100', '0', '8', '2018-08-27 16:40:47', null, null);
-INSERT INTO `sms_coupon` VALUES ('4', '0', '手机品类专用券', '0', '92', '300.00', '1', '2000.00', '2018-08-27 16:40:47', '2018-09-15 16:40:47', '1', '手机分类专用优惠券', '100', '0', '8', '2018-08-27 16:40:47', null, null);
-INSERT INTO `sms_coupon` VALUES ('7', '0', 'T恤分类专用优惠券', '0', '93', '50.00', '1', '500.00', '2018-08-27 16:40:47', '2018-08-15 16:40:47', '1', '满500减50', '100', '0', '7', '2018-08-27 16:40:47', null, null);
+INSERT INTO `sms_coupon` VALUES ('4', '0', '手机品类专用券', '0', '92', '300.00', '1', '2000.00', '2018-08-27 16:40:47', '2018-09-15 16:40:47', '1', '手机minutes类专用优惠券', '100', '0', '8', '2018-08-27 16:40:47', null, null);
+INSERT INTO `sms_coupon` VALUES ('7', '0', 'T恤minutes类专用优惠券', '0', '93', '50.00', '1', '500.00', '2018-08-27 16:40:47', '2018-08-15 16:40:47', '1', '满500减50', '100', '0', '7', '2018-08-27 16:40:47', null, null);
 INSERT INTO `sms_coupon` VALUES ('8', '0', '新优惠券', '0', '100', '100.00', '1', '1000.00', '2018-11-08 00:00:00', '2018-11-27 00:00:00', '0', '测试', '100', '0', '1', null, null, null);
 INSERT INTO `sms_coupon` VALUES ('9', '0', '全品类通用券', '0', '100', '5.00', '1', '100.00', '2018-11-08 00:00:00', '2018-11-10 00:00:00', '0', null, '100', '0', '1', null, null, null);
 INSERT INTO `sms_coupon` VALUES ('10', '0', '全品类通用券', '0', '100', '15.00', '1', '200.00', '2018-11-08 00:00:00', '2018-11-10 00:00:00', '0', null, '100', '0', '1', null, null, null);
 INSERT INTO `sms_coupon` VALUES ('11', '0', '全品类通用券', '0', '1000', '50.00', '1', '1000.00', '2018-11-08 00:00:00', '2018-11-10 00:00:00', '0', null, '1000', '0', '0', null, null, null);
 INSERT INTO `sms_coupon` VALUES ('12', '0', '移动端全品类通用券', '1', '1', '10.00', '1', '100.00', '2018-11-08 00:00:00', '2018-11-10 00:00:00', '0', null, '100', '0', '0', null, null, null);
-INSERT INTO `sms_coupon` VALUES ('19', '0', '手机分类专用', '0', '100', '100.00', '1', '1000.00', '2018-11-09 00:00:00', '2018-11-17 00:00:00', '1', '手机分类专用', '100', '0', '0', null, null, null);
+INSERT INTO `sms_coupon` VALUES ('19', '0', '手机minutes类专用', '0', '100', '100.00', '1', '1000.00', '2018-11-09 00:00:00', '2018-11-17 00:00:00', '1', '手机minutes类专用', '100', '0', '0', null, null, null);
 INSERT INTO `sms_coupon` VALUES ('20', '0', '小米手机专用', '0', '100', '200.00', '1', '1000.00', '2018-11-09 00:00:00', '2018-11-24 00:00:00', '2', '小米手机专用', '100', '0', '0', null, null, null);
 INSERT INTO `sms_coupon` VALUES ('21', '0', 'xxx', '0', '100', '10.00', '1', '100.00', '2018-11-09 00:00:00', '2018-11-30 00:00:00', '2', null, '100', '0', '0', null, null, null);
 
@@ -1390,13 +1390,13 @@ CREATE TABLE `sms_coupon_history` (
   `coupon_id` bigint(20) DEFAULT NULL,
   `member_id` bigint(20) DEFAULT NULL,
   `coupon_code` varchar(64) DEFAULT NULL,
-  `member_nickname` varchar(64) DEFAULT NULL COMMENT '领取人昵称',
-  `get_type` int(1) DEFAULT NULL COMMENT '获取类型：0->后台赠送；1->主动获取',
+  `member_nickname` varchar(64) DEFAULT NULL COMMENT 'Recipient's nickname',
+  `get_type` int(1) DEFAULT NULL COMMENT 'Acquisition type: 0-> Background gift; 1-> Active acquisition',
   `create_time` datetime DEFAULT NULL,
-  `use_status` int(1) DEFAULT NULL COMMENT 'status of use：0->未使用；1->已使用；2->已过期',
-  `use_time` datetime DEFAULT NULL COMMENT '使用时间',
+  `use_status` int(1) DEFAULT NULL COMMENT 'Usage status: 0-> unused; 1-> used; 2-> expired',
+  `use_time` datetime DEFAULT NULL COMMENT 'usage time',
   `order_id` bigint(20) DEFAULT NULL COMMENT 'Order Number',
-  `order_sn` varchar(100) DEFAULT NULL COMMENT '订单号码',
+  `order_sn` varchar(100) DEFAULT NULL COMMENT 'Order number',
   PRIMARY KEY (`id`),
   KEY `idx_member_id` (`member_id`) USING BTREE,
   KEY `idx_coupon_id` (`coupon_id`)
@@ -1439,10 +1439,10 @@ CREATE TABLE `sms_coupon_product_category_relation` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `coupon_id` bigint(20) DEFAULT NULL,
   `product_category_id` bigint(20) DEFAULT NULL,
-  `product_category_name` varchar(200) DEFAULT NULL COMMENT '产品分类名称',
-  `parent_category_name` varchar(200) DEFAULT NULL COMMENT '父分类名称',
+  `product_category_name` varchar(200) DEFAULT NULL COMMENT 'Product Category name',
+  `parent_category_name` varchar(200) DEFAULT NULL COMMENT 'Parent Category name',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='优惠券和产品分类关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='优惠券和产品minutes类关系表';
 
 -- ----------------------------
 -- Records of sms_coupon_product_category_relation
@@ -1458,7 +1458,7 @@ CREATE TABLE `sms_coupon_product_relation` (
   `coupon_id` bigint(20) DEFAULT NULL,
   `product_id` bigint(20) DEFAULT NULL,
   `product_name` varchar(500) DEFAULT NULL COMMENT 'product name',
-  `product_sn` varchar(200) DEFAULT NULL COMMENT '商品编码',
+  `product_sn` varchar(200) DEFAULT NULL COMMENT 'Product code',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='优惠券和产品的关系表';
 
@@ -1474,10 +1474,10 @@ DROP TABLE IF EXISTS `sms_flash_promotion`;
 CREATE TABLE `sms_flash_promotion` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
-  `start_date` date DEFAULT NULL COMMENT '开始date',
-  `end_date` date DEFAULT NULL COMMENT '结束date',
-  `status` int(1) DEFAULT NULL COMMENT '上下线status',
-  `create_time` datetime DEFAULT NULL COMMENT '秒杀时间段名称',
+  `start_date` date DEFAULT NULL COMMENT 'Start Date',
+  `end_date` date DEFAULT NULL COMMENT 'End Date',
+  `status` int(1) DEFAULT NULL COMMENT 'Online and offline status',
+  `create_time` datetime DEFAULT NULL COMMENT 'Flash Sale time',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='限时购表';
 
@@ -1504,7 +1504,7 @@ CREATE TABLE `sms_flash_promotion_log` (
   `product_id` bigint(20) DEFAULT NULL,
   `member_phone` varchar(64) DEFAULT NULL,
   `product_name` varchar(100) DEFAULT NULL,
-  `subscribe_time` datetime DEFAULT NULL COMMENT 'Member订阅时间',
+  `subscribe_time` datetime DEFAULT NULL COMMENT 'Subscription time',
   `send_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='限时购通知记录';
@@ -1518,13 +1518,13 @@ CREATE TABLE `sms_flash_promotion_log` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_flash_promotion_product_relation`;
 CREATE TABLE `sms_flash_promotion_product_relation` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Number',
   `flash_promotion_id` bigint(20) DEFAULT NULL,
-  `flash_promotion_session_id` bigint(20) DEFAULT NULL COMMENT '编号',
+  `flash_promotion_session_id` bigint(20) DEFAULT NULL COMMENT 'Number',
   `product_id` bigint(20) DEFAULT NULL,
-  `flash_promotion_price` decimal(10,2) DEFAULT NULL COMMENT '限时购价格',
-  `flash_promotion_count` int(11) DEFAULT NULL COMMENT '限时购数量',
-  `flash_promotion_limit` int(11) DEFAULT NULL COMMENT '每人限购数量',
+  `flash_promotion_price` decimal(10,2) DEFAULT NULL COMMENT 'Flash Promotion Price',
+  `flash_promotion_count` int(11) DEFAULT NULL COMMENT 'Flash Promotion Count',
+  `flash_promotion_limit` int(11) DEFAULT NULL COMMENT 'Flash Promotion Limit',
   `sort` int(11) DEFAULT NULL COMMENT 'Sort',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COMMENT='商品限时购与商品关系表';
@@ -1578,10 +1578,10 @@ INSERT INTO `sms_flash_promotion_product_relation` VALUES ('44', '3', '6', '29',
 -- ----------------------------
 DROP TABLE IF EXISTS `sms_flash_promotion_session`;
 CREATE TABLE `sms_flash_promotion_session` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
-  `name` varchar(200) DEFAULT NULL COMMENT 'Sessions名称',
-  `start_time` time DEFAULT NULL COMMENT '每日开始时间',
-  `end_time` time DEFAULT NULL COMMENT '每日结束时间',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Number',
+  `name` varchar(200) DEFAULT NULL COMMENT 'Event name',
+  `start_time` time DEFAULT NULL COMMENT 'Start Time',
+  `end_time` time DEFAULT NULL COMMENT 'End Time',
   `status` int(1) DEFAULT NULL COMMENT 'Enabled：0->Not enabled；1->Enable',
   `create_time` datetime DEFAULT NULL COMMENT 'Creation Date',
   PRIMARY KEY (`id`)
@@ -1605,14 +1605,14 @@ DROP TABLE IF EXISTS `sms_home_advertise`;
 CREATE TABLE `sms_home_advertise` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `type` int(1) DEFAULT NULL COMMENT '轮播位置：0->PC首页轮播；1->app首页轮播',
+  `type` int(1) DEFAULT NULL COMMENT 'Rotation location: 0 - > PC home page rotation; 1 - > app home page rotation',
   `pic` varchar(500) DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `status` int(1) DEFAULT NULL COMMENT '上下线status：0->下线；1->上线',
-  `click_count` int(11) DEFAULT NULL COMMENT '点击数',
-  `order_count` int(11) DEFAULT NULL COMMENT '下单数',
-  `url` varchar(500) DEFAULT NULL COMMENT '链接地址',
+  `status` int(1) DEFAULT NULL COMMENT 'Online and offline status：0->下线；1->上线',
+  `click_count` int(11) DEFAULT NULL COMMENT 'Click Count',
+  `order_count` int(11) DEFAULT NULL COMMENT 'Order Count',
+  `url` varchar(500) DEFAULT NULL COMMENT 'Link address',
   `note` varchar(500) DEFAULT NULL COMMENT 'Note',
   `sort` int(11) DEFAULT '0' COMMENT 'Sort',
   PRIMARY KEY (`id`)
@@ -1732,13 +1732,13 @@ CREATE TABLE `ums_admin` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(64) DEFAULT NULL,
   `password` varchar(64) DEFAULT NULL,
-  `icon` varchar(500) DEFAULT NULL COMMENT '头像',
+  `icon` varchar(500) DEFAULT NULL COMMENT 'Icon',
   `email` varchar(100) DEFAULT NULL COMMENT 'Mailbox',
-  `nick_name` varchar(200) DEFAULT NULL COMMENT '昵称',
-  `note` varchar(500) DEFAULT NULL COMMENT 'Note信息',
+  `nick_name` varchar(200) DEFAULT NULL COMMENT 'nickname',
+  `note` varchar(500) DEFAULT NULL COMMENT 'Note',
   `create_time` datetime DEFAULT NULL COMMENT 'Creation Date',
-  `login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
-  `status` int(1) DEFAULT '1' COMMENT '帐号Enabled：0->禁用；1->Enable',
+  `login_time` datetime DEFAULT NULL COMMENT 'Last login time',
+  `status` int(1) DEFAULT '1' COMMENT 'Account enabling status: 0 - > disable; 1 - > Enable',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='后台User表';
 
@@ -1758,7 +1758,7 @@ CREATE TABLE `ums_admin_login_log` (
   `create_time` datetime DEFAULT NULL,
   `ip` varchar(64) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
-  `user_agent` varchar(100) DEFAULT NULL COMMENT '浏览器登录类型',
+  `user_agent` varchar(100) DEFAULT NULL COMMENT 'User Agent',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='后台User登录日志表';
 
@@ -1821,13 +1821,13 @@ CREATE TABLE `ums_growth_change_history` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `member_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `change_type` int(1) DEFAULT NULL COMMENT '改变类型：0->增加；1->减少',
-  `change_count` int(11) DEFAULT NULL COMMENT '积分改变数量',
-  `operate_man` varchar(100) DEFAULT NULL COMMENT 'Operator员',
-  `operate_note` varchar(200) DEFAULT NULL COMMENT '操作Note',
-  `source_type` int(1) DEFAULT NULL COMMENT '积分来源：0->购物；1->Administrator修改',
+  `change_type` int(1) DEFAULT NULL COMMENT 'Change type: 0 - > increase; 1 - > decrease',
+  `change_count` int(11) DEFAULT NULL COMMENT 'Number of changes',
+  `operate_man` varchar(100) DEFAULT NULL COMMENT 'operating staff',
+  `operate_note` varchar(200) DEFAULT NULL COMMENT 'operate Note',
+  `source_type` int(1) DEFAULT NULL COMMENT 'Source Type：0->Shopping；1->Administrator modification',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='成长值变化历史记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Growth value变化历史记录表';
 
 -- ----------------------------
 -- Records of ums_growth_change_history
@@ -1842,13 +1842,13 @@ CREATE TABLE `ums_integration_change_history` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `member_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `change_type` int(1) DEFAULT NULL COMMENT '改变类型：0->增加；1->减少',
-  `change_count` int(11) DEFAULT NULL COMMENT '积分改变数量',
-  `operate_man` varchar(100) DEFAULT NULL COMMENT 'Operator员',
-  `operate_note` varchar(200) DEFAULT NULL COMMENT '操作Note',
-  `source_type` int(1) DEFAULT NULL COMMENT '积分来源：0->购物；1->Administrator修改',
+  `change_type` int(1) DEFAULT NULL COMMENT 'Change type: 0 - > increase; 1 - > decrease',
+  `change_count` int(11) DEFAULT NULL COMMENT 'Number of changes',
+  `operate_man` varchar(100) DEFAULT NULL COMMENT 'operating staff',
+  `operate_note` varchar(200) DEFAULT NULL COMMENT 'operate Note',
+  `source_type` int(1) DEFAULT NULL COMMENT 'Source Type：0->Shopping；1->Administrator modification',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='积分变化历史记录表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Integration变化历史记录表';
 
 -- ----------------------------
 -- Records of ums_integration_change_history
@@ -1860,12 +1860,12 @@ CREATE TABLE `ums_integration_change_history` (
 DROP TABLE IF EXISTS `ums_integration_consume_setting`;
 CREATE TABLE `ums_integration_consume_setting` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `deduction_per_amount` int(11) DEFAULT NULL COMMENT '每一元需要抵扣的积分数量',
-  `max_percent_per_order` int(11) DEFAULT NULL COMMENT '每笔订单最高抵用百分比',
-  `use_unit` int(11) DEFAULT NULL COMMENT '每次使用积分最小单位100',
-  `coupon_status` int(1) DEFAULT NULL COMMENT 'YesNo可以和优惠券同用；0->不可以；1->可以',
+  `deduction_per_amount` int(11) DEFAULT NULL COMMENT 'Number of credits to be deducted for each Currency Unit',
+  `max_percent_per_order` int(11) DEFAULT NULL COMMENT 'Maximum credit percentage per order',
+  `use_unit` int(11) DEFAULT NULL COMMENT 'Minimum unit of points per use 100',
+  `coupon_status` int(1) DEFAULT NULL COMMENT 'Whether it can be used with coupons; 0-> no; 1-> yes',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='积分消费设置';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Integration消费设置';
 
 -- ----------------------------
 -- Records of ums_integration_consume_setting
@@ -1881,21 +1881,21 @@ CREATE TABLE `ums_member` (
   `member_level_id` bigint(20) DEFAULT NULL,
   `username` varchar(64) DEFAULT NULL COMMENT 'username',
   `password` varchar(64) DEFAULT NULL COMMENT 'password',
-  `nickname` varchar(64) DEFAULT NULL COMMENT '昵称',
-  `phone` varchar(64) DEFAULT NULL COMMENT '手机号码',
-  `status` int(1) DEFAULT NULL COMMENT '帐号Enabled:0->禁用；1->Enable',
-  `create_time` datetime DEFAULT NULL COMMENT '注册时间',
-  `icon` varchar(500) DEFAULT NULL COMMENT '头像',
-  `gender` int(1) DEFAULT NULL COMMENT '性别：0->未知；1->男；2->女',
-  `birthday` date DEFAULT NULL COMMENT '生日',
-  `city` varchar(64) DEFAULT NULL COMMENT '所做City',
-  `job` varchar(100) DEFAULT NULL COMMENT '职业',
-  `personalized_signature` varchar(200) DEFAULT NULL COMMENT '个性签名',
-  `source_type` int(1) DEFAULT NULL COMMENT 'User来源',
-  `integration` int(11) DEFAULT NULL COMMENT '积分',
-  `growth` int(11) DEFAULT NULL COMMENT '成长值',
-  `luckey_count` int(11) DEFAULT NULL COMMENT '剩余抽奖次数',
-  `history_integration` int(11) DEFAULT NULL COMMENT '历史积分数量',
+  `nickname` varchar(64) DEFAULT NULL COMMENT 'nickname',
+  `phone` varchar(64) DEFAULT NULL COMMENT 'mobile phone number',
+  `status` int(1) DEFAULT NULL COMMENT 'Account enabling status: 0 - > Disable; 1 - > Enable',
+  `create_time` datetime DEFAULT NULL COMMENT 'Registration time',
+  `icon` varchar(500) DEFAULT NULL COMMENT 'Icon',
+  `gender` int(1) DEFAULT NULL COMMENT 'Gender: 0 - > unknown; 1 - > male; 2 - > female',
+  `birthday` date DEFAULT NULL COMMENT 'Birthday',
+  `city` varchar(64) DEFAULT NULL COMMENT 'The city you're Living',
+  `job` varchar(100) DEFAULT NULL COMMENT 'Job',
+  `personalized_signature` varchar(200) DEFAULT NULL COMMENT 'Signature',
+  `source_type` int(1) DEFAULT NULL COMMENT 'User source',
+  `integration` int(11) DEFAULT NULL COMMENT 'Integration',
+  `growth` int(11) DEFAULT NULL COMMENT 'Growth value',
+  `luckey_count` int(11) DEFAULT NULL COMMENT 'The remaining Lucky number',
+  `history_integration` int(11) DEFAULT NULL COMMENT 'Number of historical points',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_username` (`username`),
   UNIQUE KEY `idx_phone` (`phone`)
@@ -1921,15 +1921,15 @@ CREATE TABLE `ums_member_level` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `growth_point` int(11) DEFAULT NULL,
-  `default_status` int(1) DEFAULT NULL COMMENT 'YesNo为默认等级：0->No；1->Yes',
-  `free_freight_point` decimal(10,2) DEFAULT NULL COMMENT '免运费标准',
-  `comment_growth_point` int(11) DEFAULT NULL COMMENT '每次评价获取的成长值',
-  `priviledge_free_freight` int(1) DEFAULT NULL COMMENT 'YesNo有免邮特权',
-  `priviledge_sign_in` int(1) DEFAULT NULL COMMENT 'YesNo有签到特权',
-  `priviledge_comment` int(1) DEFAULT NULL COMMENT 'YesNo有评论获奖励特权',
-  `priviledge_promotion` int(1) DEFAULT NULL COMMENT 'YesNo有专享活动特权',
-  `priviledge_member_price` int(1) DEFAULT NULL COMMENT 'YesNo有member price特权',
-  `priviledge_birthday` int(1) DEFAULT NULL COMMENT 'YesNo有生日特权',
+  `default_status` int(1) DEFAULT NULL COMMENT 'Is it the default level: 0 - > No; 1 - > Yes',
+  `free_freight_point` decimal(10,2) DEFAULT NULL COMMENT 'Free freight Point',
+  `comment_growth_point` int(11) DEFAULT NULL COMMENT 'Growth value obtained in each comment',
+  `priviledge_free_freight` int(1) DEFAULT NULL COMMENT 'Do you have the privilege of Freight',
+  `priviledge_sign_in` int(1) DEFAULT NULL COMMENT 'Are there check-in privileges',
+  `priviledge_comment` int(1) DEFAULT NULL COMMENT 'Is there a privilege to receive rewards for comments',
+  `priviledge_promotion` int(1) DEFAULT NULL COMMENT 'Is there an exclusive Promotion privilege',
+  `priviledge_member_price` int(1) DEFAULT NULL COMMENT 'Is there a membership price privilege',
+  `priviledge_birthday` int(1) DEFAULT NULL COMMENT 'Do you have birthday privileges',
   `note` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Member等级表';
@@ -1952,10 +1952,10 @@ CREATE TABLE `ums_member_login_log` (
   `create_time` datetime DEFAULT NULL,
   `ip` varchar(64) DEFAULT NULL,
   `city` varchar(64) DEFAULT NULL,
-  `login_type` int(1) DEFAULT NULL COMMENT '登录类型：0->PC；1->android;2->ios;3->小程序',
+  `login_type` int(1) DEFAULT NULL COMMENT 'Login type: 0 - > PC; 1 - > Android; 2 - > IOS; 3 - > applet',
   `province` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Member登录记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Member Login记录';
 
 -- ----------------------------
 -- Records of ums_member_login_log
@@ -1985,7 +1985,7 @@ CREATE TABLE `ums_member_product_category_relation` (
   `member_id` bigint(20) DEFAULT NULL,
   `product_category_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Member与产品分类关系表（User喜欢的分类）';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Member与产品minutes类关系表（User喜欢的minutes类）';
 
 -- ----------------------------
 -- Records of ums_member_product_category_relation
@@ -1998,14 +1998,14 @@ DROP TABLE IF EXISTS `ums_member_receive_address`;
 CREATE TABLE `ums_member_receive_address` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `member_id` bigint(20) DEFAULT NULL,
-  `name` varchar(100) DEFAULT NULL COMMENT 'Receiver名称',
+  `name` varchar(100) DEFAULT NULL COMMENT 'Name of Receiver',
   `phone_number` varchar(64) DEFAULT NULL,
-  `default_status` int(1) DEFAULT NULL COMMENT 'YesNo为默认',
-  `post_code` varchar(100) DEFAULT NULL COMMENT '邮政编码',
+  `default_status` int(1) DEFAULT NULL COMMENT 'Default or not',
+  `post_code` varchar(100) DEFAULT NULL COMMENT 'Postal Code',
   `province` varchar(100) DEFAULT NULL COMMENT 'Province/City',
   `city` varchar(100) DEFAULT NULL COMMENT 'City',
   `region` varchar(100) DEFAULT NULL COMMENT 'Area',
-  `detail_address` varchar(128) DEFAULT NULL COMMENT 'Detailed address(街道)',
+  `detail_address` varchar(128) DEFAULT NULL COMMENT 'Detailed address (street)',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='MemberShipping address表';
 
@@ -2022,14 +2022,14 @@ INSERT INTO `ums_member_receive_address` VALUES ('4', '1', '大梨', '1803344184
 DROP TABLE IF EXISTS `ums_member_rule_setting`;
 CREATE TABLE `ums_member_rule_setting` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `continue_sign_day` int(11) DEFAULT NULL COMMENT '连续签到天数',
-  `continue_sign_point` int(11) DEFAULT NULL COMMENT '连续签到赠送数量',
-  `consume_per_point` decimal(10,2) DEFAULT NULL COMMENT '每消费多少元获取1个点',
-  `low_order_amount` decimal(10,2) DEFAULT NULL COMMENT '最低获取点数的订单金额',
-  `max_point_per_order` int(11) DEFAULT NULL COMMENT '每笔订单最高获取点数',
-  `type` int(1) DEFAULT NULL COMMENT '类型：0->积分规则；1->成长值规则',
+  `continue_sign_day` int(11) DEFAULT NULL COMMENT 'Consecutive sign-in days',
+  `continue_sign_point` int(11) DEFAULT NULL COMMENT 'Number of complimentary consecutive sign-in',
+  `consume_per_point` decimal(10,2) DEFAULT NULL COMMENT 'Get 1 point for each Currency Unit spent',
+  `low_order_amount` decimal(10,2) DEFAULT NULL COMMENT 'Order amount of the lowest acquisition point',
+  `max_point_per_order` int(11) DEFAULT NULL COMMENT 'Maximum number of points per order',
+  `type` int(1) DEFAULT NULL COMMENT 'Type: 0 - > integration rule; 1 - > growth value rule',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Member积分成长规则表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='MemberIntegration成长规则表';
 
 -- ----------------------------
 -- Records of ums_member_rule_setting
@@ -2042,20 +2042,20 @@ DROP TABLE IF EXISTS `ums_member_statistics_info`;
 CREATE TABLE `ums_member_statistics_info` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `member_id` bigint(20) DEFAULT NULL,
-  `consume_amount` decimal(10,2) DEFAULT NULL COMMENT '累计消费金额',
-  `order_count` int(11) DEFAULT NULL COMMENT '订单数量',
-  `coupon_count` int(11) DEFAULT NULL COMMENT '优惠券数量',
-  `comment_count` int(11) DEFAULT NULL COMMENT '评价数',
+  `consume_amount` decimal(10,2) DEFAULT NULL COMMENT 'Accumulated consumption amount',
+  `order_count` int(11) DEFAULT NULL COMMENT 'Order quantity',
+  `coupon_count` int(11) DEFAULT NULL COMMENT 'Coupon quantity',
+  `comment_count` int(11) DEFAULT NULL COMMENT 'Comment number',
   `return_order_count` int(11) DEFAULT NULL COMMENT 'Number of returns',
-  `login_count` int(11) DEFAULT NULL COMMENT '登录次数',
-  `attend_count` int(11) DEFAULT NULL COMMENT '关注数量',
-  `fans_count` int(11) DEFAULT NULL COMMENT '粉丝数量',
+  `login_count` int(11) DEFAULT NULL COMMENT 'Login number times',
+  `attend_count` int(11) DEFAULT NULL COMMENT 'Attend Count',
+  `fans_count` int(11) DEFAULT NULL COMMENT 'Fans Count',
   `collect_product_count` int(11) DEFAULT NULL,
   `collect_subject_count` int(11) DEFAULT NULL,
   `collect_topic_count` int(11) DEFAULT NULL,
   `collect_comment_count` int(11) DEFAULT NULL,
   `invite_friend_count` int(11) DEFAULT NULL,
-  `recent_order_time` datetime DEFAULT NULL COMMENT '最后一次下订单时间',
+  `recent_order_time` datetime DEFAULT NULL COMMENT 'Last order time',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Member统计信息';
 
@@ -2070,8 +2070,8 @@ DROP TABLE IF EXISTS `ums_member_tag`;
 CREATE TABLE `ums_member_tag` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `finish_order_count` int(11) DEFAULT NULL COMMENT '自动打标签完成订单数量',
-  `finish_order_amount` decimal(10,2) DEFAULT NULL COMMENT '自动打标签完成订单金额',
+  `finish_order_count` int(11) DEFAULT NULL COMMENT 'Finished Order Count',
+  `finish_order_amount` decimal(10,2) DEFAULT NULL COMMENT 'Automatically label to complete the order amount',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User标签表';
 
@@ -2086,9 +2086,9 @@ DROP TABLE IF EXISTS `ums_member_task`;
 CREATE TABLE `ums_member_task` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `growth` int(11) DEFAULT NULL COMMENT '赠送成长值',
-  `intergration` int(11) DEFAULT NULL COMMENT '赠送积分',
-  `type` int(1) DEFAULT NULL COMMENT '任务类型：0->新手任务；1->日常任务',
+  `growth` int(11) DEFAULT NULL COMMENT 'Give growth value',
+  `intergration` int(11) DEFAULT NULL COMMENT 'Gift points',
+  `type` int(1) DEFAULT NULL COMMENT 'Task type: 0-> Novice task; 1-> Daily task',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Member任务表';
 
@@ -2102,13 +2102,13 @@ CREATE TABLE `ums_member_task` (
 DROP TABLE IF EXISTS `ums_permission`;
 CREATE TABLE `ums_permission` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `pid` bigint(20) DEFAULT NULL COMMENT '父级权限id',
-  `name` varchar(100) DEFAULT NULL COMMENT '名称',
-  `value` varchar(200) DEFAULT NULL COMMENT '权限值',
+  `pid` bigint(20) DEFAULT NULL COMMENT 'Parent permission id',
+  `name` varchar(100) DEFAULT NULL COMMENT 'Name',
+  `value` varchar(200) DEFAULT NULL COMMENT 'Permission value',
   `icon` varchar(500) DEFAULT NULL COMMENT 'icon',
-  `type` int(1) DEFAULT NULL COMMENT '权限类型：0->目录；1->菜单；2->按钮（接口绑定权限）',
-  `uri` varchar(200) DEFAULT NULL COMMENT '前端资源路径',
-  `status` int(1) DEFAULT NULL COMMENT 'Enabled；0->禁用；1->Enable',
+  `type` int(1) DEFAULT NULL COMMENT 'Permission type: 0-> Directory; 1-> Menu; 2-> Button (interface binding permission)',
+  `uri` varchar(200) DEFAULT NULL COMMENT 'Front-end resource path',
+  `status` int(1) DEFAULT NULL COMMENT 'Enabled state; 0-> Disable; 1-> Enable',
   `create_time` datetime DEFAULT NULL COMMENT 'Creation Date',
   `sort` int(11) DEFAULT NULL COMMENT 'Sort',
   PRIMARY KEY (`id`)
@@ -2142,11 +2142,11 @@ INSERT INTO `ums_permission` VALUES ('18', '0', '首页', null, null, '0', null,
 DROP TABLE IF EXISTS `ums_role`;
 CREATE TABLE `ums_role` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL COMMENT '名称',
+  `name` varchar(100) DEFAULT NULL COMMENT 'Name',
   `description` varchar(500) DEFAULT NULL COMMENT 'description',
-  `admin_count` int(11) DEFAULT NULL COMMENT '后台User数量',
+  `admin_count` int(11) DEFAULT NULL COMMENT 'Number of background users',
   `create_time` datetime DEFAULT NULL COMMENT 'Creation Date',
-  `status` int(1) DEFAULT '1' COMMENT 'Enabled：0->禁用；1->Enable',
+  `status` int(1) DEFAULT '1' COMMENT 'Enable status: 0-> Disable; 1-> Enable',
   `sort` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='后台User角色表';

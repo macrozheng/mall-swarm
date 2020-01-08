@@ -20,13 +20,13 @@ public interface UmsMemberCouponService {
     CommonResult add(Long couponId);
 
     /**
-     * 获取优惠券列表
-     * @param useStatus 优惠券的status of use
+     * Get coupon list
+     * @param useStatus Coupon status of use
      */
     List<SmsCouponHistory> list(Integer useStatus);
 
     /**
-     * according to购物车信息获取可用优惠券
+     * Get available coupons according to Shopping car information
      */
     List<SmsCouponHistoryDetail> listCart(List<CartPromotionItem> cartItemList, Integer type);
 }

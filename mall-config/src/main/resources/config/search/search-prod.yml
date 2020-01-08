@@ -15,4 +15,4 @@ logging:
 management:
   health:
     elasticsearch:
-      response-timeout: 1000ms #加大健康检查超时时间
+      response-timeout: 1000ms #加大健康检查Timeout

@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 /**
- * User商品浏览历史记录
+ * User product browsing history
  * Created by macro on 2018/8/3.
  */
 @Document

@@ -9,18 +9,18 @@ public class PmsSkuStock implements Serializable {
 
     private Long productId;
 
-    @ApiModelProperty(value = "sku编码")
+    @ApiModelProperty(value = "SKU code")
     private String skuCode;
 
     private BigDecimal price;
 
-    @ApiModelProperty(value = "库存")
+    @ApiModelProperty(value = "Stock")
     private Integer stock;
 
-    @ApiModelProperty(value = "预警库存")
+    @ApiModelProperty(value = "Low Stock Alarm Value")
     private Integer lowStock;
 
-    @ApiModelProperty(value = "Sales Attributes1")
+    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes1")
     private String sp1;
 
     private String sp2;
@@ -30,13 +30,13 @@ public class PmsSkuStock implements Serializable {
     @ApiModelProperty(value = "Show pictures")
     private String pic;
 
-    @ApiModelProperty(value = "销量")
+    @ApiModelProperty(value = "Sales")
     private Integer sale;
 
-    @ApiModelProperty(value = "单品促销价格")
+    @ApiModelProperty(value = "Promotion price of single product")
     private BigDecimal promotionPrice;
 
-    @ApiModelProperty(value = "锁定库存")
+    @ApiModelProperty(value = "Locking the inventory")
     private Integer lockStock;
 
     private static final long serialVersionUID = 1L;

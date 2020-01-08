@@ -10,10 +10,10 @@ public class SmsCouponProductCategoryRelation implements Serializable {
 
     private Long productCategoryId;
 
-    @ApiModelProperty(value = "产品分类名称")
+    @ApiModelProperty(value = "Product Category name")
     private String productCategoryName;
 
-    @ApiModelProperty(value = "父分类名称")
+    @ApiModelProperty(value = "Parent Category name")
     private String parentCategoryName;
 
     private static final long serialVersionUID = 1L;
