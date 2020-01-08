@@ -19,7 +19,7 @@ public class PmsProductAttribute implements Serializable {
     @ApiModelProperty(value = "List of optional values，Separated by commas")
     private String inputList;
 
-    @ApiModelProperty(value = "Sort fields：最高的可以单独上传图片")
+    @ApiModelProperty(value = "Sort fields: the highest can be uploaded separately")
     private Integer sort;
 
     @ApiModelProperty(value = "Classification and filtering style：1->ordinary；1->colour")

@@ -6,41 +6,41 @@ import com.macro.mall.portal.domain.OrderParam;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * 前台Order management Service
+ * Order Management Service
  * Created by macro on 2018/8/30.
  */
 public interface OmsPortalOrderService {
     /**
-     * according toUser购物车信息生成确认单信息
+     * Generate confirmation information based on user shopping cart information
      */
     ConfirmOrderResult generateConfirmOrder();
 
     /**
-     * according to提交信息生成订单
+     * according to submit information
      */
     @Transactional
     CommonResult generateOrder(OrderParam orderParam);
 
     /**
-     * 支付成功后的Callback
+     * Callback after successful payment
      */
     @Transactional
     CommonResult paySuccess(Long orderId);
 
     /**
-     * 自动取消超时订单
+     * Automatic cancellation of overtime orders
      */
     @Transactional
     CommonResult cancelTimeOutOrder();
 
     /**
-     * 取消单个超时订单
+     * Cancel single overtime order
      */
     @Transactional
     void cancelOrder(Long orderId);
 
     /**
-     * 发送延迟消息取消订单
+     * Send delayed message to cancel order
      */
     void sendDelayMessageCancelOrder(Long orderId);
 }

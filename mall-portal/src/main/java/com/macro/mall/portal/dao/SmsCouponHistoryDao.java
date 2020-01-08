@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Member优惠券领取历史自定义Dao
+ * Member coupon collection history custom Dao
  * Created by macro on 2018/8/29.
  */
 public interface SmsCouponHistoryDao {

@@ -5,22 +5,22 @@ import com.macro.mall.portal.domain.MemberBrandAttention;
 import java.util.List;
 
 /**
- * Member关注Service
+ * Member follow Service
  * Created by macro on 2018/8/2.
  */
 public interface MemberAttentionService {
     /**
-     * 添加关注
+     * Add follow
      */
     int add(MemberBrandAttention memberBrandAttention);
 
     /**
-     * 取消关注
+     * Unfollow
      */
     int delete(Long memberId, Long brandId);
 
     /**
-     * 获取User关注列表
+     * Get User Watchlist
      */
     List<MemberBrandAttention> list(Long memberId);
 }

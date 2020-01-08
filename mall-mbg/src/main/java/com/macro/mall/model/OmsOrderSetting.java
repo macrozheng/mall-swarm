@@ -15,7 +15,7 @@ public class OmsOrderSetting implements Serializable {
     @ApiModelProperty(value = "Automatic Confirm receipt time (days) after delivery")
     private Integer confirmOvertime;
 
-    @ApiModelProperty(value = "Auto-complete trading time, can not apply for after-sales (days)")
+    @ApiModelProperty(value = "Auto-complete trading time, can not apply for after-Audit status: 0 - > not approved; 1 - > approved (days)")
     private Integer finishOvertime;
 
     @ApiModelProperty(value = "Automatic positive time after order is completed (days)")

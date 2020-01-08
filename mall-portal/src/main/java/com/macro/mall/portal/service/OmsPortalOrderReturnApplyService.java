@@ -8,7 +8,7 @@ import com.macro.mall.portal.domain.OmsOrderReturnApplyParam;
  */
 public interface OmsPortalOrderReturnApplyService {
     /**
-     * 提交申请
+     * submit application
      */
     int create(OmsOrderReturnApplyParam returnApply);
 }

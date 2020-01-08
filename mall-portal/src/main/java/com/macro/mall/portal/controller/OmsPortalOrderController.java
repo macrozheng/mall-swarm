@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.*;
  * Created by macro on 2018/8/30.
  */
 @Controller
-@Api(tags = "OmsPortalOrderController",description = "订单management")
+@Api(tags = "OmsPortalOrderController",description = "Order management")
 @RequestMapping("/order")
 public class OmsPortalOrderController {
     @Autowired
     private OmsPortalOrderService portalOrderService;
-    @ApiOperation("according to购物车信息生成确认单信息")
+    @ApiOperation("Generate confirmation information based on shopping cart information")
     @RequestMapping(value = "/generateConfirmOrder",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<ConfirmOrderResult> generateConfirmOrder(){
@@ -28,27 +28,27 @@ public class OmsPortalOrderController {
         return CommonResult.success(confirmOrderResult);
     }
 
-    @ApiOperation("according to购物车信息生成订单")
+    @ApiOperation("Generate orders based on cart information")
     @RequestMapping(value = "/generateOrder",method = RequestMethod.POST)
     @ResponseBody
     public Object generateOrder(@RequestBody OrderParam orderParam){
         return portalOrderService.generateOrder(orderParam);
     }
-    @ApiOperation("支付成功的Callback")
+    @ApiOperation("Callback for successful payment")
     @RequestMapping(value = "/paySuccess",method = RequestMethod.POST)
     @ResponseBody
     public Object paySuccess(@RequestParam Long orderId){
         return portalOrderService.paySuccess(orderId);
     }
 
-    @ApiOperation("自动取消超时订单")
+    @ApiOperation("Automatic cancellation of overtime orders")
     @RequestMapping(value = "/cancelTimeOutOrder",method = RequestMethod.POST)
     @ResponseBody
     public Object cancelTimeOutOrder(){
         return portalOrderService.cancelTimeOutOrder();
     }
 
-    @ApiOperation("取消单个超时订单")
+    @ApiOperation("Cancel single overtime order")
     @RequestMapping(value = "/cancelOrder",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelOrder(Long orderId){

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 
 /**
- * redis操作Service的实现类
+ * Redis operation service implementation class
  * Created by macro on 2018/8/7.
  */
 @Service

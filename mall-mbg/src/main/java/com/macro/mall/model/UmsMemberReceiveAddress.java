@@ -8,15 +8,15 @@ public class UmsMemberReceiveAddress implements Serializable {
 
     private Long memberId;
 
-    @ApiModelProperty(value = "Receiver名称")
+    @ApiModelProperty(value = "Name of Receiver")
     private String name;
 
     private String phoneNumber;
 
-    @ApiModelProperty(value = "YesNo为默认")
+    @ApiModelProperty(value = "Default or not")
     private Integer defaultStatus;
 
-    @ApiModelProperty(value = "邮政编码")
+    @ApiModelProperty(value = "Postal Code")
     private String postCode;
 
     @ApiModelProperty(value = "Province/City")
@@ -28,7 +28,7 @@ public class UmsMemberReceiveAddress implements Serializable {
     @ApiModelProperty(value = "Area")
     private String region;
 
-    @ApiModelProperty(value = "Detailed address(街道)")
+    @ApiModelProperty(value = "Detailed address (street)")
     private String detailAddress;
 
     private static final long serialVersionUID = 1L;

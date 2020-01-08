@@ -73,7 +73,7 @@ public class EsProductController {
     }
 
     @ApiOperation(value = "综合搜索、筛选、Sort")
-    @ApiImplicitParam(name = "sort", value = "Sort fields:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低",
+    @ApiImplicitParam(name = "sort", value = "Sort fields:0->按相关度；1->按新品；2->按Sales；3->价格从低到高；4->价格从高到低",
             defaultValue = "0", allowableValues = "0,1,2,3,4", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
@@ -97,7 +97,7 @@ public class EsProductController {
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
 
-    @ApiOperation(value = "获取搜索的相关品牌、分类及筛选Attributes")
+    @ApiOperation(value = "获取搜索的相关品牌、minutes类及筛选Attributes")
     @RequestMapping(value = "/search/relate", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<EsProductRelatedInfo> searchRelatedInfo(@RequestParam(required = false) String keyword) {

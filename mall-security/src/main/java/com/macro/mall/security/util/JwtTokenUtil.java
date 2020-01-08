@@ -143,7 +143,7 @@ public class JwtTokenUtil {
         if(isTokenExpired(token)){
             return null;
         }
-        //如果token在30分钟之内刚刷新过，返回原token
+        //如果token在30minutes钟之内刚刷新过，返回原token
         if(tokenRefreshJustBefore(token,30*60)){
             return token;
         }else{

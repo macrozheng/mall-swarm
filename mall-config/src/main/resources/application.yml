@@ -8,9 +8,9 @@ spring:
   cloud:
     config:
       server:
-        native: #本地仓库存储
+        native: #本地仓Stock储
           search-locations: classpath:/config/{application}
-        git: #Git仓库存储
+        git: #Git仓Stock储
           uri: https://gitee.com/macrozheng/mall-config.git
           username: macro
           password: 123456

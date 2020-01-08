@@ -10,7 +10,7 @@ public class PmsProductAttributeValue implements Serializable {
 
     private Long productAttributeId;
 
-    @ApiModelProperty(value = "手动添加specification或parameter的值，parameter单值，specification有多个时Separated by commas")
+    @ApiModelProperty(value = "Manually add the value of specification or parameter, single value of parameter, separated by comma when there are multiple specifications")
     private String value;
 
     private static final long serialVersionUID = 1L;

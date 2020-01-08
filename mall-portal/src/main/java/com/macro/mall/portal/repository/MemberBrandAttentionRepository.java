@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 /**
- * Member关注Repository
+ * Member follow Repository
  * Created by macro on 2018/8/2.
  */
 public interface MemberBrandAttentionRepository extends MongoRepository<MemberBrandAttention,String> {

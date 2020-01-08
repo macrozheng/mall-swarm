@@ -3,30 +3,30 @@ package com.macro.mall.portal.domain;
 import lombok.Getter;
 
 /**
- * message queue枚举配置
+ * message queue enumeration configuration
  * Created by macro on 2018/9/14.
  */
 @Getter
 public enum QueueEnum {
     /**
-     * 消息通知队列
+     * Message notification queue
      */
     QUEUE_ORDER_CANCEL("mall.order.direct", "mall.order.cancel", "mall.order.cancel"),
     /**
-     * 消息通知ttl队列
+     * Message notification ttl queue
      */
     QUEUE_TTL_ORDER_CANCEL("mall.order.direct.ttl", "mall.order.cancel.ttl", "mall.order.cancel.ttl");
 
     /**
-     * 交换名称
+     * Exchange Name
      */
     private String exchange;
     /**
-     * 队列名称
+     * Queue Name
      */
     private String name;
     /**
-     * 路由键
+     * Routing key
      */
     private String routeKey;
 

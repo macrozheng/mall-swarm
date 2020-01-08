@@ -8,52 +8,52 @@ import java.util.Date;
 public class SmsCoupon implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "优惠卷类型；0->全场赠券；1->Member赠券；2->购物赠券；3->注册赠券")
+    @ApiModelProperty(value = "Coupon type; 0 - > full coupon; 1 - > member coupon; 2 - > shopping coupon; 3 - > registration coupon")
     private Integer type;
 
     private String name;
 
-    @ApiModelProperty(value = "使用平台：0->全部；1->移动；2->PC")
+    @ApiModelProperty(value = "Use platform: 0 - > all; 1 - > mobile; 2 - > PC")
     private Integer platform;
 
-    @ApiModelProperty(value = "数量")
+    @ApiModelProperty(value = "Count")
     private Integer count;
 
-    @ApiModelProperty(value = "金额")
+    @ApiModelProperty(value = "Amount")
     private BigDecimal amount;
 
-    @ApiModelProperty(value = "每人限领张数")
+    @ApiModelProperty(value = "Limited number of tickets per person")
     private Integer perLimit;
 
-    @ApiModelProperty(value = "使用门槛；0表示无门槛")
+    @ApiModelProperty(value = "Use threshold; 0 means no threshold")
     private BigDecimal minPoint;
 
     private Date startTime;
 
     private Date endTime;
 
-    @ApiModelProperty(value = "使用类型：0->全场通用；1->指定分类；2->指定商品")
+    @ApiModelProperty(value = "Usage type: 0 - > universal; 1 - > specify classification; 2 - > specify Product")
     private Integer useType;
 
     @ApiModelProperty(value = "Note")
     private String note;
 
-    @ApiModelProperty(value = "发行数量")
+    @ApiModelProperty(value = "Publish Count")
     private Integer publishCount;
 
-    @ApiModelProperty(value = "已使用数量")
+    @ApiModelProperty(value = "Used Count")
     private Integer useCount;
 
-    @ApiModelProperty(value = "领取数量")
+    @ApiModelProperty(value = "Received Count")
     private Integer receiveCount;
 
-    @ApiModelProperty(value = "可以领取的date")
+    @ApiModelProperty(value = "Available date")
     private Date enableTime;
 
-    @ApiModelProperty(value = "优惠码")
+    @ApiModelProperty(value = "Discount code")
     private String code;
 
-    @ApiModelProperty(value = "可领取的Member类型：0->无限时")
+    @ApiModelProperty(value = "Available member types: 0 - > unlimited time")
     private Integer memberLevel;
 
     private static final long serialVersionUID = 1L;

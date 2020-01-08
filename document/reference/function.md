@@ -6,7 +6,7 @@
 
 ![功能结构图-商品.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_product.jpg)
 
-### 订单management
+### Order management
 
 ![功能结构图-订单.jpg](https://github.com/macrozheng/mall/blob/master/document/resource/mind_order.jpg)
 

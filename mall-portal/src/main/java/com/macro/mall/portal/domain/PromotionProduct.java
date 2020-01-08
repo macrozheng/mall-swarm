@@ -9,14 +9,14 @@ import java.util.List;
 
 /**
  * Created by macro on 2018/8/27.
- * 商品的促销信息，包括sku、打折优惠、满减优惠
+ * Product promotion information, including SKU, discounts, full discounts
  */
 public class PromotionProduct extends PmsProduct {
-    //商品库存信息
+    //Product Stock Information
     private List<PmsSkuStock> skuStockList;
-    //商品打折信息
+    //Product discount information
     private List<PmsProductLadder> productLadderList;
-    //商品满减信息
+    //Product full reduction information
     private List<PmsProductFullReduction> productFullReductionList;
 
     public List<PmsSkuStock> getSkuStockList() {

@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 /**
- * Member商品浏览历史Repository
+ * Member Product Browsing History Repository
  * Created by macro on 2018/8/3.
  */
 public interface MemberReadHistoryRepository extends MongoRepository<MemberReadHistory,String> {
