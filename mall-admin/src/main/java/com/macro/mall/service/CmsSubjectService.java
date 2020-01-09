@@ -5,7 +5,7 @@ import com.macro.mall.model.CmsSubject;
 import java.util.List;
 
 /**
- * Commodity topics Service
+ * Product topics Service
  * Created by macro on 2018/6/1.
  */
 public interface CmsSubjectService {

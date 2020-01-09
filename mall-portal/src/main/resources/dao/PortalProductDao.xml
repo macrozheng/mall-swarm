@@ -2,19 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.macro.mall.portal.dao.PortalProductDao">
     <resultMap id="cartProductMap" type="com.macro.mall.portal.domain.CartProduct" autoMapping="true">
-        <id column="id" jdbcType="BIGINT" property="id" />
-        <collection property="productAttributeList" columnPrefix="attr_" resultMap="com.macro.mall.mapper.PmsProductAttributeMapper.BaseResultMap">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <collection property="productAttributeList" columnPrefix="attr_"
+                    resultMap="com.macro.mall.mapper.PmsProductAttributeMapper.BaseResultMap">
         </collection>
-        <collection property="skuStockList" columnPrefix="sku_" resultMap="com.macro.mall.mapper.PmsSkuStockMapper.BaseResultMap">
+        <collection property="skuStockList" columnPrefix="sku_"
+                    resultMap="com.macro.mall.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
     </resultMap>
-    <resultMap id="promotionProductMap" type="com.macro.mall.portal.domain.PromotionProduct" extends="com.macro.mall.mapper.PmsProductMapper.BaseResultMap">
-        <id column="id" jdbcType="BIGINT" property="id" />
-        <collection property="skuStockList" columnPrefix="sku_" resultMap="com.macro.mall.mapper.PmsSkuStockMapper.BaseResultMap">
+    <resultMap id="promotionProductMap" type="com.macro.mall.portal.domain.PromotionProduct"
+               extends="com.macro.mall.mapper.PmsProductMapper.BaseResultMap">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <collection property="skuStockList" columnPrefix="sku_"
+                    resultMap="com.macro.mall.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
-        <collection property="productLadderList" columnPrefix="ladder_" resultMap="com.macro.mall.mapper.PmsProductLadderMapper.BaseResultMap">
+        <collection property="productLadderList" columnPrefix="ladder_"
+                    resultMap="com.macro.mall.mapper.PmsProductLadderMapper.BaseResultMap">
         </collection>
-        <collection property="productFullReductionList" columnPrefix="full_" resultMap="com.macro.mall.mapper.PmsProductFullReductionMapper.BaseResultMap">
+        <collection property="productFullReductionList" columnPrefix="full_"
+                    resultMap="com.macro.mall.mapper.PmsProductFullReductionMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getCartProduct" resultMap="cartProductMap">
@@ -47,30 +53,30 @@
     </select>
     <select id="getPromotionProductList" resultMap="promotionProductMap">
         SELECT
-            p.id,
-            p.`name`,
-            p.promotion_type,
-            p.gift_growth,
-            p.gift_point,
-            sku.id sku_id,
-            sku.price sku_price,
-            sku.sku_code sku_sku_code,
-            sku.promotion_price sku_promotion_price,
-            sku.stock sku_stock,
-            sku.lock_stock sku_lock_stock,
-            ladder.id ladder_id,
-            ladder.count ladder_count,
-            ladder.discount ladder_discount,
-            full_re.id full_id,
-            full_re.full_price full_full_price,
-            full_re.reduce_price full_reduce_price
+        p.id,
+        p.`name`,
+        p.promotion_type,
+        p.gift_growth,
+        p.gift_point,
+        sku.id sku_id,
+        sku.price sku_price,
+        sku.sku_code sku_sku_code,
+        sku.promotion_price sku_promotion_price,
+        sku.stock sku_stock,
+        sku.lock_stock sku_lock_stock,
+        ladder.id ladder_id,
+        ladder.count ladder_count,
+        ladder.discount ladder_discount,
+        full_re.id full_id,
+        full_re.full_price full_full_price,
+        full_re.reduce_price full_reduce_price
         FROM
-            pms_product p
-            LEFT JOIN pms_sku_stock sku ON p.id = sku.product_id
-            LEFT JOIN pms_product_ladder ladder ON p.id = ladder.product_id
-            LEFT JOIN pms_product_full_reduction full_re ON p.id = full_re.product_id
+        pms_product p
+        LEFT JOIN pms_sku_stock sku ON p.id = sku.product_id
+        LEFT JOIN pms_product_ladder ladder ON p.id = ladder.product_id
+        LEFT JOIN pms_product_full_reduction full_re ON p.id = full_re.product_id
         WHERE
-            p.id IN
+        p.id IN
         <foreach collection="ids" open="(" close=")" item="id" separator=",">
             #{id}
         </foreach>

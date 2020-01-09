@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 搜索Systematic中的Product management自定义Dao
+ * Search Product Management Custom Dao in Systematic
  * Created by macro on 2018/6/19.
  */
 public interface EsProductDao {

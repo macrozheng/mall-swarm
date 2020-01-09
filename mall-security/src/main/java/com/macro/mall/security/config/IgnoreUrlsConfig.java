@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 用于配置不需要保护的资源路径
+ * Used to configure resource paths that do not need protection
  * Created by macro on 2018/11/5.
  */
 @Getter

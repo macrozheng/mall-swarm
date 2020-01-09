@@ -4,13 +4,13 @@ spring:
   application:
     name: mall-config
   profiles:
-    active: native #使用本地配置，要使用git存储改为git即可
+    active: native #Use local configuration, you can use git storage instead of git
   cloud:
     config:
       server:
-        native: #本地仓Stock储
+        native: #Local Warehouse Stock Storage
           search-locations: classpath:/config/{application}
-        git: #Git仓Stock储
+        git: #Git repository storage
           uri: https://gitee.com/macrozheng/mall-config.git
           username: macro
           password: 123456

@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Commodity Property Service Implementation Class
+ * Product Property Service Implementation Class
  * Created by macro on 2018/4/26.
  */
 @Service

@@ -6,22 +6,22 @@ services:
     ports:
       - 8080:8080
     external_links:
-      - mysql:db #可以用db这个域名访问mysql服务
+      - mysql:db #You can use the domain name db to access the mysql service
   mall-search:
     image: mall/mall-search:1.0-SNAPSHOT
     container_name: mall-search
     ports:
       - 8081:8081
     external_links:
-      - elasticsearch:es #可以用es这个域名访问elasticsearch服务
-      - mysql:db #可以用db这个域名访问mysql服务
+      - elasticsearch:es #You can access the elasticsearch service with the domain name es
+      - mysql:db #You can use the domain name db to access the mysql service
   mall-portal:
     image: mall/mall-portal:1.0-SNAPSHOT
     container_name: mall-portal
     ports:
       - 8085:8085
     external_links:
-      - redis:redis #可以用redis这个域名访问redis服务
-      - mongo:mongo #可以用mongo这个域名访问mongo服务
-      - mysql:db #可以用db这个域名访问mysql服务
-      - rabbitmq:rabbit #可以用rabbit这个域名访问rabbitmq服务
+      - redis:redis #You can use the domain name redis to access the redis service
+      - mongo:mongo #You can use the mongo domain to access mongo services
+      - mysql:db #You can use the domain name db to access the mysql service
+      - rabbitmq:rabbit #You can use the domain name rabbit to access rabbitmq services
