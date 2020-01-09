@@ -10,7 +10,7 @@ spring:
       discovery:
         locator:
           enabled: true
-          lower-case-service-id: true #使用小写service-id
+          lower-case-service-id: true #Use lowercase service-id
 management: #Enable monitoring of SpringBoot Admin
   endpoints:
     web:

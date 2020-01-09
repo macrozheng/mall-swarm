@@ -6,17 +6,17 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**
- * 商品ES操作类
+ * Product ES operation
  * Created by macro on 2018/6/19.
  */
 public interface EsProductRepository extends ElasticsearchRepository<EsProduct, Long> {
     /**
-     * 搜索查询
+     * Search query
      *
      * @param name              product name
-     * @param subTitle          商品标题
-     * @param keywords          商品Keywords
-     * @param page              minutes页信息
+     * @param subTitle          Product title
+     * @param keywords          Product Keywords
+     * @param page              Paging information
      * @return
      */
     Page<EsProduct> findByNameOrSubTitleOrKeywords(String name, String subTitle, String keywords,Pageable page);

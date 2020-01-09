@@ -3,7 +3,7 @@ package com.macro.mall.search.domain;
 import java.util.List;
 
 /**
- * 搜索相关商品brand name，minutes类Name及Attributes
+ * Search related product brand names, category names and attributes
  * Created by macro on 2018/6/27.
  */
 public class EsProductRelatedInfo {

@@ -1,91 +1,90 @@
-# mall-swarm 在Windows环境下的部署
+# mall-swarm deployment in Windows
 
-## 开发Environment setup
+## Develop Environment setup
 
-> `mall-swarm`中使用到的环境和`mall`项目中大致相同，具体可以查看[mall在Windows环境下的部署](https://github.com/macrozheng/mall-learning/blob/master/docs/deploy/mall_deploy_windows.md)。
+> `The environment used in mall-swarm` is roughly the same as in the `mall` project. For details, see [mall deployment in a Windows environment.](https://github.com/macrozheng/mall-learning/blob/master/docs/deploy/mall_deploy_windows.md)。
 
-简易Environment setup流程：
+Easy Environment setup process：
 
-- 安装IDEA并导入项目源码；
-- 安装MySql，创建一个`mall`数据库，并导入`/document/sql/mall.sql`文件；
-- 安装Redis、Elasticsearch、MongoDB、RabbitMQ等环境。
+- Install IDEA and import the project source code；
+- Install MySql, create a `mall` database, and import the` / document / sql / mall.sql` file；
+- Install Redis, Elasticsearch, MongoDB, RabbitMQ and other environments。
 
-## 项目部署
+## Project deployment
 
-> `mall-swarm`项目启动有先后顺序，大家要按照以下顺序启动。
+> `The mall-swarm` project starts in a sequential order, everyone should start in the following order.
 
-### 启动注册中心`mall-registory`
+### Start registry `mall-registory`
 
-- 直接运行com.macro.mall.MallRegistryApplication的main函数即可；
-- 运行完成后可以通过注册中心控制台查看：http://localhost:8001
+- Simply run the main function of com.macro.mall.MallRegistryApplication;
+- After the operation is completed, you can view it through the registry console：http://localhost:8001
 
-### 启动配置中心`mall-config`
+### Start the configuration center `mall-config`
 
-- 直接运行com.macro.mall.MallConfigApplication的main函数即可；
-- 访问以下接口获取mall-admin在dev环境下的配置信息：http://localhost:8301/master/admin-dev.yml
+- Just run the main function of com.macro.mall.MallConfigApplication；
+- Visit the following interface to get the configuration information of mall-admin in the dev environment：http://localhost:8301/master/admin-dev.yml
 
-### 启动监控中心`mall-monitor`
+### Start monitoring center `mall-monitor`
 
-- 直接运行com.macro.mall.MallMonitorApplication的main函数即可；
-- 运行完成后可以通过监控中心控制台查看：http://localhost:8101
-- 输入账号password`macro:123456`可以登录查看。
+- Simply run the main function of com.macro.mall.MallMonitorApplication.；
+- After the operation is completed, you can view it through the monitoring center console：http://localhost:8101
+- Enter the account password `macro: 123456` to login and view.
 
-### 启动网关服务`mall-gateway`
+### Start the gateway service`mall-gateway`
 
-- 直接运行com.macro.mall.MallGatewayApplication的main函数即可；
-- 访问以下接口获取动态路由规则：http://localhost:8201/actuator/gateway/routes
+- Just run the main function of com.macro.mall.MallGatewayApplication.；
+- Visit the following interface for dynamic routing rules：http://localhost:8201/actuator/gateway/routes
 
-### 启动后台management服务`mall-admin`
+### Start background management service`mall-admin`
 
-- 直接运行com.macro.mall.MallAdminApplication的main函数即可；
-- 通过`mall-gateway`网关服务访问接口文档：http://localhost:8201/mall-admin/swagger-ui.html
+- Just run the main function of com.macro.mall.MallAdminApplication；
+- Access interface documents through `mall-gateway` gateway service：http://localhost:8201/mall-admin/swagger-ui.html
 
 ![](../resource/mall_swarm_windows_06.png)
 
-- 登录接口地址：http://localhost:8201/mall-admin/admin/login
-- 访问登录接口获取到token后放入认证的头信息即可正常访问其他需要登录的接口：
+- Login interface address：http://localhost:8201/mall-admin/admin/login
+- After accessing the login interface and obtaining the token, put the authentication header information to access other interfaces that require login normally.：
 
 ![](../resource/mall_swarm_windows_09.png)
 
-### 启动前台服务`mall-portal`
+### Start the foreground service`mall-portal`
 
-- 直接运行com.macro.mall.portal.MallPortalApplication的main函数即可；
-- 通过`mall-gateway`网关服务访问接口文档：http://localhost:8201/mall-portal/swagger-ui.html
+- Just run the main function of com.macro.mall.portal.MallPortalApplication.；
+- Access interface documents through `mall-gateway` gateway service：http://localhost:8201/mall-portal/swagger-ui.html
 
 ![](../resource/mall_swarm_windows_07.png)
 
-- 登录接口地址：http://localhost:8201/mall-portal/sso/login
-- 调用需要登录的接口方式同`mall-admin`。
+- Login interface address：http://localhost:8201/mall-portal/sso/login
+- The method of calling the interface that needs to log in is the same`mall-admin`。
 
-### 启动搜索服务`mall-search`
+### Start search service`mall-search`
 
-- 直接运行com.macro.mall.search.MallSearchApplication的main函数即可；
-- 通过`mall-gateway`网关服务访问接口文档：http://localhost:8201/mall-search/swagger-ui.html
+- Simply run the main function of com.macro.mall.search.MallSearchApplication;
+-Access interface documentation via `mall-gateway` gateway service: http: // localhost: 8201 / mall-search / swagger-ui.html
 
-![](../resource/mall_swarm_windows_10.png)
+! [] (../ resource / mall_swarm_windows_10.png)
 
-### 启动测试服务`mall-demo`
+### Start test service `mall-demo`
 
-- 直接运行com.macro.mall.MallAdminApplication的main函数即可；
-- 通过`mall-gateway`网关服务访问接口文档：http://localhost:8201/mall-demo/swagger-ui.html
-
+-Simply run the main function of com.macro.mall.MallAdminApplication;
+-Access interface documentation via `mall-gateway` gateway service: http: // localhost: 8201 / mall-demo / swagger-ui.html
 ![](../resource/mall_swarm_windows_08.png)
 
-- 可以通过调用FeignAdminController、FeignPortalController、FeignSearchController来测试使用Feign的远程调用功能。
+- You can test the remote call function using Feign by calling FeignAdminController, FeignPortalController, FeignSearchController.
 
-## 效果展示
+## Show results
 
-- 注册中心服务信息：
+-Registry service information:
 
-![](../resource/mall_swarm_windows_01.png)
+! [] (../ resource / mall_swarm_windows_01.png)
 
-- 监控中心服务概览信息：
+-Overview information of monitoring center services:
 
 ![](../resource/mall_swarm_windows_02.png)
 
 ![](../resource/mall_swarm_windows_03.png)
 
-- 监控中心单应用详情信息：
+- Monitoring center single application details：
 
 ![](../resource/mall_swarm_windows_04.png)
 

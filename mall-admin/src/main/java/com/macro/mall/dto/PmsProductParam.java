@@ -10,7 +10,7 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 public class PmsProductParam extends PmsProduct{
-    @ApiModelProperty("Commodity Ladder Price Settings")
+    @ApiModelProperty("Product Ladder Price Settings")
     private List<PmsProductLadder> productLadderList;
     @ApiModelProperty("Product full price reduction setting")
     private List<PmsProductFullReduction> productFullReductionList;
@@ -20,9 +20,9 @@ public class PmsProductParam extends PmsProduct{
     private List<PmsSkuStock> skuStockList;
     @ApiModelProperty("Product parameter and custom specification attributes")
     private List<PmsProductAttributeValue> productAttributeValueList;
-    @ApiModelProperty("Special Topics and Commodity Relations")
+    @ApiModelProperty("Special Topics and Product Relations")
     private List<CmsSubjectProductRelation> subjectProductRelationList;
-    @ApiModelProperty("Relationship between preferred area and commodity")
+    @ApiModelProperty("Relationship between preferred area and Product")
     private List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList;
 
     public List<PmsProductLadder> getProductLadderList() {

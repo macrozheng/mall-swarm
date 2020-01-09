@@ -9,14 +9,14 @@
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
         <property name="javaFileEncoding" value="UTF-8"/>
-        <!-- 为模型生成序列化方法-->
+        <!-- Generate a serialization method for the model-->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
-        <!-- 为生成的Java模型创建一个toString方法 -->
+        <!-- Create a toString method for the generated Java model -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
-        <!--生成mapper.xml时覆盖原文件-->
-        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <!--Overwrite the original file when generating mapper.xml-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>
         <commentGenerator type="com.macro.mall.CommentGenerator">
-            <!-- YesNo去除自动生成的注释 true：Yes ： false:No -->
+            <!-- Whether to remove auto-generated comments true: yes: false: no -->
             <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="true"/>
             <property name="addRemarkComments" value="true"/>
@@ -26,8 +26,8 @@
                         connectionURL="${jdbc.connectionURL}"
                         userId="${jdbc.userId}"
                         password="${jdbc.password}">
-            <!--解决mysql驱动升级到8.0后不生成指定数据库代码的问题-->
-            <property name="nullCatalogMeansCurrent" value="true" />
+            <!--Solve the problem that the specified database code is not generated after the mysql driver is upgraded to 8.0-->
+            <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="com.macro.mall.model" targetProject="mall-mbg\src\main\java"/>
@@ -36,7 +36,7 @@
 
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.macro.mall.mapper"
                              targetProject="mall-mbg\src\main\java"/>
-        <!--生成全部表tableName设为%-->
+        <!--Generate all tables with tableName set to %-->
         <table tableName="%">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>

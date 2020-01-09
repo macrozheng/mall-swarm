@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 自定义Return result：未登录或登录过期
+ * Custom return results: Not logged in or expired
  * Created by macro on 2018/5/14.
  */
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {

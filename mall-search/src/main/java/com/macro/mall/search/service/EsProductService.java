@@ -7,22 +7,22 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
- * 商品搜索managementService
+ * Product Search Management Service
  * Created by macro on 2018/6/19.
  */
 public interface EsProductService {
     /**
-     * 从数据库中导入所有商品到ES
+     * Import all products from database to ES
      */
     int importAll();
 
     /**
-     * according toid删除商品
+     * Delete item by id
      */
     void delete(Long id);
 
     /**
-     * according toidCreate product
+     * Create product based on id
      */
     EsProduct create(Long id);
 
@@ -32,22 +32,22 @@ public interface EsProductService {
     void delete(List<Long> ids);
 
     /**
-     * according toKeywords搜索Name或者Subtitle
+     * Search for a name or subtitle by keyword
      */
     Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize);
 
     /**
-     * according toKeywords搜索Name或者Subtitle复合查询
+     * Compound search by name or subtitle by keyword
      */
     Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort);
 
     /**
-     * according to商品id推荐相关商品
+     * Recommend related products based on product id
      */
     Page<EsProduct> recommend(Long id, Integer pageNum, Integer pageSize);
 
     /**
-     * 获取搜索词相关品牌、minutes类、Attributes
+     * Get search terms related brands, categories, attributes
      */
     EsProductRelatedInfo searchRelatedInfo(String keyword);
 }

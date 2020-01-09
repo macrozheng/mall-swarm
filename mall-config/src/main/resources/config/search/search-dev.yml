@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
     username: root
     password: root
   data:
@@ -12,5 +12,5 @@ spring:
       uris: http://localhost:9200
 logging:
   level:
-    root: info #日志配置DEBUG,INFO,WARN,ERROR
+    root: info #Log configuration DEBUG, INFO, WARN, ERROR
     com.macro.mall: debug

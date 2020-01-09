@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Commodity topics Controller
+ * Product topics Controller
  * Created by macro on 2018/6/1.
  */
 @Controller
-@Api(tags = "CmsSubjectController", description = "Commodity topics management")
+@Api(tags = "CmsSubjectController", description = "Product topics management")
 @RequestMapping("/subject")
 public class CmsSubjectController {
     @Autowired
     private CmsSubjectService subjectService;
 
-    @ApiOperation("Get all Commodity topics ")
+    @ApiOperation("Get all Product topics ")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<CmsSubject>> listAll() {

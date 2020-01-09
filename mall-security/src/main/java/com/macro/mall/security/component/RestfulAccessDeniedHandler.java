@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 自定义Return result：没有权限访问时
+ * Custom return results: when you do not have permission to access
  * Created by macro on 2018/4/26.
  */
 public class RestfulAccessDeniedHandler implements AccessDeniedHandler{

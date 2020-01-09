@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://db:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://db:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
     username: reader
     password: 123456
   data:
@@ -11,8 +11,8 @@ spring:
     rest:
       uris: http://es:9200
 logging:
-  path: /var/logs #配置日志生成路径
+  path: /var/logs #Configure the log generation path
 management:
   health:
     elasticsearch:
-      response-timeout: 1000ms #加大健康检查Timeout
+      response-timeout: 1000ms #Increase health check-up Timeout

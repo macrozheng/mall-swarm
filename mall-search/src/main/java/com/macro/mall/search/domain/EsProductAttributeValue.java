@@ -6,14 +6,14 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 
 /**
- * 搜索中的商品Attributes信息
+ * Product attribute information in search
  * Created by macro on 2018/6/27.
  */
 public class EsProductAttributeValue implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long id;
     private Long productAttributeId;
-    //Attributes值
+    //Attributes value
     @Field(type = FieldType.Keyword)
     private String value;
     //Attributesparameter：0->specification；1->parameter
