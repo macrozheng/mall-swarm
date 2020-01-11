@@ -102,13 +102,13 @@
                 <artifactId>mall-security</artifactId>
                 <version>${mall-security.version}</version>
             </dependency>
-            <!--MyBatisminutes page plugin starter-->
+            <!--MyBatis page plugin starter-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper-starter.version}</version>
             </dependency>
-            <!--MyBatisminutes page plugin-->
+            <!--MyBatis page plugin-->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
