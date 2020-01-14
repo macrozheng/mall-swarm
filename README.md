@@ -69,6 +69,7 @@ mall
 | Lombok           | 简化对象封装工具     | https://github.com/rzwitserloot/lombok               |
 | Seata            | 全局事务管理框架     | https://github.com/seata/seata                       |
 | Portainer        | 可视化Docker容器管理 | https://github.com/portainer/portainer               |
+| Jenkins          | 自动化部署工具       | https://github.com/jenkinsci/jenkins                 |
 
 ### 前端技术
 
