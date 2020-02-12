@@ -1,0 +1,72 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root #Set root account password
+    ports:
+      - 3306:3306
+    volumes:
+      - $HOME/mallData/mysql/data/db:/var/lib/mysql #Data file mount
+      - $HOME/mallData/mysql/data/conf:/etc/mysql/conf.d #Configuration file mount
+      - $HOME/mallData/mysql/log:/var/log/mysql #Log file mount
+  redis:
+    image: redis:3.2
+    container_name: redis
+    command: redis-server --appendonly yes
+    volumes:
+      - $HOME/mallData/redis/data:/data #Data file mount
+    ports:
+      - 6379:6379
+  nginx:
+    image: nginx:1.10
+    container_name: nginx
+    volumes:
+      - $HOME/mallData/nginx/nginx.conf:/etc/nginx/nginx.conf #Configuration file mount
+      - $HOME/mallData/nginx/html:/usr/share/nginx/html #Mount the static resource root directory
+      - $HOME/mallData/nginx/log:/var/log/nginx #Log file mount
+    ports:
+      - 80:80
+  rabbitmq:
+    image: rabbitmq:3.7.15-management
+    container_name: rabbitmq
+    volumes:
+      - $HOME/mallData/rabbitmq/data:/var/lib/rabbitmq #Data file mount
+      - $HOME/mallData/rabbitmq/log:/var/log/rabbitmq #Log file mount
+    ports:
+      - 5672:5672
+      - 15672:15672
+  elasticsearch:
+    image: elasticsearch:6.4.0
+    container_name: elasticsearch
+    environment:
+      - "cluster.name=elasticsearch" #Set cluster name to elasticsearch
+      - "discovery.type=single-node" #Start in single node mode
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m" #Set the jvm memory size
+    volumes:
+      - $HOME/mallData/elasticsearch/plugins:/usr/share/elasticsearch/plugins #Mounting plugin files
+      - $HOME/mallData/elasticsearch/data:/usr/share/elasticsearch/data #Data file mount
+    ports:
+      - 9200:9200
+      - 9300:9300
+  kibana:
+    image: kibana:6.4.0
+    container_name: kibana
+    links:
+      - elasticsearch:es #You can access the elasticsearch service with the domain name es
+    depends_on:
+      - elasticsearch #kibana starts after elasticsearch starts
+    environment:
+      - "elasticsearch.hosts=http://es:9200" #Set the address to access elasticsearch
+    ports:
+      - 5601:5601
+  mongo:
+    image: mongo:3.2
+    container_name: mongo
+    volumes:
+      - $HOME/mallData/mongo/db:/data/db #Data file mount
+    ports:
+      - 27017:27017

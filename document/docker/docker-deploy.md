@@ -39,7 +39,7 @@ docker run -p 3306:3306 --name mysql \
 - -v /mydata/mysql/data:/var/lib/mysql/：Mount the configuration folder to the host
 - -e MYSQL_ROOT_PASSWORD=root：Initialize rootUser's password
 ### Connect through the container's mysql command line tool
-docker exec -it mysql mysql -uroot -proot
+docker exec -it mysql mysql -u root -p root
 ### Set up remote access
 grant all privileges on *.* to 'root' @'%' identified by 'root';
 flush privileges;
@@ -91,7 +91,7 @@ docker run -p 9200:9200 -p 9300:9300 --name elasticsearch \
 -v /mydata/elasticsearch/data:/usr/share/elasticsearch/data \
 -d elasticsearch:6.4.0
 ### Test
-Access returns version information：http://192.168.1.66:9200/
+    Access returns version information：http://192.168.1.66:9200/
 ### Installation directory location
 /usr/share/elasticsearch
 ### Install the head plugin (may not be installed, only for testing)

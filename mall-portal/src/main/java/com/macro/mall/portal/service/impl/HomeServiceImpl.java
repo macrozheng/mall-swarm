@@ -45,7 +45,7 @@ public class HomeServiceImpl implements HomeService {
         //Get Recommended Brands
         result.setBrandList(homeDao.getRecommendBrandList(0,4));
         //Get Flash Promotion information
-        result.setHomeFlashPromotion(getHome());
+        result.setHomeFlashPromotion(getHomeFlashPromotion());
         //Get new product recommendations
         result.setNewProductList(homeDao.getNewProductList(0,4));
         //Get Popular Recommendations

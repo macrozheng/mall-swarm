@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Created by macro on 2018/8/27.
- * 前台商品查询逻辑单dollar测试
+ * Front-end product query logic single dollar test
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

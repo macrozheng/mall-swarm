@@ -16,8 +16,8 @@ import java.util.Properties;
  */
 public class CommentGenerator extends DefaultCommentGenerator {
     private boolean addRemarkComments = false;
-    private static final String EXAMPLE_SUFFIX="Example";
-    private static final String API_MODEL_PROPERTY_FULL_CLASS_NAME="io.swagger.annotations.ApiModelProperty";
+    private static final String EXAMPLE_SUFFIX = "Example";
+    private static final String API_MODEL_PROPERTY_FULL_CLASS_NAME = "io.swagger.annotations.ApiModelProperty";
 
     /**
      * Setting user-configured parameters
@@ -36,14 +36,14 @@ public class CommentGenerator extends DefaultCommentGenerator {
                                 IntrospectedColumn introspectedColumn) {
         String remarks = introspectedColumn.getRemarks();
         //Determine whether to add remark information based on parameters and remark information
-        if(addRemarkComments&&StringUtility.stringHasValue(remarks)){
+        if (addRemarkComments && StringUtility.stringHasValue(remarks)) {
 //            addFieldJavaDoc(field, remarks);
             //Special characters in the database need to be escaped
-            if(remarks.contains("\"")){
-                remarks = remarks.replace("\"","'");
+            if (remarks.contains("\"")) {
+                remarks = remarks.replace("\"", "'");
             }
             //Add a swagger annotation to the model's fields
-            field.addJavaDocLine("@ApiModelProperty(value = \""+remarks+"\")");
+            field.addJavaDocLine("@ApiModelProperty(value = \"" + remarks + "\")");
         }
     }
 
@@ -55,8 +55,8 @@ public class CommentGenerator extends DefaultCommentGenerator {
         field.addJavaDocLine("/**");
         //Get comment information for database fields
         String[] remarkLines = remarks.split(System.getProperty("line.separator"));
-        for(String remarkLine:remarkLines){
-            field.addJavaDocLine(" * "+remarkLine);
+        for (String remarkLine : remarkLines) {
+            field.addJavaDocLine(" * " + remarkLine);
         }
         addJavadocTag(field, false);
         field.addJavaDocLine(" */");
@@ -66,7 +66,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
     public void addJavaFileComment(CompilationUnit compilationUnit) {
         super.addJavaFileComment(compilationUnit);
         //Only add import of swagger annotation class in model
-        if(!compilationUnit.isJavaInterface()&&!compilationUnit.getType().getFullyQualifiedName().contains(EXAMPLE_SUFFIX)){
+        if (!compilationUnit.isJavaInterface() && !compilationUnit.getType().getFullyQualifiedName().contains(EXAMPLE_SUFFIX)) {
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_PROPERTY_FULL_CLASS_NAME));
         }
     }

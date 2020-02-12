@@ -29,7 +29,7 @@ CREATE TABLE `cms_help` (
   `read_count` int(1) DEFAULT NULL,
   `content` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='帮助表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Help table';
 
 -- ----------------------------
 -- Records of cms_help
@@ -47,7 +47,7 @@ CREATE TABLE `cms_help_category` (
   `show_status` int(2) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='帮助minutes类表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Help category';
 
 -- ----------------------------
 -- Records of cms_help_category
@@ -66,7 +66,7 @@ CREATE TABLE `cms_member_report` (
   `report_status` int(1) DEFAULT NULL COMMENT 'Report status：0->Not processed；1->Processed',
   `handle_status` int(1) DEFAULT NULL COMMENT 'process result：0->invalid；1->Effective；2->Malicious',
   `note` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User举报表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='user report table';
 
 -- ----------------------------
 -- Records of cms_member_report
@@ -84,7 +84,7 @@ CREATE TABLE `cms_prefrence_area` (
   `sort` int(11) DEFAULT NULL,
   `show_status` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='优选专Area';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Prefrence area';
 
 -- ----------------------------
 -- Records of cms_prefrence_area
@@ -710,7 +710,7 @@ CREATE TABLE `pms_comment` (
   `read_count` int(11) DEFAULT NULL,
   `content` text,
   `pics` varchar(1000) DEFAULT NULL COMMENT 'Image addresses, separated by commas',
-  `member_icon` varchar(255) DEFAULT NULL COMMENT 'Comment on a user's profile picture',
+  `member_icon` varchar(255) DEFAULT NULL COMMENT 'Comment on a users profile picture',
   `replay_count` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='product review表';
@@ -1888,7 +1888,7 @@ CREATE TABLE `ums_member` (
   `icon` varchar(500) DEFAULT NULL COMMENT 'Icon',
   `gender` int(1) DEFAULT NULL COMMENT 'Gender: 0 - > unknown; 1 - > male; 2 - > female',
   `birthday` date DEFAULT NULL COMMENT 'Birthday',
-  `city` varchar(64) DEFAULT NULL COMMENT 'The city you're Living',
+  `city` varchar(64) DEFAULT NULL COMMENT 'The city youre Living',
   `job` varchar(100) DEFAULT NULL COMMENT 'Job',
   `personalized_signature` varchar(200) DEFAULT NULL COMMENT 'Signature',
   `source_type` int(1) DEFAULT NULL COMMENT 'User source',
