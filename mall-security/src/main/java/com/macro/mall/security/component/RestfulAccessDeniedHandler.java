@@ -15,7 +15,7 @@ import java.io.IOException;
  * Custom return results: when you do not have permission to access
  * Created by macro on 2018/4/26.
  */
-public class RestfulAccessDeniedHandler implements AccessDeniedHandler{
+public class RestfulAccessDeniedHandler implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest request,
                        HttpServletResponse response,

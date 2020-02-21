@@ -102,7 +102,7 @@ docker run -p 9200:9200 -p 9300:9300 --name elasticsearch \
 1. Enter docker internal bash:docker exec -it elasticsearch /bin/bash
 2. Install the Chinese word segmentation plugin and execute the following command：elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.2/elasticsearch-analysis-ik-6.2.2.zip
 3. test：
-    - Access header plugin：打开地址http://192.168.1.66:9200/_plugin/head/ 
+    - Access header plugin：Open address http://192.168.1.66:9200/_plugin/head/ 
     - Select compound query and enter address：POST:http://192.168.1.66:9200/_analyze 
     - Input parameter：JSON:{"analyzer":"ik","text":"We are big data developers"}
 
