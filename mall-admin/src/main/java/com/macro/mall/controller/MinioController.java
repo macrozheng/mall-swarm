@@ -3,7 +3,7 @@ package com.macro.mall.controller;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.dto.MinioUploadDto;
 import io.minio.MinioClient;
-import io.minio.policy.PolicyType;
+//import io.minio.policy.PolicyType;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -50,7 +50,7 @@ public class MinioController {
             } else {
                 //Create a bucket and set read-only permissions
                 minioClient.makeBucket(BUCKET_NAME);
-                minioClient.setBucketPolicy(BUCKET_NAME, "*.*", PolicyType.READ_ONLY);
+                minioClient.setBucketPolicy(BUCKET_NAME, "*.*");
             }
             String filename = file.getOriginalFilename();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
