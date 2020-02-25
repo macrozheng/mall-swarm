@@ -13,7 +13,6 @@
         <module>mall-common</module>
         <module>mall-mbg</module>
         <module>mall-security</module>
-        <module>mall-demo</module>
         <module>mall-admin</module>
         <module>mall-search</module>
         <module>mall-portal</module>
@@ -35,15 +34,15 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
-        <docker.host>http://192.168.6.132:2375</docker.host>
+        <docker.host>http://118.89.155.112:2375</docker.host>
         <docker.maven.plugin.version>1.1.0</docker.maven.plugin.version>
-        <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <pagehelper-starter.version>1.2.10</pagehelper-starter.version>
         <pagehelper.version>5.1.8</pagehelper.version>
         <druid.version>1.1.10</druid.version>
-        <hutool.version>4.5.7</hutool.version>
+        <hutool.version>5.1.4</hutool.version>
         <swagger2.version>2.7.0</swagger2.version>
+        <knife4j.version>2.0.0</knife4j.version>
         <mybatis-generator.version>1.3.7</mybatis-generator.version>
         <mybatis.version>3.4.6</mybatis.version>
         <mysql-connector.version>8.0.15</mysql-connector.version>
@@ -58,21 +57,6 @@
         <mall-security.version>1.0-SNAPSHOT</mall-security.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -133,10 +117,11 @@
                 <version>${swagger2.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger2.version}</version>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-ui</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
+
             <!-- MyBatis 生成器 -->
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
