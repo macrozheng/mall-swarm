@@ -56,7 +56,21 @@
         <mall-mbg.version>1.0-SNAPSHOT</mall-mbg.version>
         <mall-security.version>1.0-SNAPSHOT</mall-security.version>
     </properties>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
