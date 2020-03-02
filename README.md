@@ -14,7 +14,7 @@
 
 ## 系统架构图
 
-![系统架构图](document/resource/mall_micro_service_arch.png)
+![系统架构图](document/resource/mall_micro_service_arch.jpg)
 
 ## 组织结构
 
