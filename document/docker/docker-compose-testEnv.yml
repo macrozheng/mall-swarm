@@ -10,7 +10,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - $HOME/mallData/mysql/data/db:/var/lib/mysql #Data file mount
+      - $HOME/mallDataqqqdwcws:/var/lib/mysql #Data file mount
       - $HOME/mallData/mysql/data/conf:/etc/mysql/conf.d #Configuration file mount
       - $HOME/mallData/mysql/log:/var/log/mysql #Log file mount
   redis:
