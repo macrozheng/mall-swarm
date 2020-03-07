@@ -1,10 +1,13 @@
 package com.macro.mall.service.impl;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.StrUtil;
 import com.github.pagehelper.PageHelper;
 import com.macro.mall.bo.AdminUserDetails;
 import com.macro.mall.dao.UmsAdminPermissionRelationDao;
 import com.macro.mall.dao.UmsAdminRoleRelationDao;
 import com.macro.mall.dto.UmsAdminParam;
+import com.macro.mall.dto.UpdateAdminPasswordParam;
 import com.macro.mall.mapper.UmsAdminLoginLogMapper;
 import com.macro.mall.mapper.UmsAdminMapper;
 import com.macro.mall.mapper.UmsAdminPermissionRelationMapper;
@@ -147,13 +150,13 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     @Override
-    public List<UmsAdmin> list(String name, Integer pageSize, Integer pageNum) {
+    public List<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum) {
         PageHelper.startPage(pageNum, pageSize);
         UmsAdminExample example = new UmsAdminExample();
         UmsAdminExample.Criteria criteria = example.createCriteria();
-        if (!StringUtils.isEmpty(name)) {
-            criteria.andUsernameLike("%" + name + "%");
-            example.or(example.createCriteria().andNickNameLike("%" + name + "%"));
+        if (!StringUtils.isEmpty(keyword)) {
+            criteria.andUsernameLike("%" + keyword + "%");
+            example.or(example.createCriteria().andNickNameLike("%" + keyword + "%"));
         }
         return adminMapper.selectByExample(example);
     }
@@ -161,8 +164,18 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public int update(Long id, UmsAdmin admin) {
         admin.setId(id);
-        //密码已经加密处理，需要单独修改
-        admin.setPassword(null);
+        UmsAdmin rawAdmin = adminMapper.selectByPrimaryKey(id);
+        if(rawAdmin.getPassword().equals(admin.getPassword())){
+            //与原加密密码相同的不需要修改
+            admin.setPassword(null);
+        }else{
+            //与原加密密码不同的需要加密修改
+            if(StrUtil.isEmpty(admin.getPassword())){
+                admin.setPassword(null);
+            }else{
+                admin.setPassword(passwordEncoder.encode(admin.getPassword()));
+            }
+        }
         return adminMapper.updateByPrimaryKeySelective(admin);
     }
 
@@ -195,6 +208,11 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public List<UmsRole> getRoleList(Long adminId) {
         return adminRoleRelationDao.getRoleList(adminId);
+    }
+
+    @Override
+    public List<UmsResource> getResourceList(Long adminId) {
+        return adminRoleRelationDao.getResourceList(adminId);
     }
 
     @Override
@@ -239,12 +257,35 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         return adminRoleRelationDao.getPermissionList(adminId);
     }
 
+    @Override
+    public int updatePassword(UpdateAdminPasswordParam param) {
+        if(StrUtil.isEmpty(param.getUsername())
+                ||StrUtil.isEmpty(param.getOldPassword())
+                ||StrUtil.isEmpty(param.getNewPassword())){
+            return -1;
+        }
+        UmsAdminExample example = new UmsAdminExample();
+        example.createCriteria().andUsernameEqualTo(param.getUsername());
+        List<UmsAdmin> adminList = adminMapper.selectByExample(example);
+        if(CollUtil.isEmpty(adminList)){
+            return -2;
+        }
+        UmsAdmin umsAdmin = adminList.get(0);
+        if(!passwordEncoder.matches(param.getOldPassword(),umsAdmin.getPassword())){
+            return -3;
+        }
+        umsAdmin.setPassword(passwordEncoder.encode(param.getNewPassword()));
+        adminMapper.updateByPrimaryKey(umsAdmin);
+        return 1;
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String username){
         //获取用户信息
         UmsAdmin admin = getAdminByUsername(username);
         if (admin != null) {
-            List<UmsPermission> permissionList = getPermissionList(admin.getId());
-            return new AdminUserDetails(admin,permissionList);
+            List<UmsResource> resourceList = getResourceList(admin.getId());
+            return new AdminUserDetails(admin,resourceList);
         }
         throw new UsernameNotFoundException("用户名或密码错误");
     }
