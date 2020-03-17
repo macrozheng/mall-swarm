@@ -108,7 +108,7 @@ nginx | 1.10 | http://nginx.org/en/download.html
 - 读写分离解决方案请参考：[你还在代码里做读写分离么，试试这个中间件吧](http://www.macrozheng.com/#/reference/gaea);
 - 如果想使用`Consul`作为注册及配置中心的话请参考：[Spring Cloud Consul：服务治理与配置中心](http://www.macrozheng.com/#/cloud/consul);
 - 如果想使用`Nacos`作为注册及配置中心的话请参考：[Spring Cloud Alibaba：Nacos 作为注册中心和配置中心使用](http://www.macrozheng.com/#/cloud/nacos);
-- `分布式事务`解决方案请参考：[使用Seata彻底解决Spring Cloud中的分布式事务问题！](https://juejin.im/post/5dd53a9d5188255d35425a08)。
+- `分布式事务`解决方案请参考：[使用Seata彻底解决Spring Cloud中的分布式事务问题！](http://www.macrozheng.com/#/cloud/seata)。
 
 > Docker环境部署
 
