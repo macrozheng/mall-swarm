@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.mapper.SmsCouponHistoryMapper;
 import com.macro.mall.mapper.SmsCouponMapper;
 import com.macro.mall.model.*;
@@ -13,7 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 /**
  * MemberManagement Coupon Service Implementation Class
@@ -30,26 +33,26 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
     @Autowired
     private SmsCouponHistoryDao couponHistoryDao;
     @Override
-    public CommonResult add(Long couponId) {
+    public void add(Long couponId) {
         UmsMember currentMember = memberService.getCurrentMember();
         //Get coupon information and determine the quantity
         SmsCoupon coupon = couponMapper.selectByPrimaryKey(couponId);
         if(coupon==null){
-            return CommonResult.failed("Coupon does not exist");
+            Asserts.fail("优惠券不存在");
         }
         if(coupon.getCount()<=0){
-            return CommonResult.failed("Coupons have been collected");
+            Asserts.fail("优惠券已经领完了");
         }
         Date now = new Date();
         if(now.before(coupon.getEnableTime())){
-            return CommonResult.failed("Coupon is not yet available");
+            Asserts.fail("优惠券还没到领取时间");
         }
         //Determine if the number of coupons a user receives exceeds the limit
         SmsCouponHistoryExample couponHistoryExample = new SmsCouponHistoryExample();
         couponHistoryExample.createCriteria().andCouponIdEqualTo(couponId).andMemberIdEqualTo(currentMember.getId());
         long count = couponHistoryMapper.countByExample(couponHistoryExample);
         if(count>=coupon.getPerLimit()){
-            return CommonResult.failed("You have already received the coupon");
+            Asserts.fail("您已经领取过该优惠券");
         }
         //Generate coupon redemption history
         SmsCouponHistory couponHistory = new SmsCouponHistory();
@@ -67,7 +70,6 @@ public class UmsMemberCouponServiceImpl implements UmsMemberCouponService {
         coupon.setCount(coupon.getCount()-1);
         coupon.setReceiveCount(coupon.getReceiveCount()==null?1:coupon.getReceiveCount()+1);
         couponMapper.updateByPrimaryKey(coupon);
-        return CommonResult.success(null,"Claim success");
     }
 
     /**

@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.mapper.UmsMemberLevelMapper;
 import com.macro.mall.mapper.UmsMemberMapper;
 import com.macro.mall.model.UmsMember;
@@ -71,10 +71,10 @@ public class UmsMemberServiceImpl implements UmsMemberService {
     }
 
     @Override
-    public CommonResult register(String username, String password, String telephone, String authCode) {
-        //Verification code
+    public void register(String username, String password, String telephone, String authCode) {
+        //验证验证码
         if(!verifyAuthCode(authCode,telephone)){
-            return CommonResult.failed("Verification code error");
+            Asserts.fail("验证码错误");
         }
         //Query whether the user already exists
         UmsMemberExample example = new UmsMemberExample();
@@ -82,7 +82,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         example.or(example.createCriteria().andPhoneEqualTo(telephone));
         List<UmsMember> umsMembers = memberMapper.selectByExample(example);
         if (!CollectionUtils.isEmpty(umsMembers)) {
-            return CommonResult.failed("The User already exists");
+            Asserts.fail("该用户已经存在");
         }
         //No user added
         UmsMember umsMember = new UmsMember();
@@ -100,11 +100,10 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         }
         memberMapper.insert(umsMember);
         umsMember.setPassword(null);
-        return CommonResult.success(null,"registration success");
     }
 
     @Override
-    public CommonResult generateAuthCode(String telephone) {
+    public String generateAuthCode(String telephone) {
         StringBuilder sb = new StringBuilder();
         Random random = new Random();
         for(int i=0;i<6;i++){
@@ -113,25 +112,24 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         //Verification code is bound to mobile phone number and stored in redis
         redisService.set(REDIS_KEY_PREFIX_AUTH_CODE+telephone,sb.toString());
         redisService.expire(REDIS_KEY_PREFIX_AUTH_CODE+telephone,AUTH_CODE_EXPIRE_SECONDS);
-        return CommonResult.success(sb.toString(),"Get verification code succeeded");
+        return sb.toString();
     }
 
     @Override
-    public CommonResult updatePassword(String telephone, String password, String authCode) {
+    public void updatePassword(String telephone, String password, String authCode) {
         UmsMemberExample example = new UmsMemberExample();
         example.createCriteria().andPhoneEqualTo(telephone);
         List<UmsMember> memberList = memberMapper.selectByExample(example);
         if(CollectionUtils.isEmpty(memberList)){
-            return CommonResult.failed("The account does not exist");
+            Asserts.fail("该账号不存在");
         }
         //Verification code
         if(!verifyAuthCode(authCode,telephone)){
-            return CommonResult.failed("Verification code error");
+            Asserts.fail("验证码错误");
         }
         UmsMember umsMember = memberList.get(0);
         umsMember.setPassword(passwordEncoder.encode(password));
         memberMapper.updateByPrimaryKeySelective(umsMember);
-        return CommonResult.success(null,"Password changed successfully");
     }
 
     @Override

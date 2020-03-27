@@ -24,18 +24,18 @@ public interface UmsMemberService {
      * User registration
      */
     @Transactional
-    CommonResult register(String username, String password, String telephone, String authCode);
+    void register(String username, String password, String telephone, String authCode);
 
     /**
      * Generate verification code
      */
-    CommonResult generateAuthCode(String telephone);
+    String generateAuthCode(String telephone);
 
     /**
      * Change Password
      */
     @Transactional
-    CommonResult updatePassword(String telephone, String password, String authCode);
+    void updatePassword(String telephone, String password, String authCode);
 
     /**
      * Get the currently logged in Member
@@ -46,6 +46,7 @@ public interface UmsMemberService {
      * Modify member points based on member id
      */
     void updateIntegration(Long id,Integer integration);
+
 
     /**
      * Get user information

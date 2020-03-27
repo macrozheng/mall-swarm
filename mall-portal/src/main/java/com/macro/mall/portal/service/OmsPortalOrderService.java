@@ -1,9 +1,10 @@
 package com.macro.mall.portal.service;
 
-import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.portal.domain.ConfirmOrderResult;
 import com.macro.mall.portal.domain.OrderParam;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Map;
 
 /**
  * Order Management Service
@@ -19,19 +20,19 @@ public interface OmsPortalOrderService {
      * according to submit information
      */
     @Transactional
-    CommonResult generateOrder(OrderParam orderParam);
+    Map<String, Object> generateOrder(OrderParam orderParam);
 
     /**
      * Callback after successful payment
      */
     @Transactional
-    CommonResult paySuccess(Long orderId);
+    Integer paySuccess(Long orderId);
 
     /**
      * Automatic cancellation of overtime orders
      */
     @Transactional
-    CommonResult cancelTimeOutOrder();
+    Integer cancelTimeOutOrder();
 
     /**
      * Cancel single overtime order

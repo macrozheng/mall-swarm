@@ -9,7 +9,6 @@ import com.macro.mall.service.PmsProductCategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -31,7 +30,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Add product category")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:create')")
     public CommonResult create(@Validated @RequestBody PmsProductCategoryParam productCategoryParam,
                          BindingResult result) {
         int count = productCategoryService.create(productCategoryParam);
@@ -45,7 +43,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Edit product category")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:update')")
     public CommonResult update(@PathVariable Long id,
                          @Validated
                          @RequestBody PmsProductCategoryParam productCategoryParam,
@@ -61,7 +58,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Paging query product categories")
     @RequestMapping(value = "/list/{parentId}", method = RequestMethod.GET)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:read')")
     public CommonResult<CommonPage<PmsProductCategory>> getList(@PathVariable Long parentId,
                                                                 @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                                 @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
@@ -72,7 +68,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Get product classification by id")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:read')")
     public CommonResult<PmsProductCategory> getItem(@PathVariable Long id) {
         PmsProductCategory productCategory = productCategoryService.getItem(id);
         return CommonResult.success(productCategory);
@@ -81,7 +76,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Remove product category")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:delete')")
     public CommonResult delete(@PathVariable Long id) {
         int count = productCategoryService.delete(id);
         if (count > 0) {
@@ -94,7 +88,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Modify navigation bar display status")
     @RequestMapping(value = "/update/navStatus", method = RequestMethod.POST)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:update')")
     public CommonResult updateNavStatus(@RequestParam("ids") List<Long> ids, @RequestParam("navStatus") Integer navStatus) {
         int count = productCategoryService.updateNavStatus(ids, navStatus);
         if (count > 0) {
@@ -107,7 +100,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Modify display status")
     @RequestMapping(value = "/update/showStatus", method = RequestMethod.POST)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:update')")
     public CommonResult updateShowStatus(@RequestParam("ids") List<Long> ids, @RequestParam("showStatus") Integer showStatus) {
         int count = productCategoryService.updateShowStatus(ids, showStatus);
         if (count > 0) {
@@ -120,7 +112,6 @@ public class PmsProductCategoryController {
     @ApiOperation("Query all first-level categories and sub-categories")
     @RequestMapping(value = "/list/withChildren", method = RequestMethod.GET)
     @ResponseBody
-    @PreAuthorize("hasAuthority('pms:productCategory:read')")
     public CommonResult<List<PmsProductCategoryWithChildrenItem>> listWithChildren() {
         List<PmsProductCategoryWithChildrenItem> list = productCategoryService.listWithChildren();
         return CommonResult.success(list);

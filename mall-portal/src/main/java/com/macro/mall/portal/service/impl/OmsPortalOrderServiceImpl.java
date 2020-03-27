@@ -1,6 +1,6 @@
 package com.macro.mall.portal.service.impl;
 
-import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.mapper.*;
 import com.macro.mall.model.*;
 import com.macro.mall.portal.component.CancelOrderSender;
@@ -83,7 +83,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     }
 
     @Override
-    public CommonResult generateOrder(OrderParam orderParam) {
+    public Map<String, Object> generateOrder(OrderParam orderParam) {
         List<OmsOrderItem> orderItemList = new ArrayList<>();
         //Get Shopping Carts and Offers
         UmsMember currentMember = memberService.getCurrentMember();
@@ -110,7 +110,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         }
         //Determine if all items in the shopping cart are in stock
         if (!hasStock(cartPromotionItemList)) {
-            return CommonResult.failed("There is not enough stock to order");
+            Asserts.fail("库存不足，无法下单");
         }
         //Use of coupons
         if (orderParam.getCouponId() == null) {
@@ -122,7 +122,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
             //use a coupon
             SmsCouponHistoryDetail couponHistoryDetail = getUseCoupon(cartPromotionItemList, orderParam.getCouponId());
             if (couponHistoryDetail == null) {
-                return CommonResult.failed("This coupon is not available");
+                Asserts.fail("该优惠券不可用");
             }
             //Processing of coupons for ordered products
             handleCouponAmount(orderItemList, couponHistoryDetail);
@@ -138,7 +138,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
             BigDecimal totalAmount = calcTotalAmount(orderItemList);
             BigDecimal integrationAmount = getUseIntegrationAmount(orderParam.getUseIntegration(), totalAmount, currentMember, orderParam.getCouponId() != null);
             if (integrationAmount.compareTo(new BigDecimal(0)) == 0) {
-                return CommonResult.failed("Integration is not available");
+                Asserts.fail("积分不可用");
             } else {
                 //Allocate to available Products if available
                 for (OmsOrderItem orderItem : orderItemList) {
@@ -226,12 +226,12 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         Map<String, Object> result = new HashMap<>();
         result.put("order", order);
         result.put("orderItemList", orderItemList);
-        return CommonResult.success(result, "successfully ordered");
+        return result;
     }
 
     @Override
-    public CommonResult paySuccess(Long orderId) {
-        //Modify order payment status
+    public Integer paySuccess(Long orderId) {
+        //修改订单支付状态
         OmsOrder order = new OmsOrder();
         order.setId(orderId);
         order.setStatus(1);
@@ -240,16 +240,17 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         //Restore the Locking the inventory of all ordered products and reduce the real stock
         OmsOrderDetail orderDetail = portalOrderDao.getDetail(orderId);
         int count = portalOrderDao.updateSkuStock(orderDetail.getOrderItemList());
-        return CommonResult.success(count,"payment successful");
+        return count;
     }
 
     @Override
-    public CommonResult cancelTimeOutOrder() {
+    public Integer cancelTimeOutOrder() {
+        Integer count=0;
         OmsOrderSetting orderSetting = orderSettingMapper.selectByPrimaryKey(1L);
         //Query overtime, Unpaid orders and order details
         List<OmsOrderDetail> timeOutOrders = portalOrderDao.getTimeOutOrders(orderSetting.getNormalOrderOvertime());
         if (CollectionUtils.isEmpty(timeOutOrders)) {
-            return CommonResult.failed("No overtime orders");
+            return count;
         }
         //Modify Order Status to cancel the transaction
         List<Long> ids = new ArrayList<>();
@@ -268,7 +269,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
                 memberService.updateIntegration(timeOutOrder.getMemberId(), member.getIntegration() + timeOutOrder.getUseIntegration());
             }
         }
-        return CommonResult.success(null);
+        return timeOutOrders.size();
     }
 
     @Override

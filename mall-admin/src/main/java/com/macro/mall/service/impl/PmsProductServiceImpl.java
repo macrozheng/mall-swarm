@@ -1,5 +1,6 @@
 package com.macro.mall.service.impl;
 
+import cn.hutool.core.collection.CollUtil;
 import com.github.pagehelper.PageHelper;
 import com.macro.mall.dao.*;
 import com.macro.mall.dto.PmsProductParam;
@@ -8,7 +9,6 @@ import com.macro.mall.dto.PmsProductResult;
 import com.macro.mall.mapper.*;
 import com.macro.mall.model.*;
 import com.macro.mall.service.PmsProductService;
-import io.swagger.annotations.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Product Management Service Implementation Class
@@ -71,7 +72,7 @@ public class PmsProductServiceImpl implements PmsProductService {
         PmsProduct product = productParam;
         product.setId(null);
         productMapper.insertSelective(product);
-        //Set prices according to promotion type:, ladder price, full discount price
+        //根据促销类型设置价格：会员价格、阶梯价格、满减价格
         Long productId = product.getId();
         //member price
         relateAndInsertList(memberPriceDao, productParam.getMemberPriceList(), productId);
@@ -138,13 +139,9 @@ public class PmsProductServiceImpl implements PmsProductService {
         fullReductionExample.createCriteria().andProductIdEqualTo(id);
         productFullReductionMapper.deleteByExample(fullReductionExample);
         relateAndInsertList(productFullReductionDao, productParam.getProductFullReductionList(), id);
-        //Modify SKU inventory information
-        PmsSkuStockExample skuStockExample = new PmsSkuStockExample();
-        skuStockExample.createCriteria().andProductIdEqualTo(id);
-        skuStockMapper.deleteByExample(skuStockExample);
-        handleSkuStockCode(productParam.getSkuStockList(),id);
-        relateAndInsertList(skuStockDao, productParam.getSkuStockList(), id);
-        //Modify product parameters and add custom product specifications
+        //修改sku库存信息
+        handleUpdateSkuStockList(id, productParam);
+        //修改商品参数,添加自定义商品规格
         PmsProductAttributeValueExample productAttributeValueExample = new PmsProductAttributeValueExample();
         productAttributeValueExample.createCriteria().andProductIdEqualTo(id);
         productAttributeValueMapper.deleteByExample(productAttributeValueExample);
@@ -161,6 +158,49 @@ public class PmsProductServiceImpl implements PmsProductService {
         relateAndInsertList(prefrenceAreaProductRelationDao, productParam.getPrefrenceAreaProductRelationList(), id);
         count = 1;
         return count;
+    }
+
+    private void handleUpdateSkuStockList(Long id, PmsProductParam productParam) {
+        //当前的sku信息
+        List<PmsSkuStock> currSkuList = productParam.getSkuStockList();
+        //当前没有sku直接删除
+        if(CollUtil.isEmpty(currSkuList)){
+            PmsSkuStockExample skuStockExample = new PmsSkuStockExample();
+            skuStockExample.createCriteria().andProductIdEqualTo(id);
+            skuStockMapper.deleteByExample(skuStockExample);
+            return;
+        }
+        //获取初始sku信息
+        PmsSkuStockExample skuStockExample = new PmsSkuStockExample();
+        skuStockExample.createCriteria().andProductIdEqualTo(id);
+        List<PmsSkuStock> oriStuList = skuStockMapper.selectByExample(skuStockExample);
+        //获取新增sku信息
+        List<PmsSkuStock> insertSkuList = currSkuList.stream().filter(item->item.getId()==null).collect(Collectors.toList());
+        //获取需要更新的sku信息
+        List<PmsSkuStock> updateSkuList = currSkuList.stream().filter(item->item.getId()!=null).collect(Collectors.toList());
+        List<Long> updateSkuIds = updateSkuList.stream().map(PmsSkuStock::getId).collect(Collectors.toList());
+        //获取需要删除的sku信息
+        List<PmsSkuStock> removeSkuList = oriStuList.stream().filter(item-> !updateSkuIds.contains(item.getId())).collect(Collectors.toList());
+        handleSkuStockCode(insertSkuList,id);
+        handleSkuStockCode(updateSkuList,id);
+        //新增sku
+        if(CollUtil.isNotEmpty(insertSkuList)){
+            relateAndInsertList(skuStockDao, insertSkuList, id);
+        }
+        //删除sku
+        if(CollUtil.isNotEmpty(removeSkuList)){
+            List<Long> removeSkuIds = removeSkuList.stream().map(PmsSkuStock::getId).collect(Collectors.toList());
+            PmsSkuStockExample removeExample = new PmsSkuStockExample();
+            removeExample.createCriteria().andIdIn(removeSkuIds);
+            skuStockMapper.deleteByExample(removeExample);
+        }
+        //修改sku
+        if(CollUtil.isNotEmpty(updateSkuList)){
+            for (PmsSkuStock pmsSkuStock : updateSkuList) {
+                skuStockMapper.updateByPrimaryKeySelective(pmsSkuStock);
+            }
+        }
+
     }
 
     @Override
@@ -261,71 +301,7 @@ public class PmsProductServiceImpl implements PmsProductService {
     }
 
     /**
-     * @deprecated Old version creation
-     */
-    public int createOld(PmsProductParam productParam) {
-        int count;
-        //Create product
-        PmsProduct product = productParam;
-        product.setId(null);
-        productMapper.insertSelective(product);
-        //Set prices based on promotion type：、Ladder price、Full discount
-        Long productId = product.getId();
-        //member price
-        List<PmsMemberPrice> memberPriceList = productParam.getMemberPriceList();
-        if (!CollectionUtils.isEmpty(memberPriceList)) {
-            for (PmsMemberPrice pmsMemberPrice : memberPriceList) {
-                pmsMemberPrice.setId(null);
-                pmsMemberPrice.setProductId(productId);
-            }
-            memberPriceDao.insertList(memberPriceList);
-        }
-        //Ladder price
-        List<PmsProductLadder> productLadderList = productParam.getProductLadderList();
-        if (!CollectionUtils.isEmpty(productLadderList)) {
-            for (PmsProductLadder productLadder : productLadderList) {
-                productLadder.setId(null);
-                productLadder.setProductId(productId);
-            }
-            productLadderDao.insertList(productLadderList);
-        }
-        //Full discount
-        List<PmsProductFullReduction> productFullReductionList = productParam.getProductFullReductionList();
-        if (!CollectionUtils.isEmpty(productFullReductionList)) {
-            for (PmsProductFullReduction productFullReduction : productFullReductionList) {
-                productFullReduction.setId(null);
-                productFullReduction.setProductId(productId);
-            }
-            productFullReductionDao.insertList(productFullReductionList);
-        }
-        //Add SKU inventory information
-        List<PmsSkuStock> skuStockList = productParam.getSkuStockList();
-        if (!CollectionUtils.isEmpty(skuStockList)) {
-            for (PmsSkuStock skuStock : skuStockList) {
-                skuStock.setId(null);
-                skuStock.setProductId(productId);
-            }
-            skuStockDao.insertList(skuStockList);
-        }
-        //Add product parameters, add custom product specifications
-        List<PmsProductAttributeValue> productAttributeValueList = productParam.getProductAttributeValueList();
-        if (!CollectionUtils.isEmpty(productAttributeValueList)) {
-            for (PmsProductAttributeValue productAttributeValue : productAttributeValueList) {
-                productAttributeValue.setId(null);
-                productAttributeValue.setProductId(productId);
-            }
-            productAttributeValueDao.insertList(productAttributeValueList);
-        }
-        //Related topics
-        relateAndInsertList(subjectProductRelationDao, productParam.getSubjectProductRelationList(), productId);
-        //Related preference
-        relateAndInsertList(prefrenceAreaProductRelationDao, productParam.getPrefrenceAreaProductRelationList(), productId);
-        count = 1;
-        return count;
-    }
-
-    /**
-     * Create and insert relational table operations
+     * 建立和插入关系表操作
      *
      * @param dao       Operational dao
      * @param dataList  Data to insert

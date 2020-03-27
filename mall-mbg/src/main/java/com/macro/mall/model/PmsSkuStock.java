@@ -20,14 +20,7 @@ public class PmsSkuStock implements Serializable {
     @ApiModelProperty(value = "Low Stock Alarm Value")
     private Integer lowStock;
 
-    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes1")
-    private String sp1;
-
-    private String sp2;
-
-    private String sp3;
-
-    @ApiModelProperty(value = "Show pictures")
+    @ApiModelProperty(value = "展示图片")
     private String pic;
 
     @ApiModelProperty(value = "Sales")
@@ -38,6 +31,9 @@ public class PmsSkuStock implements Serializable {
 
     @ApiModelProperty(value = "Locking the inventory")
     private Integer lockStock;
+
+    @ApiModelProperty(value = "商品销售属性，json格式")
+    private String spData;
 
     private static final long serialVersionUID = 1L;
 
@@ -89,30 +85,6 @@ public class PmsSkuStock implements Serializable {
         this.lowStock = lowStock;
     }
 
-    public String getSp1() {
-        return sp1;
-    }
-
-    public void setSp1(String sp1) {
-        this.sp1 = sp1;
-    }
-
-    public String getSp2() {
-        return sp2;
-    }
-
-    public void setSp2(String sp2) {
-        this.sp2 = sp2;
-    }
-
-    public String getSp3() {
-        return sp3;
-    }
-
-    public void setSp3(String sp3) {
-        this.sp3 = sp3;
-    }
-
     public String getPic() {
         return pic;
     }
@@ -145,6 +117,14 @@ public class PmsSkuStock implements Serializable {
         this.lockStock = lockStock;
     }
 
+    public String getSpData() {
+        return spData;
+    }
+
+    public void setSpData(String spData) {
+        this.spData = spData;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -157,13 +137,11 @@ public class PmsSkuStock implements Serializable {
         sb.append(", price=").append(price);
         sb.append(", stock=").append(stock);
         sb.append(", lowStock=").append(lowStock);
-        sb.append(", sp1=").append(sp1);
-        sb.append(", sp2=").append(sp2);
-        sb.append(", sp3=").append(sp3);
         sb.append(", pic=").append(pic);
         sb.append(", sale=").append(sale);
         sb.append(", promotionPrice=").append(promotionPrice);
         sb.append(", lockStock=").append(lockStock);
+        sb.append(", spData=").append(spData);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

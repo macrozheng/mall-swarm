@@ -20,16 +20,7 @@ public class OmsCartItem implements Serializable {
     @ApiModelProperty(value = "Price added to shopping cart")
     private BigDecimal price;
 
-    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes1")
-    private String sp1;
-
-    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes2")
-    private String sp2;
-
-    @ApiModelProperty(value = "Audit status: 0 - > not approved; 1 - > approved Attributes3")
-    private String sp3;
-
-    @ApiModelProperty(value = "Product main picture")
+    @ApiModelProperty(value = "商品主图")
     private String productPic;
 
     @ApiModelProperty(value = "product name")
@@ -111,30 +102,6 @@ public class OmsCartItem implements Serializable {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public String getSp1() {
-        return sp1;
-    }
-
-    public void setSp1(String sp1) {
-        this.sp1 = sp1;
-    }
-
-    public String getSp2() {
-        return sp2;
-    }
-
-    public void setSp2(String sp2) {
-        this.sp2 = sp2;
-    }
-
-    public String getSp3() {
-        return sp3;
-    }
-
-    public void setSp3(String sp3) {
-        this.sp3 = sp3;
     }
 
     public String getProductPic() {
@@ -245,9 +212,6 @@ public class OmsCartItem implements Serializable {
         sb.append(", memberId=").append(memberId);
         sb.append(", quantity=").append(quantity);
         sb.append(", price=").append(price);
-        sb.append(", sp1=").append(sp1);
-        sb.append(", sp2=").append(sp2);
-        sb.append(", sp3=").append(sp3);
         sb.append(", productPic=").append(productPic);
         sb.append(", productName=").append(productName);
         sb.append(", productSubTitle=").append(productSubTitle);
