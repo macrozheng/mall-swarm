@@ -9,5 +9,8 @@ import java.util.List;
  * Created by macro on 2018/5/24.
  */
 public interface PmsProductAttributeCategoryDao {
+    /**
+     * 获取商品属性分类，包括属性
+     */
     List<PmsProductAttributeCategoryItem> getListWithAttr();
 }
