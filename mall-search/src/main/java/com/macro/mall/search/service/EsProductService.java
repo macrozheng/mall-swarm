@@ -39,7 +39,7 @@ public interface EsProductService {
     /**
      * Compound search by name or subtitle by keyword
      */
-    Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort);
+    Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort);
 
     /**
      * Recommend related products based on product id
