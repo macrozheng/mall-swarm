@@ -7,20 +7,21 @@
     <groupId>com.macro.mall</groupId>
     <artifactId>mall-swarm</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <packaging>pom</packaging>
 
     <modules>
+        <module>mall-registry</module>
+        <module>mall-config</module>
+        <module>mall-monitor</module>
+        <module>mall-gateway</module>
+        <module>mall-admin</module>
+        <module>mall-portal</module>
+        <module>mall-search</module>
         <module>mall-common</module>
         <module>mall-mbg</module>
         <module>mall-security</module>
         <module>mall-demo</module>
-        <module>mall-admin</module>
-        <module>mall-search</module>
-        <module>mall-portal</module>
-        <module>mall-registry</module>
-        <module>mall-monitor</module>
-        <module>mall-gateway</module>
-        <module>mall-config</module>
     </modules>
 
     <parent>
@@ -55,6 +56,12 @@
         <mall-common.version>1.0-SNAPSHOT</mall-common.version>
         <mall-mbg.version>1.0-SNAPSHOT</mall-mbg.version>
         <mall-security.version>1.0-SNAPSHOT</mall-security.version>
+        <docker.maven.plugin.version>1.2.2</docker.maven.plugin.version>
+        <!---Sonar_Propeties-->
+        <sonar.projectKey>kratos47mhs_mall-swarm</sonar.projectKey>
+        <sonar.organization>kratos47mhs</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>c3290958ec079564804bb4e30b1f4a1444f594ce</sonar.login>
     </properties>
 
     <dependencies>

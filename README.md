@@ -1,20 +1,21 @@
 # mall-swarm
 
 <p>
-  <a href="#the public"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-macrozheng-blue.svg" alt="the public"></a>
-  <a href="https://github.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE-mall-blue.svg" alt="Background project"></a>
-  <a href="https://github.com/macrozheng/mall-admin-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-mall--admin--web-green.svg" alt="Front-end project"></a>
-  <a href="#the public"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E4%BA%A4%E6%B5%81-%E5%BE%AE%E4%BF%A1%E7%BE%A4-2BA245.svg" alt="communicate with"></a>
-  <a href="https://gitee.com/macrozheng/mall-swarm"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="Code cloud"></a>
+  <a href="#" ><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="make a pull request"></a>
+  <a href="#the public"><img src="https://img.shields.io/badge/Developer-kratos47mhs-green" alt="the public"></a>
+  <a href="https://github.com/macrozheng/mall"><img src="https://img.shields.io/badge/Project-mall-blue" alt="Back-end project"></a>
+  <a href="https://github.com/kratos47mhs/mall-admin-web"><img src="https://img.shields.io/badge/Front--end-mall--admin--web-RGB(44%2C%200%2C%2010%2C0)" alt="Front-end project"></a>
+  <a href="mailto:mehdisamadiarchitect@gmail.com"><img src="https://img.shields.io/badge/Email-mehdisamadiarchitect%40gmail.com-yellow" alt="communicate with"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Platfom-Spring Cloud-orange" alt="Spring Cloud"></a>
 </p>
 
 ## Project Introduction
 
-`mall-swarm`Is a micro service mall system，Adopted Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch and other core technologies, while providing a Vue-based management background to facilitate the rapid construction of the system. `mall-swarm` integrates system functions such as registration center, configuration center, monitoring center, and gateway on the basis of e-commerce business. Complete documentation with a complete set of Spring Cloud tutorials.
+`mall-swarm`Is a micro service mall system，Adopted Spring Cloud Hoxton、Spring Boot 2、MyBatis、Docker、Elasticsearch and other core technologies, while providing a Vue-based management background to facilitate the rapid construction of the system. `mall-swarm` integrates system functions such as registration center, configuration center, monitoring center, and gateway on the basis of e-commerce business. Complete documentation with a complete set of Spring Cloud tutorials.
 
 ## System architecture diagram
 
-![System architecture diagram](document/resource/mall_micro_service_arch.png)
+![System architecture diagram](document/resource/mall_micro_service_arch.jpg)
 
 ## Organizational structure
 
@@ -69,7 +70,7 @@ mall
 | Lombok           | Simplified Object Packaging Tool     | https://github.com/rzwitserloot/lombok               |
 | Seata            | Global transaction management framework     | https://github.com/seata/seata                       |
 | Portainer        | Visual Docker container management | https://github.com/portainer/portainer               |
-| Jenkins          | 自动化部署工具       | https://github.com/jenkinsci/jenkins                 |
+| Jenkins          | Automated deployment tools       | https://github.com/jenkinsci/jenkins                 |
 
 ### Front-end technology
 
@@ -142,10 +143,10 @@ Mall project full set of learning tutorials in series，**Follow the public**Get
 
 Add WeChat group communication，the public background reply**Plus group**Just fine.
 
-![the public picture](http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg)
+![the public picture](https://kratos47mhs.github.io/images/logo.png)
 
 ## license
 
-[Apache License 2.0](https://github.com/macrozheng/mall-swarm/blob/master/LICENSE)
+[Apache License 2.0](https://github.com/kratos47mhs/mall-swarm/blob/master/LICENSE)
 
-Copyright (c) 2018-2020 macrozheng
+Copyright (c) 2018-2020 kratos47mhs
