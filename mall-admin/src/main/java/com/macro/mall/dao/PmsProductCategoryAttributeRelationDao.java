@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface PmsProductCategoryAttributeRelationDao {
     /**
-     * 批量创建
+     * Bulk creation
      */
     int insertList(@Param("list") List<PmsProductCategoryAttributeRelation> productCategoryAttributeRelationList);
 }

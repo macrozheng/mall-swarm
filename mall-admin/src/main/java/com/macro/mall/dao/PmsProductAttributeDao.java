@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface PmsProductAttributeDao {
     /**
-     * 获取商品属性信息
+     * Get product attribute information
      */
     List<ProductAttrInfo> getProductAttrInfo(@Param("id") Long productCategoryId);
 }

@@ -121,7 +121,7 @@ CREATE TABLE `cms_prefrence_area_product_relation`
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 25
-  DEFAULT CHARSET = utf8 COMMENT ='Preferred area and product relationship table';
+  DEFAULT CHARSET = utf8 COMMENT ='Preferred area and product relationship Table';
 
 -- ----------------------------
 -- Records of cms_prefrence_area_product_relation
@@ -168,7 +168,7 @@ CREATE TABLE `cms_subject`
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 7
-  DEFAULT CHARSET = utf8 COMMENT ='Subject table';
+  DEFAULT CHARSET = utf8 COMMENT ='Subject Table';
 
 -- ----------------------------
 -- Records of cms_subject
@@ -250,7 +250,7 @@ CREATE TABLE `cms_subject_product_relation`
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 44
-  DEFAULT CHARSET = utf8 COMMENT ='Subject Product relations table';
+  DEFAULT CHARSET = utf8 COMMENT ='Subject Product relations Table';
 
 -- ----------------------------
 -- Records of cms_subject_product_relation
@@ -302,7 +302,7 @@ CREATE TABLE `cms_topic`
     `content`         text COMMENT 'Topic content',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8 COMMENT ='Topic list';
+  DEFAULT CHARSET = utf8 COMMENT ='Topic Table';
 
 -- ----------------------------
 -- Records of cms_topic
@@ -322,7 +322,7 @@ CREATE TABLE `cms_topic_category`
     `sort`          int(11)      DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8 COMMENT ='Topic category table';
+  DEFAULT CHARSET = utf8 COMMENT ='Topic category Table';
 
 -- ----------------------------
 -- Records of cms_topic_category
@@ -376,7 +376,7 @@ CREATE TABLE `oms_cart_item`
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 22
-  DEFAULT CHARSET = utf8 COMMENT ='Order Shopping cart table';
+  DEFAULT CHARSET = utf8 COMMENT ='Order Shopping cart Table';
 
 -- ----------------------------
 -- Records of oms_cart_item
@@ -1251,7 +1251,7 @@ CREATE TABLE `pms_brand`
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 59
-  DEFAULT CHARSET = utf8 COMMENT ='Brand table';
+  DEFAULT CHARSET = utf8 COMMENT ='Brand Table';
 
 -- ----------------------------
 -- Records of pms_brand
