@@ -73,7 +73,8 @@
                 <configuration>
                     <imageName>mall/${project.artifactId}:${project.version}</imageName>
                     <dockerHost>${docker.host}</dockerHost>
-                    <baseImage>java:8</baseImage>
+                    <!--                    <baseImage>java:8</baseImage>-->
+                    <baseImage>openjdk:8-jdk-alpine</baseImage>
                     <entryPoint>["java", "-jar", "-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]
                     </entryPoint>
                     <resources>
