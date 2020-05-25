@@ -20,7 +20,7 @@ public class FeignPortalController {
 
     @PostMapping("/login")
     public CommonResult login(@RequestParam String username, @RequestParam String password) {
-        return portalService.login(username,password);
+        return portalService.login(username, password);
     }
 
     @GetMapping("/cartList")

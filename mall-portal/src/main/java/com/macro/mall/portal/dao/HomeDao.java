@@ -17,7 +17,7 @@ public interface HomeDao {
     /**
      * Get Recommended Brands
      */
-    List<PmsBrand> getRecommendBrandList(@Param("offset") Integer offset,@Param("limit") Integer limit);
+    List<PmsBrand> getRecommendBrandList(@Param("offset") Integer offset, @Param("limit") Integer limit);
 
     /**
      * Get flash products
@@ -27,11 +27,12 @@ public interface HomeDao {
     /**
      * Get new product recommendations
      */
-    List<PmsProduct> getNewProductList(@Param("offset") Integer offset,@Param("limit") Integer limit);
+    List<PmsProduct> getNewProductList(@Param("offset") Integer offset, @Param("limit") Integer limit);
+
     /**
      * Get Popular Recommendations
      */
-    List<PmsProduct> getHotProductList(@Param("offset") Integer offset,@Param("limit") Integer limit);
+    List<PmsProduct> getHotProductList(@Param("offset") Integer offset, @Param("limit") Integer limit);
 
     /**
      * Get Recommended Subjects

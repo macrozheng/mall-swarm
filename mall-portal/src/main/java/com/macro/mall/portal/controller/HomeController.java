@@ -56,7 +56,7 @@ public class HomeController {
     public CommonResult<List<CmsSubject>> getSubjectList(@RequestParam(required = false) Long cateId,
                                                          @RequestParam(value = "pageSize", defaultValue = "4") Integer pageSize,
                                                          @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        List<CmsSubject> subjectList = homeService.getSubjectList(cateId,pageSize,pageNum);
+        List<CmsSubject> subjectList = homeService.getSubjectList(cateId, pageSize, pageNum);
         return CommonResult.success(subjectList);
     }
 }

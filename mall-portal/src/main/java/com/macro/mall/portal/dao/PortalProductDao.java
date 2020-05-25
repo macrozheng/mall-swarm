@@ -12,5 +12,6 @@ import java.util.List;
  */
 public interface PortalProductDao {
     CartProduct getCartProduct(@Param("id") Long id);
+
     List<PromotionProduct> getPromotionProductList(@Param("ids") List<Long> ids);
 }

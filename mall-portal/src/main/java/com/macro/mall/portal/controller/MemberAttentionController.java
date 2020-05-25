@@ -21,14 +21,15 @@ import java.util.List;
 public class MemberAttentionController {
     @Autowired
     private MemberAttentionService memberAttentionService;
+
     @ApiOperation("Add brand attention")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody MemberBrandAttention memberBrandAttention) {
         int count = memberAttentionService.add(memberBrandAttention);
-        if(count>0){
+        if (count > 0) {
             return CommonResult.success(count);
-        }else{
+        } else {
             return CommonResult.failed();
         }
     }
@@ -37,10 +38,10 @@ public class MemberAttentionController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(Long memberId, Long brandId) {
-        int count = memberAttentionService.delete(memberId,brandId);
-        if(count>0){
+        int count = memberAttentionService.delete(memberId, brandId);
+        if (count > 0) {
             return CommonResult.success(count);
-        }else{
+        } else {
             return CommonResult.failed();
         }
     }

@@ -16,11 +16,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class CancelOrderSender {
-    private static Logger LOGGER =LoggerFactory.getLogger(CancelOrderSender.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(CancelOrderSender.class);
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    public void sendMessage(Long orderId,final long delayTimes){
+    public void sendMessage(Long orderId, final long delayTimes) {
         //Send a message to the delay queue
         amqpTemplate.convertAndSend(QueueEnum.QUEUE_TTL_ORDER_CANCEL.getExchange(), QueueEnum.QUEUE_TTL_ORDER_CANCEL.getRouteKey(), orderId, new MessagePostProcessor() {
             @Override
@@ -30,6 +30,6 @@ public class CancelOrderSender {
                 return message;
             }
         });
-        LOGGER.info("send orderId:{}",orderId);
+        LOGGER.info("send orderId:{}", orderId);
     }
 }

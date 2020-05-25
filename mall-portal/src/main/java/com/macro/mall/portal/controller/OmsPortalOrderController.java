@@ -17,13 +17,14 @@ import java.util.Map;
  * Created by macro on 2018/8/30.
  */
 @Controller
-@Api(tags = "OmsPortalOrderController",description = "Order management")
+@Api(tags = "OmsPortalOrderController", description = "Order management")
 @RequestMapping("/order")
 public class OmsPortalOrderController {
     @Autowired
     private OmsPortalOrderService portalOrderService;
+
     @ApiOperation("Generate confirmation information based on shopping cart information")
-    @RequestMapping(value = "/generateConfirmOrder",method = RequestMethod.POST)
+    @RequestMapping(value = "/generateConfirmOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<ConfirmOrderResult> generateConfirmOrder() {
         ConfirmOrderResult confirmOrderResult = portalOrderService.generateConfirmOrder();
@@ -31,14 +32,15 @@ public class OmsPortalOrderController {
     }
 
     @ApiOperation("Generate orders based on cart information")
-    @RequestMapping(value = "/generateOrder",method = RequestMethod.POST)
+    @RequestMapping(value = "/generateOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult generateOrder(@RequestBody OrderParam orderParam) {
         Map<String, Object> result = portalOrderService.generateOrder(orderParam);
         return CommonResult.success(result, "下单成功");
     }
+
     @ApiOperation("Callback for successful payment")
-    @RequestMapping(value = "/paySuccess",method = RequestMethod.POST)
+    @RequestMapping(value = "/paySuccess", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult paySuccess(@RequestParam Long orderId) {
         Integer count = portalOrderService.paySuccess(orderId);
@@ -46,7 +48,7 @@ public class OmsPortalOrderController {
     }
 
     @ApiOperation("Automatic cancellation of overtime orders")
-    @RequestMapping(value = "/cancelTimeOutOrder",method = RequestMethod.POST)
+    @RequestMapping(value = "/cancelTimeOutOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelTimeOutOrder() {
         portalOrderService.cancelTimeOutOrder();
@@ -54,7 +56,7 @@ public class OmsPortalOrderController {
     }
 
     @ApiOperation("Cancel single overtime order")
-    @RequestMapping(value = "/cancelOrder",method = RequestMethod.POST)
+    @RequestMapping(value = "/cancelOrder", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult cancelOrder(Long orderId) {
         portalOrderService.sendDelayMessageCancelOrder(orderId);

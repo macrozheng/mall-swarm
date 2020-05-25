@@ -9,6 +9,6 @@ import java.util.List;
  * Member Product Browsing History Repository
  * Created by macro on 2018/8/3.
  */
-public interface MemberReadHistoryRepository extends MongoRepository<MemberReadHistory,String> {
+public interface MemberReadHistoryRepository extends MongoRepository<MemberReadHistory, String> {
     List<MemberReadHistory> findByMemberIdOrderByCreateTimeDesc(Long memberId);
 }

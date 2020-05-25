@@ -9,8 +9,10 @@ import java.util.List;
  * Member Product Collection Repository
  * Created by macro on 2018/8/2.
  */
-public interface MemberProductCollectionRepository extends MongoRepository<MemberProductCollection,String> {
+public interface MemberProductCollectionRepository extends MongoRepository<MemberProductCollection, String> {
     MemberProductCollection findByMemberIdAndProductId(Long memberId, Long productId);
-    int deleteByMemberIdAndProductId(Long memberId,Long productId);
+
+    int deleteByMemberIdAndProductId(Long memberId, Long productId);
+
     List<MemberProductCollection> findByMemberId(Long memberId);
 }

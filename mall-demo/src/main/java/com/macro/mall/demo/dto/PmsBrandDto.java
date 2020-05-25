@@ -12,20 +12,20 @@ import javax.validation.constraints.NotNull;
  */
 @ApiModel(value = "PmsBrandDto")
 public class PmsBrandDto {
-    @ApiModelProperty(value = "brand name",required = true)
+    @ApiModelProperty(value = "brand name", required = true)
     @NotNull(message = "A Name is required")
     private String name;
-    @ApiModelProperty(value = "Brand initials",required = true)
+    @ApiModelProperty(value = "Brand initials", required = true)
     @NotNull(message = "The first letter cannot be empty")
     private String firstLetter;
     @ApiModelProperty(value = "Sort fields")
     @Min(value = 0, message = "Sort minimum is 0")
     private Integer sort;
     @ApiModelProperty(value = "Is it a manufacturer?")
-    @FlagValidator(value = {"0","1"}, message = "Manufacturer status is incorrect")
+    @FlagValidator(value = {"0", "1"}, message = "Manufacturer status is incorrect")
     private Integer factoryStatus;
     @ApiModelProperty(value = "Whether to display")
-    @FlagValidator(value = {"0","1"}, message = "The display status is incorrect")
+    @FlagValidator(value = {"0", "1"}, message = "The display status is incorrect")
     private Integer showStatus;
     @ApiModelProperty(value = "Brand logo")
     private String logo;

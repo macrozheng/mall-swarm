@@ -29,7 +29,7 @@ public class JacksonConfig {
         // Include.NON_NULL Attributes is NULL and is not serialized, so the field whose Yes is null does not participate in serialization
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 
-        // Fields are retained, null values ​​are converted to""
+        // Fields are retained, null values are converted to""
 //        objectMapper.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>()
 //        {
 //            @Override

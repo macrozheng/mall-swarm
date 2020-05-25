@@ -23,6 +23,7 @@ public interface PortalOrderDao {
 
     /**
      * Get overtime orders
+     *
      * @param minute Timeout（minutes）
      */
     List<OmsOrderDetail> getTimeOutOrders(@Param("minute") Integer minute);
@@ -30,7 +31,7 @@ public interface PortalOrderDao {
     /**
      * Get overtime order
      */
-    int updateOrderStatus(@Param("ids") List<Long> ids,@Param("status") Integer status);
+    int updateOrderStatus(@Param("ids") List<Long> ids, @Param("status") Integer status);
 
     /**
      * Release the inventory lock of cancellation order

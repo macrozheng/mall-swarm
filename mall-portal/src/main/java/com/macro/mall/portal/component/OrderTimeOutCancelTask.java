@@ -22,8 +22,8 @@ public class OrderTimeOutCancelTask {
      * scan every 10 minutes, scan the order placed before the set timeout, and cancel the order if no payment is made
      */
     @Scheduled(cron = "0 0/10 * ? * ?")
-    private void cancelTimeOutOrder(){
+    private void cancelTimeOutOrder() {
         Integer count = portalOrderService.cancelTimeOutOrder();
-        LOGGER.info("取消订单，并根据sku编号释放锁定库存，取消订单数量：{}",count);
+        LOGGER.info("取消订单，并根据sku编号释放锁定库存，取消订单数量：{}", count);
     }
 }

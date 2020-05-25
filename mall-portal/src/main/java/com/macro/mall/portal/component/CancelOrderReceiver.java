@@ -15,12 +15,13 @@ import org.springframework.stereotype.Component;
 @Component
 @RabbitListener(queues = "mall.order.cancel")
 public class CancelOrderReceiver {
-    private static Logger LOGGER =LoggerFactory.getLogger(CancelOrderReceiver.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(CancelOrderReceiver.class);
     @Autowired
     private OmsPortalOrderService portalOrderService;
+
     @RabbitHandler
-    public void handle(Long orderId){
+    public void handle(Long orderId) {
         portalOrderService.cancelOrder(orderId);
-        LOGGER.info("process orderId:{}",orderId);
+        LOGGER.info("process orderId:{}", orderId);
     }
 }
