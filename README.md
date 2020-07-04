@@ -14,7 +14,7 @@
 
 ## 系统架构图
 
-![系统架构图](document/resource/mall_micro_service_arch.jpg)
+![系统架构图](http://img.macrozheng.com/mall/project/mall_micro_service_arch.jpg)
 
 ## 组织结构
 
@@ -122,19 +122,19 @@ nginx | 1.10 | http://nginx.org/en/download.html
 
 - 注册中心控制台信息：
 
-![](./document/resource/mall_swarm_linux_07.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_linux_07.png)
 
 - 监控中心应用信息：
 
-![](./document/resource/mall_swarm_linux_08.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_linux_08.png)
 
-![](./document/resource/mall_swarm_linux_09.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_linux_09.png)
 
 - 可视化容器管理：
 
-![](./document/resource/mall_swarm_linux_02.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_linux_02.png)
 
-![](./document/resource/mall_swarm_linux_04.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_linux_04.png)
 
 ## 公众号
 
