@@ -11,7 +11,7 @@ services:
       - 3306:3306
     volumes:
       - /mydata/mysql/data/db:/var/lib/mysql #数据文件挂载
-      - /mydata/mysql/data/conf:/etc/mysql/conf.d #配置文件挂载
+      - /mydata/mysql/data/conf/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf #配置文件挂载
       - /mydata/mysql/log:/var/log/mysql #日志文件挂载
   redis:
     image: redis:3.2
