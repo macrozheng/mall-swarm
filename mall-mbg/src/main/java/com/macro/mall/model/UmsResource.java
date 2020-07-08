@@ -7,7 +7,7 @@ import java.util.Date;
 public class UmsResource implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "Creation time")
     private Date createTime;
 
     @ApiModelProperty(value = "资源名称")
@@ -16,7 +16,7 @@ public class UmsResource implements Serializable {
     @ApiModelProperty(value = "资源URL")
     private String url;
 
-    @ApiModelProperty(value = "描述")
+    @ApiModelProperty(value = "Description")
     private String description;
 
     @ApiModelProperty(value = "资源分类ID")

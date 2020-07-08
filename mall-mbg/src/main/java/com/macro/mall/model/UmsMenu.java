@@ -10,7 +10,7 @@ public class UmsMenu implements Serializable {
     @ApiModelProperty(value = "父级ID")
     private Long parentId;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "Creation time")
     private Date createTime;
 
     @ApiModelProperty(value = "菜单名称")

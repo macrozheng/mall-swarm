@@ -72,7 +72,7 @@ public class PmsProductServiceImpl implements PmsProductService {
         PmsProduct product = productParam;
         product.setId(null);
         productMapper.insertSelective(product);
-        //根据促销类型设置价格：会员价格、阶梯价格、满减价格
+        //根据促销类型设置价格：Member Price、阶梯价格、满减价格
         Long productId = product.getId();
         //member price
         relateAndInsertList(memberPriceDao, productParam.getMemberPriceList(), productId);

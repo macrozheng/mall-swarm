@@ -20,7 +20,7 @@ public class OmsCartItem implements Serializable {
     @ApiModelProperty(value = "Price added to shopping cart")
     private BigDecimal price;
 
-    @ApiModelProperty(value = "商品主图")
+    @ApiModelProperty(value = "Product main picture")
     private String productPic;
 
     @ApiModelProperty(value = "product name")

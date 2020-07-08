@@ -1,6 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <activatedProperties>dev</activatedProperties>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <activatedProperties>prod</activatedProperties>
+            </properties>
+        </profile>
+    </profiles>
 
     <groupId>com.macro.mall</groupId>
     <artifactId>mall-admin</artifactId>
@@ -76,7 +93,7 @@
                     <dockerHost>${docker.host}</dockerHost>
                     <!--                    <baseImage>java:8</baseImage>-->
                     <baseImage>openjdk:8-jdk-alpine</baseImage>
-                    <entryPoint>["java", "-jar", "-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]
+                    <entryPoint>["java", "-jar", "-Dspring.profiles.active=${activatedProperties}","/${project.build.finalName}.jar"]
                     </entryPoint>
                     <resources>
                         <resource>

@@ -38,7 +38,7 @@ public class OmsOrderItem implements Serializable {
     @ApiModelProperty(value = "Category ID")
     private Long productCategoryId;
 
-    @ApiModelProperty(value = "商品促销名称")
+    @ApiModelProperty(value = "Product promotion name")
     private String promotionName;
 
     @ApiModelProperty(value = "Product promotion breakdown amount")
