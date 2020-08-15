@@ -122,29 +122,29 @@ mall
 
 - 查看注册中心注册服务信息，访问地址：http://192.168.3.101:8848/nacos/
 
-![](/document/resource/mall_swarm_run_01.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_01.png)
 
 - 监控中心应用信息，访问地址：http://192.168.3.101:8101
 
-![](/document/resource/mall_swarm_run_02.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_02.png)
 
-![](/document/resource/mall_swarm_run_03.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_03.png)
 
-![](/document/resource/mall_swarm_run_04.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_04.png)
 
 - API文档信息，访问地址：http://192.168.3.101:8201
 
-![](/document/resource/mall_swarm_run_05.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_05.png)
 
 - 日志收集系统信息，访问地址：http://192.168.3.101:5601
 
-![](/document/resource/mall_swarm_run_06.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_06.png)
 
 - 可视化容器管理，访问地址：http://192.168.3.101:9000
 
-![](/document/resource/mall_swarm_run_07.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_07.png)
 
-![](/document/resource/mall_swarm_run_08.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_08.png)
 
 ## 公众号
 
