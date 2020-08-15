@@ -1,5 +1,14 @@
 package com.macro.mall.portal.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.digest.BCrypt;
+import cn.hutool.json.JSONUtil;
+import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.api.ResultCode;
+import com.macro.mall.common.constant.AuthConstant;
+import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.mapper.UmsMemberLevelMapper;
 import com.macro.mall.mapper.UmsMemberMapper;
@@ -7,30 +16,20 @@ import com.macro.mall.model.UmsMember;
 import com.macro.mall.model.UmsMemberExample;
 import com.macro.mall.model.UmsMemberLevel;
 import com.macro.mall.model.UmsMemberLevelExample;
-import com.macro.mall.portal.domain.MemberDetails;
-import com.macro.mall.portal.service.RedisService;
+import com.macro.mall.portal.service.AuthService;
+import com.macro.mall.portal.service.UmsMemberCacheService;
 import com.macro.mall.portal.service.UmsMemberService;
-import com.macro.mall.security.util.JwtTokenUtil;
+import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 /**
  * 会员管理Service实现类
@@ -40,19 +39,19 @@ import java.util.Random;
 public class UmsMemberServiceImpl implements UmsMemberService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UmsMemberServiceImpl.class);
     @Autowired
-    private PasswordEncoder passwordEncoder;
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
-    @Autowired
     private UmsMemberMapper memberMapper;
     @Autowired
     private UmsMemberLevelMapper memberLevelMapper;
     @Autowired
-    private RedisService redisService;
-    @Value("${redis.key.prefix.authCode}")
+    private UmsMemberCacheService memberCacheService;
+    @Value("${redis.key.authCode}")
     private String REDIS_KEY_PREFIX_AUTH_CODE;
-    @Value("${redis.key.expire.authCode}")
+    @Value("${redis.expire.authCode}")
     private Long AUTH_CODE_EXPIRE_SECONDS;
+    @Autowired
+    private AuthService authService;
+    @Autowired
+    private HttpServletRequest request;
 
     @Override
     public UmsMember getByUsername(String username) {
@@ -88,7 +87,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         UmsMember umsMember = new UmsMember();
         umsMember.setUsername(username);
         umsMember.setPhone(telephone);
-        umsMember.setPassword(passwordEncoder.encode(password));
+        umsMember.setPassword(BCrypt.hashpw(password));
         umsMember.setCreateTime(new Date());
         umsMember.setStatus(1);
         //获取默认会员等级并设置
@@ -109,9 +108,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         for(int i=0;i<6;i++){
             sb.append(random.nextInt(10));
         }
-        //验证码绑定手机号并存储到redis
-        redisService.set(REDIS_KEY_PREFIX_AUTH_CODE+telephone,sb.toString());
-        redisService.expire(REDIS_KEY_PREFIX_AUTH_CODE+telephone,AUTH_CODE_EXPIRE_SECONDS);
+        memberCacheService.setAuthCode(telephone,sb.toString());
         return sb.toString();
     }
 
@@ -128,16 +125,26 @@ public class UmsMemberServiceImpl implements UmsMemberService {
             Asserts.fail("验证码错误");
         }
         UmsMember umsMember = memberList.get(0);
-        umsMember.setPassword(passwordEncoder.encode(password));
+        umsMember.setPassword(BCrypt.hashpw(password));
         memberMapper.updateByPrimaryKeySelective(umsMember);
+        memberCacheService.delMember(umsMember.getId());
     }
 
     @Override
     public UmsMember getCurrentMember() {
-        SecurityContext ctx = SecurityContextHolder.getContext();
-        Authentication auth = ctx.getAuthentication();
-        MemberDetails memberDetails = (MemberDetails) auth.getPrincipal();
-        return memberDetails.getUmsMember();
+        String userStr = request.getHeader(AuthConstant.USER_TOKEN_HEADER);
+        if(StrUtil.isEmpty(userStr)){
+            Asserts.fail(ResultCode.UNAUTHORIZED);
+        }
+        UserDto userDto = JSONUtil.toBean(userStr, UserDto.class);
+        UmsMember member = memberCacheService.getMember(userDto.getId());
+        if(member!=null){
+            return member;
+        }else{
+            member = getById(userDto.getId());
+            memberCacheService.setMember(member);
+            return member;
+        }
     }
 
     @Override
@@ -146,38 +153,33 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         record.setId(id);
         record.setIntegration(integration);
         memberMapper.updateByPrimaryKeySelective(record);
+        memberCacheService.delMember(id);
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) {
+    public UserDto loadUserByUsername(String username) {
         UmsMember member = getByUsername(username);
         if(member!=null){
-            return new MemberDetails(member);
+            UserDto userDto = new UserDto();
+            BeanUtil.copyProperties(member,userDto);
+            userDto.setRoles(CollUtil.toList("前台会员"));
+            return userDto;
         }
-        throw new UsernameNotFoundException("用户名或密码错误");
+        return null;
     }
 
     @Override
-    public String login(String username, String password) {
-        String token = null;
-        //密码需要客户端加密后传递
-        try {
-            UserDetails userDetails = loadUserByUsername(username);
-            if(!passwordEncoder.matches(password,userDetails.getPassword())){
-                throw new BadCredentialsException("密码不正确");
-            }
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            token = jwtTokenUtil.generateToken(userDetails);
-        } catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
+    public CommonResult login(String username, String password) {
+        if(StrUtil.isEmpty(username)||StrUtil.isEmpty(password)){
+            Asserts.fail("用户名或密码不能为空！");
         }
-        return token;
-    }
-
-    @Override
-    public String refreshToken(String token) {
-        return jwtTokenUtil.refreshHeadToken(token);
+        Map<String, String> params = new HashMap<>();
+        params.put("client_id", AuthConstant.PORTAL_CLIENT_ID);
+        params.put("client_secret","123456");
+        params.put("grant_type","password");
+        params.put("username",username);
+        params.put("password",password);
+        return authService.getAccessToken(params);
     }
 
     //对输入的验证码进行校验
@@ -185,7 +187,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         if(StringUtils.isEmpty(authCode)){
             return false;
         }
-        String realAuthCode = redisService.get(REDIS_KEY_PREFIX_AUTH_CODE + telephone);
+        String realAuthCode = memberCacheService.getAuthCode(telephone);
         return authCode.equals(realAuthCode);
     }
 

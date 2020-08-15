@@ -8,6 +8,8 @@ import com.macro.mall.mapper.UmsRoleMenuRelationMapper;
 import com.macro.mall.mapper.UmsRolePermissionRelationMapper;
 import com.macro.mall.mapper.UmsRoleResourceRelationMapper;
 import com.macro.mall.model.*;
+import com.macro.mall.service.UmsAdminCacheService;
+import com.macro.mall.service.UmsResourceService;
 import com.macro.mall.service.UmsRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +37,8 @@ public class UmsRoleServiceImpl implements UmsRoleService {
     private UmsRolePermissionRelationDao rolePermissionRelationDao;
     @Autowired
     private UmsRoleDao roleDao;
+    @Autowired
+    private UmsResourceService resourceService;
     @Override
     public int create(UmsRole role) {
         role.setCreateTime(new Date());
@@ -53,7 +57,9 @@ public class UmsRoleServiceImpl implements UmsRoleService {
     public int delete(List<Long> ids) {
         UmsRoleExample example = new UmsRoleExample();
         example.createCriteria().andIdIn(ids);
-        return roleMapper.deleteByExample(example);
+        int count = roleMapper.deleteByExample(example);
+        resourceService.initResourceRolesMap();
+        return count;
     }
 
     @Override
@@ -137,6 +143,7 @@ public class UmsRoleServiceImpl implements UmsRoleService {
             relation.setResourceId(resourceId);
             roleResourceRelationMapper.insert(relation);
         }
+        resourceService.initResourceRolesMap();
         return resourceIds.size();
     }
 }
