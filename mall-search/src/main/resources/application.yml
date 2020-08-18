@@ -18,8 +18,9 @@ spring:
     elasticsearch:
       repositories:
         enabled: true
-      cluster-nodes: 127.0.0.1:9300
-      cluster-name: elasticsearch
+  elasticsearch:
+    rest:
+      uris: 127.0.0.1:9200
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
