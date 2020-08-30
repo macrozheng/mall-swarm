@@ -43,7 +43,7 @@ public class UmsAdminController {
     public CommonResult<UmsAdmin> register(@RequestBody UmsAdminParam umsAdminParam, BindingResult result) {
         UmsAdmin umsAdmin = adminService.register(umsAdminParam);
         if (umsAdmin == null) {
-            CommonResult.failed();
+            return CommonResult.failed();
         }
         return CommonResult.success(umsAdmin);
     }
