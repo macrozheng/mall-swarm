@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2020-02-26 10:34:13
+Date: 2020-08-24 13:48:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1746,7 +1746,7 @@ CREATE TABLE `ums_admin_login_log` (
   `address` varchar(100) DEFAULT NULL,
   `user_agent` varchar(100) DEFAULT NULL COMMENT '浏览器登录类型',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=utf8 COMMENT='后台用户登录日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=204 DEFAULT CHARSET=utf8 COMMENT='后台用户登录日志表';
 
 -- ----------------------------
 -- Records of ums_admin_login_log
@@ -1946,6 +1946,14 @@ INSERT INTO `ums_admin_login_log` VALUES ('192', '8', '2020-02-21 10:36:49', '0:
 INSERT INTO `ums_admin_login_log` VALUES ('193', '3', '2020-02-21 11:10:11', '0:0:0:0:0:0:0:1', null, null);
 INSERT INTO `ums_admin_login_log` VALUES ('194', '3', '2020-02-25 16:11:13', '0:0:0:0:0:0:0:1', null, null);
 INSERT INTO `ums_admin_login_log` VALUES ('195', '3', '2020-02-25 16:46:29', '0:0:0:0:0:0:0:1', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('196', '6', '2020-08-24 13:39:59', '192.168.5.145', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('197', '3', '2020-08-24 13:40:08', '192.168.5.145', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('198', '3', '2020-08-24 13:40:14', '192.168.5.145', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('199', '3', '2020-08-24 13:40:20', '192.168.5.145', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('200', '1', '2020-08-24 13:40:55', '192.168.5.145', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('201', '3', '2020-08-24 13:42:42', '192.168.5.145', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('202', '6', '2020-08-24 13:45:28', '192.168.5.145', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('203', '3', '2020-08-24 13:45:39', '192.168.5.145', null, null);
 
 -- ----------------------------
 -- Table structure for ums_admin_permission_relation
@@ -2363,7 +2371,7 @@ CREATE TABLE `ums_resource` (
   `description` varchar(500) DEFAULT NULL COMMENT '描述',
   `category_id` bigint(20) DEFAULT NULL COMMENT '资源分类ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='后台资源表';
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='后台资源表';
 
 -- ----------------------------
 -- Records of ums_resource
@@ -2396,6 +2404,8 @@ INSERT INTO `ums_resource` VALUES ('26', '2020-02-07 16:48:24', '后台用户角
 INSERT INTO `ums_resource` VALUES ('27', '2020-02-07 16:48:48', '后台菜单管理', '/menu/**', '', '4');
 INSERT INTO `ums_resource` VALUES ('28', '2020-02-07 16:49:18', '后台资源分类管理', '/resourceCategory/**', '', '4');
 INSERT INTO `ums_resource` VALUES ('29', '2020-02-07 16:49:45', '后台资源管理', '/resource/**', '', '4');
+INSERT INTO `ums_resource` VALUES ('31', '2020-08-24 13:43:54', '登录后获取用户信息', '/admin/info', '后台用户登录需要配置', '4');
+INSERT INTO `ums_resource` VALUES ('32', '2020-08-24 13:44:37', '后台用户登出', '/admin/logout', '后台用户登出需要配置', '4');
 
 -- ----------------------------
 -- Table structure for ums_resource_category
@@ -2532,49 +2542,55 @@ CREATE TABLE `ums_role_resource_relation` (
   `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
   `resource_id` bigint(20) DEFAULT NULL COMMENT '资源ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8 COMMENT='后台角色资源关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=225 DEFAULT CHARSET=utf8 COMMENT='后台角色资源关系表';
 
 -- ----------------------------
 -- Records of ums_role_resource_relation
 -- ----------------------------
-INSERT INTO `ums_role_resource_relation` VALUES ('103', '2', '8');
-INSERT INTO `ums_role_resource_relation` VALUES ('104', '2', '9');
-INSERT INTO `ums_role_resource_relation` VALUES ('105', '2', '10');
-INSERT INTO `ums_role_resource_relation` VALUES ('106', '2', '11');
-INSERT INTO `ums_role_resource_relation` VALUES ('107', '2', '12');
-INSERT INTO `ums_role_resource_relation` VALUES ('142', '5', '1');
-INSERT INTO `ums_role_resource_relation` VALUES ('143', '5', '2');
-INSERT INTO `ums_role_resource_relation` VALUES ('144', '5', '3');
-INSERT INTO `ums_role_resource_relation` VALUES ('145', '5', '4');
-INSERT INTO `ums_role_resource_relation` VALUES ('146', '5', '5');
-INSERT INTO `ums_role_resource_relation` VALUES ('147', '5', '6');
-INSERT INTO `ums_role_resource_relation` VALUES ('148', '5', '8');
-INSERT INTO `ums_role_resource_relation` VALUES ('149', '5', '9');
-INSERT INTO `ums_role_resource_relation` VALUES ('150', '5', '10');
-INSERT INTO `ums_role_resource_relation` VALUES ('151', '5', '11');
-INSERT INTO `ums_role_resource_relation` VALUES ('152', '5', '12');
-INSERT INTO `ums_role_resource_relation` VALUES ('153', '5', '13');
-INSERT INTO `ums_role_resource_relation` VALUES ('154', '5', '14');
-INSERT INTO `ums_role_resource_relation` VALUES ('155', '5', '15');
-INSERT INTO `ums_role_resource_relation` VALUES ('156', '5', '16');
-INSERT INTO `ums_role_resource_relation` VALUES ('157', '5', '17');
-INSERT INTO `ums_role_resource_relation` VALUES ('158', '5', '18');
-INSERT INTO `ums_role_resource_relation` VALUES ('159', '5', '19');
-INSERT INTO `ums_role_resource_relation` VALUES ('160', '5', '20');
-INSERT INTO `ums_role_resource_relation` VALUES ('161', '5', '21');
-INSERT INTO `ums_role_resource_relation` VALUES ('162', '5', '22');
-INSERT INTO `ums_role_resource_relation` VALUES ('163', '5', '23');
-INSERT INTO `ums_role_resource_relation` VALUES ('164', '5', '24');
-INSERT INTO `ums_role_resource_relation` VALUES ('165', '5', '25');
-INSERT INTO `ums_role_resource_relation` VALUES ('166', '5', '26');
-INSERT INTO `ums_role_resource_relation` VALUES ('167', '5', '27');
-INSERT INTO `ums_role_resource_relation` VALUES ('168', '5', '28');
-INSERT INTO `ums_role_resource_relation` VALUES ('169', '5', '29');
-INSERT INTO `ums_role_resource_relation` VALUES ('170', '1', '1');
-INSERT INTO `ums_role_resource_relation` VALUES ('171', '1', '2');
-INSERT INTO `ums_role_resource_relation` VALUES ('172', '1', '3');
-INSERT INTO `ums_role_resource_relation` VALUES ('173', '1', '4');
-INSERT INTO `ums_role_resource_relation` VALUES ('174', '1', '5');
-INSERT INTO `ums_role_resource_relation` VALUES ('175', '1', '6');
-INSERT INTO `ums_role_resource_relation` VALUES ('176', '1', '23');
-INSERT INTO `ums_role_resource_relation` VALUES ('177', '1', '24');
+INSERT INTO `ums_role_resource_relation` VALUES ('178', '5', '1');
+INSERT INTO `ums_role_resource_relation` VALUES ('179', '5', '2');
+INSERT INTO `ums_role_resource_relation` VALUES ('180', '5', '3');
+INSERT INTO `ums_role_resource_relation` VALUES ('181', '5', '4');
+INSERT INTO `ums_role_resource_relation` VALUES ('182', '5', '5');
+INSERT INTO `ums_role_resource_relation` VALUES ('183', '5', '6');
+INSERT INTO `ums_role_resource_relation` VALUES ('184', '5', '8');
+INSERT INTO `ums_role_resource_relation` VALUES ('185', '5', '9');
+INSERT INTO `ums_role_resource_relation` VALUES ('186', '5', '10');
+INSERT INTO `ums_role_resource_relation` VALUES ('187', '5', '11');
+INSERT INTO `ums_role_resource_relation` VALUES ('188', '5', '12');
+INSERT INTO `ums_role_resource_relation` VALUES ('189', '5', '13');
+INSERT INTO `ums_role_resource_relation` VALUES ('190', '5', '14');
+INSERT INTO `ums_role_resource_relation` VALUES ('191', '5', '15');
+INSERT INTO `ums_role_resource_relation` VALUES ('192', '5', '16');
+INSERT INTO `ums_role_resource_relation` VALUES ('193', '5', '17');
+INSERT INTO `ums_role_resource_relation` VALUES ('194', '5', '18');
+INSERT INTO `ums_role_resource_relation` VALUES ('195', '5', '19');
+INSERT INTO `ums_role_resource_relation` VALUES ('196', '5', '20');
+INSERT INTO `ums_role_resource_relation` VALUES ('197', '5', '21');
+INSERT INTO `ums_role_resource_relation` VALUES ('198', '5', '22');
+INSERT INTO `ums_role_resource_relation` VALUES ('199', '5', '23');
+INSERT INTO `ums_role_resource_relation` VALUES ('200', '5', '24');
+INSERT INTO `ums_role_resource_relation` VALUES ('201', '5', '25');
+INSERT INTO `ums_role_resource_relation` VALUES ('202', '5', '26');
+INSERT INTO `ums_role_resource_relation` VALUES ('203', '5', '27');
+INSERT INTO `ums_role_resource_relation` VALUES ('204', '5', '28');
+INSERT INTO `ums_role_resource_relation` VALUES ('205', '5', '29');
+INSERT INTO `ums_role_resource_relation` VALUES ('206', '5', '31');
+INSERT INTO `ums_role_resource_relation` VALUES ('207', '5', '32');
+INSERT INTO `ums_role_resource_relation` VALUES ('208', '2', '8');
+INSERT INTO `ums_role_resource_relation` VALUES ('209', '2', '9');
+INSERT INTO `ums_role_resource_relation` VALUES ('210', '2', '10');
+INSERT INTO `ums_role_resource_relation` VALUES ('211', '2', '11');
+INSERT INTO `ums_role_resource_relation` VALUES ('212', '2', '12');
+INSERT INTO `ums_role_resource_relation` VALUES ('213', '2', '31');
+INSERT INTO `ums_role_resource_relation` VALUES ('214', '2', '32');
+INSERT INTO `ums_role_resource_relation` VALUES ('215', '1', '1');
+INSERT INTO `ums_role_resource_relation` VALUES ('216', '1', '2');
+INSERT INTO `ums_role_resource_relation` VALUES ('217', '1', '3');
+INSERT INTO `ums_role_resource_relation` VALUES ('218', '1', '4');
+INSERT INTO `ums_role_resource_relation` VALUES ('219', '1', '5');
+INSERT INTO `ums_role_resource_relation` VALUES ('220', '1', '6');
+INSERT INTO `ums_role_resource_relation` VALUES ('221', '1', '23');
+INSERT INTO `ums_role_resource_relation` VALUES ('222', '1', '24');
+INSERT INTO `ums_role_resource_relation` VALUES ('223', '1', '31');
+INSERT INTO `ums_role_resource_relation` VALUES ('224', '1', '32');

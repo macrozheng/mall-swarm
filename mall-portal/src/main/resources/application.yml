@@ -24,12 +24,6 @@ spring:
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password:  # Redis服务器连接密码（默认为空）
-    jedis:
-      pool:
-        max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
-        max-wait: -1ms # 连接池最大阻塞等待时间（使用负值表示没有限制）
-        max-idle: 8 # 连接池中的最大空闲连接
-        min-idle: 0 # 连接池中的最小空闲连接
     timeout: 3000ms # 连接超时时间（毫秒）
   rabbitmq:
     host: localhost
@@ -37,7 +31,6 @@ spring:
     virtual-host: /mall
     username: mall
     password: mall
-    publisher-confirms: true #如果对异步消息需要回调必须设置为true
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
@@ -50,38 +43,26 @@ management: #开启SpringBoot Admin的监控
   endpoint:
     health:
       show-details: always
-jwt:
-  tokenHeader: Authorization #JWT存储的请求头
-  secret: mall-portal-secret #JWT加解密使用的密钥
-  expiration: 604800 #JWT的超期限时间(60*60*24)
-  tokenHead: Bearer #JWT负载中拿到开头
-secure:
-  ignored:
-    urls: #安全路径白名单
-      - /swagger-ui.html
-      - /swagger-resources/**
-      - /swagger/**
-      - /**/v2/api-docs
-      - /**/*.js
-      - /**/*.css
-      - /**/*.png
-      - /**/*.ico
-      - /webjars/springfox-swagger-ui/**
-      - /druid/**
-      - /actuator/**
-      - /sso/**
-      - /home/**
-# 自定义redis键值
+
+# 自定义redis key
 redis:
+  database: mall
   key:
-    prefix:
-      authCode: "portal:authCode:"
-      orderId: "portal:orderId:"
-    expire:
-      authCode: 90 # 验证码超期时间
-# 自定义消息队列名称
+    authCode: 'ums:authCode'
+    orderId: 'oms:orderId'
+    member: 'ums:member'
+  expire:
+    authCode: 90 # 验证码超期时间
+    common: 86400 # 24小时
+
+# 消息队列定义
 rabbitmq:
   queue:
     name:
       cancelOrder: cancelOrderQueue
-
+feign:
+  okhttp:
+    enabled: true
+ribbon:
+  ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
+  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）

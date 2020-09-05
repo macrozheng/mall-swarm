@@ -1,8 +1,8 @@
 package com.macro.mall.portal.service;
 
 import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.model.UmsMember;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -51,15 +51,10 @@ public interface UmsMemberService {
     /**
      * 获取用户信息
      */
-    UserDetails loadUserByUsername(String username);
+    UserDto loadUserByUsername(String username);
 
     /**
      * 登录后获取token
      */
-    String login(String username, String password);
-
-    /**
-     * 刷新token
-     */
-    String refreshToken(String token);
+    CommonResult login(String username, String password);
 }
