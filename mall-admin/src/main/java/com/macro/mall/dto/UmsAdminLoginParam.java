@@ -13,10 +13,10 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class UmsAdminLoginParam {
+    @NotEmpty
     @ApiModelProperty(value = "用户名", required = true)
-    @NotEmpty
     private String username;
-    @ApiModelProperty(value = "密码", required = true)
     @NotEmpty
+    @ApiModelProperty(value = "密码", required = true)
     private String password;
 }
