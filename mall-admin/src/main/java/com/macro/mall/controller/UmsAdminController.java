@@ -1,7 +1,9 @@
 package com.macro.mall.controller;
 
+import cn.hutool.core.collection.CollUtil;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.dto.UmsAdminLoginParam;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
@@ -13,16 +15,14 @@ import com.macro.mall.service.UmsRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * 后台用户管理
@@ -32,10 +32,6 @@ import java.util.Map;
 @Api(tags = "UmsAdminController", description = "后台用户管理")
 @RequestMapping("/admin")
 public class UmsAdminController {
-    @Value("${jwt.tokenHeader}")
-    private String tokenHeader;
-    @Value("${jwt.tokenHead}")
-    private String tokenHead;
     @Autowired
     private UmsAdminService adminService;
     @Autowired
@@ -44,10 +40,10 @@ public class UmsAdminController {
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<UmsAdmin> register(@RequestBody UmsAdminParam umsAdminParam, BindingResult result) {
+    public CommonResult<UmsAdmin> register(@Validated @RequestBody UmsAdminParam umsAdminParam) {
         UmsAdmin umsAdmin = adminService.register(umsAdminParam);
         if (umsAdmin == null) {
-            CommonResult.failed();
+            return CommonResult.failed();
         }
         return CommonResult.success(umsAdmin);
     }
@@ -55,46 +51,24 @@ public class UmsAdminController {
     @ApiOperation(value = "登录以后返回token")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam, BindingResult result) {
-        String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
-        if (token == null) {
-            return CommonResult.validateFailed("用户名或密码错误");
-        }
-        Map<String, String> tokenMap = new HashMap<>();
-        tokenMap.put("token", token);
-        tokenMap.put("tokenHead", tokenHead);
-        return CommonResult.success(tokenMap);
-    }
-
-    @ApiOperation(value = "刷新token")
-    @RequestMapping(value = "/refreshToken", method = RequestMethod.GET)
-    @ResponseBody
-    public CommonResult refreshToken(HttpServletRequest request) {
-        String token = request.getHeader(tokenHeader);
-        String refreshToken = adminService.refreshToken(token);
-        if (refreshToken == null) {
-            return CommonResult.failed("token已经过期！");
-        }
-        Map<String, String> tokenMap = new HashMap<>();
-        tokenMap.put("token", refreshToken);
-        tokenMap.put("tokenHead", tokenHead);
-        return CommonResult.success(tokenMap);
+    public CommonResult login(@Validated @RequestBody UmsAdminLoginParam umsAdminLoginParam) {
+        return adminService.login(umsAdminLoginParam.getUsername(),umsAdminLoginParam.getPassword());
     }
 
     @ApiOperation(value = "获取当前登录用户信息")
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult getAdminInfo(Principal principal) {
-        if(principal==null){
-            return CommonResult.unauthorized(null);
-        }
-        String username = principal.getName();
-        UmsAdmin umsAdmin = adminService.getAdminByUsername(username);
+    public CommonResult getAdminInfo() {
+        UmsAdmin umsAdmin = adminService.getCurrentAdmin();
         Map<String, Object> data = new HashMap<>();
         data.put("username", umsAdmin.getUsername());
-        data.put("roles", new String[]{"TEST"});
         data.put("menus", roleService.getMenuList(umsAdmin.getId()));
         data.put("icon", umsAdmin.getIcon());
+        List<UmsRole> roleList = adminService.getRoleList(umsAdmin.getId());
+        if(CollUtil.isNotEmpty(roleList)){
+            List<String> roles = roleList.stream().map(UmsRole::getName).collect(Collectors.toList());
+            data.put("roles",roles);
+        }
         return CommonResult.success(data);
     }
 
@@ -196,23 +170,11 @@ public class UmsAdminController {
         return CommonResult.success(roleList);
     }
 
-    @ApiOperation("给用户分配+-权限")
-    @RequestMapping(value = "/permission/update", method = RequestMethod.POST)
+    @ApiOperation("根据用户名获取通用用户信息")
+    @RequestMapping(value = "/loadByUsername", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult updatePermission(@RequestParam Long adminId,
-                                         @RequestParam("permissionIds") List<Long> permissionIds) {
-        int count = adminService.updatePermission(adminId, permissionIds);
-        if (count > 0) {
-            return CommonResult.success(count);
-        }
-        return CommonResult.failed();
-    }
-
-    @ApiOperation("获取用户所有权限（包括+-权限）")
-    @RequestMapping(value = "/permission/{adminId}", method = RequestMethod.GET)
-    @ResponseBody
-    public CommonResult<List<UmsPermission>> getPermissionList(@PathVariable Long adminId) {
-        List<UmsPermission> permissionList = adminService.getPermissionList(adminId);
-        return CommonResult.success(permissionList);
+    public UserDto loadUserByUsername(@RequestParam String username) {
+        UserDto userDTO = adminService.loadUserByUsername(username);
+        return userDTO;
     }
 }
