@@ -34,7 +34,7 @@ mall
 
 ## 项目文档
 
-- 项目文档`mall`系列教程：[http://www.macrozheng.com](https://macrozheng.github.io/mall-learning)
+- 项目文档`mall`系列教程：[http://www.macrozheng.com](http://www.macrozheng.com)
 - 配套`Spring Cloud`系列教程：[https://github.com/macrozheng/springcloud-learning](https://github.com/macrozheng/springcloud-learning)
 
 ## 项目演示
