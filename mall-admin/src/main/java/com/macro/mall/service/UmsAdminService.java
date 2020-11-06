@@ -1,12 +1,10 @@
 package com.macro.mall.service;
 
+import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
-import com.macro.mall.model.UmsAdmin;
-import com.macro.mall.model.UmsPermission;
-import com.macro.mall.model.UmsResource;
-import com.macro.mall.model.UmsRole;
-import org.springframework.security.core.userdetails.UserDetails;
+import com.macro.mall.model.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -30,15 +28,9 @@ public interface UmsAdminService {
      * 登录功能
      * @param username 用户名
      * @param password 密码
-     * @return 生成的JWT的token
+     * @return 调用认证中心返回结果
      */
-    String login(String username,String password);
-
-    /**
-     * 刷新token的功能
-     * @param oldToken 旧的token
-     */
-    String refreshToken(String oldToken);
+    CommonResult login(String username, String password);
 
     /**
      * 根据用户id获取用户
@@ -77,17 +69,6 @@ public interface UmsAdminService {
     List<UmsResource> getResourceList(Long adminId);
 
     /**
-     * 修改用户的+-权限
-     */
-    @Transactional
-    int updatePermission(Long adminId, List<Long> permissionIds);
-
-    /**
-     * 获取用户所有权限（包括角色权限和+-权限）
-     */
-    List<UmsPermission> getPermissionList(Long adminId);
-
-    /**
      * 修改密码
      */
     int updatePassword(UpdateAdminPasswordParam updatePasswordParam);
@@ -95,5 +76,10 @@ public interface UmsAdminService {
     /**
      * 获取用户信息
      */
-    UserDetails loadUserByUsername(String username);
+    UserDto loadUserByUsername(String username);
+
+    /**
+     * 获取当前登录后台用户
+     */
+    UmsAdmin getCurrentAdmin();
 }

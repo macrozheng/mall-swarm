@@ -1,15 +1,8 @@
 spring:
   cloud:
-    config:
-      profile: prod #启用环境名称
-      label: master #分支名称
-      name: demo #配置文件名称
+    nacos:
       discovery:
-        enabled: true
-        service-id: mall-config
-eureka:
-  client:
-    service-url:
-      defaultZone: http://mall-registry:8001/eureka/
-  instance:
-    prefer-ip-address: true
+        server-addr: http://nacos-registry:8848
+      config:
+        server-addr: http://nacos-registry:8848
+        file-extension: yaml
