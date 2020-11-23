@@ -6,17 +6,17 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Custom product SKU inventory Dao
+ * Custom product SKU management Dao
  * Created by macro on 2018/4/26.
  */
 public interface PmsSkuStockDao {
     /**
-     * Bulk insertion operations
+     * Bulk insert operation
      */
     int insertList(@Param("list")List<PmsSkuStock> skuStockList);
 
     /**
-     * Bulk insert or replace operations
+     * Bulk insert or replace operation
      */
     int replaceList(@Param("list")List<PmsSkuStock> skuStockList);
 }

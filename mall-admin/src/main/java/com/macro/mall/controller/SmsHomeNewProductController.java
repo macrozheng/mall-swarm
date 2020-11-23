@@ -17,7 +17,7 @@ import java.util.List;
  * Created by macro on 2018/11/6.
  */
 @Controller
-@Api(tags = "SmsHomeNewProductController", description = "Home New Management")
+@Api(tags = "SmsHomeNewProductController", description = "Home New Product Management")
 @RequestMapping("/home/newProduct")
 public class SmsHomeNewProductController {
     @Autowired

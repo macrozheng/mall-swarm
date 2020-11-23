@@ -1,65 +1,60 @@
 package com.macro.mall.portal.service;
 
 import com.macro.mall.common.api.CommonResult;
+import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.model.UmsMember;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Member Management Service
+ * 会员管理Service
  * Created by macro on 2018/8/3.
  */
 public interface UmsMemberService {
     /**
-     * Get members by username
+     * 根据用户名获取会员
      */
     UmsMember getByUsername(String username);
 
     /**
-     * Get members by member number
+     * 根据会员编号获取会员
      */
     UmsMember getById(Long id);
 
     /**
-     * User registration
+     * 用户注册
      */
     @Transactional
     void register(String username, String password, String telephone, String authCode);
 
     /**
-     * Generate verification code
+     * 生成验证码
      */
     String generateAuthCode(String telephone);
 
     /**
-     * Change Password
+     * 修改密码
      */
     @Transactional
     void updatePassword(String telephone, String password, String authCode);
 
     /**
-     * Get the currently logged in Member
+     * 获取当前登录会员
      */
     UmsMember getCurrentMember();
 
     /**
-     * Modify member points based on member id
+     * 根据会员id修改会员积分
      */
     void updateIntegration(Long id,Integer integration);
 
 
     /**
-     * Get user information
+     * 获取用户信息
      */
-    UserDetails loadUserByUsername(String username);
+    UserDto loadUserByUsername(String username);
 
     /**
-     * Get token after login
+     * 登录后获取token
      */
-    String login(String username, String password);
-
-    /**
-     * Refresh token
-     */
-    String refreshToken(String token);
+    CommonResult login(String username, String password);
 }

@@ -1,11 +1,15 @@
 package com.macro.mall.dto;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
- * oss上传文件的Callback结果
+ * Callback result of oss uploaded file
  * Created by macro on 2018/5/17.
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class OssCallbackResult {
     @ApiModelProperty("file name")
     private String filename;
@@ -17,44 +21,4 @@ public class OssCallbackResult {
     private String width;
     @ApiModelProperty("The height of the picture file")
     private String height;
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getMimeType() {
-        return mimeType;
-    }
-
-    public void setMimeType(String mimeType) {
-        this.mimeType = mimeType;
-    }
-
-    public String getWidth() {
-        return width;
-    }
-
-    public void setWidth(String width) {
-        this.width = width;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
 }

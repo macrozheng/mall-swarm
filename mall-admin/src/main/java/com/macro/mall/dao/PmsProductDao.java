@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 
 /**
- * Product Custom Dao
+ * Custom product management Dao
  * Created by macro on 2018/4/26.
  */
 public interface PmsProductDao {

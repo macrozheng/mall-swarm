@@ -8,22 +8,22 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * User login parameter
+ * User login parameters
  * Created by macro on 2018/4/26.
  */
 @Getter
 @Setter
 public class UmsAdminParam {
-    @ApiModelProperty(value = "username", required = true)
-    @NotEmpty(message = "username cannot be empty")
+    @ApiModelProperty(value = "Username", required = true)
+    @NotEmpty
     private String username;
-    @ApiModelProperty(value = "password", required = true)
-    @NotEmpty(message = "password cannot be empty")
+    @ApiModelProperty(value = "Password", required = true)
+    @NotEmpty
     private String password;
-    @ApiModelProperty(value = "profile picture")
+    @ApiModelProperty(value = "Profile Picture")
     private String icon;
-    @ApiModelProperty(value = "Mailbox")
-    @Email(message = "Mailbox format is not legal")
+    @ApiModelProperty(value = "Email")
+    @Email
     private String email;
     @ApiModelProperty(value = "User's Nickname")
     private String nickName;

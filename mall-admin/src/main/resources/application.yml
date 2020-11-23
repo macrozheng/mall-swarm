@@ -1,19 +1,25 @@
 server:
-  port: 8180
+  port: 8080
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
     druid:
-      initial-size: 5 #Connection pool initialization size
+      initial-size: 5 #Initial connection pool size
       min-idle: 10 #Minimum number of idle connections
       max-active: 20 #Maximum number of connections
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Do not count these request data
-      stat-view-servlet: #Login username and password for accessing monitoring web pages
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+      stat-view-servlet: #Login user name and password to access the monitoring webpage
         login-username: druid
         login-password: druid
+  redis:
+    host: localhost # Redis server address
+    database: 0 # Redis database index (default is 0)
+    port: 6379 # Redis server connection port
+    password:  # Redis server connection password (empty by default)
+    timeout: 3000ms # Connection timeout (ms)
   rabbitmq: #rabbitmq related configuration
     host: localhost
     port: 5672
@@ -21,13 +27,13 @@ spring:
     password: guest
   servlet:
     multipart:
-      enabled: true #Open File Upload
-      max-file-size: 10MB #Limit file upload size to 10M
+      enabled: true #Open file upload
+      max-file-size: 10MB #Limit file upload size to 10 M
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
     - classpath*:com/**/mapper/*.xml
-management: #Enable monitoring of SpringBoot Admin
+management: #Open SpringBoot Admin monitoring
   endpoints:
     web:
       exposure:
@@ -35,44 +41,32 @@ management: #Enable monitoring of SpringBoot Admin
   endpoint:
     health:
       show-details: always
-jwt:
-  tokenHeader: Authorization #JWT stored request header
-  secret: mall-admin-secret #JWT encryption and decryption key
-  expiration: 604800 #JWT overdue time (60 * 60 * 24)
-  tokenHead: Bearer  #Get the beginning in JWT load
-secure:
-  ignored:
-    urls: #Safe Path Whitelist
-      - /swagger-ui.html
-      - /swagger-resources/**
-      - /swagger/**
-      - /**/v2/api-docs
-      - /**/*.js
-      - /**/*.css
-      - /**/*.png
-      - /**/*.ico
-      - /webjars/springfox-swagger-ui/**
-      - /actuator/**
-      - /druid/**
-      - /admin/login
-      - /admin/register
-      - /admin/info
-      - /admin/logout
-      - /minio/upload
+redis:
+  database: mall
+  key:
+    admin: 'ums:admin'
+  expire:
+    common: 86400 # 24 hours
 aliyun:
   oss:
-    endpoint: oss-cn-shenzhen.aliyuncs.com # access domain for oss external services
+    endpoint: oss-cn-shenzhen.aliyuncs.com # Access domain name of oss external service
     accessKeyId: test # User ID used in access authentication
-    accessKeySecret: test # Key used by the user to encrypt the signature string and OSS to verify the signature string
-    bucketName: macro-oss # storage space for oss
+    accessKeySecret: test # The key used by the user to encrypt the signature string and oss ​​to verify the signature string
+    bucketName: macro-oss # oss storage space
     policy:
-      expire: 300 # Signature validity(S)
-    maxSize: 10 # Upload File size (M)
-    callback: http://39.98.190.128:8080/aliyun/oss/callback # Callback address after File Upload succeeded
+      expire: 300 # Signature validity period(S)
+    maxSize: 10 # Upload file size(M)
+    callback: http://39.98.190.128:8080/aliyun/oss/callback # Callback address after successful file upload
     dir:
       prefix: mall/images/ # Upload folder path prefix
 minio:
-  endpoint: http://192.168.6.132:9090 #Address of the MinIO service
+  endpoint: http://192.168.6.132:9090 #Address of MinIO service
   bucketName: mall #Bucket name
   accessKey: minioadmin #Access key
-  secretKey: minioadmin #Secret key
+  secretKey: minioadmin #Access key
+feign:
+  okhttp:
+    enabled: true
+ribbon:
+  ConnectTimeout: 3000 #Service request connection timeout（毫秒）
+  ReadTimeout: 3000 #Service request processing timeout time (ms)

@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface PmsMemberPriceDao {
     /**
-     * 批量创建
+     * Batch creation
      */
     int insertList(@Param("list") List<PmsMemberPrice> memberPriceList);
 }

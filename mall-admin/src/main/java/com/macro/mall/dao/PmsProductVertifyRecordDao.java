@@ -6,9 +6,12 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Product audit log custom dao
+ * Customized product audit log management Dao
  * Created by macro on 2018/4/27.
  */
 public interface PmsProductVertifyRecordDao {
+    /**
+     * Batch creation
+     */
     int insertList(@Param("list") List<PmsProductVertifyRecord> list);
 }

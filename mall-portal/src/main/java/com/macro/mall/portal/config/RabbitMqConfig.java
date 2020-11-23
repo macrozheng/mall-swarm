@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * message queue configuration
+ * 消息队列相关配置
  * Created by macro on 2018/9/14.
  */
 @Configuration
 public class RabbitMqConfig {
 
     /**
-     * The order bound to the actual consumption queue of the switch
+     * 订单消息实际消费队列所绑定的交换机
      */
     @Bean
     DirectExchange orderDirect() {
@@ -24,7 +24,7 @@ public class RabbitMqConfig {
     }
 
     /**
-     * The order bound to the order queue
+     * 订单延迟队列队列所绑定的交换机
      */
     @Bean
     DirectExchange orderTtlDirect() {
@@ -35,7 +35,7 @@ public class RabbitMqConfig {
     }
 
     /**
-     * Order actual consumption queue
+     * 订单实际消费队列
      */
     @Bean
     public Queue orderQueue() {
@@ -43,22 +43,22 @@ public class RabbitMqConfig {
     }
 
     /**
-     * Order Delay Queue (Dead Letter Queue)
+     * 订单延迟队列（死信队列）
      */
     @Bean
     public Queue orderTtlQueue() {
         return QueueBuilder
                 .durable(QueueEnum.QUEUE_TTL_ORDER_CANCEL.getName())
-                .withArgument("x-dead-letter-exchange", QueueEnum.QUEUE_ORDER_CANCEL.getExchange())//Switch forwarded after expiration
-                .withArgument("x-dead-letter-routing-key", QueueEnum.QUEUE_ORDER_CANCEL.getRouteKey())//Routing key to forward after expiration
+                .withArgument("x-dead-letter-exchange", QueueEnum.QUEUE_ORDER_CANCEL.getExchange())//到期后转发的交换机
+                .withArgument("x-dead-letter-routing-key", QueueEnum.QUEUE_ORDER_CANCEL.getRouteKey())//到期后转发的路由键
                 .build();
     }
 
     /**
-     * Bind the order queue to the switch
+     * 将订单队列绑定到交换机
      */
     @Bean
-    Binding orderBinding(DirectExchange orderDirect, Queue orderQueue) {
+    Binding orderBinding(DirectExchange orderDirect,Queue orderQueue){
         return BindingBuilder
                 .bind(orderQueue)
                 .to(orderDirect)
@@ -66,10 +66,10 @@ public class RabbitMqConfig {
     }
 
     /**
-     * Bind the order delay queue to the switch
+     * 将订单延迟队列绑定到交换机
      */
     @Bean
-    Binding orderTtlBinding(DirectExchange orderTtlDirect, Queue orderTtlQueue) {
+    Binding orderTtlBinding(DirectExchange orderTtlDirect,Queue orderTtlQueue){
         return BindingBuilder
                 .bind(orderTtlQueue)
                 .to(orderTtlDirect)

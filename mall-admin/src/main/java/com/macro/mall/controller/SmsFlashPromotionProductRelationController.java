@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Limited-time purchase and product relationship management Controller
+ * Flash Promotion and product relationship management Controller
  * Created by macro on 2018/11/16.
  */
 @Controller
-@Api(tags = "SmsFlashPromotionProductRelationController", description = "Limited-time purchase and merchandise relationship management")
+@Api(tags = "SmsFlashPromotionProductRelationController", description = "Flash Promotion and Product relationship management")
 @RequestMapping("/flashProductRelation")
 public class SmsFlashPromotionProductRelationController {
     @Autowired

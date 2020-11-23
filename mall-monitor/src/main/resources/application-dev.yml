@@ -1,4 +1,5 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8001/eureka/
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848

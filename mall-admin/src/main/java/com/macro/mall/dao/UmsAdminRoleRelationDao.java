@@ -1,7 +1,6 @@
 package com.macro.mall.dao;
 
 import com.macro.mall.model.UmsAdminRoleRelation;
-import com.macro.mall.model.UmsPermission;
 import com.macro.mall.model.UmsResource;
 import com.macro.mall.model.UmsRole;
 import org.apache.ibatis.annotations.Param;
@@ -9,32 +8,27 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Background user and role management custom Dao
+ * Customize admin user and role management Dao
  * Created by macro on 2018/10/8.
  */
 public interface UmsAdminRoleRelationDao {
     /**
-     * Bulk insertion of user role relationships
+     * Insert user role relationships in bulk
      */
     int insertList(@Param("list") List<UmsAdminRoleRelation> adminRoleRelationList);
 
     /**
-     * Get for all roles
+     * Get used for all roles
      */
     List<UmsRole> getRoleList(@Param("adminId") Long adminId);
 
     /**
-     * Get all role permissions for a user
-     */
-    List<UmsPermission> getRolePermissionList(@Param("adminId") Long adminId);
-
-    /**
-     * Get all user permissions (including +-permissions)
-     */
-    List<UmsPermission> getPermissionList(@Param("adminId") Long adminId);
-
-    /**
-     * 获取用户所有可访问资源
+     * Get all accessible resources of the user
      */
     List<UmsResource> getResourceList(@Param("adminId") Long adminId);
+
+    /**
+     * Get a list of resource-related user IDs
+     */
+    List<Long> getAdminIdList(@Param("resourceId") Long resourceId);
 }

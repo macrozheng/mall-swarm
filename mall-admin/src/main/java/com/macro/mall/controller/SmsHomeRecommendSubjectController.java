@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Home Featured Management Controller
+ * Home Recommend Subject Management
  * Created by macro on 2018/11/6.
  */
 @Controller
-@Api(tags = "SmsHomeRecommendSubjectController", description = "Home Featured Management")
+@Api(tags = "SmsHomeRecommendSubjectController", description = "Home Recommend Subject Management")
 @RequestMapping("/home/recommendSubject")
 public class SmsHomeRecommendSubjectController {
     @Autowired
     private SmsHomeRecommendSubjectService recommendSubjectService;
 
-    @ApiOperation("Add a homepage recommendation专题")
+    @ApiOperation("Add a homepage recommendation subject")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody List<SmsHomeRecommendSubject> homeBrandList) {

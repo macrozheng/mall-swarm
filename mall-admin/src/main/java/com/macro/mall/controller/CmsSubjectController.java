@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Product topics Controller
+ * Product subject management Controller
  * Created by macro on 2018/6/1.
  */
 @Controller
-@Api(tags = "CmsSubjectController", description = "Product topics management")
+@Api(tags = "CmsSubjectController", description = "Product Subject management")
 @RequestMapping("/subject")
 public class CmsSubjectController {
     @Autowired
     private CmsSubjectService subjectService;
 
-    @ApiOperation("Get all Product topics ")
+    @ApiOperation("Get all product subjects")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<CmsSubject>> listAll() {
@@ -34,7 +34,7 @@ public class CmsSubjectController {
         return CommonResult.success(subjectList);
     }
 
-    @ApiOperation(value = "Get topics by page by topic name")
+    @ApiOperation(value = "Get subjects by page by subject name")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<CmsSubject>> getList(@RequestParam(value = "keyword", required = false) String keyword,

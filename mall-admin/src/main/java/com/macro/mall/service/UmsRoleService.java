@@ -1,7 +1,6 @@
 package com.macro.mall.service;
 
 import com.macro.mall.model.UmsMenu;
-import com.macro.mall.model.UmsPermission;
 import com.macro.mall.model.UmsResource;
 import com.macro.mall.model.UmsRole;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,38 +8,27 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Background role management Service
+ * 后台角色管理Service
  * Created by macro on 2018/9/30.
  */
 public interface UmsRoleService {
     /**
-     * Add role
+     * 添加角色
      */
     int create(UmsRole role);
 
     /**
-     * Modify role information
+     * 修改角色信息
      */
     int update(Long id, UmsRole role);
 
     /**
-     * Delete roles in bulk
+     * 批量删除角色
      */
     int delete(List<Long> ids);
 
     /**
-     * Get specified role permissions
-     */
-    List<UmsPermission> getPermissionList(Long roleId);
-
-    /**
-     * Modify the permissions of the specified role
-     */
-    @Transactional
-    int updatePermission(Long roleId, List<Long> permissionIds);
-
-    /**
-     * Get list of roles
+     * 获取所有角色列表
      */
     List<UmsRole> list();
 

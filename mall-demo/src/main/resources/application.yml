@@ -17,3 +17,6 @@ management: #Enable monitoring of SpringBoot Admin
   endpoint:
     health:
       show-details: always
+feign:
+  okhttp:
+    enabled: true

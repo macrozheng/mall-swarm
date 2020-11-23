@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Home Popular recommendation management Controller
+ * Home Product Recommendation management Controller
  * Created by macro on 2018/11/6.
  */
 @Controller
-@Api(tags = "SmsHomeRecommendProductController", description = "Home Popular recommendation management")
+@Api(tags = "SmsHomeRecommendProductController", description = "Home Product Recommendation management")
 @RequestMapping("/home/recommendProduct")
 public class SmsHomeRecommendProductController {
     @Autowired

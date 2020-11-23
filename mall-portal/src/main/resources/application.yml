@@ -2,16 +2,16 @@ server:
   port: 8085
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
     druid:
-      initial-size: 5 #Connection pool initialization size
-      min-idle: 10 #Minimum idle connections
-      max-active: 20 #Maximum number of connections
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 20 #最大连接数
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Do not count these request data
-      stat-view-servlet: #Login username and password for accessing the monitoring webpage
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+      stat-view-servlet: #访问监控网页的登录用户名和密码
         login-username: druid
         login-password: druid
   data:
@@ -20,29 +20,22 @@ spring:
       port: 27017
       database: mall-port
   redis:
-    host: localhost # Redis server address
-    database: 0 # Redis database index (default is 0)
-    port: 6379 # Redis server connection port
+    host: localhost # Redis服务器地址
+    database: 0 # Redis数据库索引（默认为0）
+    port: 6379 # Redis服务器连接端口
     password:  # Redis服务器连接密码（默认为空）
-    jedis:
-      pool:
-        max-active: 8 # Maximum number of connections in the connection pool (use a negative value to indicate no limit)
-        max-wait: -1ms # Connection pool maximum blocking wait time (use a negative value to indicate no limit)
-        max-idle: 8 # Maximum idle connections in the connection pool
-        min-idle: 0 # The smallest idle connection in the connection pool
-    timeout: 3000ms # Connection timeout (ms)
+    timeout: 3000ms # 连接超时时间（毫秒）
   rabbitmq:
     host: localhost
     port: 5672
     virtual-host: /mall
     username: mall
     password: mall
-    publisher-confirms: true #Must be set to true if callbacks are required for asynchronous messages
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
     - classpath*:com/**/mapper/*.xml
-management: #Enable monitoring of SpringBoot Admin
+management: #开启SpringBoot Admin的监控
   endpoints:
     web:
       exposure:
@@ -50,37 +43,26 @@ management: #Enable monitoring of SpringBoot Admin
   endpoint:
     health:
       show-details: always
-jwt:
-  tokenHeader: Authorization #JWT stored request header
-  secret: mall-portal-secret #JWT encryption and decryption key
-  expiration: 604800 #JWT overdue time (60 * 60 * 24)
-  tokenHead: Bearer #Get the beginning in JWT load
-secure:
-  ignored:
-    urls: #Safe path whitelist
-      - /swagger-ui.html
-      - /swagger-resources/**
-      - /swagger/**
-      - /**/v2/api-docs
-      - /**/*.js
-      - /**/*.css
-      - /**/*.png
-      - /**/*.ico
-      - /webjars/springfox-swagger-ui/**
-      - /druid/**
-      - /actuator/**
-      - /sso/**
-      - /home/**
-# Custom redis key
+
+# 自定义redis key
 redis:
+  database: mall
   key:
-    prefix:
-      authCode: "portal:authCode:"
-      orderId: "portal:orderId:"
-    expire:
-      authCode: 90 # Verification code expiration time
-# Custom message queue name
+    authCode: 'ums:authCode'
+    orderId: 'oms:orderId'
+    member: 'ums:member'
+  expire:
+    authCode: 90 # 验证码超期时间
+    common: 86400 # 24小时
+
+# 消息队列定义
 rabbitmq:
   queue:
     name:
       cancelOrder: cancelOrderQueue
+feign:
+  okhttp:
+    enabled: true
+ribbon:
+  ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
+  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）

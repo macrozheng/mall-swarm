@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * OSS object storage related configuration
  * Created by macro on 2018/5/17.
  */
 @Configuration

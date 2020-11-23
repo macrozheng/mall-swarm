@@ -3,6 +3,7 @@ package com.macro.mall.service;
 import com.macro.mall.model.UmsResource;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 后台资源管理Service
@@ -38,4 +39,9 @@ public interface UmsResourceService {
      * 查询全部资源
      */
     List<UmsResource> listAll();
+
+    /**
+     * 初始化资源角色规则
+     */
+    Map<String,List<String>> initResourceRolesMap();
 }

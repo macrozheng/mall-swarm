@@ -5,12 +5,12 @@ import com.macro.mall.dto.PmsProductAttributeCategoryItem;
 import java.util.List;
 
 /**
- * Custom Product Attribute Classification Dao
+ * Custom product attribute category Dao
  * Created by macro on 2018/5/24.
  */
 public interface PmsProductAttributeCategoryDao {
     /**
-     * Get product attribute classification, including attributes
+     * Get product attribute category containing attributes
      */
     List<PmsProductAttributeCategoryItem> getListWithAttr();
 }

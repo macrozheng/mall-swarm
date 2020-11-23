@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Home Carousel Management Controller
+ * Home Advertise Management Controller
  * Created by macro on 2018/11/7.
  */
 @Controller
-@Api(tags = "SmsHomeAdvertiseController", description = "Home Carousel Management")
+@Api(tags = "SmsHomeAdvertiseController", description = "Home Advertise Management")
 @RequestMapping("/home/advertise")
 public class SmsHomeAdvertiseController {
     @Autowired

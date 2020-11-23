@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface OmsOrderOperateHistoryDao {
     /**
-     * 批量创建
+     * Batch creation
      */
     int insertList(@Param("list") List<OmsOrderOperateHistory> orderOperateHistoryList);
 }
