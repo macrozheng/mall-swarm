@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
     username: root
     password: root
     druid:
@@ -10,7 +10,7 @@ spring:
       min-idle: 10 #Minimum number of idle connections
       max-active: 20 #Maximum number of connections
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Exclude these file type request data
       stat-view-servlet: #Login user name and password to access the monitoring webpage
         login-username: druid
         login-password: druid
@@ -68,5 +68,5 @@ feign:
   okhttp:
     enabled: true
 ribbon:
-  ConnectTimeout: 3000 #Service request connection timeout（毫秒）
-  ReadTimeout: 3000 #Service request processing timeout time (ms)
+  ConnectTimeout: 3000 #Service request connection timeout（Millisecond）
+  ReadTimeout: 3000 #Service request processing timeout time (Millisecond)

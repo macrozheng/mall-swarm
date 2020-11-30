@@ -10,76 +10,76 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 后台管理员Service
+ * back-end Administrator Service
  * Created by macro on 2018/4/26.
  */
 public interface UmsAdminService {
     /**
-     * 根据用户名获取后台管理员
+     * Get back-end administrator based on user name
      */
     UmsAdmin getAdminByUsername(String username);
 
     /**
-     * 注册功能
+     * Registration function
      */
     UmsAdmin register(UmsAdminParam umsAdminParam);
 
     /**
-     * 登录功能
-     * @param username 用户名
-     * @param password 密码
-     * @return 调用认证中心返回结果
+     * Login function
+     * @param username Username
+     * @param password Password
+     * @return Call the certification center to return the result
      */
     CommonResult login(String username, String password);
 
     /**
-     * 根据用户id获取用户
+     * Get users based on user id
      */
     UmsAdmin getItem(Long id);
 
     /**
-     * 根据用户名或昵称分页查询用户
+     * Paging query users based on user name or nickname
      */
     List<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
 
     /**
-     * 修改指定用户信息
+     * Modify specified user information
      */
     int update(Long id, UmsAdmin admin);
 
     /**
-     * 删除指定用户
+     * Delete specified user
      */
     int delete(Long id);
 
     /**
-     * 修改用户角色关系
+     * Modify user role relationship
      */
     @Transactional
     int updateRole(Long adminId, List<Long> roleIds);
 
     /**
-     * 获取用户对于角色
+     * Get users for roles
      */
     List<UmsRole> getRoleList(Long adminId);
 
     /**
-     * 获取指定用户的可访问资源
+     * Get the accessible resources of the specified user
      */
     List<UmsResource> getResourceList(Long adminId);
 
     /**
-     * 修改密码
+     * change Password
      */
     int updatePassword(UpdateAdminPasswordParam updatePasswordParam);
 
     /**
-     * 获取用户信息
+     * Get user information
      */
     UserDto loadUserByUsername(String username);
 
     /**
-     * 获取当前登录后台用户
+     * Get the currently logged in admin user
      */
     UmsAdmin getCurrentAdmin();
 }

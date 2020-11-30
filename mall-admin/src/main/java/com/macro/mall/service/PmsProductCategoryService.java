@@ -15,44 +15,44 @@ import java.util.List;
  */
 public interface PmsProductCategoryService {
     /**
-     * 创建商品分类
+     * Create product categories
      */
     @Transactional
     int create(PmsProductCategoryParam pmsProductCategoryParam);
 
     /**
-     * 修改商品分类
+     * Modify product category
      */
     @Transactional
     int update(Long id, PmsProductCategoryParam pmsProductCategoryParam);
 
     /**
-     * 分页获取商品分类
+     * Get product category by page
      */
     List<PmsProductCategory> getList(Long parentId, Integer pageSize, Integer pageNum);
 
     /**
-     * 删除商品分类
+     * Delete product category
      */
     int delete(Long id);
 
     /**
-     * 根据ID获取商品分类
+     * Get product Category based on ID
      */
     PmsProductCategory getItem(Long id);
 
     /**
-     * 批量修改导航状态
+     * Batch edit navigation status
      */
     int updateNavStatus(List<Long> ids, Integer navStatus);
 
     /**
-     * 批量修改显示状态
+     * Batch modify display status
      */
     int updateShowStatus(List<Long> ids, Integer showStatus);
 
     /**
-     * 以层级形式获取商品分类
+     * Get product Category With Children Item
      */
     List<PmsProductCategoryWithChildrenItem> listWithChildren();
 }

@@ -6,42 +6,42 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 后台资源管理Service
+ * Admin Resource Management Service
  * Created by macro on 2020/2/2.
  */
 public interface UmsResourceService {
     /**
-     * 添加资源
+     * Add resource
      */
     int create(UmsResource umsResource);
 
     /**
-     * 修改资源
+     * Modify resources
      */
     int update(Long id, UmsResource umsResource);
 
     /**
-     * 获取资源详情
+     * Get resource details
      */
     UmsResource getItem(Long id);
 
     /**
-     * 删除资源
+     * Delete resource
      */
     int delete(Long id);
 
     /**
-     * 分页查询资源
+     * Paging query resources
      */
     List<UmsResource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageSize, Integer pageNum);
 
     /**
-     * 查询全部资源
+     * Query all resources
      */
     List<UmsResource> listAll();
 
     /**
-     * 初始化资源角色规则
+     * Initialize resource role rules
      */
     Map<String,List<String>> initResourceRolesMap();
 }

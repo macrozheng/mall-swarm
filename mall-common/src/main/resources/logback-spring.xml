@@ -67,7 +67,7 @@
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
-                    <timeZone>Asia/Shanghai</timeZone>
+                    <timeZone>Asia/Tehran</timeZone>
                 </timestamp>
                 <!--自定义日志输出格式-->
                 <pattern>
@@ -105,7 +105,7 @@
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
-                    <timeZone>Asia/Shanghai</timeZone>
+                    <timeZone>Asia/Tehran</timeZone>
                 </timestamp>
                 <!--自定义日志输出格式-->
                 <pattern>
@@ -138,7 +138,7 @@
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
-                    <timeZone>Asia/Shanghai</timeZone>
+                    <timeZone>Asia/Tehran</timeZone>
                 </timestamp>
                 <!--自定义日志输出格式-->
                 <pattern>
@@ -171,7 +171,7 @@
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
-                    <timeZone>Asia/Shanghai</timeZone>
+                    <timeZone>Asia/Tehran</timeZone>
                 </timestamp>
                 <!--自定义日志输出格式-->
                 <pattern>

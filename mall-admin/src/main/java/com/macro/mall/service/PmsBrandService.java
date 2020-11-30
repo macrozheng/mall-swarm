@@ -12,48 +12,48 @@ import java.util.List;
  */
 public interface PmsBrandService {
     /**
-     * 获取所有品牌
+     * Get all brands
      */
     List<PmsBrand> listAllBrand();
 
     /**
-     * 创建品牌
+     * Create a brand
      */
     int createBrand(PmsBrandParam pmsBrandParam);
 
     /**
-     * 修改品牌
+     * Modify brand
      */
     @Transactional
     int updateBrand(Long id, PmsBrandParam pmsBrandParam);
 
     /**
-     * 删除品牌
+     * Remove brand
      */
     int deleteBrand(Long id);
 
     /**
-     * 批量删除品牌
+     * Delete brands in bulk
      */
     int deleteBrand(List<Long> ids);
 
     /**
-     * 分页查询品牌
+     * Paging query brand
      */
     List<PmsBrand> listBrand(String keyword, int pageNum, int pageSize);
 
     /**
-     * 获取品牌
+     * Get the brand
      */
     PmsBrand getBrand(Long id);
 
     /**
-     * 修改显示状态
+     * Modify display status
      */
     int updateShowStatus(List<Long> ids, Integer showStatus);
 
     /**
-     * 修改厂家制造商状态
+     * Modify manufacturer manufacturer status
      */
     int updateFactoryStatus(List<Long> ids, Integer factoryStatus);
 }

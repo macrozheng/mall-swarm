@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface CmsPrefrenceAreaService {
     /**
-     * 获取所有优选专区
+     * Get all preferred areas
      */
     List<CmsPrefrenceArea> listAll();
 }
