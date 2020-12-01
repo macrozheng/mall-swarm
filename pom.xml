@@ -8,6 +8,14 @@
     <artifactId>mall-swarm</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <profiles>
+        <profile>
+            <id>dev</id>
+        </profile>
+        <profile>
+            <id>prod</id>
+        </profile>
+    </profiles>
 
     <modules>
         <module>mall-common</module>

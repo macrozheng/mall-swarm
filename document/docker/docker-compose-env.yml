@@ -25,7 +25,7 @@ services:
     image: nginx:1.10
     container_name: nginx
     volumes:
-      - /mydata/nginx/conf:/etc/nginx #Configuration file mounting
+      - /mydata/nginx/nginx.conf:/etc/nginx/nginx.conf #Configuration file mounting
       - /mydata/nginx/html:/usr/share/nginx/html #Static resource root directory mount
       - /mydata/nginx/log:/var/log/nginx #Log file mount
     ports:
