@@ -1,6 +1,16 @@
 server:
   port: 8082
 spring:
+  application:
+    name: mall-demo
+# Customize Spring Boot Info actuator
+info:
+  java.vm.vendor: ${java.vm.vendor}
+  java.version: ${java.version}
+  application.encoding: @project.build.sourceEncoding@
+  application.name: ${spring.application.name}
+  spring.boot.version: @spring-boot.version@
+
   datasource:
     url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
     username: root

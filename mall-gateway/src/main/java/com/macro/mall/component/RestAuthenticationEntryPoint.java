@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 import java.nio.charset.Charset;
 
 /**
- * 自定义返回结果：没有登录或token过期时
+ * Custom return result: when there is no login or the token expires
  * Created by macro on 2020/6/18.
  */
 @Component

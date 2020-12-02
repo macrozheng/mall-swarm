@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * 网关白名单配置
+ * Gateway whitelist configuration
  * Created by macro on 2020/6/17.
  */
 @Data

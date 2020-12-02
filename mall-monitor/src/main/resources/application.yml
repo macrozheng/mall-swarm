@@ -1,6 +1,14 @@
 spring:
   application:
     name: mall-monitor
+# Customize Spring Boot Info actuator
+info:
+  java.vm.vendor: ${java.vm.vendor}
+  java.version: ${java.version}
+  application.encoding: @project.build.sourceEncoding@
+  application.name: ${spring.application.name}
+  spring.boot.version: @spring-boot.version@
+
   security: #Configure login username and password
     user:
       name: macro

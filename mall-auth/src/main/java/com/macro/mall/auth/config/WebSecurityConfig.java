@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * SpringSecurity配置
+ * Spring Security configuration
  * Created by macro on 2020/6/19.
  */
 @Configuration

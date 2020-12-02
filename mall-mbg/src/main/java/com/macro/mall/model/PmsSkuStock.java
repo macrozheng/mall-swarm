@@ -32,7 +32,7 @@ public class PmsSkuStock implements Serializable {
     @ApiModelProperty(value = "Locking the inventory")
     private Integer lockStock;
 
-    @ApiModelProperty(value = "商品销售属性，json格式")
+    @ApiModelProperty(value = "Product sales attributes, json format")
     private String spData;
 
     private static final long serialVersionUID = 1L;

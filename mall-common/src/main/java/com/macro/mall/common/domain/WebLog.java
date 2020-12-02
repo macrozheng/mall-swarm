@@ -4,34 +4,34 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Controller层的日志封装类
+ * Controller layer log encapsulation class
  * Created by macro on 2018/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class WebLog {
     /**
-     * 操作描述
+     * Operation description
      */
     private String description;
 
     /**
-     * 操作用户
+     * Operation user
      */
     private String username;
 
     /**
-     * 操作时间
+     * Operating starting time
      */
     private Long startTime;
 
     /**
-     * 消耗时间
+     * Spend Time
      */
     private Integer spendTime;
 
     /**
-     * 根路径
+     * Root path
      */
     private String basePath;
 
@@ -46,22 +46,22 @@ public class WebLog {
     private String url;
 
     /**
-     * 请求类型
+     * Request type
      */
     private String method;
 
     /**
-     * IP地址
+     * IP address
      */
     private String ip;
 
     /**
-     * 请求参数
+     * Request parameter
      */
     private Object parameter;
 
     /**
-     * 返回结果
+     * Return result
      */
     private Object result;
 

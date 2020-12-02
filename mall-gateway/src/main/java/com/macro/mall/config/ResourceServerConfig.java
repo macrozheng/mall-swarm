@@ -22,7 +22,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 import reactor.core.publisher.Mono;
 
 /**
- * 资源服务器配置
+ * Resource server configuration
  * Created by macro on 2020/6/19.
  */
 @AllArgsConstructor
@@ -39,16 +39,16 @@ public class ResourceServerConfig {
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http.oauth2ResourceServer().jwt()
                 .jwtAuthenticationConverter(jwtAuthenticationConverter());
-        //自定义处理JWT请求头过期或签名错误的结果
+        //Customize the result of processing JWT request header expired or signature error
         http.oauth2ResourceServer().authenticationEntryPoint(restAuthenticationEntryPoint);
-        //对白名单路径，直接移除JWT请求头
+        //For the whitelist path, directly remove the JWT request header
         http.addFilterBefore(ignoreUrlsRemoveJwtFilter,SecurityWebFiltersOrder.AUTHENTICATION);
         http.authorizeExchange()
-                .pathMatchers(ArrayUtil.toArray(ignoreUrlsConfig.getUrls(),String.class)).permitAll()//白名单配置
-                .anyExchange().access(authorizationManager)//鉴权管理器配置
+                .pathMatchers(ArrayUtil.toArray(ignoreUrlsConfig.getUrls(),String.class)).permitAll()//Whitelist configuration
+                .anyExchange().access(authorizationManager)//Authentication manager configuration
                 .and().exceptionHandling()
-                .accessDeniedHandler(restfulAccessDeniedHandler)//处理未授权
-                .authenticationEntryPoint(restAuthenticationEntryPoint)//处理未认证
+                .accessDeniedHandler(restfulAccessDeniedHandler)//Deal with unauthorized
+                .authenticationEntryPoint(restAuthenticationEntryPoint)//Handling uncertified
                 .and().csrf().disable();
         return http.build();
     }

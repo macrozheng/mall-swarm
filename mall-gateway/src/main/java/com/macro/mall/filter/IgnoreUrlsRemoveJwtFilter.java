@@ -17,7 +17,7 @@ import java.net.URI;
 import java.util.List;
 
 /**
- * 白名单路径访问时需要移除JWT请求头
+ * The JWT request header needs to be removed when accessing the whitelist path
  * Created by macro on 2020/7/24.
  */
 @Component
@@ -29,7 +29,7 @@ public class IgnoreUrlsRemoveJwtFilter implements WebFilter {
         ServerHttpRequest request = exchange.getRequest();
         URI uri = request.getURI();
         PathMatcher pathMatcher = new AntPathMatcher();
-        //白名单路径移除JWT请求头
+        //Whitelist path remove JWT request header
         List<String> ignoreUrls = ignoreUrlsConfig.getUrls();
         for (String ignoreUrl : ignoreUrls) {
             if (pathMatcher.match(ignoreUrl, uri.getPath())) {

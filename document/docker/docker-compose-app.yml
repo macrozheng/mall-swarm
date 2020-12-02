@@ -1,7 +1,7 @@
 version: '3'
 services:
   mall-admin:
-    image: mall/mall-admin:1.0-SNAPSHOT
+    image: mall-admin:1.0-SNAPSHOT
     container_name: mall-admin
     ports:
       - 8080:8080
@@ -14,7 +14,7 @@ services:
       - mysql:db #You can use the domain name db to access the mysql service
       - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-search:
-    image: mall/mall-search:1.0-SNAPSHOT
+    image: mall-search:1.0-SNAPSHOT
     container_name: mall-search
     ports:
       - 8081:8081
@@ -28,7 +28,7 @@ services:
       - mysql:db #You can use the domain name db to access the mysql service
       - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-portal:
-    image: mall/mall-portal:1.0-SNAPSHOT
+    image: mall-portal:1.0-SNAPSHOT
     container_name: mall-portal
     ports:
       - 8085:8085
@@ -44,7 +44,7 @@ services:
       - rabbitmq:rabbit #The rabbitmq service can be accessed with the domain name rabbit
       - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-auth:
-    image: mall/mall-auth:1.0-SNAPSHOT
+    image: mall-auth:1.0-SNAPSHOT
     container_name: mall-auth
     ports:
       - 8401:8401
@@ -56,7 +56,7 @@ services:
     external_links:
       - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-gateway:
-    image: mall/mall-gateway:1.0-SNAPSHOT
+    image: mall-gateway:1.0-SNAPSHOT
     container_name: mall-gateway
     ports:
       - 8201:8201
@@ -69,7 +69,7 @@ services:
       - redis:redis #You can use the domain name redis to access the redis service
       - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-monitor:
-    image: mall/mall-monitor:1.0-SNAPSHOT
+    image: mall-monitor:1.0-SNAPSHOT
     container_name: mall-monitor
     ports:
       - 8101:8101

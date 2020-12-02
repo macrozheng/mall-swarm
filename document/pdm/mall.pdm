@@ -17798,7 +17798,7 @@ LABL 0 新宋体,8,N</a:FontList>
 <a:Creator>zhenghong</a:Creator>
 <a:ModificationDate>1580625454</a:ModificationDate>
 <a:Modifier>zhenghong</a:Modifier>
-<a:Comment>资源ID</a:Comment>
+<a:Comment>Resource ID</a:Comment>
 <a:DataType>bigint</a:DataType>
 </o:Column>
 </c:Columns>

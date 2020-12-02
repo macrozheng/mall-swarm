@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  application:
+    name: mall-admin
   datasource:
     url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
     username: root
@@ -29,6 +31,13 @@ spring:
     multipart:
       enabled: true #Open file upload
       max-file-size: 10MB #Limit file upload size to 10 M
+# Customize Spring Boot Info actuator
+info:
+  java.vm.vendor: ${java.vm.vendor}
+  java.version: ${java.version}
+  application.encoding: @project.build.sourceEncoding@
+  application.name: ${spring.application.name}
+  spring.boot.version: @spring-boot.version@
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml

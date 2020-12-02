@@ -11,7 +11,7 @@ import springfox.documentation.swagger.web.*;
 import java.util.Optional;
 
 /**
- * 自定义Swagger的各个配置节点
+ * Customize each configuration node of Swagger
  * Created by macro on 2020/7/9.
  */
 @RestController
@@ -31,7 +31,7 @@ public class SwaggerHandler {
     }
 
     /**
-     * Swagger安全配置，支持oauth和apiKey设置
+     * Swagger security configuration, support oauth and api Key settings
      */
     @GetMapping("/swagger-resources/configuration/security")
     public Mono<ResponseEntity<SecurityConfiguration>> securityConfiguration() {
@@ -40,7 +40,7 @@ public class SwaggerHandler {
     }
 
     /**
-     * Swagger UI配置
+     * Swagger UI placement
      */
     @GetMapping("/swagger-resources/configuration/ui")
     public Mono<ResponseEntity<UiConfiguration>> uiConfiguration() {
@@ -49,7 +49,7 @@ public class SwaggerHandler {
     }
 
     /**
-     * Swagger资源配置，微服务中这各个服务的api-docs信息
+     * Swagger resource configuration, api-docs information of each service in the microservice
      */
     @GetMapping("/swagger-resources")
     public Mono<ResponseEntity> swaggerResources() {

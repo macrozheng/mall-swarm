@@ -8,52 +8,52 @@ import java.util.Date;
 public class SmsCoupon implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "优惠券类型；0->全场赠券；1->会员赠券；2->购物赠券；3->注册赠券")
+    @ApiModelProperty(value = "Coupon type; 0->Entire coupon; 1->Member coupon; 2->Shopping coupon; 3->Registration coupon")
     private Integer type;
 
     private String name;
 
-    @ApiModelProperty(value = "使用平台：0->全部；1->移动；2->PC")
+    @ApiModelProperty(value = "Use platform: 0->all; 1->mobile; 2->PC")
     private Integer platform;
 
-    @ApiModelProperty(value = "数量")
+    @ApiModelProperty(value = "Count")
     private Integer count;
 
-    @ApiModelProperty(value = "金额")
+    @ApiModelProperty(value = "Amount")
     private BigDecimal amount;
 
-    @ApiModelProperty(value = "每人限领张数")
+    @ApiModelProperty(value = "Number of sheets per person")
     private Integer perLimit;
 
-    @ApiModelProperty(value = "使用门槛；0表示无门槛")
+    @ApiModelProperty(value = "Use threshold; 0 means no threshold")
     private BigDecimal minPoint;
 
     private Date startTime;
 
     private Date endTime;
 
-    @ApiModelProperty(value = "使用类型：0->全场通用；1->指定分类；2->指定商品")
+    @ApiModelProperty(value = "Use type: 0->universal for the whole site; 1->designated category; 2->designated Products")
     private Integer useType;
 
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "Note")
     private String note;
 
-    @ApiModelProperty(value = "发行数量")
+    @ApiModelProperty(value = "Publish Count")
     private Integer publishCount;
 
-    @ApiModelProperty(value = "已使用数量")
+    @ApiModelProperty(value = "Quantity used")
     private Integer useCount;
 
-    @ApiModelProperty(value = "领取数量")
+    @ApiModelProperty(value = "Quantity received")
     private Integer receiveCount;
 
-    @ApiModelProperty(value = "可以领取的日期")
+    @ApiModelProperty(value = "Available date")
     private Date enableTime;
 
-    @ApiModelProperty(value = "优惠码")
+    @ApiModelProperty(value = "Promo Code")
     private String code;
 
-    @ApiModelProperty(value = "可领取的会员类型：0->无限时")
+    @ApiModelProperty(value = "Member types that can be claimed: 0->Unlimited time")
     private Integer memberLevel;
 
     private static final long serialVersionUID = 1L;

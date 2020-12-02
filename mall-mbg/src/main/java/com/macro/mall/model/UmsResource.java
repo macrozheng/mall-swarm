@@ -10,16 +10,16 @@ public class UmsResource implements Serializable {
     @ApiModelProperty(value = "Creation time")
     private Date createTime;
 
-    @ApiModelProperty(value = "资源名称")
+    @ApiModelProperty(value = "Resource Name")
     private String name;
 
-    @ApiModelProperty(value = "资源URL")
+    @ApiModelProperty(value = "Resource URL")
     private String url;
 
     @ApiModelProperty(value = "Description")
     private String description;
 
-    @ApiModelProperty(value = "资源分类ID")
+    @ApiModelProperty(value = "Resource category ID")
     private Long categoryId;
 
     private static final long serialVersionUID = 1L;

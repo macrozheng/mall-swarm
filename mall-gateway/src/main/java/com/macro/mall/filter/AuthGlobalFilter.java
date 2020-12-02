@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 import java.text.ParseException;
 
 /**
- * 将登录用户的JWT转化成用户信息的全局过滤器
+ * Convert the JWT of the logged-in user into a global filter for user information
  * Created by macro on 2020/6/17.
  */
 @Component
@@ -31,7 +31,7 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
             return chain.filter(exchange);
         }
         try {
-            //从token中解析用户信息并设置到Header中去
+            //Parse user information from token and set it to Header
             String realToken = token.replace(AuthConstant.JWT_TOKEN_PREFIX, "");
             JWSObject jwsObject = JWSObject.parse(realToken);
             String userStr = jwsObject.getPayload().toString();

@@ -21,25 +21,25 @@ import java.security.Principal;
 import java.util.Map;
 
 /**
- * 自定义Oauth2获取令牌接口
+ * Customize Oauth2 get token interface
  * Created by macro on 2020/7/17.
  */
 @RestController
-@Api(tags = "AuthController", description = "认证中心登录认证")
+@Api(tags = "AuthController", description = "Authentication center login authentication")
 @RequestMapping("/oauth")
 public class AuthController {
 
     @Autowired
     private TokenEndpoint tokenEndpoint;
 
-    @ApiOperation("Oauth2获取token")
+    @ApiOperation("Oauth2 get token")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "grant_type", value = "授权模式", required = true),
-            @ApiImplicitParam(name = "client_id", value = "Oauth2客户端ID", required = true),
-            @ApiImplicitParam(name = "client_secret", value = "Oauth2客户端秘钥", required = true),
-            @ApiImplicitParam(name = "refresh_token", value = "刷新token"),
-            @ApiImplicitParam(name = "username", value = "登录用户名"),
-            @ApiImplicitParam(name = "password", value = "登录密码")
+            @ApiImplicitParam(name = "grant_type", value = "Authorization model", required = true),
+            @ApiImplicitParam(name = "client_id", value = "Oauth2 client ID", required = true),
+            @ApiImplicitParam(name = "client_secret", value = "Oauth2 client secret key", required = true),
+            @ApiImplicitParam(name = "refresh_token", value = "Refresh token"),
+            @ApiImplicitParam(name = "username", value = "Login Username"),
+            @ApiImplicitParam(name = "password", value = "Login Password")
     })
     @RequestMapping(value = "/token", method = RequestMethod.POST)
     public CommonResult<Oauth2TokenDto> postAccessToken(@ApiIgnore Principal principal, @ApiIgnore @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {

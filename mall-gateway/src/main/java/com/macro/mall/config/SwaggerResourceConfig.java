@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Swagger资源配置
+ * Swagger resource configuration
  * Created by macro on 2020/7/9.
  */
 @Slf4j
@@ -30,9 +30,9 @@ public class SwaggerResourceConfig implements SwaggerResourcesProvider {
     public List<SwaggerResource> get() {
         List<SwaggerResource> resources = new ArrayList<>();
         List<String> routes = new ArrayList<>();
-        //获取所有路由的ID
+        //Get the ID of all routes
         routeLocator.getRoutes().subscribe(route -> routes.add(route.getId()));
-        //过滤出配置文件中定义的路由->过滤出Path Route Predicate->根据路径拼接成api-docs路径->生成SwaggerResource
+        //Filter out the route defined in the configuration file -> filter out Path Route Predicate -> splice the path into api-docs path -> generate SwaggerResource
         gatewayProperties.getRoutes().stream().filter(routeDefinition -> routes.contains(routeDefinition.getId())).forEach(route -> {
             route.getPredicates().stream()
                     .filter(predicateDefinition -> ("Path").equalsIgnoreCase(predicateDefinition.getName()))
