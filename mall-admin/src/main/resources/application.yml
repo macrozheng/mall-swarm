@@ -35,9 +35,9 @@ spring:
 info:
   java.vm.vendor: ${java.vm.vendor}
   java.version: ${java.version}
-  application.encoding: @project.build.sourceEncoding@
+  application.encoding: '@project.build.sourceEncoding@'
   application.name: ${spring.application.name}
-  spring.boot.version: @spring-boot.version@
+  spring.boot.version: '@spring-boot.version@'
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
@@ -56,21 +56,22 @@ redis:
     admin: 'ums:admin'
   expire:
     common: 86400 # 24 hours
-aliyun:
-  oss:
-    endpoint: oss-cn-shenzhen.aliyuncs.com # Access domain name of oss external service
-    accessKeyId: test # User ID used in access authentication
-    accessKeySecret: test # The key used by the user to encrypt the signature string and oss ​​to verify the signature string
-    bucketName: macro-oss # oss storage space
+aws:
+  s3:
+    endpoint: localhost:9000 # Access domain name of oss external service
+    accessKeyId: ${ACCESS_KEY} # User ID used in access authentication
+    accessKeySecret: ${SECRET_KEY} # The key used by the user to encrypt the signature string and s3 to verify the signature string
+    bucketName: mall-s3 # s3 storage space
+    region: us-east-1
     policy:
       expire: 300 # Signature validity period(S)
     maxSize: 10 # Upload file size(M)
-    callback: http://39.98.190.128:8080/aliyun/oss/callback # Callback address after successful file upload
+    callback: http://39.98.190.128:8080/aws/s3/callback # Callback address after successful file upload
     dir:
       prefix: mall/images/ # Upload folder path prefix
 minio:
-  endpoint: http://192.168.6.132:9090 #Address of MinIO service
-  bucketName: mall #Bucket name
+  endpoint: localhost:9090 #Address of MinIO service
+  bucketName: mall-minio #Bucket name
   accessKey: minioadmin #Access key
   secretKey: minioadmin #Access key
 feign:

@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OssCallbackParam {
+public class AmazonS3CallbackParam {
     @ApiModelProperty("Requested callback address")
     private String callbackUrl;
     @ApiModelProperty("Callback is the parameter passed in the request")

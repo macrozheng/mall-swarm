@@ -37,9 +37,9 @@ spring:
 info:
   java.vm.vendor: ${java.vm.vendor}
   java.version: ${java.version}
-  application.encoding: @project.build.sourceEncoding@
+  application.encoding: '@project.build.sourceEncoding@'
   application.name: ${spring.application.name}
-  spring.boot.version: @spring-boot.version@
+  spring.boot.version: '@spring-boot.version@'
 
 mybatis:
   mapper-locations:

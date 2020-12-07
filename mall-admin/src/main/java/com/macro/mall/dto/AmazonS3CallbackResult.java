@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OssCallbackResult {
+public class AmazonS3CallbackResult {
     @ApiModelProperty("file name")
     private String filename;
     @ApiModelProperty("File size")
