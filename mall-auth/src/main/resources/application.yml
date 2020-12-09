@@ -1,5 +1,15 @@
+spring:
+  application:
+    name: mall-auth
 server:
   port: 8401
+# Customize Spring Boot Info actuator
+info:
+  java.vm.vendor: ${java.vm.vendor}
+  java.version: ${java.version}
+  application.encoding: '@project.build.sourceEncoding@'
+  application.name: ${spring.application.name}
+  spring.boot.version: '@spring-boot.version@'
 management:
   endpoints:
     web:
@@ -9,5 +19,5 @@ feign:
   okhttp:
     enabled: true
 ribbon:
-  ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
-  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+  ConnectTimeout: 3000 #Service request connection timeout time (ms)
+  ReadTimeout: 3000 #Service request processing timeout time (ms)

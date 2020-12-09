@@ -5,22 +5,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 订单退货申请查询参数
+ * Order return request query parameters
  * Created by macro on 2018/10/18.
  */
 @Getter
 @Setter
 public class OmsReturnApplyQueryParam {
-    @ApiModelProperty("服务单号")
+    @ApiModelProperty("Ticket number")
     private Long id;
-    @ApiModelProperty(value = "收货人姓名/号码")
+    @ApiModelProperty(value = "Name/number of consignee")
     private String receiverKeyword;
-    @ApiModelProperty(value = "申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝")
+    @ApiModelProperty(value = "application status：0->Pending；1->Returning；2->completed；3->Rejected")
     private Integer status;
-    @ApiModelProperty(value = "申请时间")
+    @ApiModelProperty(value = "application time")
     private String createTime;
-    @ApiModelProperty(value = "处理人员")
+    @ApiModelProperty(value = "Processing staff")
     private String handleMan;
-    @ApiModelProperty(value = "处理时间")
+    @ApiModelProperty(value = "Processing time")
     private String handleTime;
 }

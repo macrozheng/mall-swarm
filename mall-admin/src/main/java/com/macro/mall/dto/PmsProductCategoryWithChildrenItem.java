@@ -13,6 +13,6 @@ import java.util.List;
 public class PmsProductCategoryWithChildrenItem extends PmsProductCategory {
     @Getter
     @Setter
-    @ApiModelProperty("子级分类")
+    @ApiModelProperty("Sub-categories")
     private List<PmsProductCategory> children;
 }

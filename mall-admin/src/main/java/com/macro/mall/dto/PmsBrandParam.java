@@ -9,31 +9,31 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * 品牌传递参数
+ * Brand transfer parameters
  * Created by macro on 2018/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class PmsBrandParam {
     @NotEmpty
-    @ApiModelProperty(value = "品牌名称",required = true)
+    @ApiModelProperty(value = "brand name",required = true)
     private String name;
-    @ApiModelProperty(value = "品牌首字母")
+    @ApiModelProperty(value = "Brand initials")
     private String firstLetter;
     @Min(value = 0)
-    @ApiModelProperty(value = "排序字段")
+    @ApiModelProperty(value = "Sort field")
     private Integer sort;
-    @FlagValidator(value = {"0","1"}, message = "厂家状态不正确")
-    @ApiModelProperty(value = "是否为厂家制造商")
+    @FlagValidator(value = {"0","1"}, message = "Incorrect manufacturer status")
+    @ApiModelProperty(value = "Whether it is a manufacturer")
     private Integer factoryStatus;
-    @FlagValidator(value = {"0","1"}, message = "显示状态不正确")
-    @ApiModelProperty(value = "是否进行显示")
+    @FlagValidator(value = {"0","1"}, message = "Incorrect display status")
+    @ApiModelProperty(value = "Whether to display")
     private Integer showStatus;
     @NotEmpty
-    @ApiModelProperty(value = "品牌logo",required = true)
+    @ApiModelProperty(value = "Brand logo",required = true)
     private String logo;
-    @ApiModelProperty(value = "品牌大图")
+    @ApiModelProperty(value = "Brand big picture")
     private String bigPic;
-    @ApiModelProperty(value = "品牌故事")
+    @ApiModelProperty(value = "Brand story")
     private String brandStory;
 }

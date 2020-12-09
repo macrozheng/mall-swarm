@@ -11,31 +11,31 @@ public class UmsMemberLevel implements Serializable {
 
     private Integer growthPoint;
 
-    @ApiModelProperty(value = "是否为默认等级：0->不是；1->是")
+    @ApiModelProperty(value = "Is it the default level: 0 - > No; 1 - > Yes")
     private Integer defaultStatus;
 
-    @ApiModelProperty(value = "免运费标准")
+    @ApiModelProperty(value = "Free freight Point")
     private BigDecimal freeFreightPoint;
 
-    @ApiModelProperty(value = "每次评价获取的成长值")
+    @ApiModelProperty(value = "Growth value obtained in each comment")
     private Integer commentGrowthPoint;
 
-    @ApiModelProperty(value = "是否有免邮特权")
+    @ApiModelProperty(value = "Do you have the privilege of Freight")
     private Integer priviledgeFreeFreight;
 
-    @ApiModelProperty(value = "是否有签到特权")
+    @ApiModelProperty(value = "Are there check-in privileges")
     private Integer priviledgeSignIn;
 
-    @ApiModelProperty(value = "是否有评论获奖励特权")
+    @ApiModelProperty(value = "Is there a privilege to receive rewards for comments")
     private Integer priviledgeComment;
 
-    @ApiModelProperty(value = "是否有专享活动特权")
+    @ApiModelProperty(value = "Is there an exclusive Promotion privilege")
     private Integer priviledgePromotion;
 
-    @ApiModelProperty(value = "是否有会员价格特权")
+    @ApiModelProperty(value = "Is there a membership price privilege")
     private Integer priviledgeMemberPrice;
 
-    @ApiModelProperty(value = "是否有生日特权")
+    @ApiModelProperty(value = "Do you have birthday privileges")
     private Integer priviledgeBirthday;
 
     private String note;

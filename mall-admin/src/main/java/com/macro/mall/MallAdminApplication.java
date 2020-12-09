@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * 应用启动入口
+ * Application launch portal
  * Created by macro on 2018/4/26.
  */
 @EnableFeignClients

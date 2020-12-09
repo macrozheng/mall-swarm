@@ -30,7 +30,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * 鉴权管理器，用于判断是否有资源的访问权限
+ * Authentication manager, used to determine whether there is access permission for resources
  * Created by macro on 2020/6/19.
  */
 @Component
@@ -45,18 +45,18 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
         ServerHttpRequest request = authorizationContext.getExchange().getRequest();
         URI uri = request.getURI();
         PathMatcher pathMatcher = new AntPathMatcher();
-        //白名单路径直接放行
+        //Whitelist path direct release
         List<String> ignoreUrls = ignoreUrlsConfig.getUrls();
         for (String ignoreUrl : ignoreUrls) {
             if (pathMatcher.match(ignoreUrl, uri.getPath())) {
                 return Mono.just(new AuthorizationDecision(true));
             }
         }
-        //对应跨域的预检请求直接放行
+        //Direct release corresponding to cross-domain pre-inspection requests
         if(request.getMethod()==HttpMethod.OPTIONS){
             return Mono.just(new AuthorizationDecision(true));
         }
-        //不同用户体系登录不允许互相访问
+        //Different user system logins do not allow mutual access
         try {
             String token = request.getHeaders().getFirst(AuthConstant.JWT_TOKEN_HEADER);
             if(StrUtil.isEmpty(token)){
@@ -76,11 +76,11 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
             e.printStackTrace();
             return Mono.just(new AuthorizationDecision(false));
         }
-        //非管理端路径直接放行
+        //Non-management route direct release
         if (!pathMatcher.match(AuthConstant.ADMIN_URL_PATTERN, uri.getPath())) {
             return Mono.just(new AuthorizationDecision(true));
         }
-        //管理端路径需校验权限
+        //The management end path needs to verify permissions
         Map<Object, Object> resourceRolesMap = redisTemplate.opsForHash().entries(AuthConstant.RESOURCE_ROLES_MAP_KEY);
         Iterator<Object> iterator = resourceRolesMap.keySet().iterator();
         List<String> authorities = new ArrayList<>();
@@ -91,7 +91,7 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
             }
         }
         authorities = authorities.stream().map(i -> i = AuthConstant.AUTHORITY_PREFIX + i).collect(Collectors.toList());
-        //认证通过且角色匹配的用户可访问当前路径
+        //Users who pass authentication and match roles can access the current path
         return mono
                 .filter(Authentication::isAuthenticated)
                 .flatMapIterable(Authentication::getAuthorities)

@@ -8,10 +8,10 @@ public class PmsProductAttributeCategory implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "属性数量")
+    @ApiModelProperty(value = "The number of Attributes")
     private Integer attributeCount;
 
-    @ApiModelProperty(value = "参数数量")
+    @ApiModelProperty(value = "The number of Parameter")
     private Integer paramCount;
 
     private static final long serialVersionUID = 1L;

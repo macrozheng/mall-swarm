@@ -5,178 +5,178 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * redis操作Service
+ * redis operation Service
  * Created by macro on 2020/3/3.
  */
 public interface RedisService {
 
     /**
-     * 保存属性
+     * Save properties
      */
     void set(String key, Object value, long time);
 
     /**
-     * 保存属性
+     * Save properties
      */
     void set(String key, Object value);
 
     /**
-     * 获取属性
+     * Get attributes
      */
     Object get(String key);
 
     /**
-     * 删除属性
+     * Delete attribute
      */
     Boolean del(String key);
 
     /**
-     * 批量删除属性
+     * Delete attributes in bulk
      */
     Long del(List<String> keys);
 
     /**
-     * 设置过期时间
+     * Set expiration time
      */
     Boolean expire(String key, long time);
 
     /**
-     * 获取过期时间
+     * Get expiration time
      */
     Long getExpire(String key);
 
     /**
-     * 判断是否有该属性
+     * Determine whether there is this attribute
      */
     Boolean hasKey(String key);
 
     /**
-     * 按delta递增
+     * Increment by delta
      */
     Long incr(String key, long delta);
 
     /**
-     * 按delta递减
+     * Decrease by delta
      */
     Long decr(String key, long delta);
 
     /**
-     * 获取Hash结构中的属性
+     * Get the attributes in the Hash structure
      */
     Object hGet(String key, String hashKey);
 
     /**
-     * 向Hash结构中放入一个属性
+     * Put an attribute into the Hash structure
      */
     Boolean hSet(String key, String hashKey, Object value, long time);
 
     /**
-     * 向Hash结构中放入一个属性
+     * Put an attribute into the Hash structure
      */
     void hSet(String key, String hashKey, Object value);
 
     /**
-     * 直接获取整个Hash结构
+     * Get the entire Hash structure directly
      */
     Map<Object, Object> hGetAll(String key);
 
     /**
-     * 直接设置整个Hash结构
+     * Set the entire Hash structure directly
      */
     Boolean hSetAll(String key, Map<String, Object> map, long time);
 
     /**
-     * 直接设置整个Hash结构
+     * Set the entire Hash structure directly
      */
     void hSetAll(String key, Map<String, ?> map);
 
     /**
-     * 删除Hash结构中的属性
+     * Delete the attributes in the Hash structure
      */
     void hDel(String key, Object... hashKey);
 
     /**
-     * 判断Hash结构中是否有该属性
+     * Determine whether there is this attribute in the Hash structure
      */
     Boolean hHasKey(String key, String hashKey);
 
     /**
-     * Hash结构中属性递增
+     * Incremental attributes in the Hash structure
      */
     Long hIncr(String key, String hashKey, Long delta);
 
     /**
-     * Hash结构中属性递减
+     * Attribute decreasing in Hash structure
      */
     Long hDecr(String key, String hashKey, Long delta);
 
     /**
-     * 获取Set结构
+     * Get the Set structure
      */
     Set<Object> sMembers(String key);
 
     /**
-     * 向Set结构中添加属性
+     * Add attributes to the Set structure
      */
     Long sAdd(String key, Object... values);
 
     /**
-     * 向Set结构中添加属性
+     * Add attributes to the Set structure
      */
     Long sAdd(String key, long time, Object... values);
 
     /**
-     * 是否为Set中的属性
+     * Is it an attribute in Set
      */
     Boolean sIsMember(String key, Object value);
 
     /**
-     * 获取Set结构的长度
+     * Get the length of the Set structure
      */
     Long sSize(String key);
 
     /**
-     * 删除Set结构中的属性
+     * Delete the attributes in the Set structure
      */
     Long sRemove(String key, Object... values);
 
     /**
-     * 获取List结构中的属性
+     * Get the attributes in the List structure
      */
     List<Object> lRange(String key, long start, long end);
 
     /**
-     * 获取List结构的长度
+     * Get the length of the List structure
      */
     Long lSize(String key);
 
     /**
-     * 根据索引获取List中的属性
+     * Get the attributes in the List according to the index
      */
     Object lIndex(String key, long index);
 
     /**
-     * 向List结构中添加属性
+     * Add attributes to the List structure
      */
     Long lPush(String key, Object value);
 
     /**
-     * 向List结构中添加属性
+     * Add attributes to the List structure
      */
     Long lPush(String key, Object value, long time);
 
     /**
-     * 向List结构中批量添加属性
+     * Add attributes to the List structure in bulk
      */
     Long lPushAll(String key, Object... values);
 
     /**
-     * 向List结构中批量添加属性
+     * Add attributes to the List structure in bulk
      */
     Long lPushAll(String key, Long time, Object... values);
 
     /**
-     * 从List结构中移除属性
+     * Remove attributes from List structure
      */
     Long lRemove(String key, long count, Object value);
 }

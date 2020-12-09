@@ -5,12 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 查询单个产品进行修改时返回的结果
+ * Query the results returned when a single product is modified
  * Created by macro on 2018/4/26.
  */
 public class PmsProductResult extends PmsProductParam {
     @Getter
     @Setter
-    @ApiModelProperty("商品所选分类的父id")
+    @ApiModelProperty("Parent id of the selected category")
     private Long cateParentId;
 }

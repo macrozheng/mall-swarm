@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 限时购商品关联管理Service实现类
+ * Limited-time purchase of Products Relatedmanagement Service implementation class
  * Created by macro on 2018/11/16.
  */
 @Service
@@ -22,6 +22,7 @@ public class SmsFlashPromotionProductRelationServiceImpl implements SmsFlashProm
     private SmsFlashPromotionProductRelationMapper relationMapper;
     @Autowired
     private SmsFlashPromotionProductRelationDao relationDao;
+
     @Override
     public int create(List<SmsFlashPromotionProductRelation> relationList) {
         for (SmsFlashPromotionProductRelation relation : relationList) {
@@ -48,8 +49,8 @@ public class SmsFlashPromotionProductRelationServiceImpl implements SmsFlashProm
 
     @Override
     public List<SmsFlashPromotionProduct> list(Long flashPromotionId, Long flashPromotionSessionId, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
-        return relationDao.getList(flashPromotionId,flashPromotionSessionId);
+        PageHelper.startPage(pageNum, pageSize);
+        return relationDao.getList(flashPromotionId, flashPromotionSessionId);
     }
 
     @Override

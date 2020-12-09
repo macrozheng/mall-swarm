@@ -7,18 +7,18 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * 修改订单费用信息参数
+ * Modify order fee information parameters
  * Created by macro on 2018/10/29.
  */
 @Getter
 @Setter
 public class OmsMoneyInfoParam {
-    @ApiModelProperty("订单ID")
+    @ApiModelProperty("Order id")
     private Long orderId;
-    @ApiModelProperty("运费金额")
+    @ApiModelProperty("Freight amount")
     private BigDecimal freightAmount;
-    @ApiModelProperty("管理员后台调整订单使用的折扣金额")
+    @ApiModelProperty("The administrator adjusts the discount amount used in the order")
     private BigDecimal discountAmount;
-    @ApiModelProperty("订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    @ApiModelProperty("Order status: 0->to be paid; 1->to be shipped; 2->shipped; 3->completed; 4->closed; 5->invalid order")
     private Integer status;
 }

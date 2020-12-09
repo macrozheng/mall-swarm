@@ -1,8 +1,5 @@
 spring:
   cloud:
-    nacos:
-      discovery:
-        server-addr: http://nacos-registry:8848
-      config:
-        server-addr: http://nacos-registry:8848
-        file-extension: yaml
+    consul:
+      host: localhost
+      port: 8500

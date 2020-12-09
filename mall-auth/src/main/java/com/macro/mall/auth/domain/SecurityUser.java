@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * 登录用户信息
+ * Login user information
  * Created by macro on 2020/6/19.
  */
 @Data
@@ -21,23 +21,23 @@ public class SecurityUser implements UserDetails {
      */
     private Long id;
     /**
-     * 用户名
+     * user name
      */
     private String username;
     /**
-     * 用户密码
+     * user password
      */
     private String password;
     /**
-     * 用户状态
+     * user status
      */
     private Boolean enabled;
     /**
-     * 登录客户端ID
+     * Login clientID
      */
     private String clientId;
     /**
-     * 权限数据
+     * Permission data
      */
     private Collection<SimpleGrantedAuthority> authorities;
 

@@ -8,25 +8,25 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * 用户登录参数
+ * User login parameters
  * Created by macro on 2018/4/26.
  */
 @Getter
 @Setter
 public class UmsAdminParam {
-    @ApiModelProperty(value = "用户名", required = true)
+    @ApiModelProperty(value = "Username", required = true)
     @NotEmpty
     private String username;
-    @ApiModelProperty(value = "密码", required = true)
+    @ApiModelProperty(value = "Password", required = true)
     @NotEmpty
     private String password;
-    @ApiModelProperty(value = "用户头像")
+    @ApiModelProperty(value = "Profile Picture")
     private String icon;
-    @ApiModelProperty(value = "邮箱")
+    @ApiModelProperty(value = "Email")
     @Email
     private String email;
-    @ApiModelProperty(value = "用户昵称")
+    @ApiModelProperty(value = "User's Nickname")
     private String nickName;
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "Note")
     private String note;
 }

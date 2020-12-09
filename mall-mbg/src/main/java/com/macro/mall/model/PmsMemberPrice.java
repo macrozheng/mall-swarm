@@ -11,7 +11,7 @@ public class PmsMemberPrice implements Serializable {
 
     private Long memberLevelId;
 
-    @ApiModelProperty(value = "会员价格")
+    @ApiModelProperty(value = "member price")
     private BigDecimal memberPrice;
 
     private String memberLevelName;

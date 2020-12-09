@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Feign调用mall-search接口示例
+ * Feign calls mall-search interface example
  * Created by macro on 2019/10/22.
  */
-@Api(tags = "FeignSearchController", description = "Feign调用mall-search接口示例")
+@Api(tags = "FeignSearchController", description = "Feign calls mall-search interface example")
 @RestController
 @RequestMapping("/feign/search")
 public class FeignSearchController {
@@ -19,7 +19,7 @@ public class FeignSearchController {
     @Autowired
     private FeignSearchService feignSearchService;
 
-    @ApiOperation(value = "简单商品搜索")
+    @ApiOperation(value = "Simple product search")
     @RequestMapping(value = "/justSearch", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult search(@RequestParam(required = false) String keyword,

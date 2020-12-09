@@ -4,6 +4,8 @@ target/
 # IDEA #
 .idea/
 *.iml
+# VSCode #
+.vscode/
 
 # Eclipse #
 .settings/

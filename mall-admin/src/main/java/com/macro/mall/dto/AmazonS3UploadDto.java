@@ -5,14 +5,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 文件上传返回结果
+ * File Upload returns results
  * Created by macro on 2019/12/25.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class MinioUploadDto {
-    @ApiModelProperty("文件访问URL")
+public class AmazonS3UploadDto {
+    @ApiModelProperty("File access URL")
     private String url;
-    @ApiModelProperty("文件名称")
+    @ApiModelProperty("file name")
     private String name;
 }

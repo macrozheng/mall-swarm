@@ -1,0 +1,94 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MallConfigApplication<mall-config>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.MallConfigApplication",
+            "projectName": "mall-config",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MallAdminApplication<mall-admin>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.MallAdminApplication",
+            "projectName": "mall-admin",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MallDemoApplication<mall-demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.MallDemoApplication",
+            "projectName": "mall-demo",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Generator<mall-mbg>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.Generator",
+            "projectName": "mall-mbg",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MallGatewayApplication<mall-gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.MallGatewayApplication",
+            "projectName": "mall-gateway",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MallPortalApplication<mall-portal>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.portal.MallPortalApplication",
+            "projectName": "mall-portal",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MallRegistryApplication<mall-registry>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.MallRegistryApplication",
+            "projectName": "mall-registry",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MallMonitorApplication<mall-monitor>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.MallMonitorApplication",
+            "projectName": "mall-monitor",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MallSearchApplication<mall-search>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.macro.mall.search.MallSearchApplication",
+            "projectName": "mall-search",
+            "args": ""
+        }
+    ]
+}

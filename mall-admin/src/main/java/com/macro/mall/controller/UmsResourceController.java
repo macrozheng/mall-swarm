@@ -14,18 +14,18 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 后台资源管理Controller
+ * Admin Resource Management Controller
  * Created by macro on 2020/2/4.
  */
 @Controller
-@Api(tags = "UmsResourceController", description = "后台资源管理")
+@Api(tags = "UmsResourceController", description = "Admin resource management")
 @RequestMapping("/resource")
 public class UmsResourceController {
 
     @Autowired
     private UmsResourceService resourceService;
 
-    @ApiOperation("添加后台资源")
+    @ApiOperation("Add Admin resources")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody UmsResource umsResource) {
@@ -37,7 +37,7 @@ public class UmsResourceController {
         }
     }
 
-    @ApiOperation("修改后台资源")
+    @ApiOperation("Modify Admin resources")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id,
@@ -50,7 +50,7 @@ public class UmsResourceController {
         }
     }
 
-    @ApiOperation("根据ID获取资源详情")
+    @ApiOperation("Get resource details based on ID")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<UmsResource> getItem(@PathVariable Long id) {
@@ -58,7 +58,7 @@ public class UmsResourceController {
         return CommonResult.success(umsResource);
     }
 
-    @ApiOperation("根据ID删除后台资源")
+    @ApiOperation("Delete Admin resources based on ID")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
@@ -70,7 +70,7 @@ public class UmsResourceController {
         }
     }
 
-    @ApiOperation("分页模糊查询后台资源")
+    @ApiOperation("Paging fuzzy query Admin resources")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<UmsResource>> list(@RequestParam(required = false) Long categoryId,
@@ -82,7 +82,7 @@ public class UmsResourceController {
         return CommonResult.success(CommonPage.restPage(resourceList));
     }
 
-    @ApiOperation("查询所有后台资源")
+    @ApiOperation("Query all Admin resources")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsResource>> listAll() {
@@ -90,7 +90,7 @@ public class UmsResourceController {
         return CommonResult.success(resourceList);
     }
 
-    @ApiOperation("初始化资源角色关联数据")
+    @ApiOperation("Initialize resource role association data")
     @RequestMapping(value = "/initResourceRolesMap", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult initResourceRolesMap() {

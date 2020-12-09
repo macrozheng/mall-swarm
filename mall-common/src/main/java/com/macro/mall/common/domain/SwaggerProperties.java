@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Swagger自定义配置
+ * Swagger custom configuration
  * Created by macro on 2020/7/16.
  */
 @Data
@@ -13,35 +13,35 @@ import lombok.EqualsAndHashCode;
 @Builder
 public class SwaggerProperties {
     /**
-     * API文档生成基础路径
+     * API document generation base path
      */
     private String apiBasePackage;
     /**
-     * 是否要启用登录认证
+     * Whether to enable login authentication
      */
     private boolean enableSecurity;
     /**
-     * 文档标题
+     * Document title
      */
     private String title;
     /**
-     * 文档描述
+     * Document description
      */
     private String description;
     /**
-     * 文档版本
+     * Document version
      */
     private String version;
     /**
-     * 文档联系人姓名
+     * Document contact name
      */
     private String contactName;
     /**
-     * 文档联系人网址
+     * Document contact URL
      */
     private String contactUrl;
     /**
-     * 文档联系人邮箱
+     * Document contact email
      */
     private String contactEmail;
 }

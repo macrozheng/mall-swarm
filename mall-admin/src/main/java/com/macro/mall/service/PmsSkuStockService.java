@@ -5,17 +5,17 @@ import com.macro.mall.model.PmsSkuStock;
 import java.util.List;
 
 /**
- * sku商品库存管理Service
+ * SKU product inventory managementService
  * Created by macro on 2018/4/27.
  */
 public interface PmsSkuStockService {
     /**
-     * 根据产品id和skuCode模糊搜索
+     * Fuzzy search based on Product id and SKU Code
      */
     List<PmsSkuStock> getList(Long pid, String keyword);
 
     /**
-     * 批量更新商品库存信息
+     * Bulk Update product inventory information
      */
     int update(Long pid, List<PmsSkuStock> skuStockList);
 }

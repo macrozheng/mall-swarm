@@ -6,19 +6,19 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Oauth2获取Token返回信息封装
+ * Oauth2 get Token return information package
  * Created by macro on 2020/7/17.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Builder
 public class Oauth2TokenDto {
-    @ApiModelProperty("访问令牌")
+    @ApiModelProperty("Access token")
     private String token;
-    @ApiModelProperty("刷令牌")
+    @ApiModelProperty("Swipe token")
     private String refreshToken;
-    @ApiModelProperty("访问令牌头前缀")
+    @ApiModelProperty("Access token header prefix")
     private String tokenHead;
-    @ApiModelProperty("有效时间（秒）")
+    @ApiModelProperty("Expires In (seconds)")
     private int expiresIn;
 }

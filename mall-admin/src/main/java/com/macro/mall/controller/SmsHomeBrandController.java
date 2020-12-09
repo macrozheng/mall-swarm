@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 首页品牌管理Controller
+ * Home brand management Controller
  * Created by macro on 2018/11/6.
  */
 @Controller
-@Api(tags = "SmsHomeBrandController", description = "首页品牌管理")
+@Api(tags = "SmsHomeBrandController", description = "Home Brand Management")
 @RequestMapping("/home/brand")
 public class SmsHomeBrandController {
     @Autowired
     private SmsHomeBrandService homeBrandService;
 
-    @ApiOperation("添加首页推荐品牌")
+    @ApiOperation("Add Home Recommended Brand")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody List<SmsHomeBrand> homeBrandList) {
@@ -34,7 +34,7 @@ public class SmsHomeBrandController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改品牌排序")
+    @ApiOperation("Edit brand order")
     @RequestMapping(value = "/update/sort/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateSort(@PathVariable Long id, Integer sort) {
@@ -45,7 +45,7 @@ public class SmsHomeBrandController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("批量删除推荐品牌")
+    @ApiOperation("Bulk removal of recommended brands")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@RequestParam("ids") List<Long> ids) {
@@ -56,7 +56,7 @@ public class SmsHomeBrandController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("批量修改推荐状态")
+    @ApiOperation("Bulk modification of recommended status")
     @RequestMapping(value = "/update/recommendStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateRecommendStatus(@RequestParam("ids") List<Long> ids, @RequestParam Integer recommendStatus) {
@@ -67,7 +67,7 @@ public class SmsHomeBrandController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("分页查询推荐品牌")
+    @ApiOperation("Paging query recommended brands")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<SmsHomeBrand>> list(@RequestParam(value = "brandName", required = false) String brandName,

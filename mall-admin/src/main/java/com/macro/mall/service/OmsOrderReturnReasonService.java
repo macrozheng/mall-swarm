@@ -5,37 +5,37 @@ import com.macro.mall.model.OmsOrderReturnReason;
 import java.util.List;
 
 /**
- * 订单原因管理Service
+ * Order reason managementService
  * Created by macro on 2018/10/17.
  */
 public interface OmsOrderReturnReasonService {
     /**
-     * 添加订单原因
+     * Reason for adding order
      */
     int create(OmsOrderReturnReason returnReason);
 
     /**
-     * 修改退货原因
+     * Modify return reason
      */
     int update(Long id, OmsOrderReturnReason returnReason);
 
     /**
-     * 批量删除退货原因
+     * Batch delete reason for returns
      */
     int delete(List<Long> ids);
 
     /**
-     * 分页获取退货原因
+     * Get the reason for return
      */
     List<OmsOrderReturnReason> list(Integer pageSize, Integer pageNum);
 
     /**
-     * 批量修改退货原因状态
+     * Batch Modify return reason status
      */
     int updateStatus(List<Long> ids, Integer status);
 
     /**
-     * 获取单个退货原因详情信息
+     * Get details of a single return reason
      */
     OmsOrderReturnReason getItem(Long id);
 }

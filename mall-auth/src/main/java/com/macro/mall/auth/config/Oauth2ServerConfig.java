@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 认证服务器配置
+ * Authentication server configuration
  * Created by macro on 2020/6/19.
  */
 @AllArgsConstructor
@@ -60,9 +60,9 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
         List<TokenEnhancer> delegates = new ArrayList<>();
         delegates.add(jwtTokenEnhancer);
         delegates.add(accessTokenConverter());
-        enhancerChain.setTokenEnhancers(delegates); //配置JWT的内容增强器
+        enhancerChain.setTokenEnhancers(delegates); //Configure JWT's content enhancer
         endpoints.authenticationManager(authenticationManager)
-                .userDetailsService(userDetailsService) //配置加载用户信息的服务
+                .userDetailsService(userDetailsService) //Configure the service to load user information
                 .accessTokenConverter(accessTokenConverter())
                 .tokenEnhancer(enhancerChain);
     }
@@ -81,7 +81,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Bean
     public KeyPair keyPair() {
-        //从classpath下的证书中获取秘钥对
+        //Obtain the key pair from the certificate under the classpath
         KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("jwt.jks"), "123456".toCharArray());
         return keyStoreKeyFactory.getKeyPair("jwt", "123456".toCharArray());
     }

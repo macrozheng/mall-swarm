@@ -1,5 +1,5 @@
 spring:
   cloud:
-    nacos:
-      discovery:
-        server-addr: http://localhost:8848
+    consul:
+      host: localhost
+      port: 8500

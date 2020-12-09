@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * sku库存Controller
+ * SKU inventory controller
  * Created by macro on 2018/4/27.
  */
 @Controller
-@Api(tags = "PmsSkuStockController", description = "sku商品库存管理")
+@Api(tags = "PmsSkuStockController", description = "SKU product inventory management")
 @RequestMapping("/sku")
 public class PmsSkuStockController {
     @Autowired
     private PmsSkuStockService skuStockService;
 
-    @ApiOperation("根据商品编号及编号模糊搜索sku库存")
+    @ApiOperation("Fuzzy search for SKU inventory by product number and serial number")
     @RequestMapping(value = "/{pid}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsSkuStock>> getList(@PathVariable Long pid, @RequestParam(value = "keyword",required = false) String keyword) {
         List<PmsSkuStock> skuStockList = skuStockService.getList(pid, keyword);
         return CommonResult.success(skuStockList);
     }
-    @ApiOperation("批量更新库存信息")
+    @ApiOperation("Update inventory information in batches")
     @RequestMapping(value ="/update/{pid}",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long pid,@RequestBody List<PmsSkuStock> skuStockList){

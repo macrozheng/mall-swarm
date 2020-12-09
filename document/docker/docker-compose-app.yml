@@ -1,7 +1,7 @@
 version: '3'
 services:
   mall-admin:
-    image: mall/mall-admin:1.0-SNAPSHOT
+    image: mall-admin:1.0-SNAPSHOT
     container_name: mall-admin
     ports:
       - 8080:8080
@@ -9,12 +9,12 @@ services:
       - /mydata/app/mall-admin/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - 'TZ="Asia/Tehran"'
     external_links:
-      - mysql:db #可以用db这个域名访问mysql服务
-      - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
+      - mysql:db #You can use the domain name db to access the mysql service
+      - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-search:
-    image: mall/mall-search:1.0-SNAPSHOT
+    image: mall-search:1.0-SNAPSHOT
     container_name: mall-search
     ports:
       - 8081:8081
@@ -22,13 +22,13 @@ services:
       - /mydata/app/mall-search/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - 'TZ="Asia/Tehran"'
     external_links:
-      - elasticsearch:es #可以用es这个域名访问elasticsearch服务
-      - mysql:db #可以用db这个域名访问mysql服务
-      - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
+      - elasticsearch:es #You can use the domain name es to access the elasticsearch service
+      - mysql:db #You can use the domain name db to access the mysql service
+      - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-portal:
-    image: mall/mall-portal:1.0-SNAPSHOT
+    image: mall-portal:1.0-SNAPSHOT
     container_name: mall-portal
     ports:
       - 8085:8085
@@ -36,15 +36,15 @@ services:
       - /mydata/app/mall-portal/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - 'TZ="Asia/Tehran"'
     external_links:
-      - redis:redis #可以用redis这个域名访问redis服务
-      - mongo:mongo #可以用mongo这个域名访问mongo服务
-      - mysql:db #可以用db这个域名访问mysql服务
-      - rabbitmq:rabbit #可以用rabbit这个域名访问rabbitmq服务
-      - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
+      - redis:redis #You can use the domain name redis to access the redis service
+      - mongo:mongo #You can use the mongo domain name to access the mongo service
+      - mysql:db #You can use the domain name db to access the mysql service
+      - rabbitmq:rabbit #The rabbitmq service can be accessed with the domain name rabbit
+      - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-auth:
-    image: mall/mall-auth:1.0-SNAPSHOT
+    image: mall-auth:1.0-SNAPSHOT
     container_name: mall-auth
     ports:
       - 8401:8401
@@ -52,11 +52,11 @@ services:
       - /mydata/app/mall-auth/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - 'TZ="Asia/Tehran"'
     external_links:
-      - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
+      - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-gateway:
-    image: mall/mall-gateway:1.0-SNAPSHOT
+    image: mall-gateway:1.0-SNAPSHOT
     container_name: mall-gateway
     ports:
       - 8201:8201
@@ -64,12 +64,12 @@ services:
       - /mydata/app/mall-gateway/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - 'TZ="Asia/Tehran"'
     external_links:
-      - redis:redis #可以用redis这个域名访问redis服务
-      - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
+      - redis:redis #You can use the domain name redis to access the redis service
+      - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry
   mall-monitor:
-    image: mall/mall-monitor:1.0-SNAPSHOT
+    image: mall-monitor:1.0-SNAPSHOT
     container_name: mall-monitor
     ports:
       - 8101:8101
@@ -77,6 +77,6 @@ services:
       - /mydata/app/mall-monitor/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - 'TZ="Asia/Tehran"'
     external_links:
-      - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
+      - nacos-registry:nacos-registry #Nacos service can be accessed with the domain name nacos-registry

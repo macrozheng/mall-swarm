@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 用户管理业务类
+ * User management business
  * Created by macro on 2020/6/19.
  */
 @Service

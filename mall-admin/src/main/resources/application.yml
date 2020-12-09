@@ -1,39 +1,48 @@
 server:
   port: 8080
 spring:
+  application:
+    name: mall-admin
   datasource:
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
     username: root
     password: root
     druid:
-      initial-size: 5 #连接池初始化大小
-      min-idle: 10 #最小空闲连接数
-      max-active: 20 #最大连接数
+      initial-size: 5 #Initial connection pool size
+      min-idle: 10 #Minimum number of idle connections
+      max-active: 20 #Maximum number of connections
       web-stat-filter:
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
-      stat-view-servlet: #访问监控网页的登录用户名和密码
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #Exclude these file type request data
+      stat-view-servlet: #Login user name and password to access the monitoring webpage
         login-username: druid
         login-password: druid
   redis:
-    host: localhost # Redis服务器地址
-    database: 0 # Redis数据库索引（默认为0）
-    port: 6379 # Redis服务器连接端口
-    password:  # Redis服务器连接密码（默认为空）
-    timeout: 3000ms # 连接超时时间（毫秒）
-  rabbitmq: #rabbitmq相关配置
+    host: localhost # Redis server address
+    database: 0 # Redis database index (default is 0)
+    port: 6379 # Redis server connection port
+    password:  # Redis server connection password (empty by default)
+    timeout: 3000ms # Connection timeout (ms)
+  rabbitmq: #rabbitmq related configuration
     host: localhost
     port: 5672
     username: guest
     password: guest
   servlet:
     multipart:
-      enabled: true #开启文件上传
-      max-file-size: 10MB #限制文件上传大小为10M
+      enabled: true #Open file upload
+      max-file-size: 10MB #Limit file upload size to 10 M
+# Customize Spring Boot Info actuator
+info:
+  java.vm.vendor: ${java.vm.vendor}
+  java.version: ${java.version}
+  application.encoding: '@project.build.sourceEncoding@'
+  application.name: ${spring.application.name}
+  spring.boot.version: '@spring-boot.version@'
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
     - classpath*:com/**/mapper/*.xml
-management: #开启SpringBoot Admin的监控
+management: #Open SpringBoot Admin monitoring
   endpoints:
     web:
       exposure:
@@ -46,27 +55,28 @@ redis:
   key:
     admin: 'ums:admin'
   expire:
-    common: 86400 # 24小时
-aliyun:
-  oss:
-    endpoint: oss-cn-shenzhen.aliyuncs.com # oss对外服务的访问域名
-    accessKeyId: test # 访问身份验证中用到用户标识
-    accessKeySecret: test # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
-    bucketName: macro-oss # oss的存储空间
+    common: 86400 # 24 hours
+aws:
+  s3:
+    endpoint: localhost:9090 # Access domain name of oss external service
+    access-key: mallminio # User ID used in access authentication
+    secret-key: mallminio # The key used by the user to encrypt the signature string and s3 to verify the signature string
+    bucketName: mall-s3 # s3 storage space
+    region: us-east-1
     policy:
-      expire: 300 # 签名有效期(S)
-    maxSize: 10 # 上传文件大小(M)
-    callback: http://39.98.190.128:8080/aliyun/oss/callback # 文件上传成功后的回调地址
+      expire: 300 # Signature validity period(S)
+    maxSize: 10 # Upload file size(M)
+    callback: localhost:8080/aws/s3/callback # Callback address after successful file upload
     dir:
-      prefix: mall/images/ # 上传文件夹路径前缀
-minio:
-  endpoint: http://192.168.6.132:9090 #MinIO服务所在地址
-  bucketName: mall #存储桶名称
-  accessKey: minioadmin #访问的key
-  secretKey: minioadmin #访问的秘钥
+      prefix: mall/images/ # Upload folder path prefix
+#minio:
+#  endpoint: localhost:9090 #Address of MinIO service
+#  bucketName: mall-minio #Bucket name
+#  accessKey: minioadmin #Access key
+#  secretKey: minioadmin #Access key
 feign:
   okhttp:
     enabled: true
 ribbon:
-  ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
-  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+  ConnectTimeout: 3000 #Service request connection timeout（Millisecond）
+  ReadTimeout: 3000 #Service request processing timeout time (Millisecond)

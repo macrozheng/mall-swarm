@@ -5,28 +5,28 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 订单修改收货人信息参数
+ * Order Modify consignee information parameters
  * Created by macro on 2018/10/29.
  */
 @Getter
 @Setter
 public class OmsReceiverInfoParam {
-    @ApiModelProperty(value = "订单ID")
+    @ApiModelProperty(value = "Order id")
     private Long orderId;
-    @ApiModelProperty(value = "收货人姓名")
+    @ApiModelProperty(value = "Receiver name")
     private String receiverName;
-    @ApiModelProperty(value = "收货人电话")
+    @ApiModelProperty(value = "Receiver phone")
     private String receiverPhone;
-    @ApiModelProperty(value = "收货人邮编")
+    @ApiModelProperty(value = "Zip code of receiver")
     private String receiverPostCode;
-    @ApiModelProperty(value = "详细地址")
+    @ApiModelProperty(value = "Address")
     private String receiverDetailAddress;
-    @ApiModelProperty(value = "省份/直辖市")
+    @ApiModelProperty(value = "Province/City")
     private String receiverProvince;
-    @ApiModelProperty(value = "城市")
+    @ApiModelProperty(value = "City")
     private String receiverCity;
-    @ApiModelProperty(value = "区")
+    @ApiModelProperty(value = "Region")
     private String receiverRegion;
-    @ApiModelProperty(value = "订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    @ApiModelProperty(value = "Order status: 0->to be paid; 1->to be shipped; 2->shipped; 3->completed; 4->closed; 5->invalid order")
     private Integer status;
 }

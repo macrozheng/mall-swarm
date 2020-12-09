@@ -11,12 +11,12 @@ public class PmsProductVertifyRecord implements Serializable {
 
     private Date createTime;
 
-    @ApiModelProperty(value = "审核人")
+    @ApiModelProperty(value = "reviewed by")
     private String vertifyMan;
 
     private Integer status;
 
-    @ApiModelProperty(value = "反馈详情")
+    @ApiModelProperty(value = "Feedback details")
     private String detail;
 
     private static final long serialVersionUID = 1L;

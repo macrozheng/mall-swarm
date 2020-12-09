@@ -8,41 +8,41 @@ import lombok.EqualsAndHashCode;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * 商品属性参数
+ * Product attribute parameters
  * Created by macro on 2018/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class PmsProductAttributeParam {
     @NotEmpty
-    @ApiModelProperty("属性分类ID")
+    @ApiModelProperty("Attribute category ID")
     private Long productAttributeCategoryId;
     @NotEmpty
-    @ApiModelProperty("属性名称")
+    @ApiModelProperty("Attribute name")
     private String name;
     @FlagValidator({"0","1","2"})
-    @ApiModelProperty("属性选择类型：0->唯一；1->单选；2->多选")
+    @ApiModelProperty("Attribute selection type: 0->only; 1->single selection; 2->multiple selection")
     private Integer selectType;
     @FlagValidator({"0","1"})
-    @ApiModelProperty("属性录入方式：0->手工录入；1->从列表中选取")
+    @ApiModelProperty("Attribute entry method: 0->manual entry; 1->select from the list")
     private Integer inputType;
-    @ApiModelProperty("可选值列表，以逗号隔开")
+    @ApiModelProperty("A list of optional values, separated by commas")
     private String inputList;
 
     private Integer sort;
     @FlagValidator({"0","1"})
-    @ApiModelProperty("分类筛选样式：0->普通；1->颜色")
+    @ApiModelProperty("Category filter style: 0->common; 1->color")
     private Integer filterType;
     @FlagValidator({"0","1","2"})
-    @ApiModelProperty("检索类型；0->不需要进行检索；1->关键字检索；2->范围检索")
+    @ApiModelProperty("Search type; 0->no need to search; 1->keyword search; 2->range search")
     private Integer searchType;
     @FlagValidator({"0","1"})
-    @ApiModelProperty("相同属性产品是否关联；0->不关联；1->关联")
+    @ApiModelProperty("Whether products with the same attribute are related; 0->not related; 1->related")
     private Integer relatedStatus;
     @FlagValidator({"0","1"})
-    @ApiModelProperty("是否支持手动新增；0->不支持；1->支持")
+    @ApiModelProperty("Whether to support manual addition; 0->not supported; 1->support")
     private Integer handAddStatus;
     @FlagValidator({"0","1"})
-    @ApiModelProperty("属性的类型；0->规格；1->参数")
+    @ApiModelProperty("Type of attribute; 0->specification; 1->parameter")
     private Integer type;
 }

@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * JWT内容增强器
+ * JWT content enhancer
  * Created by macro on 2020/6/19.
  */
 @Component
@@ -20,7 +20,7 @@ public class JwtTokenEnhancer implements TokenEnhancer {
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
         SecurityUser securityUser = (SecurityUser) authentication.getPrincipal();
         Map<String, Object> info = new HashMap<>();
-        //把用户ID设置到JWT中
+        //Set the user ID to JWT
         info.put("id", securityUser.getId());
         info.put("client_id",securityUser.getClientId());
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);

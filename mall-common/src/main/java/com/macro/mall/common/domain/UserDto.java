@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * 登录用户信息
+ * Login user information
  * Created by macro on 2020/6/19.
  */
 @Data

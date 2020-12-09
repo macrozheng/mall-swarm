@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import java.util.List;
 
 /**
- * Minio Bucket访问策略配置
+ * Minio Bucket access policy configuration
  * Created by macro on 2020/8/11.
  */
 @Data

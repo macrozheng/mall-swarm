@@ -188,7 +188,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         order.setPayType(orderParam.getPayType());
         //订单来源：0->PC订单；1->app订单
         order.setSourceType(1);
-        //订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单
+        //Order status: 0->to be paid; 1->to be shipped; 2->shipped; 3->completed; 4->closed; 5->invalid order
         order.setStatus(0);
         //订单类型：0->正常订单；1->秒杀订单
         order.setOrderType(0);

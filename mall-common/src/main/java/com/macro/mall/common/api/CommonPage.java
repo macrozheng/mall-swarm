@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
- * 分页数据封装类
+ * Paging data encapsulation class
  * Created by macro on 2019/4/19.
  */
 public class CommonPage<T> {
@@ -17,7 +17,7 @@ public class CommonPage<T> {
     private List<T> list;
 
     /**
-     * 将PageHelper分页后的list转为分页信息
+     * Turn PageHelper's paginated list into pagination information
      */
     public static <T> CommonPage<T> restPage(List<T> list) {
         CommonPage<T> result = new CommonPage<T>();
@@ -31,7 +31,7 @@ public class CommonPage<T> {
     }
 
     /**
-     * 将SpringData分页后的list转为分页信息
+     * Turn SpringData paginated list into pagination information
      */
     public static <T> CommonPage<T> restPage(Page<T> pageInfo) {
         CommonPage<T> result = new CommonPage<T>();

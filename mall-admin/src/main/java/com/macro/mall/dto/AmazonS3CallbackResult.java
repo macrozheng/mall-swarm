@@ -5,20 +5,20 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * oss上传文件的回调结果
+ * Callback result of oss uploaded file
  * Created by macro on 2018/5/17.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class OssCallbackResult {
-    @ApiModelProperty("文件名称")
+public class AmazonS3CallbackResult {
+    @ApiModelProperty("file name")
     private String filename;
-    @ApiModelProperty("文件大小")
+    @ApiModelProperty("File size")
     private String size;
-    @ApiModelProperty("文件的mimeType")
+    @ApiModelProperty("File mimeType")
     private String mimeType;
-    @ApiModelProperty("图片文件的宽")
+    @ApiModelProperty("The width of the picture file")
     private String width;
-    @ApiModelProperty("图片文件的高")
+    @ApiModelProperty("The height of the picture file")
     private String height;
 }

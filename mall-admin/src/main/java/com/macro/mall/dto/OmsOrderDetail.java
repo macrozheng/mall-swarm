@@ -10,16 +10,16 @@ import lombok.Setter;
 import java.util.List;
 
 /**
- * 订单详情信息
+ * Order details
  * Created by macro on 2018/10/11.
  */
 public class OmsOrderDetail extends OmsOrder {
     @Getter
     @Setter
-    @ApiModelProperty("订单商品列表")
+    @ApiModelProperty("Order item list")
     private List<OmsOrderItem> orderItemList;
     @Getter
     @Setter
-    @ApiModelProperty("订单操作记录列表")
+    @ApiModelProperty("Order operation History list")
     private List<OmsOrderOperateHistory> historyList;
 }

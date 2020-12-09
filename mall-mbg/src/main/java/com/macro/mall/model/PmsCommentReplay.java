@@ -17,7 +17,7 @@ public class PmsCommentReplay implements Serializable {
 
     private Date createTime;
 
-    @ApiModelProperty(value = "评论人员类型；0->会员；1->管理员")
+    @ApiModelProperty(value = "Reviewer Type；0->Member；1->Administrator")
     private Integer type;
 
     private static final long serialVersionUID = 1L;

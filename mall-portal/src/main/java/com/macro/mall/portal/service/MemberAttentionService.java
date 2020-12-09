@@ -6,22 +6,22 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
- * 会员关注Service
+ * Member follow Service
  * Created by macro on 2018/8/2.
  */
 public interface MemberAttentionService {
     /**
-     * 添加关注
+     * Add follow
      */
     int add(MemberBrandAttention memberBrandAttention);
 
     /**
-     * 取消关注
+     * Unfollow
      */
     int delete(Long brandId);
 
     /**
-     * 获取用户关注列表
+     * Get User Watchlist
      */
     Page<MemberBrandAttention> list(Integer pageNum, Integer pageSize);
 
