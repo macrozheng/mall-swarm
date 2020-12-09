@@ -18,11 +18,11 @@ import org.springframework.context.annotation.Configuration;
 public class AmazonS3Config {
 
     // click on them, the file URL contains your bucket URL.
-    @Value("${amazon.s3.endpoint}")
+    @Value("${aws.s3.endpoint}")
     private String url;
 
     // Your bucket name.
-    @Value("${aws.s3.bucket-name}")
+    @Value("${aws.s3.bucketName}")
     private String bucketName;
 
     // The IAM access key.
@@ -40,13 +40,9 @@ public class AmazonS3Config {
 
     @Bean
     protected AmazonS3 amazonS3() {
-        final BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials(accessKey, secretKey);
-        // Get AmazonS3 client and return the s3Client object.
-        return AmazonS3ClientBuilder
-                .standard()
-                .withRegion(Regions.fromName(region))
-                .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
-                .build();
+        BasicAWSCredentials awsCreds = new BasicAWSCredentials(accessKey, secretKey);
+        return AmazonS3ClientBuilder.standard().withRegion(Regions.fromName(region))
+                .withCredentials(new AWSStaticCredentialsProvider(awsCreds)).build();
     }
 
 }

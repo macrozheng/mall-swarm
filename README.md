@@ -48,7 +48,6 @@ mall
 | technology             | Description                 | Official website                                                 |
 | ---------------- | -------------------- | ---------------------------------------------------- |
 | Spring Cloud           | Microservices framework           | https://spring.io/projects/spring-cloud              |
-| Spring Cloud Alibaba   | Microservice framework           | https://github.com/alibaba/spring-cloud-alibaba      |
 | Spring Boot            | Container + MVC framework         | https://spring.io/projects/spring-boot               |
 | Spring Security Oauth2 | Authentication and authorization framework       | https://spring.io/projects/spring-security-oauth     |
 | MyBatis                | ORM framework              | http://www.mybatis.org/mybatis-3/zh/index.html       |
@@ -61,8 +60,9 @@ mall
 | MongoDb                | NoSql database          | https://www.mongodb.com/                             |
 | Docker                 | Application container engine         | https://www.docker.com/                              |
 | Druid            | Database connection pool         | https://github.com/alibaba/druid                     |
-| OSS              | Object store             | https://github.com/aliyun/aliyun-oss-java-sdk        |
+| S3              | Object store             | https://github.com/aws/aws-sdk-java        |
 | MinIO            | Object store             | https://github.com/minio/minio                       |
+|Consul            |Discover services   |https://www.consul.io/docs/guides/containers-guide |
 | JWT              | JWT login support          | https://github.com/jwtk/jjwt                         |
 | LogStash         | Log collection             | https://github.com/logstash/logstash-logback-encoder |
 | Lombok           | Simplified Object Packaging Tool     | https://github.com/rzwitserloot/lombok               |
@@ -118,7 +118,7 @@ mall
 
 ## Running effect display
 
-- View registration center service information, access address：http://192.168.3.101:8848/nacos/
+- View registration center service information, access address：http://192.168.3.101:8500/nacos/
 
 ![](./document/resource/mall_swarm_run_01.png)
 

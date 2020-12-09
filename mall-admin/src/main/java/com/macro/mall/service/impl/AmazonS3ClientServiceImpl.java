@@ -30,7 +30,7 @@ public class AmazonS3ClientServiceImpl implements AmazonClientService {
 
     @Autowired
     private AmazonS3 amazonS3;
-    @Value("${aws.s3.bucket}")
+    @Value("${aws.s3.bucketName}")
     private String bucketName;
 
     @Override

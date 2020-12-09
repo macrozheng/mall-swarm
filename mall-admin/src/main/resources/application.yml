@@ -58,22 +58,22 @@ redis:
     common: 86400 # 24 hours
 aws:
   s3:
-    endpoint: localhost:9000 # Access domain name of oss external service
-    accessKeyId: ${ACCESS_KEY} # User ID used in access authentication
-    accessKeySecret: ${SECRET_KEY} # The key used by the user to encrypt the signature string and s3 to verify the signature string
+    endpoint: localhost:9090 # Access domain name of oss external service
+    access-key: mallminio # User ID used in access authentication
+    secret-key: mallminio # The key used by the user to encrypt the signature string and s3 to verify the signature string
     bucketName: mall-s3 # s3 storage space
     region: us-east-1
     policy:
       expire: 300 # Signature validity period(S)
     maxSize: 10 # Upload file size(M)
-    callback: http://39.98.190.128:8080/aws/s3/callback # Callback address after successful file upload
+    callback: localhost:8080/aws/s3/callback # Callback address after successful file upload
     dir:
       prefix: mall/images/ # Upload folder path prefix
-minio:
-  endpoint: localhost:9090 #Address of MinIO service
-  bucketName: mall-minio #Bucket name
-  accessKey: minioadmin #Access key
-  secretKey: minioadmin #Access key
+#minio:
+#  endpoint: localhost:9090 #Address of MinIO service
+#  bucketName: mall-minio #Bucket name
+#  accessKey: minioadmin #Access key
+#  secretKey: minioadmin #Access key
 feign:
   okhttp:
     enabled: true

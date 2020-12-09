@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class MinioUploadDto {
+public class AmazonS3UploadDto {
     @ApiModelProperty("File access URL")
     private String url;
     @ApiModelProperty("file name")

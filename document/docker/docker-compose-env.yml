@@ -87,10 +87,23 @@ services:
       - /mydata/mongo/db:/data/db #Data file mounting
     ports:
       - 27017:27017
-  nacos-registry:
-    image: nacos/nacos-server:1.3.0
-    container_name: nacos-registry
-    environment:
-      - "MODE=standalone"
+  consul:
+    image: consul:latest
+    container_name: consul
+    command: agent -server -ui -node=server-1 -bootstrap-expect=1 -client=0.0.0.0
+    volumes:
+      - /mydata/consul/data:/consul/data
     ports:
-      - 8848:8848
+      - 8500:8500
+      - 8600:8600/udp
+  minio:
+    image: minio/minio
+    container_name: minio
+    command: server /data gateway s3
+    environment:
+      - "MINIO_ACCESS_KEY=mallminio"
+      - "MINIO_SECRET_KEY=mallminio"
+    volumes:
+      - /mydata/minio/data:/data
+    ports:
+      - 9090:9000

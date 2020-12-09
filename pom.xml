@@ -63,8 +63,7 @@
         <spring-data-commons.version>2.3.0.RELEASE</spring-data-commons.version>
         <jjwt.version>0.9.0</jjwt.version>
         <logstash-logback.version>5.3</logstash-logback.version>
-        <admin-starter-server.version>2.2.3</admin-starter-server.version>
-        <minio.version>7.1.0</minio.version>
+        <admin-starter-server.version>2.3.1</admin-starter-server.version>
         <knife4j.version>2.0.4</knife4j.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
         <mall-common.version>1.0-SNAPSHOT</mall-common.version>
@@ -94,12 +93,19 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+<!--        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>-->
     </dependencies>
 
     <dependencyManagement>
@@ -206,12 +212,6 @@
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-server</artifactId>
                 <version>${admin-starter-server.version}</version>
-            </dependency>
-            <!--MinIO JAVA SDK-->
-            <dependency>
-                <groupId>io.minio</groupId>
-                <artifactId>minio</artifactId>
-                <version>${minio.version}</version>
             </dependency>
             <!-- Amazon S3 -->
             <dependency>

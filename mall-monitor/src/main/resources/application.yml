@@ -1,21 +1,20 @@
 spring:
   application:
     name: mall-monitor
-# Customize Spring Boot Info actuator
+  # Customize Spring Boot Info actuator
+  security: #Configure login username and password
+    user:
+      name: macro
+      password: 123456
+  boot: #Do not display monitoring information for admin-server
+    admin:
+      discovery:
+        ignored-services: ${spring.application.name}
 info:
   java.vm.vendor: ${java.vm.vendor}
   java.version: ${java.version}
   application.encoding: '@project.build.sourceEncoding@'
   application.name: ${spring.application.name}
   spring.boot.version: '@spring-boot.version@'
-
-  security: #Configure login username and password
-    user:
-      name: macro
-      password: 123456
-  boot:  #Do not display monitoring information for admin-server
-    admin:
-      discovery:
-        ignored-services: ${spring.application.name}
 server:
   port: 8101

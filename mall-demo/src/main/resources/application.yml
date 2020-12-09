@@ -3,14 +3,7 @@ server:
 spring:
   application:
     name: mall-demo
-# Customize Spring Boot Info actuator
-info:
-  java.vm.vendor: ${java.vm.vendor}
-  java.version: ${java.version}
-  application.encoding: '@project.build.sourceEncoding@'
-  application.name: ${spring.application.name}
-  spring.boot.version: '@spring-boot.version@'
-
+  # Customize Spring Boot Info actuator
   datasource:
     url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Tehran
     username: root
@@ -27,6 +20,13 @@ management: #Enable monitoring of SpringBoot Admin
   endpoint:
     health:
       show-details: always
+info:
+  java.vm.vendor: ${java.vm.vendor}
+  java.version: ${java.version}
+  application.encoding: '@project.build.sourceEncoding@'
+  application.name: ${spring.application.name}
+  spring.boot.version: '@spring-boot.version@'
+
 feign:
   okhttp:
     enabled: true
