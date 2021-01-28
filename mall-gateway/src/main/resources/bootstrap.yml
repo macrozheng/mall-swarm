@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mall-gateway

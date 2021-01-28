@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: reader
+    password: 123456
+  elasticsearch:
+    rest:
+      uris: http://es:9200
+management:
+  health:
+    elasticsearch:
+      response-timeout: 1000ms #加大健康检查超时时间
+logging:
+  file:
+    path: /var/logs
+  level:
+    root: info
+    com.macro.mall: info
+logstash:
+  host: logstash
