@@ -1,6 +1,6 @@
 package com.macro.mall.mapper;
 
-import com.macro.mall.model.CmsPrefrenceArea;
+import com.macro.mall.model.CmsPreferenceArea;
 import com.macro.mall.model.CmsPrefrenceAreaExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
@@ -12,25 +12,25 @@ public interface CmsPrefrenceAreaMapper {
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(CmsPrefrenceArea record);
+    int insert(CmsPreferenceArea record);
 
-    int insertSelective(CmsPrefrenceArea record);
+    int insertSelective(CmsPreferenceArea record);
 
-    List<CmsPrefrenceArea> selectByExampleWithBLOBs(CmsPrefrenceAreaExample example);
+    List<CmsPreferenceArea> selectByExampleWithBLOBs(CmsPrefrenceAreaExample example);
 
-    List<CmsPrefrenceArea> selectByExample(CmsPrefrenceAreaExample example);
+    List<CmsPreferenceArea> selectByExample(CmsPrefrenceAreaExample example);
 
-    CmsPrefrenceArea selectByPrimaryKey(Long id);
+    CmsPreferenceArea selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") CmsPrefrenceArea record, @Param("example") CmsPrefrenceAreaExample example);
+    int updateByExampleSelective(@Param("record") CmsPreferenceArea record, @Param("example") CmsPrefrenceAreaExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") CmsPrefrenceArea record, @Param("example") CmsPrefrenceAreaExample example);
+    int updateByExampleWithBLOBs(@Param("record") CmsPreferenceArea record, @Param("example") CmsPrefrenceAreaExample example);
 
-    int updateByExample(@Param("record") CmsPrefrenceArea record, @Param("example") CmsPrefrenceAreaExample example);
+    int updateByExample(@Param("record") CmsPreferenceArea record, @Param("example") CmsPrefrenceAreaExample example);
 
-    int updateByPrimaryKeySelective(CmsPrefrenceArea record);
+    int updateByPrimaryKeySelective(CmsPreferenceArea record);
 
-    int updateByPrimaryKeyWithBLOBs(CmsPrefrenceArea record);
+    int updateByPrimaryKeyWithBLOBs(CmsPreferenceArea record);
 
-    int updateByPrimaryKey(CmsPrefrenceArea record);
+    int updateByPrimaryKey(CmsPreferenceArea record);
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.macro.mall.mapper.CmsPrefrenceAreaMapper">
-  <resultMap id="BaseResultMap" type="com.macro.mall.model.CmsPrefrenceArea">
+  <resultMap id="BaseResultMap" type="com.macro.mall.model.CmsPreferenceArea">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="sub_title" jdbcType="VARCHAR" property="subTitle" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
     <result column="show_status" jdbcType="INTEGER" property="showStatus" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.macro.mall.model.CmsPrefrenceArea">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.macro.mall.model.CmsPreferenceArea">
     <result column="pic" jdbcType="VARBINARY" property="pic" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -123,7 +123,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.macro.mall.model.CmsPrefrenceArea">
+  <insert id="insert" parameterType="com.macro.mall.model.CmsPreferenceArea">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -132,7 +132,7 @@
     values (#{name,jdbcType=VARCHAR}, #{subTitle,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
       #{showStatus,jdbcType=INTEGER}, #{pic,jdbcType=VARBINARY})
   </insert>
-  <insert id="insertSelective" parameterType="com.macro.mall.model.CmsPrefrenceArea">
+  <insert id="insertSelective" parameterType="com.macro.mall.model.CmsPreferenceArea">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -227,7 +227,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.CmsPrefrenceArea">
+  <update id="updateByPrimaryKeySelective" parameterType="com.macro.mall.model.CmsPreferenceArea">
     update cms_prefrence_area
     <set>
       <if test="name != null">
@@ -248,7 +248,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.macro.mall.model.CmsPrefrenceArea">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.macro.mall.model.CmsPreferenceArea">
     update cms_prefrence_area
     set name = #{name,jdbcType=VARCHAR},
       sub_title = #{subTitle,jdbcType=VARCHAR},
@@ -257,7 +257,7 @@
       pic = #{pic,jdbcType=VARBINARY}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.CmsPrefrenceArea">
+  <update id="updateByPrimaryKey" parameterType="com.macro.mall.model.CmsPreferenceArea">
     update cms_prefrence_area
     set name = #{name,jdbcType=VARCHAR},
       sub_title = #{subTitle,jdbcType=VARCHAR},

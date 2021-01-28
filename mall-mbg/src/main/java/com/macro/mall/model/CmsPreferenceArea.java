@@ -3,7 +3,7 @@ package com.macro.mall.model;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
-public class CmsPrefrenceArea implements Serializable {
+public class CmsPreferenceArea implements Serializable {
     private Long id;
 
     private String name;

@@ -9,9 +9,9 @@ import java.util.List;
  * 自定义优选和商品关系操作Dao
  * Created by macro on 2018/4/26.
  */
-public interface CmsPrefrenceAreaProductRelationDao {
+public interface CmsPreferenceAreaProductRelationDao {
     /**
      * 批量创建
      */
-    int insertList(@Param("list") List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList);
+    int insertList(@Param("list") List<CmsPrefrenceAreaProductRelation> preferenceAreaProductRelationList);
 }
