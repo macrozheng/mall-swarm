@@ -9,9 +9,17 @@
   <a href="https://gitee.com/macrozheng/mall-swarm"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="码云"></a>
 </p>
 
+## 友情提示
+
+> 1. **快速体验项目**：[在线访问地址](http://www.macrozheng.com/admin/index.html)。
+> 2. **全套学习教程**：[《mall学习教程》](http://www.macrozheng.com/#/README)。
+> 3. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning)。
+> 4. **专属学习路线**：学习不走弯路，整理了套非常不错的[《mall专属学习路线》](#公众号)。
+> 5. **项目交流**：想要加群交流项目的朋友，可以加入[mall项目交流群](#公众号)。
+
 ## 项目介绍
 
-`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud Hoxton & Alibaba、Spring Boot 2.3、Oauth2、MyBatis、Docker、Elasticsearch等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。 文档齐全，附带全套Spring Cloud教程。 
+`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud Hoxton & Alibaba、Spring Boot 2.3、Oauth2、MyBatis、Elasticsearch、Docker等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。 
 
 ## 系统架构图
 
