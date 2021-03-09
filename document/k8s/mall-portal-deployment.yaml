@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mall-portal-deployment
+  namespace: default
+  labels:
+    app: mall-portal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mall-portal
+  template:
+    metadata:
+      labels:
+        app: mall-portal
+    spec:
+      containers:
+        - name: mall-portal
+          # 指定Docker Hub中的镜像地址
+          image: macrodocker/mall-portal:1.0-SNAPSHOT
+          ports:
+            - containerPort: 8085
+          env:
+            # 指定环境
+            - name: spring.profiles.active
+              value: prod
+            # 指定时区
+            - name: TZ
+              value: Asia/Shanghai
+            # 指定Nacos地址
+            - name: spring.cloud.nacos.discovery.server-addr
+              value: http://192.168.3.101:8848
+            - name: spring.cloud.nacos.config.server-addr
+              value: http://192.168.3.101:8848
+          volumeMounts:
+            - mountPath: /var/logs
+              name: log-volume
+      volumes:
+        - name: log-volume
+          hostPath:
+            path: /mydata/app/mall-portal/logs
+            type: DirectoryOrCreate

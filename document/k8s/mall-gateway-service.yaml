@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mall-gateway-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: mall-gateway
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8201
+      targetPort: 8201
+      nodePort: 30201
