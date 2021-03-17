@@ -1,9 +1,9 @@
 package com.macro.mall.service.impl;
 
 import com.macro.mall.mapper.CmsPrefrenceAreaMapper;
-import com.macro.mall.model.CmsPrefrenceArea;
+import com.macro.mall.model.CmsPreferenceArea;
 import com.macro.mall.model.CmsPrefrenceAreaExample;
-import com.macro.mall.service.CmsPrefrenceAreaService;
+import com.macro.mall.service.CmsPreferenceAreaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,12 @@ import java.util.List;
  * Created by macro on 2018/6/1.
  */
 @Service
-public class CmsPrefrenceAreaServiceImpl implements CmsPrefrenceAreaService {
+public class CmsPrefrenceAreaServiceImpl implements CmsPreferenceAreaService {
     @Autowired
     private CmsPrefrenceAreaMapper prefrenceAreaMapper;
 
     @Override
-    public List<CmsPrefrenceArea> listAll() {
+    public List<CmsPreferenceArea> listAll() {
         return prefrenceAreaMapper.selectByExample(new CmsPrefrenceAreaExample());
     }
 }
