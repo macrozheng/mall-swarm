@@ -2,15 +2,24 @@
 
 <p>
   <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-macrozheng-blue.svg" alt="公众号"></a>
+  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E4%BA%A4%E6%B5%81-%E5%BE%AE%E4%BF%A1%E7%BE%A4-2BA245.svg" alt="交流"></a>
+  <a href="https://github.com/macrozheng/mall-learning"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B-mall--learning-green.svg" alt="学习教程"></a>
   <a href="https://github.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE-mall-blue.svg" alt="后台项目"></a>
   <a href="https://github.com/macrozheng/mall-admin-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-mall--admin--web-green.svg" alt="前端项目"></a>
-  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E4%BA%A4%E6%B5%81-%E5%BE%AE%E4%BF%A1%E7%BE%A4-2BA245.svg" alt="交流"></a>
   <a href="https://gitee.com/macrozheng/mall-swarm"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="码云"></a>
 </p>
 
+## 友情提示
+
+> 1. **快速体验项目**：[在线访问地址](http://www.macrozheng.com/admin/index.html)。
+> 2. **全套学习教程**：[《mall学习教程》](http://www.macrozheng.com/#/README)。
+> 3. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning)。
+> 4. **专属学习路线**：学习不走弯路，整理了套非常不错的[《mall专属学习路线》](#公众号)。
+> 5. **项目交流**：想要加群交流项目的朋友，可以加入[mall项目交流群](#公众号)。
+
 ## 项目介绍
 
-`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud Hoxton & Alibaba、Spring Boot 2.3、Oauth2、MyBatis、Docker、Elasticsearch等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。 文档齐全，附带全套Spring Cloud教程。 
+`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud Hoxton & Alibaba、Spring Boot 2.3、Oauth2、MyBatis、Elasticsearch、Docker、Kubernetes等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。 
 
 ## 系统架构图
 
@@ -70,6 +79,7 @@ mall
 | Seata                  | 全局事务管理框架     | https://github.com/seata/seata                       |
 | Portainer              | 可视化Docker容器管理 | https://github.com/portainer/portainer               |
 | Jenkins                | 自动化部署工具       | https://github.com/jenkinsci/jenkins                 |
+| Kubernetes             | 应用容器管理平台     | https://kubernetes.io/                               |
 
 ### 前端技术
 
@@ -118,6 +128,10 @@ mall
 - 本项目在Docker容器下的部署请参考：[mall-swarm在Linux环境下的部署（基于Docker容器）](http://www.macrozheng.com/#/deploy/mall_swarm_deploy_docker);
 - 本项目使用Jenkins自动化部署请参考：[微服务架构下的自动化部署，使用Jenkins来实现](http://www.macrozheng.com/#/deploy/mall_swarm_deploy_jenkins)。
 
+> Kubernetes环境部署
+
+- 本项目使用Kubernetes部署请参考：[mall-swarm微服务项目在K8S下的实践！](http://www.macrozheng.com/#/deploy/mall_swarm_deploy_k8s)
+
 ## 运行效果展示
 
 - 查看注册中心注册服务信息，访问地址：http://192.168.3.101:8848/nacos/
@@ -148,7 +162,7 @@ mall
 
 ## 公众号
 
-mall项目全套学习教程连载中，关注公众号「**macrozheng**」第一时间获取。
+学习不走弯路，关注公众号「**macrozheng**」，回复「**学习路线**」，获取mall项目专属学习路线！
 
 加微信群交流，公众号后台回复「**加群**」即可。
 
@@ -158,4 +172,4 @@ mall项目全套学习教程连载中，关注公众号「**macrozheng**」第�
 
 [Apache License 2.0](https://github.com/macrozheng/mall-swarm/blob/master/LICENSE)
 
-Copyright (c) 2018-2020 macrozheng
+Copyright (c) 2018-2021 macrozheng
