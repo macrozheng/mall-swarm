@@ -35,7 +35,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     private final UserServiceImpl userDetailsService;
     private final AuthenticationManager authenticationManager;
     private final JwtTokenEnhancer jwtTokenEnhancer;
-
+    //客户端信息配置
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
@@ -53,7 +53,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 .accessTokenValiditySeconds(3600*24)
                 .refreshTokenValiditySeconds(3600*24*7);
     }
-
+    //配置授权
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
@@ -66,22 +66,21 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 .accessTokenConverter(accessTokenConverter())
                 .tokenEnhancer(enhancerChain);
     }
-
+    //允许表单认证
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.allowFormAuthenticationForClients();
     }
-
+    //使用非对称加密算法对token进行签名
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
         jwtAccessTokenConverter.setKeyPair(keyPair());
         return jwtAccessTokenConverter;
     }
-
+    //从classpath下的证书中获取秘钥对
     @Bean
     public KeyPair keyPair() {
-        //从classpath下的证书中获取秘钥对
         KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("jwt.jks"), "123456".toCharArray());
         return keyStoreKeyFactory.getKeyPair("jwt", "123456".toCharArray());
     }

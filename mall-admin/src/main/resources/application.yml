@@ -2,9 +2,9 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://1.14.193.151:3307/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
-    password: root
+    password: 1234zhaoJIA+
     druid:
       initial-size: 5 #连接池初始化大小
       min-idle: 10 #最小空闲连接数
@@ -29,6 +29,8 @@ spring:
     multipart:
       enabled: true #开启文件上传
       max-file-size: 10MB #限制文件上传大小为10M
+  main:
+    allow-bean-definition-overriding: true
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
@@ -70,3 +72,18 @@ feign:
 ribbon:
   ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
   ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+seata:
+  tx-service-group: default_tx_group
+  enable-auto-data-source-proxy: true
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 1.14.193.151:8848
+      namespace: e4630df7-0e27-4d4f-9f9f-00c1e1a2d93d
+      group: SEATA_GROUP
+  config:
+    type: nacos
+    nacos:
+      server-addr: 1.14.193.151:8848
+      namespace: e4630df7-0e27-4d4f-9f9f-00c1e1a2d93d
+      group: SEATA_GROUP

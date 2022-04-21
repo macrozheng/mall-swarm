@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
+ * 安全配置
  * SpringSecurity配置
  * Created by macro on 2020/6/19.
  */
@@ -26,16 +27,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/v2/api-docs").permitAll()
                 .anyRequest().authenticated();
     }
-
+    /**
+     *  如果不配置SpringBoot会自动配置一个AuthenticationManager,覆盖掉内存中的用户
+     */
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-
+    //密码加密配置
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 
 }

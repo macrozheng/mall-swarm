@@ -2,6 +2,42 @@ server:
   port: 8201
 spring:
   cloud:
+    sentinel:
+      filter:
+        enabled: false
+      enabled: true
+      eager: true
+#      scg:
+#        fallback:
+#          #限流后响应
+#          content-type: application/json
+#          #模式 response、redirect
+#          mode: response
+#          #响应码s
+#          response-status: 429
+#          #响应信息
+#          response-body: 对不起，已被限流了
+      transport:
+        dashboard: 1.14.193.151:8858
+        client-ip: localhost
+      datasource:
+        # 网关限流规则，gw-flow为key，随便定义
+        gw-flow:
+          nacos:
+            server-addr: 1.14.193.151:8848
+            dataId: mall-gateway-gw-flow-rules # 流控规则配置文件名：mall-gateway-gw-flow-rules
+            groupId: SENTINEL_GROUP
+            data-type: json
+            rule-type: gw-flow
+        # 自定义API分组，gw-api-group为key，随便定义
+        gw-api-group:
+          nacos:
+            server-addr: 1.14.193.151:8848
+            dataId: mall-gateway-gw-api-group-rules # 流控规则配置文件名：mall-gateway-gw-api-group-rules
+            groupId: SENTINEL_GROUP
+            data-type: json
+            rule-type: gw-api-group
+
     gateway:
       discovery:
         locator:
@@ -35,7 +71,7 @@ spring:
         - id: mall-demo
           uri: lb://mall-demo
           predicates:
-            - Path=/mall-demo/**
+            - Path=/mall-demo/**sa
           filters:
             - StripPrefix=1
   security:
@@ -48,6 +84,8 @@ spring:
     port: 6379
     host: localhost
     password:
+  main:
+    allow-bean-definition-overriding: true
 secure:
   ignore:
     urls: #配置白名单路径
@@ -61,6 +99,7 @@ secure:
       - "/**/*.ico"
       - "/webjars/springfox-swagger-ui/**"
       - "/actuator/**"
+      - "/mall-auth/oauth/seata"
       - "/mall-auth/oauth/token"
       - "/mall-auth/rsa/publicKey"
       - "/mall-search/**"

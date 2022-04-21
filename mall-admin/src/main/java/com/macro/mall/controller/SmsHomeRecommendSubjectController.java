@@ -66,7 +66,6 @@ public class SmsHomeRecommendSubjectController {
         }
         return CommonResult.failed();
     }
-
     @ApiOperation("分页查询推荐")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody

@@ -218,4 +218,5 @@
     <logger name="com.macro.mall" level="DEBUG">
         <appender-ref ref="LOG_STASH_BUSINESS"/>
     </logger>
+    <logger name="org.apache.http.impl.conn.PoolingHttpClientConnectionManager" level="WARN"></logger>
 </configuration>

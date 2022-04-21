@@ -1,11 +1,16 @@
 spring:
   cloud:
     nacos:
+      username: nacos
+      password: naocs
       discovery:
-        server-addr: http://localhost:8848
+        server-addr: http://1.14.193.151:8848
+        namespace: 1faf343c-5256-423b-af82-97a480671b9d
       config:
-        server-addr: http://localhost:8848
+        server-addr: http://1.14.193.151:8848
         file-extension: yaml
+        namespace: 1faf343c-5256-423b-af82-97a480671b9d
+        enabled: false
 logging:
   level:
     root: debug

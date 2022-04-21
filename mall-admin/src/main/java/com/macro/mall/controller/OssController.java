@@ -39,5 +39,4 @@ public class OssController {
         OssCallbackResult ossCallbackResult = ossService.callback(request);
         return CommonResult.success(ossCallbackResult);
     }
-
 }

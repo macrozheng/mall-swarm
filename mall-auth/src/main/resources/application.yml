@@ -6,8 +6,28 @@ management:
       exposure:
         include: "*"
 feign:
+  hystrix:
+    enabled: false
   okhttp:
     enabled: true
 ribbon:
-  ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
-  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+  ConnectTimeout: 5000 #服务请求连接超时时间（毫秒）
+  ReadTimeout: 5000 #服务请求处理超时时间（毫秒）
+seata:
+  tx-service-group: default_tx_group
+  enable-auto-data-source-proxy: true
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 1.14.193.151:8848
+      namespace: e4630df7-0e27-4d4f-9f9f-00c1e1a2d93d
+      group: SEATA_GROUP
+  config:
+    type: nacos
+    nacos:
+      server-addr: 1.14.193.151:8848
+      namespace: e4630df7-0e27-4d4f-9f9f-00c1e1a2d93d
+      group: SEATA_GROUP
+spring:
+  main:
+    allow-bean-definition-overriding: true
