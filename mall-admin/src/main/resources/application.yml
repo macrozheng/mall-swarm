@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8088
 spring:
   datasource:
     url: jdbc:mysql://db:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
@@ -21,7 +21,7 @@ spring:
     password:  # Redis服务器连接密码（默认为空）
     timeout: 3000ms # 连接超时时间（毫秒）
   rabbitmq: #rabbitmq相关配置
-    host: localhost
+    host: rabbit
     port: 5672
     username: guest
     password: guest

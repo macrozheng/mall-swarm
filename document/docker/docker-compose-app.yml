@@ -4,7 +4,7 @@ services:
     image: mall/mall-admin:1.0-SNAPSHOT
     container_name: mall-admin
     ports:
-      - 8080:8080
+      - 8088:8088
     volumes:
       - /mydata/app/mall-admin/logs:/var/logs
       - /etc/localtime:/etc/localtime
