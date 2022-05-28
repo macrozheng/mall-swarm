@@ -9,6 +9,7 @@ echo '----rm none images----'
 docker run -p 8080:8080 --name ${app_name} \
 --link mysql:db \
 --link nacos-registry:nacos-registry \
+--network deploy_default \
 -e TZ="Asia/Shanghai" \
 -v /etc/localtime:/etc/localtime \
 -v /mydata/app/${app_name}/logs:/var/logs \

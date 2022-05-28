@@ -9,6 +9,7 @@ echo '----rm none images----'
 docker run -p 8201:8201 --name ${app_name} \
 --link redis:redis \
 --link nacos-registry:nacos-registry \
+--network deploy_default \
 -e TZ="Asia/Shanghai" \
 -v /etc/localtime:/etc/localtime \
 -v /mydata/app/${app_name}/logs:/var/logs \
