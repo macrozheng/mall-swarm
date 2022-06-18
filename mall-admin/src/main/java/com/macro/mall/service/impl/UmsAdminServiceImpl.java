@@ -10,13 +10,11 @@ import com.macro.mall.common.api.ResultCode;
 import com.macro.mall.common.constant.AuthConstant;
 import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.common.exception.Asserts;
-import com.macro.mall.dao.UmsAdminPermissionRelationDao;
 import com.macro.mall.dao.UmsAdminRoleRelationDao;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
 import com.macro.mall.mapper.UmsAdminLoginLogMapper;
 import com.macro.mall.mapper.UmsAdminMapper;
-import com.macro.mall.mapper.UmsAdminPermissionRelationMapper;
 import com.macro.mall.mapper.UmsAdminRoleRelationMapper;
 import com.macro.mall.model.*;
 import com.macro.mall.service.AuthService;
@@ -49,10 +47,6 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     private UmsAdminRoleRelationMapper adminRoleRelationMapper;
     @Autowired
     private UmsAdminRoleRelationDao adminRoleRelationDao;
-    @Autowired
-    private UmsAdminPermissionRelationMapper adminPermissionRelationMapper;
-    @Autowired
-    private UmsAdminPermissionRelationDao adminPermissionRelationDao;
     @Autowired
     private UmsAdminLoginLogMapper loginLogMapper;
     @Autowired
@@ -212,48 +206,6 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     @Override
     public List<UmsResource> getResourceList(Long adminId) {
         return adminRoleRelationDao.getResourceList(adminId);
-    }
-
-    @Override
-    public int updatePermission(Long adminId, List<Long> permissionIds) {
-        //删除原所有权限关系
-        UmsAdminPermissionRelationExample relationExample = new UmsAdminPermissionRelationExample();
-        relationExample.createCriteria().andAdminIdEqualTo(adminId);
-        adminPermissionRelationMapper.deleteByExample(relationExample);
-        //获取用户所有角色权限
-        List<UmsPermission> permissionList = adminRoleRelationDao.getRolePermissionList(adminId);
-        List<Long> rolePermissionList = permissionList.stream().map(UmsPermission::getId).collect(Collectors.toList());
-        if (!CollectionUtils.isEmpty(permissionIds)) {
-            List<UmsAdminPermissionRelation> relationList = new ArrayList<>();
-            //筛选出+权限
-            List<Long> addPermissionIdList = permissionIds.stream().filter(permissionId -> !rolePermissionList.contains(permissionId)).collect(Collectors.toList());
-            //筛选出-权限
-            List<Long> subPermissionIdList = rolePermissionList.stream().filter(permissionId -> !permissionIds.contains(permissionId)).collect(Collectors.toList());
-            //插入+-权限关系
-            relationList.addAll(convert(adminId,1,addPermissionIdList));
-            relationList.addAll(convert(adminId,-1,subPermissionIdList));
-            return adminPermissionRelationDao.insertList(relationList);
-        }
-        return 0;
-    }
-
-    /**
-     * 将+-权限关系转化为对象
-     */
-    private List<UmsAdminPermissionRelation> convert(Long adminId,Integer type,List<Long> permissionIdList) {
-        List<UmsAdminPermissionRelation> relationList = permissionIdList.stream().map(permissionId -> {
-            UmsAdminPermissionRelation relation = new UmsAdminPermissionRelation();
-            relation.setAdminId(adminId);
-            relation.setType(type);
-            relation.setPermissionId(permissionId);
-            return relation;
-        }).collect(Collectors.toList());
-        return relationList;
-    }
-
-    @Override
-    public List<UmsPermission> getPermissionList(Long adminId) {
-        return adminRoleRelationDao.getPermissionList(adminId);
     }
 
     @Override

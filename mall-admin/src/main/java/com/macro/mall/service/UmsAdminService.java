@@ -69,17 +69,6 @@ public interface UmsAdminService {
     List<UmsResource> getResourceList(Long adminId);
 
     /**
-     * 修改用户的+-权限
-     */
-    @Transactional
-    int updatePermission(Long adminId, List<Long> permissionIds);
-
-    /**
-     * 获取用户所有权限（包括角色权限和+-权限）
-     */
-    List<UmsPermission> getPermissionList(Long adminId);
-
-    /**
      * 修改密码
      */
     int updatePassword(UpdateAdminPasswordParam updatePasswordParam);

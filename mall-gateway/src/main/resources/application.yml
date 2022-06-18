@@ -64,13 +64,14 @@ secure:
       - "/mall-auth/oauth/token"
       - "/mall-auth/rsa/publicKey"
       - "/mall-search/**"
-      - "/mall-portal/sso/**"
+      - "/mall-portal/sso/login"
+      - "/mall-portal/sso/register"
+      - "/mall-portal/sso/getAuthCode"
       - "/mall-portal/home/**"
       - "/mall-portal/product/**"
       - "/mall-portal/brand/**"
       - "/mall-admin/admin/login"
       - "/mall-admin/admin/register"
-      - "/mall-admin/admin/info"
       - "/mall-admin/minio/upload"
 management: #开启SpringBoot Admin的监控
   endpoints:
