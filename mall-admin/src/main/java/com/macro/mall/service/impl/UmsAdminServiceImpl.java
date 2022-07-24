@@ -3,6 +3,7 @@ package com.macro.mall.service.impl;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.BCrypt;
+import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
 import com.github.pagehelper.PageHelper;
 import com.macro.mall.common.api.CommonResult;
@@ -51,8 +52,6 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     private UmsAdminLoginLogMapper loginLogMapper;
     @Autowired
     private AuthService authService;
-    @Autowired
-    private UmsAdminCacheService adminCacheService;
     @Autowired
     private HttpServletRequest request;
 
@@ -166,14 +165,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             }
         }
         int count = adminMapper.updateByPrimaryKeySelective(admin);
-        adminCacheService.delAdmin(id);
+        getCacheService().delAdmin(id);
         return count;
     }
 
     @Override
     public int delete(Long id) {
         int count = adminMapper.deleteByPrimaryKey(id);
-        adminCacheService.delAdmin(id);
+        getCacheService().delAdmin(id);
         return count;
     }
 
@@ -227,7 +226,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         }
         umsAdmin.setPassword(BCrypt.hashpw(param.getNewPassword()));
         adminMapper.updateByPrimaryKey(umsAdmin);
-        adminCacheService.delAdmin(umsAdmin.getId());
+        getCacheService().delAdmin(umsAdmin.getId());
         return 1;
     }
 
@@ -255,13 +254,18 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             Asserts.fail(ResultCode.UNAUTHORIZED);
         }
         UserDto userDto = JSONUtil.toBean(userStr, UserDto.class);
-        UmsAdmin admin = adminCacheService.getAdmin(userDto.getId());
+        UmsAdmin admin = getCacheService().getAdmin(userDto.getId());
         if(admin!=null){
             return admin;
         }else{
             admin = adminMapper.selectByPrimaryKey(userDto.getId());
-            adminCacheService.setAdmin(admin);
+            getCacheService().setAdmin(admin);
             return admin;
         }
+    }
+
+    @Override
+    public UmsAdminCacheService getCacheService() {
+        return SpringUtil.getBean(UmsAdminCacheService.class);
     }
 }

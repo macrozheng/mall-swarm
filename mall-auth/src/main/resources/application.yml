@@ -1,5 +1,10 @@
+
 server:
   port: 8401
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 management:
   endpoints:
     web:
@@ -8,6 +13,9 @@ management:
 feign:
   okhttp:
     enabled: true
-ribbon:
-  ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
-  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic

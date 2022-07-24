@@ -82,4 +82,9 @@ public interface UmsAdminService {
      * 获取当前登录后台用户
      */
     UmsAdmin getCurrentAdmin();
+
+    /**
+     * 获取缓存服务
+     */
+    UmsAdminCacheService getCacheService();
 }
