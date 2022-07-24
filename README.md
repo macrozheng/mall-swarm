@@ -19,7 +19,7 @@
 
 ## 项目介绍
 
-`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud Hoxton & Alibaba、Spring Boot 2.3、Oauth2、MyBatis、Elasticsearch、Docker、Kubernetes等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。 
+`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud 2021 & Alibaba、Spring Boot 2.7、Oauth2、MyBatis、Elasticsearch、Docker、Kubernetes等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。
 
 ## 系统架构图
 
@@ -48,7 +48,7 @@ mall
 
 ## 项目演示
 
-- 后台管理系统： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)  
+- 后台管理系统： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)
 - 移动端商城系统：[https://www.macrozheng.com/app/mainpage.html](https://www.macrozheng.com/app/mainpage.html)
 
 ## 技术选型
@@ -101,13 +101,13 @@ mall
 | ------------- | ------ | ------------------------------------------------------------ |
 | JDK           | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
 | Mysql         | 5.7    | https://www.mysql.com/                                       |
-| Redis         | 5.0    | https://redis.io/download                                    |
-| Elasticsearch | 7.6.2  | https://www.elastic.co/cn/downloads/elasticsearch            |
-| Kibana        | 7.6.2  | https://www.elastic.co/cn/downloads/kibana                   |
-| Logstash      | 7.6.2  | https://www.elastic.co/cn/downloads/logstash                 |
-| MongoDb       | 4.2.5  | https://www.mongodb.com/download-center                      |
-| RabbitMq      | 3.7.14 | http://www.rabbitmq.com/download.html                        |
-| nginx         | 1.10   | http://nginx.org/en/download.html                            |
+| Redis         | 7.0    | https://redis.io/download                                    |
+| Elasticsearch | 7.17.3 | https://www.elastic.co/cn/downloads/elasticsearch            |
+| Kibana        | 7.17.3 | https://www.elastic.co/cn/downloads/kibana                   |
+| Logstash      | 7.17.3 | https://www.elastic.co/cn/downloads/logstash                 |
+| MongoDb       | 5.0    | https://www.mongodb.com/download-center                      |
+| RabbitMq      | 3.10.5 | http://www.rabbitmq.com/download.html                        |
+| nginx         | 1.22   | http://nginx.org/en/download.html                            |
 
 ### 搭建步骤
 
@@ -136,15 +136,15 @@ mall
 
 - 查看注册中心注册服务信息，访问地址：http://192.168.3.101:8848/nacos/
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_01.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_01.png)
 
 - 监控中心应用信息，访问地址：http://192.168.3.101:8101
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_02.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_02.png)
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_03.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_03.png)
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_04.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_04.png)
 
 - API文档信息，访问地址：http://192.168.3.101:8201
 
@@ -152,13 +152,13 @@ mall
 
 - 日志收集系统信息，访问地址：http://192.168.3.101:5601
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_06.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_06.png)
 
 - 可视化容器管理，访问地址：http://192.168.3.101:9000
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_07.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_07.png)
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_08.png)
+![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_08.png)
 
 ## 公众号
 
