@@ -9,5 +9,7 @@ spring:
     admin:
       discovery:
         ignored-services: ${spring.application.name}
+  profiles:
+    active: dev
 server:
   port: 8101
