@@ -1,6 +1,9 @@
 server:
   port: 8201
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   cloud:
     gateway:
       discovery:
@@ -54,12 +57,12 @@ secure:
       - "/doc.html"
       - "/swagger-resources/**"
       - "/swagger/**"
-      - "/**/v2/api-docs"
-      - "/**/*.js"
-      - "/**/*.css"
-      - "/**/*.png"
-      - "/**/*.ico"
-      - "/webjars/springfox-swagger-ui/**"
+      - "/*/v2/api-docs"
+      - "/*/*.js"
+      - "/*/*.css"
+      - "/*/*.png"
+      - "/*/*.ico"
+      - "/webjars/**"
       - "/actuator/**"
       - "/mall-auth/oauth/token"
       - "/mall-auth/rsa/publicKey"

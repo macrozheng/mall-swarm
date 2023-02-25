@@ -4,8 +4,7 @@ spring:
     username: root
     password: root
   elasticsearch:
-    rest:
-      uris: http://localhost:9200
+    uris: localhost:9200
 logging:
   level:
     root: info
