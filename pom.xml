@@ -40,7 +40,7 @@
         <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
         <spring-cloud-starter-oauth2.version>2.2.5.RELEASE</spring-cloud-starter-oauth2.version>
         <pagehelper-starter.version>1.4.2</pagehelper-starter.version>
-        <pagehelper.version>5.3.0</pagehelper.version>
+        <pagehelper.version>5.3.1</pagehelper.version>
         <druid.version>1.2.9</druid.version>
         <hutool.version>5.8.0</hutool.version>
         <mybatis-generator.version>1.4.1</mybatis-generator.version>
