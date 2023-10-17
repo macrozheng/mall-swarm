@@ -8,7 +8,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: 'http://mall-gateway:8201/mall-auth/rsa/publicKey'
+          jwk-set-uri: 'http://192.168.3.101:8201/mall-auth/rsa/publicKey'
 logging:
   file:
     path: /var/logs
