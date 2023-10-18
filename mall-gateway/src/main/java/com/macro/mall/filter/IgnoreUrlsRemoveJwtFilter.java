@@ -17,7 +17,7 @@ import java.net.URI;
 import java.util.List;
 
 /**
- * 白名单路径访问时需要移除JWT请求头
+ * 白名单路径访问时移除JWT请求头的过滤器
  * Created by macro on 2020/7/24.
  */
 @Component

@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 import java.nio.charset.Charset;
 
 /**
- * 自定义返回结果：没有登录或token过期时
+ * 自定义未登录或者token失效时的返回结果
  * Created by macro on 2020/6/18.
  */
 @Component
