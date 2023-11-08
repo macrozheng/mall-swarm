@@ -49,6 +49,7 @@
         <spring-data-commons.version>2.7.0</spring-data-commons.version>
         <jjwt.version>0.9.1</jjwt.version>
         <aliyun-oss.version>2.5.0</aliyun-oss.version>
+        <alipay-sdk.version>4.38.61.ALL</alipay-sdk.version>
         <logstash-logback.version>5.3</logstash-logback.version>
         <admin-starter-server.version>2.7.0</admin-starter-server.version>
         <minio.version>8.4.1</minio.version>

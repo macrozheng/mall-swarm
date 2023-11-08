@@ -73,6 +73,7 @@ secure:
       - "/mall-portal/home/**"
       - "/mall-portal/product/**"
       - "/mall-portal/brand/**"
+      - "/mall-portal/alipay/**"
       - "/mall-admin/admin/login"
       - "/mall-admin/admin/register"
       - "/mall-admin/minio/upload"

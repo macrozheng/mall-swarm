@@ -16,7 +16,6 @@ import java.util.Map;
 public interface OmsPortalOrderService {
     /**
      * 根据用户购物车信息生成确认单信息
-     * @param cartIds
      */
     ConfirmOrderResult generateConfirmOrder(List<Long> cartIds);
 
@@ -68,4 +67,10 @@ public interface OmsPortalOrderService {
      * 用户根据订单ID删除订单
      */
     void deleteOrder(Long orderId);
+
+    /**
+     * 根据orderSn来实现的支付成功逻辑
+     */
+    @Transactional
+    void paySuccessByOrderSn(String orderSn, Integer payType);
 }
