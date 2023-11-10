@@ -6,6 +6,7 @@
   <a href="https://github.com/macrozheng/mall-learning"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B-mall--learning-green.svg" alt="学习教程"></a>
   <a href="https://github.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE-mall-blue.svg" alt="后台项目"></a>
   <a href="https://github.com/macrozheng/mall-admin-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-mall--admin--web-green.svg" alt="前端项目"></a>
+  <a href="https://github.com/macrozheng/mall-app-web"><img src="https://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E5%8F%B0%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-mall--app--web-green.svg" alt="前台商城项目"></a>
   <a href="https://gitee.com/macrozheng/mall-swarm"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="码云"></a>
 </p>
 
@@ -13,19 +14,43 @@
 
 > 1. **快速体验项目**：[在线访问地址](https://www.macrozheng.com/admin/index.html) 。
 > 2. **全套学习教程**：[《mall学习教程》](https://www.macrozheng.com) 。
-> 3. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning) 。
-> 4. **专属学习路线**：学习不走弯路，整理了套非常不错的[《mall专属学习路线》](#公众号) 。
+> 3. **视频教程（2023最新版）**：[《mall视频教程》](https://www.macrozheng.com/mall/catalog/mall_video.html) 。
+> 4. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning) 。
 > 5. **项目交流**：想要加群交流项目的朋友，可以加入[mall项目交流群](#公众号) 。
 
-## 项目介绍
+## 项目简介
 
 `mall-swarm`是一套微服务商城系统，采用了 Spring Cloud 2021 & Alibaba、Spring Boot 2.7、Oauth2、MyBatis、Elasticsearch、Docker、Kubernetes等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。
 
-## 系统架构图
+## 项目演示
 
-![系统架构图](http://img.macrozheng.com/mall/project/mall_micro_service_arch.jpg)
+### 后台管理系统
 
-## 组织结构
+前端项目`mall-admin-web`地址：https://github.com/macrozheng/mall-admin-web
+
+项目演示地址： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)
+
+![后台管理系统功能演示](./document/resource/mall_admin_show.png)
+
+### 前台商城系统
+
+前端项目`mall-app-web`地址：https://github.com/macrozheng/mall-app-web
+
+项目演示地址（将浏览器切换为手机模式效果更佳）：[https://www.macrozheng.com/app/](https://www.macrozheng.com/app/)
+
+![前台商城系统功能演示](./document/resource/re_mall_app_show.jpg)
+
+## 项目架构
+
+### 系统架构
+
+![系统架构图](./document/resource/mall_micro_service_arch.jpg)
+
+### 业务架构
+
+![业务架构图](./document/resource/re_mall_business_arch.jpg)
+
+### 组织结构
 
 ``` lua
 mall
@@ -40,16 +65,6 @@ mall
 ├── mall-demo -- 微服务远程调用测试服务
 └── config -- 配置中心存储的配置
 ```
-
-## 项目文档
-
-- 项目文档`mall`系列教程：[https://www.macrozheng.com](https://www.macrozheng.com)
-- 配套`Spring Cloud`系列教程：[https://github.com/macrozheng/springcloud-learning](https://github.com/macrozheng/springcloud-learning)
-
-## 项目演示
-
-- 后台管理系统： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)
-- 移动端商城系统：[https://www.macrozheng.com/app/mainpage.html](https://www.macrozheng.com/app/mainpage.html)
 
 ## 技术选型
 
@@ -92,6 +107,15 @@ mall
 | Axios      | 前端HTTP框架          | https://github.com/axios/axios |
 | v-charts   | 基于Echarts的图表框架 | https://v-charts.js.org/       |
 
+### 移动端技术
+
+| 技术         | 说明             | 官网                                    |
+| ------------ | ---------------- | --------------------------------------- |
+| Vue          | 核心前端框架     | https://vuejs.org                       |
+| Vuex         | 全局状态管理框架 | https://vuex.vuejs.org                  |
+| uni-app      | 移动端前端框架   | https://uniapp.dcloud.io                |
+| mix-mall     | 电商项目模板     | https://ext.dcloud.net.cn/plugin?id=200 |
+| luch-request | HTTP请求框架     | https://github.com/lei-mu/luch-request  |
 
 ## 环境搭建
 
@@ -136,29 +160,25 @@ mall
 
 - 查看注册中心注册服务信息，访问地址：http://192.168.3.101:8848/nacos/
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_01.png)
+![](./document/resource/mall_swarm_run_new_01.png)
 
 - 监控中心应用信息，访问地址：http://192.168.3.101:8101
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_02.png)
+![](./document/resource/mall_swarm_run_new_02.png)
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_03.png)
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_04.png)
+![](./document/resource/mall_swarm_run_new_04.png)
 
 - API文档信息，访问地址：http://192.168.3.101:8201
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_05.png)
+![](./document/resource/mall_swarm_run_05.png)
 
 - 日志收集系统信息，访问地址：http://192.168.3.101:5601
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_06.png)
+![](./document/resource/mall_swarm_run_new_06.png)
 
 - 可视化容器管理，访问地址：http://192.168.3.101:9000
 
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_07.png)
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_08.png)
+![](./document/resource/mall_swarm_run_new_08.png)
 
 ## 公众号
 
@@ -170,4 +190,4 @@ mall
 
 [Apache License 2.0](https://github.com/macrozheng/mall-swarm/blob/master/LICENSE)
 
-Copyright (c) 2018-2022 macrozheng
+Copyright (c) 2018-2023 macrozheng
