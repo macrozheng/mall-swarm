@@ -1,6 +1,8 @@
 spring:
   application:
     name: mall-monitor
+  profiles:
+    active: dev
   security: # 配置登录用户名和密码
     user:
       name: macro
