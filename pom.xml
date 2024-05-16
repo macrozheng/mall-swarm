@@ -42,7 +42,7 @@
         <pagehelper-starter.version>1.4.2</pagehelper-starter.version>
         <pagehelper.version>5.3.0</pagehelper.version>
         <druid.version>1.2.9</druid.version>
-        <hutool.version>5.8.0</hutool.version>
+        <hutool.version>5.8.21</hutool.version>
         <mybatis-generator.version>1.4.1</mybatis-generator.version>
         <mybatis.version>3.5.9</mybatis.version>
         <mysql-connector.version>8.0.29</mysql-connector.version>
