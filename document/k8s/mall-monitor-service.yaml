@@ -4,7 +4,7 @@ metadata:
   name: mall-monitor-service
   namespace: default
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: mall-monitor
   ports:
@@ -12,3 +12,4 @@ spec:
       protocol: TCP
       port: 8101
       targetPort: 8101
+      nodePort: 30101

@@ -12,14 +12,33 @@ mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
-management: #开启SpringBoot Admin的监控
+management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: '*' #暴露Actuator的监控端点
   endpoint:
     health:
-      show-details: always
-feign:
-  okhttp:
+      show-details: always #显示健康的详细信息
+    env:
+      show-values: always #默认Actuator的环境变量会以****显示，这里开启显示
+    configprops:
+      show-values: always #默认Actuator的配置属性会以****显示，这里开启显示
+    info:
+      enabled: true
+springdoc:
+  swagger-ui:
+    # 修改Swagger UI路径
+    path: /swagger-ui.html
+    # 开启Swagger UI界面
     enabled: true
+    # 用于配置tag和operation的展开方式，这里配置为都不展开
+    doc-expansion: 'none'
+  api-docs:
+    # 修改api-docs路径
+    path: /v3/api-docs
+    # 开启api-docs
+    enabled: true
+  group-configs:
+    - group: 'mall-demo'
+      packages-to-scan: com.macro.mall.demo.controller

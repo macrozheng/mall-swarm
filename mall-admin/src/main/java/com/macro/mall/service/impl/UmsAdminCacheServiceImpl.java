@@ -15,8 +15,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UmsAdminCacheServiceImpl implements UmsAdminCacheService {
     @Autowired
-    private UmsAdminService adminService;
-    @Autowired
     private RedisService redisService;
     @Value("${redis.database}")
     private String REDIS_DATABASE;
