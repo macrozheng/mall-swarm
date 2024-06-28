@@ -16,7 +16,7 @@
 > 2. **全套学习教程**：[《mall学习教程》](https://www.macrozheng.com) 。
 > 3. **视频教程（2023最新版）**：[《mall视频教程》](https://www.macrozheng.com/mall/catalog/mall_video.html) 。
 > 4. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning) 。
-> 5. **项目交流**：想要加群交流项目的朋友，可以加入[mall项目交流群](#公众号) 。
+> 5. **分支说明**：`master`分支基于Spring Cloud 2021+Spring Boot 2.7，`dev-v3`分支基于Spring Cloud 2023+Spring Boot 3.2。
 
 ## 项目简介
 
