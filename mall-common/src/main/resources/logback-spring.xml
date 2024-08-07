@@ -11,7 +11,10 @@
     <property name="LOG_FILE_PATH" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/logs}"/>
     <!--LogStash访问host-->
     <springProperty name="LOG_STASH_HOST" scope="context" source="logstash.host" defaultValue="localhost"/>
-
+    <!--是否开启LogStash插件内部日志-->
+    <springProperty name="ENABLE_INNER_LOG" scope="context" source="logstash.enableInnerLog" defaultValue="false"/>
+    <!--配置不打印logback内部的状态信息，排查logback配置问题时可注释掉-->
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
     <!--DEBUG日志输出到文件-->
     <appender name="FILE_DEBUG"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -64,6 +67,7 @@
             <level>DEBUG</level>
         </filter>
         <destination>${LOG_STASH_HOST}:4560</destination>
+        <addDefaultStatusListener>${ENABLE_INNER_LOG}</addDefaultStatusListener>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
@@ -86,12 +90,6 @@
                 </pattern>
             </providers>
         </encoder>
-        <!--当有多个LogStash服务时，设置访问策略为轮询-->
-        <connectionStrategy>
-            <roundRobin>
-                <connectionTTL>5 minutes</connectionTTL>
-            </roundRobin>
-        </connectionStrategy>
     </appender>
 
     <!--ERROR日志输出到LogStash-->
@@ -102,6 +100,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <destination>${LOG_STASH_HOST}:4561</destination>
+        <addDefaultStatusListener>${ENABLE_INNER_LOG}</addDefaultStatusListener>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
@@ -124,17 +123,12 @@
                 </pattern>
             </providers>
         </encoder>
-        <!--当有多个LogStash服务时，设置访问策略为轮询-->
-        <connectionStrategy>
-            <roundRobin>
-                <connectionTTL>5 minutes</connectionTTL>
-            </roundRobin>
-        </connectionStrategy>
     </appender>
 
     <!--业务日志输出到LogStash-->
     <appender name="LOG_STASH_BUSINESS" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>${LOG_STASH_HOST}:4562</destination>
+        <addDefaultStatusListener>${ENABLE_INNER_LOG}</addDefaultStatusListener>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
@@ -157,17 +151,12 @@
                 </pattern>
             </providers>
         </encoder>
-        <!--当有多个LogStash服务时，设置访问策略为轮询-->
-        <connectionStrategy>
-            <roundRobin>
-                <connectionTTL>5 minutes</connectionTTL>
-            </roundRobin>
-        </connectionStrategy>
     </appender>
 
     <!--接口访问记录日志输出到LogStash-->
     <appender name="LOG_STASH_RECORD" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>${LOG_STASH_HOST}:4563</destination>
+        <addDefaultStatusListener>${ENABLE_INNER_LOG}</addDefaultStatusListener>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp>
@@ -187,12 +176,6 @@
                 </pattern>
             </providers>
         </encoder>
-        <!--当有多个LogStash服务时，设置访问策略为轮询-->
-        <connectionStrategy>
-            <roundRobin>
-                <connectionTTL>5 minutes</connectionTTL>
-            </roundRobin>
-        </connectionStrategy>
     </appender>
 
     <!--控制框架输出日志-->

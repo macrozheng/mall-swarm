@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
         - name: mall-portal
-          # 指定Docker Hub中的镜像地址
-          image: macrodocker/mall-portal:1.0-SNAPSHOT
+          image: mall/mall-portal:1.0-SNAPSHOT
           ports:
             - containerPort: 8085
           env:

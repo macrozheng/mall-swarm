@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
         - name: mall-gateway
-          # 指定Docker Hub中的镜像地址
-          image: macrodocker/mall-gateway:1.0-SNAPSHOT
+          image: mall/mall-gateway:1.0-SNAPSHOT
           ports:
             - containerPort: 8201
           env:
