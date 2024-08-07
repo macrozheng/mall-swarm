@@ -14,9 +14,9 @@
 
 > 1. **快速体验项目**：[在线访问地址](https://www.macrozheng.com/admin/index.html) 。
 > 2. **全套学习教程**：[《mall学习教程》](https://www.macrozheng.com) 。
-> 3. **视频教程（2023最新版）**：[《mall视频教程》](https://www.macrozheng.com/mall/catalog/mall_video.html) 。
+> 3. **视频教程**：[《mall视频教程》](https://www.macrozheng.com/mall/catalog/mall_video.html) 。
 > 4. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning) 。
-> 5. **分支说明**：`master`分支基于Spring Cloud 2021+Spring Boot 2.7，`dev-v3`分支基于Spring Cloud 2023+Spring Boot 3.2。
+> 5. **分支说明**：`master`分支基于Spring Cloud 2023+Spring Boot 3.2，`dev-v2`分支基于Spring Cloud 2021+Spring Boot 2.7。
 
 ## 项目简介
 
