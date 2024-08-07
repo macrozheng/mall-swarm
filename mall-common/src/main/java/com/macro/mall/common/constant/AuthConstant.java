@@ -32,9 +32,9 @@ public interface AuthConstant {
     String ADMIN_URL_PATTERN = "/mall-admin/**";
 
     /**
-     * Redis缓存权限规则key
+     * Redis缓存权限规则（路径->资源）
      */
-    String RESOURCE_ROLES_MAP_KEY = "auth:resourceRolesMap";
+    String PATH_RESOURCE_MAP = "auth:pathResourceMap";
 
     /**
      * 认证信息Http请求头
@@ -50,5 +50,15 @@ public interface AuthConstant {
      * 用户信息Http请求头
      */
     String USER_TOKEN_HEADER = "user";
+
+    /**
+     * sa-token session中存储的会员信息
+     */
+    String STP_MEMBER_INFO = "memberInfo";
+
+    /**
+     * sa-token session中存储的后台管理员信息
+     */
+    String STP_ADMIN_INFO = "adminInfo";
 
 }

@@ -7,8 +7,9 @@ import com.macro.mall.dto.PmsProductQueryParam;
 import com.macro.mall.dto.PmsProductResult;
 import com.macro.mall.model.PmsProduct;
 import com.macro.mall.service.PmsProductService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +21,13 @@ import java.util.List;
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "PmsProductController", description = "商品管理")
+@Tag(name = "PmsProductController", description = "商品管理")
 @RequestMapping("/product")
 public class PmsProductController {
     @Autowired
     private PmsProductService productService;
 
-    @ApiOperation("创建商品")
+    @Operation(summary = "创建商品")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody PmsProductParam productParam) {
@@ -38,7 +39,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("根据商品id获取商品编辑信息")
+    @Operation(summary = "根据商品id获取商品编辑信息")
     @RequestMapping(value = "/updateInfo/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsProductResult> getUpdateInfo(@PathVariable Long id) {
@@ -46,7 +47,7 @@ public class PmsProductController {
         return CommonResult.success(productResult);
     }
 
-    @ApiOperation("更新商品")
+    @Operation(summary = "更新商品")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult update(@PathVariable Long id, @RequestBody PmsProductParam productParam) {
@@ -58,7 +59,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("查询商品")
+    @Operation(summary = "查询商品")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsProduct>> getList(PmsProductQueryParam productQueryParam,
@@ -68,7 +69,7 @@ public class PmsProductController {
         return CommonResult.success(CommonPage.restPage(productList));
     }
 
-    @ApiOperation("根据商品名称或货号模糊查询")
+    @Operation(summary = "根据商品名称或货号模糊查询")
     @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProduct>> getList(String keyword) {
@@ -76,7 +77,7 @@ public class PmsProductController {
         return CommonResult.success(productList);
     }
 
-    @ApiOperation("批量修改审核状态")
+    @Operation(summary = "批量修改审核状态")
     @RequestMapping(value = "/update/verifyStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateVerifyStatus(@RequestParam("ids") List<Long> ids,
@@ -90,7 +91,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量上下架")
+    @Operation(summary = "批量上下架")
     @RequestMapping(value = "/update/publishStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updatePublishStatus(@RequestParam("ids") List<Long> ids,
@@ -103,7 +104,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量推荐商品")
+    @Operation(summary = "批量推荐商品")
     @RequestMapping(value = "/update/recommendStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateRecommendStatus(@RequestParam("ids") List<Long> ids,
@@ -116,7 +117,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量设为新品")
+    @Operation(summary = "批量设为新品")
     @RequestMapping(value = "/update/newStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateNewStatus(@RequestParam("ids") List<Long> ids,
@@ -129,7 +130,7 @@ public class PmsProductController {
         }
     }
 
-    @ApiOperation("批量修改删除状态")
+    @Operation(summary = "批量修改删除状态")
     @RequestMapping(value = "/update/deleteStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateDeleteStatus(@RequestParam("ids") List<Long> ids,

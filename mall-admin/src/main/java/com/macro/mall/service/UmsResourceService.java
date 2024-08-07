@@ -41,7 +41,7 @@ public interface UmsResourceService {
     List<UmsResource> listAll();
 
     /**
-     * 初始化资源角色规则
+     * 初始化路径与资源访问规则
      */
-    Map<String,List<String>> initResourceRolesMap();
+    Map<String,String> initPathResourceMap();
 }

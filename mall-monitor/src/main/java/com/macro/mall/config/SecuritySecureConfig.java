@@ -1,48 +1,91 @@
 package com.macro.mall.config;
 
+import com.macro.mall.filter.CustomCsrfFilter;
 import de.codecentric.boot.admin.server.config.AdminServerProperties;
+import jakarta.servlet.DispatcherType;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import java.util.UUID;
 
 /**
- * SpringSecurity相关配置
- * Created by macro on 2019/9/30.
+ * @auther macrozheng
+ * @description Spring Boot Admin的Security相关配置
+ * @date 2024/1/16
+ * @github https://github.com/macrozheng
  */
-@Configuration
-public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
-    private final String adminContextPath;
+@Configuration(proxyBeanMethods = false)
+public class SecuritySecureConfig {
 
-    public SecuritySecureConfig(AdminServerProperties adminServerProperties) {
-        this.adminContextPath = adminServerProperties.getContextPath();
+    private final AdminServerProperties adminServer;
+
+    private final SecurityProperties security;
+
+    public SecuritySecureConfig(AdminServerProperties adminServer, SecurityProperties security) {
+        this.adminServer = adminServer;
+        this.security = security;
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
         successHandler.setTargetUrlParameter("redirectTo");
-        successHandler.setDefaultTargetUrl(adminContextPath + "/");
-
-        http.authorizeRequests()
-                //1.配置所有静态资源和登录页可以公开访问
-                .antMatchers(adminContextPath + "/assets/**").permitAll()
-                .antMatchers(adminContextPath + "/login").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                //2.配置登录和登出路径
-                .formLogin().loginPage(adminContextPath + "/login").successHandler(successHandler).and()
-                .logout().logoutUrl(adminContextPath + "/logout").and()
-                //3.开启http basic支持，admin-client注册时需要使用
-                .httpBasic().and()
-                .csrf()
-                //4.开启基于cookie的csrf保护
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                //5.忽略这些路径的csrf保护以便admin-client注册
-                .ignoringAntMatchers(
-                        adminContextPath + "/instances",
-                        adminContextPath + "/actuator/**"
-                );
+        successHandler.setDefaultTargetUrl(this.adminServer.path("/"));
+        http.authorizeHttpRequests((authorizeRequests) -> authorizeRequests //
+                .requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/assets/**")))
+                .permitAll()
+                .requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/actuator/info")))
+                .permitAll()
+                .requestMatchers(new AntPathRequestMatcher(adminServer.path("/actuator/health")))
+                .permitAll()
+                .requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/login")))
+                .permitAll()
+                .dispatcherTypeMatchers(DispatcherType.ASYNC)
+                .permitAll()
+                .anyRequest()
+                .authenticated())
+                .formLogin(
+                        (formLogin) -> formLogin.loginPage(this.adminServer.path("/login")).successHandler(successHandler))
+                .logout((logout) -> logout.logoutUrl(this.adminServer.path("/logout")))
+                .httpBasic(Customizer.withDefaults());
+        http.addFilterAfter(new CustomCsrfFilter(), BasicAuthenticationFilter.class)
+                .csrf((csrf) -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                        .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler())
+                        .ignoringRequestMatchers(
+                                new AntPathRequestMatcher(this.adminServer.path("/instances"), "POST"),
+        new AntPathRequestMatcher(this.adminServer.path("/instances/*"), "DELETE"),
+        new AntPathRequestMatcher(this.adminServer.path("/actuator/**"))
+                                ));
+        http.rememberMe((rememberMe) -> rememberMe.key(UUID.randomUUID().toString()).tokenValiditySeconds(1209600));
+        return http.build();
     }
+
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
+        UserDetails user = User.withUsername("macro")
+                .password(passwordEncoder.encode("123456"))
+                .roles("USER")
+                .build();
+        return new InMemoryUserDetailsManager(user);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 }

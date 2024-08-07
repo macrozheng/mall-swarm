@@ -1,7 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.common.domain.UserDto;
+import cn.dev33.satoken.stp.SaTokenInfo;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
 import com.macro.mall.model.*;
@@ -28,9 +27,8 @@ public interface UmsAdminService {
      * 登录功能
      * @param username 用户名
      * @param password 密码
-     * @return 调用认证中心返回结果
      */
-    CommonResult login(String username, String password);
+    SaTokenInfo login(String username, String password);
 
     /**
      * 根据用户id获取用户
@@ -74,17 +72,12 @@ public interface UmsAdminService {
     int updatePassword(UpdateAdminPasswordParam updatePasswordParam);
 
     /**
-     * 获取用户信息
-     */
-    UserDto loadUserByUsername(String username);
-
-    /**
      * 获取当前登录后台用户
      */
     UmsAdmin getCurrentAdmin();
 
     /**
-     * 获取缓存服务
+     * 登出操作
      */
-    UmsAdminCacheService getCacheService();
+    void logout();
 }

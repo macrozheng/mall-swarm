@@ -1,7 +1,6 @@
 package com.macro.mall.portal.service;
 
-import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.common.domain.UserDto;
+import cn.dev33.satoken.stp.SaTokenInfo;
 import com.macro.mall.model.UmsMember;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,14 +46,13 @@ public interface UmsMemberService {
      */
     void updateIntegration(Long id,Integer integration);
 
-
-    /**
-     * 获取用户信息
-     */
-    UserDto loadUserByUsername(String username);
-
     /**
      * 登录后获取token
      */
-    CommonResult login(String username, String password);
+    SaTokenInfo login(String username, String password);
+
+    /**
+     * 登出功能
+     */
+    void logout();
 }

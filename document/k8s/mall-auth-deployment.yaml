@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
         - name: mall-auth
-          # 指定Docker Hub中的镜像地址
-          image: macrodocker/mall-auth:1.0-SNAPSHOT
+          image: mall/mall-auth:1.0-SNAPSHOT
           ports:
             - containerPort: 8401
           env:

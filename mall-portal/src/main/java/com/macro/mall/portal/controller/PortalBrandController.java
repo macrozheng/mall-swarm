@@ -5,8 +5,9 @@ import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.model.PmsBrand;
 import com.macro.mall.model.PmsProduct;
 import com.macro.mall.portal.service.PortalBrandService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -18,14 +19,14 @@ import java.util.List;
  * Created by macro on 2020/5/15.
  */
 @Controller
-@Api(tags = "PortalBrandController", description = "前台品牌管理")
+@Tag(name = "PortalBrandController", description = "前台品牌管理")
 @RequestMapping("/brand")
 public class PortalBrandController {
 
     @Autowired
     private PortalBrandService homeBrandService;
 
-    @ApiOperation("分页获取推荐品牌")
+    @Operation(summary = "分页获取推荐品牌")
     @RequestMapping(value = "/recommendList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsBrand>> recommendList(@RequestParam(value = "pageSize", defaultValue = "6") Integer pageSize,
@@ -34,7 +35,7 @@ public class PortalBrandController {
         return CommonResult.success(brandList);
     }
 
-    @ApiOperation("获取品牌详情")
+    @Operation(summary = "获取品牌详情")
     @RequestMapping(value = "/detail/{brandId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsBrand> detail(@PathVariable Long brandId) {
@@ -42,7 +43,7 @@ public class PortalBrandController {
         return CommonResult.success(brand);
     }
 
-    @ApiOperation("分页获取品牌相关商品")
+    @Operation(summary = "分页获取品牌相关商品")
     @RequestMapping(value = "/productList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsProduct>> productList(@RequestParam Long brandId,

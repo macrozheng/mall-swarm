@@ -1,17 +1,21 @@
 package com.macro.mall.auth.service;
 
-import com.macro.mall.common.domain.UserDto;
+import com.macro.mall.auth.domain.UmsAdminLoginParam;
+import com.macro.mall.common.api.CommonResult;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * 后台用户服务远程调用Service
- * Created by macro on 2019/10/18.
+ * @auther macrozheng
+ * @description 后台用户服务远程调用Service
+ * @date 2024/1/30
+ * @github https://github.com/macrozheng
  */
 @FeignClient("mall-admin")
 public interface UmsAdminService {
 
-    @GetMapping("/admin/loadByUsername")
-    UserDto loadUserByUsername(@RequestParam String username);
+    @PostMapping("/admin/login")
+    CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam);
 }

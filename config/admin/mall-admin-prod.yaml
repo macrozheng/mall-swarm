@@ -15,11 +15,12 @@ spring:
     url: jdbc:mysql://db:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: reader
     password: 123456
-  redis:
-    host: redis # Redis服务器地址
-    database: 0 # Redis数据库索引（默认为0）
-    port: 6379 # Redis服务器连接端口
-    password: #不设置密码
+  data:
+    redis:
+      host: redis # Redis服务器地址
+      database: 0 # Redis数据库索引（默认为0）
+      port: 6379 # Redis服务器连接端口
+      password: #不设置密码
 minio:
   endpoint: http://192.168.3.101:9090 #MinIO服务所在地址
   bucketName: mall #存储桶名称

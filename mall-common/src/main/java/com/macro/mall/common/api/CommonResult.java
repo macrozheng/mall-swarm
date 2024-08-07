@@ -1,5 +1,7 @@
 package com.macro.mall.common.api;
 
+import cn.hutool.json.JSONUtil;
+
 /**
  * 通用返回对象
  * Created by macro on 2019/4/19.
@@ -120,5 +122,10 @@ public class CommonResult<T> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return JSONUtil.toJsonStr(this);
     }
 }

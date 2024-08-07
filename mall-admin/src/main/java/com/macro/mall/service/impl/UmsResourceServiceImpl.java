@@ -5,17 +5,13 @@ import com.github.pagehelper.PageHelper;
 import com.macro.mall.common.constant.AuthConstant;
 import com.macro.mall.common.service.RedisService;
 import com.macro.mall.mapper.UmsResourceMapper;
-import com.macro.mall.mapper.UmsRoleMapper;
-import com.macro.mall.mapper.UmsRoleResourceRelationMapper;
 import com.macro.mall.model.*;
-import com.macro.mall.service.UmsAdminCacheService;
 import com.macro.mall.service.UmsResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * 后台资源管理Service实现类
@@ -26,10 +22,6 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     @Autowired
     private UmsResourceMapper resourceMapper;
     @Autowired
-    private UmsRoleMapper roleMapper;
-    @Autowired
-    private UmsRoleResourceRelationMapper roleResourceRelationMapper;
-    @Autowired
     private RedisService redisService;
     @Value("${spring.application.name}")
     private String applicationName;
@@ -37,7 +29,7 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     public int create(UmsResource umsResource) {
         umsResource.setCreateTime(new Date());
         int count = resourceMapper.insert(umsResource);
-        initResourceRolesMap();
+        initPathResourceMap();
         return count;
     }
 
@@ -45,7 +37,7 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     public int update(Long id, UmsResource umsResource) {
         umsResource.setId(id);
         int count = resourceMapper.updateByPrimaryKeySelective(umsResource);
-        initResourceRolesMap();
+        initPathResourceMap();
         return count;
     }
 
@@ -57,7 +49,7 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     @Override
     public int delete(Long id) {
         int count = resourceMapper.deleteByPrimaryKey(id);
-        initResourceRolesMap();
+        initPathResourceMap();
         return count;
     }
 
@@ -84,19 +76,15 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     }
 
     @Override
-    public Map<String,List<String>> initResourceRolesMap() {
-        Map<String,List<String>> resourceRoleMap = new TreeMap<>();
+    public Map<String,String> initPathResourceMap() {
+        Map<String,String> pathResourceMap = new TreeMap<>();
         List<UmsResource> resourceList = resourceMapper.selectByExample(new UmsResourceExample());
-        List<UmsRole> roleList = roleMapper.selectByExample(new UmsRoleExample());
-        List<UmsRoleResourceRelation> relationList = roleResourceRelationMapper.selectByExample(new UmsRoleResourceRelationExample());
         for (UmsResource resource : resourceList) {
-            Set<Long> roleIds = relationList.stream().filter(item -> item.getResourceId().equals(resource.getId())).map(UmsRoleResourceRelation::getRoleId).collect(Collectors.toSet());
-            List<String> roleNames = roleList.stream().filter(item -> roleIds.contains(item.getId())).map(item -> item.getId() + "_" + item.getName()).collect(Collectors.toList());
-            resourceRoleMap.put("/"+applicationName+resource.getUrl(),roleNames);
+            pathResourceMap.put("/"+applicationName+resource.getUrl(),resource.getId()+":"+resource.getName());
         }
-        redisService.del(AuthConstant.RESOURCE_ROLES_MAP_KEY);
-        redisService.hSetAll(AuthConstant.RESOURCE_ROLES_MAP_KEY, resourceRoleMap);
-        return resourceRoleMap;
+        redisService.del(AuthConstant.PATH_RESOURCE_MAP);
+        redisService.hSetAll(AuthConstant.PATH_RESOURCE_MAP, pathResourceMap);
+        return pathResourceMap;
 
     }
 }

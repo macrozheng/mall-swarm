@@ -50,7 +50,7 @@ public class UmsRoleServiceImpl implements UmsRoleService {
         UmsRoleExample example = new UmsRoleExample();
         example.createCriteria().andIdIn(ids);
         int count = roleMapper.deleteByExample(example);
-        resourceService.initResourceRolesMap();
+        resourceService.initPathResourceMap();
         return count;
     }
 
@@ -113,7 +113,7 @@ public class UmsRoleServiceImpl implements UmsRoleService {
             relation.setResourceId(resourceId);
             roleResourceRelationMapper.insert(relation);
         }
-        resourceService.initResourceRolesMap();
+        resourceService.initPathResourceMap();
         return resourceIds.size();
     }
 }
