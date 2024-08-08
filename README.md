@@ -12,9 +12,9 @@
 
 ## 友情提示
 
-> 1. **快速体验项目**：[在线访问地址](https://www.macrozheng.com/admin/index.html) 。
-> 2. **全套学习教程**：[《mall学习教程》](https://www.macrozheng.com) 。
-> 3. **视频教程**：[《mall视频教程》](https://www.macrozheng.com/mall/catalog/mall_video.html) 。
+> 1. **快速体验项目**：[在线访问地址](https://cloud.macrozheng.com/admin/index.html) 。
+> 2. **全套学习教程**：[《mall-swarm微服务学习教程》](https://cloud.macrozheng.com) 。
+> 3. **视频教程（2024最新版）**：[《mall-swarm视频教程》](https://cloud.macrozheng.com/video/) 。
 > 4. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning) 。
 > 5. **分支说明**：`master`分支基于Spring Cloud 2023+Spring Boot 3.2，`dev-v2`分支基于Spring Cloud 2021+Spring Boot 2.7。
 
@@ -134,26 +134,8 @@ mall
 
 ### 搭建步骤
 
-> Windows环境部署
-
-- Windows环境搭建请参考：[mall-swarm在Windows环境下的部署](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_windows.html);
-- `mall-admin-web`项目的安装及部署请参考：[mall前端项目的安装与部署](https://www.macrozheng.com/mall/deploy/mall_deploy_web.html);
-- `ELK`日志收集系统的搭建请参考：[SpringBoot应用整合ELK实现日志收集](https://www.macrozheng.com/mall/reference/mall_tiny_elk.html);
-- 使用MinIO存储文件请参考：[前后端分离项目，如何优雅实现文件存储](https://www.macrozheng.com/mall/technology/minio_use.html);
-- 读写分离解决方案请参考：[你还在代码里做读写分离么，试试这个中间件吧](https://www.macrozheng.com/project/gaea.html);
-- `分布式事务`解决方案请参考：[使用Seata彻底解决Spring Cloud中的分布式事务问题！](https://www.macrozheng.com/cloud/seata.html) 。
-
-> Docker环境部署
-
-- 使用虚拟机安装CentOS7.6请参考：[虚拟机安装及使用Linux，看这一篇就够了](https://www.macrozheng.com/tool/linux_install.html);
-- Docker环境的安装请参考：[开发者必备Docker命令](https://www.macrozheng.com/mall/reference/linux_command.html);
-- 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](https://www.macrozheng.com/mall/reference/docker_maven.html);
-- 本项目在Docker容器下的部署请参考：[mall-swarm在Linux环境下的部署（基于Docker容器）](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_windows.html);
-- 本项目使用Jenkins自动化部署请参考：[mall-swarm使用Jenkins实现自动化部署](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_jenkins.html) 。
-
-> Kubernetes环境部署
-
-- 本项目使用Kubernetes部署请参考：[mall-swarm微服务项目在K8S下的实践！](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_k8s.html)
+- Windows环境搭建请参考：[mall-swarm项目后端开发环境搭建](https://cloud.macrozheng.com/start/mall_swarm_deploy_windows.html);
+- `mall-admin-web`项目的安装及部署请参考：[mall-swarm前端开发环境搭建](https://cloud.macrozheng.com/start/mall_swarm_deploy_windows_web.html);
 
 ## 运行效果展示
 
