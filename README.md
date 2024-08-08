@@ -157,9 +157,11 @@ mall
 
 ![](./document/resource/re_mall_swarm_run_05.png)
 
-- 可视化容器管理，访问地址：http://192.168.3.101:9000
+- 使用Kubernetes部署后项目运行状态，访问地址：http://192.168.3.101:30880
 
-![](./document/resource/mall_swarm_run_new_08.png)
+![](document/resource/re_mall_swarm_run_06.png)
+
+![](document/resource/re_mall_swarm_run_07.png)
 
 ## 公众号
 
