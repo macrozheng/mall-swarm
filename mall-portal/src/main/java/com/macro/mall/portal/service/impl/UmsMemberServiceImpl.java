@@ -1,7 +1,6 @@
 package com.macro.mall.portal.service.impl;
 
 import cn.dev33.satoken.stp.SaTokenInfo;
-import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.BCrypt;
 import com.macro.mall.common.constant.AuthConstant;
@@ -169,7 +168,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         // 将用户信息存储到Session中
         StpMemberUtil.getSession().set(AuthConstant.STP_MEMBER_INFO,userDto);
         // 获取当前登录用户Token信息
-        return StpUtil.getTokenInfo();
+        return StpMemberUtil.getTokenInfo();
     }
 
     @Override
