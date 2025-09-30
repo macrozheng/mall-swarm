@@ -51,7 +51,7 @@
         <alipay-sdk.version>4.38.61.ALL</alipay-sdk.version>
         <logstash-logback.version>5.3</logstash-logback.version>
         <spring-boot-admin.version>3.2.2</spring-boot-admin.version>
-        <minio.version>8.4.5</minio.version>
+        <minio.version>8.6.0</minio.version>
         <knife4j.version>4.5.0</knife4j.version>
         <sa-token.version>1.37.0</sa-token.version>
         <mall-common.version>1.0-SNAPSHOT</mall-common.version>
