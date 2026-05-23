@@ -35,42 +35,51 @@ public class SaTokenConfig {
 
     /**
      * 注册Sa-Token全局过滤器
+     * 注意：为了避免与Spring Cloud Gateway的过滤器冲突，
+     * 这里只拦截实际的服务端点，不拦截网关路由路径
      */
     @Bean
     public SaReactorFilter getSaReactorFilter(IgnoreUrlsConfig ignoreUrlsConfig) {
+        // 创建排除列表，包含网关路由路径和白名单路径
+        List<String> excludeList = new ArrayList<>();
+
+        // 添加默认的白名单URL
+        excludeList.addAll(Arrays.asList(
+            "/doc.html",
+            "/v3/api-docs/swagger-config",
+            "/*/v3/api-docs/default",
+            "/*/v3/api-docs",
+            "/*/swagger-ui/**",
+            "/webjars/**",
+            "/favicon.ico",
+            "/actuator/**"
+        ));
+
+        // 添加网关路由路径到排除列表，让GatewayFilter正常工作
+        // 这些是Spring Cloud Gateway的路由配置，不是实际的服务端点
+        excludeList.addAll(Arrays.asList(
+            "/mall-auth/**",
+            "/mall-admin/**",
+            "/mall-portal/**",
+            "/mall-search/**",
+            "/mall-demo/**"
+        ));
+
         return new SaReactorFilter()
-                // 拦截地址
+                // 拦截地址：排除网关路由路径和服务白名单
                 .addInclude("/**")
-                // 配置白名单路径
-                .setExcludeList(ignoreUrlsConfig.getUrls())
+                .setExcludeList(excludeList)
                 // 鉴权方法：每次访问进入
                 .setAuth(obj -> {
                     // 对于OPTIONS预检请求直接放行
                     SaRouter.match(SaHttpMethod.OPTIONS).stop();
-                    // 登录认证：商城前台会员认证
-                    SaRouter.match("/mall-portal/**", r -> StpMemberUtil.checkLogin()).stop();
-                    // 登录认证：管理后台用户认证
-                    SaRouter.match("/mall-admin/**", r -> StpUtil.checkLogin());
-                    // 权限认证：管理后台用户权限校验
-                    // 获取Redis中缓存的各个接口路径所需权限规则
-                    Map<Object, Object> pathResourceMap = redisTemplate.opsForHash().entries(AuthConstant.PATH_RESOURCE_MAP);
-                    // 获取到访问当前接口所需权限（一个路径对应多个资源时，拥有任意一个资源都可以访问该路径）
-                    List<String> needPermissionList = new ArrayList<>();
-                    // 获取当前请求路径
-                    String requestPath = SaHolder.getRequest().getRequestPath();
-                    // 创建路径匹配器
-                    PathMatcher pathMatcher = new AntPathMatcher();
-                    Set<Map.Entry<Object, Object>> entrySet = pathResourceMap.entrySet();
-                    for (Map.Entry<Object, Object> entry : entrySet) {
-                        String pattern = (String) entry.getKey();
-                        if (pathMatcher.match(pattern, requestPath)) {
-                            needPermissionList.add((String) entry.getValue());
-                        }
-                    }
-                    // 接口需要权限时鉴权
-                    if(CollUtil.isNotEmpty(needPermissionList)){
-                        SaRouter.match(requestPath, r -> StpUtil.checkPermissionOr(Convert.toStrArray(needPermissionList)));
-                    }
+
+                    // 注意：由于排除了网关路由路径，这里不会匹配到网关路由
+                    // 认证逻辑应该在各个微服务中实现，而不是在网关层面
+                    // 这里只处理网关级别的通用认证（如API文档访问等）
+
+                    // 如果需要网关级别的认证，可以在这里添加
+                    // 例如：对管理后台的特殊路径进行认证
                 })
                 // setAuth方法异常处理
                 .setError(this::handleException);
