@@ -9,7 +9,7 @@ services:
       - /mydata/app/mall-admin/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - TZ=Asia/Shanghai
     external_links:
       - mysql:db #可以用db这个域名访问mysql服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
@@ -22,7 +22,7 @@ services:
       - /mydata/app/mall-search/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - TZ=Asia/Shanghai
     external_links:
       - elasticsearch:es #可以用es这个域名访问elasticsearch服务
       - mysql:db #可以用db这个域名访问mysql服务
@@ -36,7 +36,7 @@ services:
       - /mydata/app/mall-portal/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - TZ=Asia/Shanghai
     external_links:
       - redis:redis #可以用redis这个域名访问redis服务
       - mongo:mongo #可以用mongo这个域名访问mongo服务
@@ -52,7 +52,7 @@ services:
       - /mydata/app/mall-auth/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - TZ=Asia/Shanghai
     external_links:
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-gateway:
@@ -64,7 +64,7 @@ services:
       - /mydata/app/mall-gateway/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - TZ=Asia/Shanghai
     external_links:
       - redis:redis #可以用redis这个域名访问redis服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
@@ -77,6 +77,6 @@ services:
       - /mydata/app/mall-monitor/logs:/var/logs
       - /etc/localtime:/etc/localtime
     environment:
-      - 'TZ="Asia/Shanghai"'
+      - TZ=Asia/Shanghai
     external_links:
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
