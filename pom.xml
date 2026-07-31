@@ -46,7 +46,7 @@
         <mybatis.version>3.5.19</mybatis.version>
         <mybatis-spring-boot-starter.version>3.0.4</mybatis-spring-boot-starter.version>
         <mysql-connector.version>9.3.0</mysql-connector.version>
-        <spring-data-commons.version>3.5.11</spring-data-commons.version>
+        <spring-data-commons.version>3.5.12</spring-data-commons.version>
         <aliyun-oss.version>3.18.5</aliyun-oss.version>
         <alipay-sdk.version>4.40.630.ALL</alipay-sdk.version>
         <logstash-logback.version>8.0</logstash-logback.version>
